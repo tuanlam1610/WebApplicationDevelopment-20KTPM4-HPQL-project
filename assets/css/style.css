@@ -3,17 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB
+}  
+
 
 body {
     height: 200vh;
-    background-color: #CCCCCC;
+    background-color: var(--white);
     font-family: 'Inter', sans-serif;
 }
 /* ----- Nav Bar Start ----- */
 .navbar {
     display: flex;
     align-items: center;
-    background-color: #EFFFFB;
+    background-color: var(--white);
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
     text-transform: uppercase;
     padding: 0px;
@@ -41,31 +47,31 @@ li.nav-item  {
 }
 
 li.active {
-    border: 2px solid #50D890;
+    border: 2px solid var(--green);
 }
 /* Note: !important color here */
 li.nav-item a.nav-link {
-    color: #4F98CA !important;
+    color: var(--primary-blue) !important;
     font-weight: 600;
 }
 /* Note: !important color here */
 li.active a.nav-link {
-    color: #50D890 !important;
+    color: var(--green) !important;
 }
 
 li:hover {
-    background-color: #50D890;
+    background-color: var(--green);
 }
 /* Note: !important color here */
 li:hover a.nav-link {
-    color: #EFFFFB !important;
+    color: var(--white) !important;
 }
 /* Note: !important color here */
 div.navbar-collapse .btn {
     height: 40px;
     padding: 0px 16px;
-    color: #EFFFFB !important;
-    background-color: #4F98CA;
+    color: var(--white)!important;
+    background-color: var(--primary-blue);
     border: none;
     border-radius: 12px;
     text-transform: uppercase;
@@ -73,13 +79,13 @@ div.navbar-collapse .btn {
 }
     /* Nav Bar Toggle */
 .navbar-toggler {
-    background-color: #4F98CA;
+    background-color: var(--primary-blue);
     border: none;
     outline: none;
 }
 
 .navbar-toggler:hover {
-    background-color: #50D890;
+    background-color: var(--green);
 }
 
 .navbar-toggler:focus {
@@ -88,3 +94,19 @@ div.navbar-collapse .btn {
 }
     /* ---------- */
 /* ----- Nav Bar End ----- */
+
+/*-----Footer----*/
+#footer {
+    background-color: var(--primary-blue) !important;
+    color: var(--white)!important;
+    margin-top: 100px;
+    padding: 30px 0;
+}
+
+.diachi{
+    display: flex;
+    flex-direction: row;
+}
+.copyright{
+    padding: 15px 0 0 0;
+}
