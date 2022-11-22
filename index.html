@@ -16,14 +16,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css
+" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- CSS File -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Bootstrap</title>
 </head>
 
 <body>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="./assets/img/HPQL-Light.svg" alt="logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -46,6 +49,51 @@
       </div>
     </div>
   </nav>
+
+  <!-- Các chuyến xe nổi bật -->
+
+  <section class="container">
+    <header>Chuyến xe phổ biến</header>
+    <h6>Các chuyến xe nổi bật</h6>
+    <div class="trips row">
+      <div class="trip col-md-6 me-4 mb-4">
+        <img src="./assets/img/TPHCM.png" alt="Thành phố Hồ Chí Minh - Đà Lạt"></img>
+        <div class="name-trip">
+          <div class="from text-center mb-3">Thành phố Hồ Chí Minh</div>
+          <i class="fa-sharp fa-solid fa-chevron-right"></i>
+          <div class="to text-center mt-3">Đà Lạt</div>
+        </div>
+      </div>
+
+      <div class="trip col-md-6 me-4 mb-4">
+        <img src="./assets/img/HaNoi.png" alt="Hà Nội - Ninh Bình"></img>
+        <div class="name-trip">
+          <div class="from text-center mb-3">Hà Nội</div>
+          <i class="fa-sharp fa-solid fa-chevron-right"></i>
+          <div class="to text-center mt-3">Ninh Bình</div>
+        </div>
+      </div>
+    
+      <div class="trip col-md-6 me-4 mb-4">
+        <img src="./assets/img/DaLat.png" alt="Đà Lạt - Thành phố Hồ Chí Minh"></img>
+        <div class="name-trip">
+          <div class="from text-center mb-3">Đà Lạt</div>
+          <i class="fa-sharp fa-solid fa-chevron-right"></i>
+          <div class="to text-center mt-3">Thành phố Hồ Chí Minh</div>
+        </div>
+      </div>
+
+      <div class="trip col-md-6 me-4 mb-4">
+        <img src="./assets/img/DaNang.png" alt="Đà Nẵng - Đà Lạt"></img>
+        <div class="name-trip">
+          <div class="from text-center mb-3">Đà Nẵng</div>
+          <i class="fa-sharp fa-solid fa-chevron-right"></i>
+          <div class="to text-center mt-3">Đà Lạt</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-info" id="footer">
     <!-- Grid container -->
@@ -72,7 +120,7 @@
 
       </div>
       <div class="col-md-3"> <img src="./assets/img/HPQL-Footer.svg" id="footer-Logo" alt="logo">
-        
+
       </div>
       <div class="row text-center copyright">
         <div class=" fs-7">
