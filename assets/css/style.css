@@ -110,3 +110,66 @@ div.navbar-collapse .btn {
 .copyright{
     padding: 15px 0 0 0;
 }
+
+.container{
+    margin-top: 100px;
+}
+
+.owl-controls .owl-buttons {
+	position: relative;
+}
+
+.owl-controls .owl-prev {
+	position: absolute;
+	left: -60px;
+	bottom: 128px;
+	padding: 10px 17px;
+	background: var(--primary-blue);
+	border-radius: 50px;
+	transition: .5s;
+}
+
+.owl-controls .owl-next {
+	position: absolute;
+	right: -60px;
+	bottom: 128px;
+	padding: 10px 17px;
+	background: var(--primary-blue);
+	border-radius: 50px;
+	transition: .5s;
+}
+
+.owl-controls .owl-prev:after, .owl-controls .owl-next:after {
+	content: '\f104';
+	font-family: FontAwesome;
+	color: #fff;
+	font-size: 16px;
+}
+
+.owl-controls .owl-next:after {
+	content: '\f105';
+}
+
+.owl-controls .owl-prev:hover, .owl-controls .owl-next:hover {
+	background: var(--green);
+}
+
+img{
+    width: 100%;
+}
+
+.news-grid:hover .news-grid-image img {
+	transform: scale(1.1);
+	transition: .5s;
+}
+
+.news-grid{
+    overflow: hidden;
+    border-radius: 12px;
+    margin: 0 12px;
+}
+
+.owl-wrapper{
+    padding: 40px 0;
+    width: 100%;
+}
