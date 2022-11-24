@@ -3,81 +3,89 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
+
+:root {
     --primary-blue: #4F98CA;
     --green: #50D890;
     --white: #EFFFFB
-}  
+}
 
 
 body {
-    height: 200vh;
     background-color: var(--white);
     font-family: 'Inter', sans-serif;
 }
+
 /* ----- Nav Bar Start ----- */
 .navbar {
-    display: flex;
-    align-items: center;
     background-color: var(--white);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
     padding: 0px;
 }
-    /* Nav Bar Logo */
+
+/* Nav Bar Logo */
 .navbar-brand {
     padding: 4px;
 }
 
-.navbar-brand img{
+.navbar-brand img {
     height: 52px;
 }
-    /* ---------- */
+
+/* ---------- */
 
 ul.navbar-nav {
     margin-right: 16px;
 }
 
-li.nav-item  {
-    display: flex;
-    align-items: center;
+li.nav-item {
     padding: 0px 20px;
-    margin:4px 8px;
+    margin: 4px 8px;
     border-radius: 12px;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--white) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
 }
 
 li.active {
     border: 2px solid var(--green);
 }
+
 /* Note: !important color here */
 li.nav-item a.nav-link {
     color: var(--primary-blue) !important;
     font-weight: 600;
 }
+
 /* Note: !important color here */
 li.active a.nav-link {
     color: var(--green) !important;
 }
 
-li:hover {
-    background-color: var(--green);
+li.nav-item:hover {
+    background-position: top left;
 }
+
 /* Note: !important color here */
 li:hover a.nav-link {
     color: var(--white) !important;
 }
+
 /* Note: !important color here */
 div.navbar-collapse .btn {
     height: 40px;
     padding: 0px 16px;
-    color: var(--white)!important;
+    color: var(--white) !important;
     background-color: var(--primary-blue);
     border: none;
     border-radius: 12px;
     text-transform: uppercase;
     font-weight: 600;
 }
-    /* Nav Bar Toggle */
+
+/* Nav Bar Toggle */
 .navbar-toggler {
     background-color: var(--primary-blue);
     border: none;
@@ -92,21 +100,158 @@ div.navbar-collapse .btn {
     border: none;
     box-shadow: none;
 }
-    /* ---------- */
+
+/* ---------- */
 /* ----- Nav Bar End ----- */
 
 /*-----Footer----*/
 #footer {
     background-color: var(--primary-blue) !important;
-    color: var(--white)!important;
-    margin-top: 100px;
+    color: var(--white) !important;
     padding: 30px 0;
 }
 
-.diachi{
-    display: flex;
-    flex-direction: row;
-}
-.copyright{
+.copyright {
     padding: 15px 0 0 0;
 }
+
+/* ----- Footer End ----- */
+
+/*----- Find Ticket -----*/
+
+#findTicket {
+    position: relative;
+    height: 80vh;
+    margin-top: 60px;
+    background-image: url("../img/FindTicket-BG.jpg");
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 600px) {
+
+}
+
+#findTicket .form-control:focus, .btn:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+#findTicket .container-fluid {
+    background-color: rgba(255, 255, 255, 0.3);
+    top: 0;
+    height: 100%;
+}
+
+#findTicket .row {
+    --bs-gutter-x: 0px;
+}
+
+#findTicket .col-md-1 {
+    min-width: 124px;
+}
+
+#findTicket i {
+    color: var(--primary-blue);
+}
+
+#findTicket #typeVehicle {
+    background-color: var(--white);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: var(--primary-blue);
+}
+
+#findTicket #typeVehicle p {
+    margin:0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#findTicket #inputTicket {
+    margin-top: 2px;
+    padding: 0;
+}
+#findTicket #inputTicket .dropdown-menu,
+#findTicket #inputTicket .dropdown-divider{
+    /* Scrollable Menu */
+    max-height: 10rem;
+    /* --------------- */
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+#findTicket #inputTicket .dropdown-header {
+    padding: 0.5rem;
+    color: var(--white);
+    background-color: var(--primary-blue);
+}
+
+#findTicket #inputTicket input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+#inputTicket #startDes {
+    background-color: var(--white);
+    border-radius: 0;
+    border-bottom-left-radius: 8px;
+}
+
+#inputTicket #endDes {
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    border-right: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+#inputTicket #endDes,
+#inputTicket #startDate {
+    background-color: var(--white);
+    border-radius: 0;
+}
+
+#startDes #startDes-input,
+#endDes #endDes-input,
+#startDate #startDate-input
+ {
+    background: transparent;
+    border-color: transparent;
+}
+
+#inputTicket .btn {
+    border: none;
+    border-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--primary-blue);
+}
+
+@media (max-width: 752px) {
+    #inputTicket #endDes {
+        border: none;
+        border-top-right-radius: 8px;
+        margin: 0 0 2px 2px;
+    }
+
+    #inputTicket #startDes {
+        border-radius: 0;
+    }
+
+    #inputTicket #startDate {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    #inputTicket .btn {
+        border-radius: 8px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* ----- Find Ticker End ----- */
