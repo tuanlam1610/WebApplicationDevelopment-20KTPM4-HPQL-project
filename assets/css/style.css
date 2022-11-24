@@ -107,12 +107,17 @@ div.navbar-collapse .btn {
 
 /* ----- Các chuyến xe nổi bật ------*/
 
-.container header {
+.container .trips {
+    display: flex;
+    justify-content: center;
+}
+
+.container .text header {
     font-size: 25px;
     font-weight: bold;
 }
 
-.container h6 {
+.container .text h6 {
     opacity: 0.75;
 }
 
