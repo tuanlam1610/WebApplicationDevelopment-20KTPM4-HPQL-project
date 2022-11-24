@@ -54,7 +54,9 @@ a {
     }
 }
 
-
+.container{
+    margin-top: 60px;
+}
 body {
     height: 200vh;
     background-color: var(--white);
@@ -139,6 +141,10 @@ div.navbar-collapse .btn {
 }
 
 /*Slider*/
+.city-container{
+    padding-top: 40px;
+}
+
 #owl-carousel{
     position: relative;
 }
