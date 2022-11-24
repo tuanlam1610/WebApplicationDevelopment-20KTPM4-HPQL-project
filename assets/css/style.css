@@ -223,17 +223,17 @@ main .container .sub-title{
 /* ----- Nav Bar End ----- */
 /* ----- Các chuyến xe nổi bật ------*/
 
-.container .trips {
+.trip-container .trips {
     display: flex;
     justify-content: center;
 }
 
-.container .text header {
+.trip-container .text header {
     font-size: 25px;
     font-weight: bold;
 }
 
-.container .text h6 {
+.trip-container .text h6 {
     opacity: 0.75;
 }
 
