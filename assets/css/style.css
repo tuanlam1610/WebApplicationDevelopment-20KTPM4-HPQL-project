@@ -4,21 +4,33 @@
     box-sizing: border-box;
 }
 
-:root {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+:root{
     --primary-blue: #4F98CA;
     --green: #50D890;
-    --white: #EFFFFB
-}
+    --white: #EFFFFB;
+
+    --fs-xl: 10vw;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+}  
+
+
 
 
 body {
+    height: 200vh;
     background-color: var(--white);
     font-family: 'Inter', sans-serif;
 }
-
 /* ----- Nav Bar Start ----- */
 .navbar {
-    background-color: var(--white);
+    background-color: var(--white)!important;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
     padding: 0px;
@@ -49,7 +61,7 @@ li.nav-item {
     transition: all .3s ease-out;
 }
 
-li.active {
+li.nav-item.active {
     border: 2px solid var(--green);
 }
 
@@ -78,11 +90,18 @@ div.navbar-collapse .btn {
     height: 40px;
     padding: 0px 16px;
     color: var(--white) !important;
-    background-color: var(--primary-blue);
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--primary-blue) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
     border: none;
     border-radius: 12px;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+div.navbar-collapse .btn:hover {
+    background-position: top left;
 }
 
 /* Nav Bar Toggle */
@@ -104,26 +123,12 @@ div.navbar-collapse .btn {
 /* ---------- */
 /* ----- Nav Bar End ----- */
 
-/*-----Footer----*/
-#footer {
-    background-color: var(--primary-blue) !important;
-    color: var(--white) !important;
-    padding: 30px 0;
-}
-
-.copyright {
-    padding: 15px 0 0 0;
-}
-
-/* ----- Footer End ----- */
-
 /*----- Find Ticket -----*/
-
 #findTicket {
     position: relative;
-    height: 80vh;
+    height: 95vh;
     margin-top: 60px;
-    background-image: url("../img/FindTicket-BG.jpg");
+    background-image: url("../img/FindTicket-BG.png");
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -255,3 +260,190 @@ div.navbar-collapse .btn {
 }
 
 /* ----- Find Ticker End ----- */
+
+/*Slider*/
+.city-container{
+    padding-top: 40px;
+}
+
+#owl-carousel{
+    position: relative;
+}
+
+.owl-carousel .nav-btn:hover{
+    background: var(--green);
+    opacity: 1;
+}
+.owl-carousel .nav-btn{
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-blue);
+    border-radius: 50px;
+    transition: .5s;
+    opacity: 0.5;
+}
+
+.owl-carousel .nav-btn i{
+    margin: 14px 0px;
+    color: var(--white); 
+}
+.owl-carousel .prev-slide{
+    left: -5%;
+}
+.owl-carousel .next-slide{
+    right: -5%;
+}
+
+img{
+    width: 100%;
+}
+
+.garage-item:hover .garage-item-image img,
+.city-item:hover .city-item-image img {
+	transform: scale(1.1);
+	transition: .5s;
+}
+
+.garage-item-image,
+.city-item-image{
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.garage-item,
+.city-item{
+    margin:  0 0.8rem;
+}
+
+.owl-wrapper{
+    padding: 20px 0;
+    width: 100%;
+}
+
+.garage-item a .garage-name,
+.city-item a .city-name{
+    text-align: center;
+    padding: 12px 0px;
+}
+
+main .container .title{
+    font-weight: bold;
+    padding-left: 1.5rem;
+}
+
+main .container .sub-title{
+    color: gray;
+    padding-left: 2.5rem;
+}
+
+    /* ---------- */
+
+/* ----- Các chuyến xe nổi bật ------*/
+
+.trip-container .trips {
+    display: flex;
+    justify-content: center;
+}
+
+.trip-container .text header {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.trip-container .text h6 {
+    opacity: 0.75;
+}
+
+.trips .trip {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: 184px;
+    max-width: 454px;
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+    box-shadow: 2px 2px 6px #888888;
+    padding: 0;
+    cursor: pointer;
+}
+
+.trips .trip:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.trip .name-trip {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.trip img {
+    border: 1px solid var(--white);
+    border-radius: 16px;
+    width: 50%;
+    height: 180px;
+}
+/*-----Footer----*/
+#footer {
+    background-color: var(--primary-blue) !important;
+    color: var(--white)!important;
+    margin-top: 40px;
+    font-size: var(--fs-400);
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+#footer-Logo{
+  width: 50%;
+  height: auto;
+}
+
+.sm-text-align{
+    text-align: start;
+}
+
+@media (min-width:768px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 0.8rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+
+    #footer-Logo{
+        width: 75%;
+        height: auto;
+      }
+}
+
+@media (min-width:840px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+}
+
+@media (min-width:1144px){ /*subtract 20px (real at 1144)*/
+    :root{
+        --fs-600: 1.75rem;
+        --fs-500: 1.5rem;
+        --fs-400: 1.25rem;
+    }  
+    .sm-text-align{
+        text-align: end!important;
+    }
+}
