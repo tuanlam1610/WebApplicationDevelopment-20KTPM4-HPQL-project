@@ -19,7 +19,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <!-- CSS File -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Bootstrap</title>
+
+  <!--OWL Carousel-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+    integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>HPQL</title>
 </head>
 
 <body>
@@ -47,9 +56,221 @@
     </div>
   </nav>
 
-   <!-- Các chuyến xe nổi bật -->
+  <main>
+    <!--Cac thanh pho noi bat-->
+    <div class="container">
+      <div class="city-container">
+        <h4 class="title">Các thành phố lớn</h4>
+        <p class="sub-title">Khám phá các thành phố lớn của Việt Nam</p>
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <div id="city-slider" class="owl-carousel">
+              <!-- 1 -->
+              <div class="city-item">
+                <a href="">
+                  <div class="city-item-image">
+                    <img src="./assets/img/HCM.png" alt="">
+                  </div>
+                  <div class="city-name">Hồ Chí Minh</div>
+                </a>
+              </div>
+              <!-- 2 -->
+              <div class="city-item">
+                <a href="">
+                  <div class="city-item-image">
+                    <img src="./assets/img/HN.png" alt="">
+                  </div>
+                  <div class="city-name">Hà Nội</div>
+                </a>
+              </div>
+              <!-- 3 -->
+              <div class="city-item">
+                <a href="">
+                  <div class="city-item-image">
+                    <img src="./assets/img/DN.png" alt="">
+                  </div>
+                  <div class="city-name">Đà Nẵng</div>
+                </a>
+              </div>
+              <!-- 4 -->
+              <div class="city-item">
+                <a href="">
+                  <div class="city-item-image">
+                    <img src="./assets/img/DL.png" alt="">
+                  </div>
+                  <div class="city-name">Đà Lạt</div>
+                </a>
+              </div>
+              <!-- 5 -->
+              <div class="city-item">
+                <a href="">
+                  <div class="city-item-image">
+                    <img src="./assets/img/NT.png" alt="">
+                  </div>
+                  <div class="city-name">Nha Trang</div>
+                </a>
+              </div>
+              <!-- 6 -->
+              <div class="city-item">
+                <a href="">
+                  <div class="city-item-image">
+                    <img src="./assets/img/CT.png" alt="">
+                  </div>
+                  <div class="city-name">Cần Thơ</div>
+                </a>
+              </div>
+              <!-- 7 -->
+              <div class="city-item">
+                <a href="">
+                  <div class="city-item-image">
+                    <img src="./assets/img/BT.png" alt="">
+                  </div>
+                  <div class="city-name">Bến Tre</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-   <section class="container">
+      <div class="garage-container">
+        <h4 class="title">Danh sách nhà xe</h4>
+        <p class="sub-title">Các nhà xe nổi bật</p>
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <div id="garage-slider" class="owl-carousel">
+              <!-- 1 -->
+              <div class="garage-item">
+                <a href="">
+                  <div class="garage-item-image">
+                    <img src="./assets/img/nha_xe_PT.png" alt="">
+                  </div>
+                  <div class="garage-name">Nhà xe Phương Trang</div>
+                </a>
+              </div>
+              <!-- 2 -->
+              <div class="garage-item">
+                <a href="">
+                  <div class="garage-item-image">
+                    <img src="./assets/img/nha_xe_PT.png" alt="">
+                  </div>
+                  <div class="garage-name">Nhà xe Phương Trang</div>
+                </a>
+              </div>
+              <!-- 3 -->
+              <div class="garage-item">
+                <a href="">
+                  <div class="garage-item-image">
+                    <img src="./assets/img/nha_xe_PT.png" alt="">
+                  </div>
+                  <div class="garage-name">Nhà xe Phương Trang</div>
+                </a>
+              </div>
+              <!-- 4 -->
+              <div class="garage-item">
+                <a href="">
+                  <div class="garage-item-image">
+                    <img src="./assets/img/nha_xe_PT.png" alt="">
+                  </div>
+                  <div class="garage-name">Nhà xe Phương Trang</div>
+                </a>
+              </div>
+              <!-- 5 -->
+              <div class="garage-item">
+                <a href="">
+                  <div class="garage-item-image">
+                    <img src="./assets/img/nha_xe_PT.png" alt="">
+                  </div>
+                  <div class="garage-name">Nhà xe Phương Trang</div>
+                </a>
+              </div>
+              <!-- 6 -->
+              <div class="garage-item">
+                <a href="">
+                  <div class="garage-item-image">
+                    <img src="./assets/img/nha_xe_PT.png" alt="">
+                  </div>
+                  <div class="garage-name">Nhà xe Phương Trang</div>
+                </a>
+              </div>
+              <!-- 7 -->
+              <div class="garage-item">
+                <a href="">
+                  <div class="garage-item-image">
+                    <img src="./assets/img/nha_xe_PT.png" alt="">
+                  </div>
+                  <div class="garage-name">Nhà xe Phương Trang</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+
+  <!-- Footer -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#city-slider").owlCarousel({
+        loop: true,
+        nav: true,
+        navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
+          "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        responsive: {
+          0: {
+            items: 1
+          },
+          400:{
+            items: 2
+          },
+          800: {
+            items: 3
+          },
+          1200: {
+            items: 4
+          }
+        }
+      });
+
+      $("#garage-slider").owlCarousel({
+        loop: true,
+        nav: true,
+        navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
+          "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        responsive: {
+          0: {
+            items: 1
+          },
+          400:{
+            items: 2
+          },
+          800: {
+            items: 3
+          },
+          1200: {
+            items: 4
+          }
+        }
+      });
+    });
+  </script>
+
+
+  <!-- Các chuyến xe nổi bật -->
+
+  <section class="container">
     <div class="text text-left">
       <header>Chuyến xe phổ biến</header>
       <h6>Các chuyến xe nổi bật</h6>
@@ -120,7 +341,8 @@
         </div>
 
       </div>
-      <div class="col-md-3 col-sm-12 d-flex align-items-center justify-content-center"> <img src="./assets/img/HPQL-Footer.svg" id="footer-Logo" alt="logo">
+      <div class="col-md-3 col-sm-12 d-flex align-items-center justify-content-center"> <img
+          src="./assets/img/HPQL-Footer.svg" id="footer-Logo" alt="logo">
 
       </div>
       <div class="row pb-3 text-center copyright">
