@@ -28,133 +28,37 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<<<<<<< HEAD
 
-=======
-  <!-- Bootstrap Datepicker -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
->>>>>>> main
   <title>HPQL</title>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./assets/img/HPQL-Light.svg" alt="logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
-            <li class="nav-item d-flex align-items-center active" style="min-width: 156px;">
-              <a class="nav-link" href="#">Trang Chủ</a>
-            </li>
-            <li class="nav-item d-flex align-items-center" style="min-width: 216px;">
-              <a class="nav-link" href="#">Danh Sách Nhà Xe</a>
-            </li>
-            <li class="nav-item d-flex align-items-center" style="min-width: 250px;">
-              <a class="nav-link" href="#">Danh Sách Chuyến Xe</a>
-            </li>
-          </ul>
-          <a role="button" class="btn btn-primary d-flex align-items-center" href="https://getbootstrap.com/docs/5.2/components/buttons/" style="min-width: 130px;">Đăng Nhập</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <!-- Find Ticket -->
-    <div id="findTicket" class="">
-      <div class="container-fluid d-flex justify-content-center align-items-center">
-        <div id="contentFindTicket" class="w-100">
-          <!-- First Row -->
-          <div class="row d-flex justify-content-center">
-            <div id="typeVehicle" class="col-6 col-md-2 py-2 px-2 d-flex justify-content-center align-items-center">
-              <i class="fa-solid fa-bus-simple fs-5"></i>
-              <p class="fs-6 fw-bold ms-3">Xe Khách</p>
-            </div>
-            <div class="col-6 col-md-5"></div>
-          </div>
-          <!-- Second Row -->
-          <div class="row mb-3 d-flex justify-content-center" id="inputTicket">
-            <!-- Start Des Col -->
-            <div class="col-6 col-md-2 dropdown">
-              <div id="startDes" class="d-flex flex-row px-3">
-                <label for="startDes-input" class="d-flex align-items-center">
-                  <i class="fa-solid fa-location-dot fa-lg d-flex align-items-center"></i>
-                </label>
-                <input type="text" name="Start Destination" id="startDes-input" class="form-control lh-lg"
-                  placeholder="Điểm khởi hành" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
-                  <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
-                  <div class="dropdown-divider"></div>
-                  <li class="dropdown-item" href="#">Hồ Chí Minh</li>
-                  <li class="dropdown-item" href="#">Hà Nội</li>
-                  <li class="dropdown-item" href="#">Đà Lạt</li>
-                  <li class="dropdown-item" href="#">Đà Nẵng</li>
-                  <li class="dropdown-item" href="#">Quảng Ninh</li>
-                  <li class="dropdown-item" href="#">Ninh Bình</li>
-                  <li class="dropdown-item" href="#">Nha Trang</li>
-                  <li class="dropdown-item" href="#">Phan Thiết</li>
-                </ul>
-              </div>
-            </div>
-            <!-- End Des Col -->
-            <div class="col-6 col-md-2 dropdown">
-              <div id="endDes" class="d-flex flex-row px-3">
-                <label for="endDes-input" class="d-flex align-items-center">
-                  <i class="fa-solid fa-location-dot fa-lg d-flex align-items-center"></i>
-                </label>
-                <input type="text" name="End Destination" id="endDes-input" class="form-control lh-lg"
-                  placeholder="Điểm đến" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
-                  <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
-                  <div class="dropdown-divider"></div>
-                  <li class="dropdown-item" href="#">Hồ Chí Minh</li>
-                  <li class="dropdown-item" href="#">Hà Nội</li>
-                  <li class="dropdown-item" href="#">Đà Lạt</li>
-                  <li class="dropdown-item" href="#">Đà Nẵng</li>
-                  <li class="dropdown-item" href="#">Quảng Ninh</li>
-                  <li class="dropdown-item" href="#">Ninh Bình</li>
-                  <li class="dropdown-item" href="#">Nha Trang</li>
-                  <li class="dropdown-item" href="#">Phan Thiết</li>
-                </ul>
-              </div>
-            </div>
-            <!-- Start Date Col -->
-            <div class="col-12 col-md-2">
-              <div id="startDate" class="d-flex flex-row px-3">
-                <!-- <input id="startDate-input" class="form-control lh-lg" type="date"/> -->
-                <div class="input-group date" id="datepicker">
-                  <label for="startDate-input" class="d-flex align-items-center">
-                    <i class="fa-solid fa-calendar-days fa-lg d-flex align-items-center"></i>
-                  </label>
-                  <input type="text" class="form-control lh-lg" name="startDate" id="startDate-input"
-                    placeholder="dd/mm/yyyy">
-                  <span class="input-group-append"></span>
-                </div>
-              </div>
-            </div>
-            <button type="button" class="col-6 col-md-1 btn btn-primary">Tìm Vé</button>
-          </div>
-        </div>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="./assets/img/HPQL-Light.svg" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+          <li class="nav-item active" style="min-width: 156px;">
+            <a class="nav-link" href="#">Trang Chủ</a>
+          </li>
+          <li class="nav-item" style="min-width: 216px;">
+            <a class="nav-link" href="#">Danh Sách Nhà Xe</a>
+          </li>
+          <li class="nav-item" style="min-width: 250px;">
+            <a class="nav-link" href="#">Danh Sách Chuyến Xe</a>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-primary" style="min-width: 130px;">Đăng Nhập</button>
       </div>
     </div>
-<<<<<<< HEAD
   </nav>
   <main>
     <!--Cac thanh pho noi bat-->
     <div class="container">
-=======
-    <!-- Content -->
-    <div class="container">
-      <!--Cac thành phố nổi bật-->
->>>>>>> main
       <div class="city-container">
         <h4 class="title">Các thành phố lớn</h4>
         <p class="sub-title">Khám phá các thành phố lớn của Việt Nam</p>
@@ -168,11 +72,7 @@
                   <div class="city-item-image">
                     <img src="./assets/img/HCM.png" alt="">
                   </div>
-<<<<<<< HEAD
                   <div class="city-name">Hồ Chí Minh</div>
-=======
-                  <div class="city-name">Thành phố Hồ Chí Minh</div>
->>>>>>> main
                 </a>
               </div>
               <!-- 2 -->
@@ -230,220 +130,7 @@
                 </a>
               </div>
             </div>
-<<<<<<< HEAD
           </div>
-=======
-          </div>
-        </div>
-      </div>
-      <!-- Các nhà xe nổi bật -->
-      <div class="garage-container">
-        <h4 class="title">Danh sách nhà xe</h4>
-        <p class="sub-title">Các nhà xe nổi bật</p>
-        <div class="row">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-10">
-            <div id="garage-slider" class="owl-carousel">
-              <!-- 1 -->
-              <div class="garage-item">
-                <a href="">
-                  <div class="garage-item-image">
-                    <img src="./assets/img/nha_xe_PT.png" alt="">
-                  </div>
-                  <div class="garage-name">Nhà xe Phương Trang</div>
-                </a>
-              </div>
-              <!-- 2 -->
-              <div class="garage-item">
-                <a href="">
-                  <div class="garage-item-image">
-                    <img src="./assets/img/nha_xe_PT.png" alt="">
-                  </div>
-                  <div class="garage-name">Nhà xe Phương Trang</div>
-                </a>
-              </div>
-              <!-- 3 -->
-              <div class="garage-item">
-                <a href="">
-                  <div class="garage-item-image">
-                    <img src="./assets/img/nha_xe_PT.png" alt="">
-                  </div>
-                  <div class="garage-name">Nhà xe Phương Trang</div>
-                </a>
-              </div>
-              <!-- 4 -->
-              <div class="garage-item">
-                <a href="">
-                  <div class="garage-item-image">
-                    <img src="./assets/img/nha_xe_PT.png" alt="">
-                  </div>
-                  <div class="garage-name">Nhà xe Phương Trang</div>
-                </a>
-              </div>
-              <!-- 5 -->
-              <div class="garage-item">
-                <a href="">
-                  <div class="garage-item-image">
-                    <img src="./assets/img/nha_xe_PT.png" alt="">
-                  </div>
-                  <div class="garage-name">Nhà xe Phương Trang</div>
-                </a>
-              </div>
-              <!-- 6 -->
-              <div class="garage-item">
-                <a href="">
-                  <div class="garage-item-image">
-                    <img src="./assets/img/nha_xe_PT.png" alt="">
-                  </div>
-                  <div class="garage-name">Nhà xe Phương Trang</div>
-                </a>
-              </div>
-              <!-- 7 -->
-              <div class="garage-item">
-                <a href="">
-                  <div class="garage-item-image">
-                    <img src="./assets/img/nha_xe_PT.png" alt="">
-                  </div>
-                  <div class="garage-name">Nhà xe Phương Trang</div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Các chuyến xe nổi bật -->
-      <div class="trip-container">
-        <h4 class="title">Danh sách chuyến xe</h4>
-        <p class="sub-title">Các chuyến xe nổi bật</p>
-
-        <div class="trips row">
-          <div class="trip col-md-6 me-4 mb-4">
-            <img src="./assets/img/TPHCM.png" alt="Thành phố Hồ Chí Minh - Đà Lạt"></img>
-            <div class="name-trip">
-              <div class="from text-center mb-3">Thành phố Hồ Chí Minh</div>
-              <i class="fa-sharp fa-solid fa-chevron-right"></i>
-              <div class="to text-center mt-3">Đà Lạt</div>
-            </div>
-          </div>
-
-          <div class="trip col-md-6 me-4 mb-4">
-            <img src="./assets/img/HaNoi.png" alt="Hà Nội - Ninh Bình"></img>
-            <div class="name-trip">
-              <div class="from text-center mb-3">Hà Nội</div>
-              <i class="fa-sharp fa-solid fa-chevron-right"></i>
-              <div class="to text-center mt-3">Ninh Bình</div>
-            </div>
-          </div>
-
-          <div class="trip col-md-6 me-4 mb-4">
-            <img src="./assets/img/DaLat.png" alt="Đà Lạt - Thành phố Hồ Chí Minh"></img>
-            <div class="name-trip">
-              <div class="from text-center mb-3">Đà Lạt</div>
-              <i class="fa-sharp fa-solid fa-chevron-right"></i>
-              <div class="to text-center mt-3">Thành phố Hồ Chí Minh</div>
-            </div>
-          </div>
-
-          <div class="trip col-md-6 me-4 mb-4">
-            <img src="./assets/img/DaNang.png" alt="Đà Nẵng - Đà Lạt"></img>
-            <div class="name-trip">
-              <div class="from text-center mb-3">Đà Nẵng</div>
-              <i class="fa-sharp fa-solid fa-chevron-right"></i>
-              <div class="to text-center mt-3">Đà Lạt</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-        <!-- Script -->
-        <script type="text/javascript">
-          $(document).ready(function () {
-            $('#datepicker').datepicker();
-            $("#city-slider").owlCarousel({
-              loop: true,
-              nav: true,
-              navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
-                "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
-              autoplay: true,
-              autoplayTimeout: 4000,
-              autoplayHoverPause: true,
-              smartSpeed: 1000,
-              responsive: {
-                0: {
-                  items: 1
-                },
-                400:{
-                  items: 2
-                },
-                800: {
-                  items: 3
-                },
-                1200: {
-                  items: 4
-                }
-              }
-            });
-      
-            $("#garage-slider").owlCarousel({
-              loop: true,
-              nav: true,
-              navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
-                "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
-              autoplay: true,
-              autoplayTimeout: 4000,
-              autoplayHoverPause: true,
-              smartSpeed: 1000,
-              responsive: {
-                0: {
-                  items: 1
-                },
-                400:{
-                  items: 2
-                },
-                800: {
-                  items: 3
-                },
-                1200: {
-                  items: 4
-                }
-              }
-            });
-          });
-        </script>
-  <!-- Footer -->
-  <footer class="bg-info" id="footer">
-    <!-- Grid container -->
-    <div class="row mx-0 g-0">
-      <div class="col-md-9 col-sm-12 ">
-
-        <div class="row g-0 pt-3">
-          <div class="col-md-4 col-sm-12 fw-bold text-center"> THÔNG TIN LIÊN HỆ:
-          </div>
-          <div class="col-md-3 col-sm-12 text-left">
-            <i class="fa-brands fa-facebook mt-1 me-2 mb-3"></i>Facebook: HPQL
-          </div>
-          <div class="col-md-5 col-sm-12 sm-text-align">
-            <i class="fa-solid fa-phone mt-1 me-2 mb-3 visible-lg-* "></i>HPQL Hotline: 028 1234 567
-          </div>
-        </div>
-        <div class="row g-0 text-left">
-          <div class="col-md-4  col-sm-12"></div>
-          <div class="col-md-8  col-sm-12 d-flex flex-row">
-            <i class="fa-solid fa-location-dot mt-1 ms-1 me-2 mb-3"></i>
-            Địa Chỉ Liên Hệ: 227 Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh
-          </div>
-        </div>
-
-      </div>
-      <div class="col-md-3 col-sm-12 d-flex align-items-center justify-content-center"> <img
-          src="./assets/img/HPQL-Footer.svg" id="footer-Logo" alt="logo">
-
-      </div>
-      <div class="row pb-3 text-center copyright">
-        <div class=" fs-7">
-          Made By HPQL Team 2022
->>>>>>> main
         </div>
       </div>
 
@@ -580,6 +267,5 @@
     });
   </script>
 </body>
-
 
 </html>
