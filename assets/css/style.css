@@ -15,6 +15,11 @@ body {
     background-color: var(--white);
     font-family: 'Inter', sans-serif;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
 /* ----- Nav Bar Start ----- */
 .navbar {
     display: flex;
@@ -115,61 +120,76 @@ div.navbar-collapse .btn {
     margin-top: 100px;
 }
 
-.owl-controls .owl-buttons {
-	position: relative;
+#owl-carousel{
+    position: relative;
 }
 
-.owl-controls .owl-prev {
-	position: absolute;
-	left: -60px;
-	bottom: 128px;
-	padding: 10px 17px;
-	background: var(--primary-blue);
-	border-radius: 50px;
-	transition: .5s;
+.owl-carousel .nav-btn:hover{
+    background: var(--green);
+    opacity: 1;
+}
+.owl-carousel .nav-btn{
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-blue);
+    border-radius: 50px;
+    transition: .5s;
+    opacity: 0.5;
 }
 
-.owl-controls .owl-next {
-	position: absolute;
-	right: -60px;
-	bottom: 128px;
-	padding: 10px 17px;
-	background: var(--primary-blue);
-	border-radius: 50px;
-	transition: .5s;
+.owl-carousel .nav-btn i{
+    margin: 14px 0px;
+    color: var(--white); 
 }
-
-.owl-controls .owl-prev:after, .owl-controls .owl-next:after {
-	content: '\f104';
-	font-family: FontAwesome;
-	color: #fff;
-	font-size: 16px;
+.owl-carousel .prev-slide{
+    left: -5%;
 }
-
-.owl-controls .owl-next:after {
-	content: '\f105';
-}
-
-.owl-controls .owl-prev:hover, .owl-controls .owl-next:hover {
-	background: var(--green);
+.owl-carousel .next-slide{
+    right: -5%;
 }
 
 img{
     width: 100%;
 }
 
-.news-grid:hover .news-grid-image img {
+.garage-item:hover .garage-item-image img,
+.city-item:hover .city-item-image img {
 	transform: scale(1.1);
 	transition: .5s;
 }
 
-.news-grid{
+.garage-item-image,
+.city-item-image{
     overflow: hidden;
     border-radius: 12px;
-    margin: 0 12px;
+}
+
+.garage-item,
+.city-item{
+    margin:  0 0.8rem;
 }
 
 .owl-wrapper{
-    padding: 40px 0;
+    padding: 20px 0;
     width: 100%;
+}
+
+.garage-item a .garage-name,
+.city-item a .city-name{
+    text-align: center;
+    padding: 12px 0px;
+}
+
+main .container .title{
+    font-weight: bold;
+    padding-left: 1.5rem;
+}
+
+main .container .sub-title{
+    color: gray;
+    padding-left: 2.5rem;
 }
