@@ -6,8 +6,47 @@
 :root{
     --primary-blue: #4F98CA;
     --green: #50D890;
-    --white: #EFFFFB
+    --white: #EFFFFB;
+
+    --fs-xl: 10vw;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
 }  
+
+
+@media (min-width:768px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 0.8rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+}
+
+@media (min-width:840px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+}
+
+@media (min-width:1144px){ /*subtract 20px (real at 1144)*/
+    :root{
+        --fs-600: 1.75rem;
+        --fs-500: 1.5rem;
+        --fs-400: 1.25rem;
+    }  
+    .sm-text-align{
+        text-align: end!important;
+    }
+}
 
 
 body {
@@ -100,39 +139,15 @@ div.navbar-collapse .btn {
     background-color: var(--primary-blue) !important;
     color: var(--white)!important;
     margin-top: 100px;
-
+    font-size: var(--fs-400);
+    padding: 0 10px 0 10px;
 }
 
-.diachi{
-    display: flex;
-    flex-direction: row;
-}
-.copyright{
-    /*padding: 15px 0 0 0;*/
+#footer-Logo{
+  max-width: 100%;
+  height: auto;
 }
 
-
-.text-justify-xs {
-    text-align: justify;
-}
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .text-justify-sm {
-        text-align: end;
-    }
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    .text-justify-md {
-        text-align: justify;
-    }
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .text-justify-lg {
-        text-align: justify;
-    }
+.sm-text-align{
+    text-align: start;
 }
