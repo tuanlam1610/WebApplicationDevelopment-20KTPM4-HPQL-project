@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+:root{
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB;
+} 
+
+.garage-name{
+    text-align: center;
+    color: var(--green);
+    padding-top: 40px;
+    padding-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.container .title{
+    font-weight: bold;
+    margin-left: -2rem;
+}
+
+.container .part{
+    padding: 0 5rem;
+    padding-bottom: 24px;
+}
+.container p.introduction-paragraph{
+    text-align:justify;
+    text-indent: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.08rem;
+}
+.container .introduction-image{
+    text-align: center;
+}
+.container .introduction-image img{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+
+.rate{
+    font-family: 'Changa One', cursive;
+}
+.rating > *{
+    padding: 4px 0.1rem;
+}
+
+.number-of-ratings{
+    font-size: 0.7rem;
+    font-style: italic;
+}
+
+i{
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+}
