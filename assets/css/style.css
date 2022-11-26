@@ -140,10 +140,6 @@ div.navbar-collapse .btn:hover {
     background-size: cover;
 }
 
-@media (max-width: 600px) {
-
-}
-
 #findTicket .form-control:focus, .btn:focus {
     box-shadow: none;
     outline: none;
@@ -231,6 +227,94 @@ div.navbar-collapse .btn:hover {
     border-color: transparent;
 }
 
+    /* CSS For Datepicker Plugin */
+#inputTicket #startDate .datepicker {
+    border-radius: 8px;
+    margin-top: 2px;
+    padding: 0.5rem;
+    max-height: max-content;
+    background-color: var(--white);
+}
+
+#startDate .datepicker th,
+#startDate .datepicker td {
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+#startDate .datepicker td {
+    font-weight: 500;
+    color:rgba(0, 0, 0, 0.7);
+}
+
+#startDate thead {
+    color: var(--primary-blue);
+    border-radius: 8px;
+}
+
+#startDate .datepicker-days th:hover,
+#startDate .datepicker-days td:hover{
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#startDate .datepicker-days th:active,
+#startDate .datepicker-days td:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+#startDate .datepicker-months,
+#startDate .datepicker-years {
+    margin: auto;
+    max-height: 10rem;
+    overflow-y: auto;
+}
+#startDate .datepicker-months thead,
+#startDate .datepicker-years thead {
+  display: flex;
+}
+
+#startDate .datepicker-months th,
+#startDate .datepicker-years th {
+    padding: 0.3rem 0.7rem;
+}
+
+#startDate .datepicker-months td,
+#startDate .datepicker-years td {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#startDate .datepicker-months span,
+#startDate .datepicker-years span {
+    border-radius: 8px;
+    padding: 0.3rem;
+}
+
+#startDate .datepicker-months th:hover,
+#startDate .datepicker-months span:hover,
+#startDate .datepicker-years th:hover,
+#startDate .datepicker-years span:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#startDate .datepicker-months th:active,
+#startDate .datepicker-months span:active,
+#startDate .datepicker-years th:active,
+#startDate .datepicker-years span:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+    /* ----- End Datepicker ----- */
+
 #inputTicket .btn {
     border: none;
     border-radius: 0;
@@ -250,6 +334,11 @@ div.navbar-collapse .btn:hover {
 
     #inputTicket #startDes {
         border-radius: 0;
+    }
+
+    #inputTicket #startDes .dropdown-menu {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
     }
 
     #inputTicket #startDate {

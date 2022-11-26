@@ -58,7 +58,8 @@
               <a class="nav-link" href="#">Danh Sách Chuyến Xe</a>
             </li>
           </ul>
-          <a role="button" class="btn btn-primary d-flex align-items-center" href="https://getbootstrap.com/docs/5.2/components/buttons/" style="min-width: 130px;">Đăng Nhập</a>
+          <a role="button" class="btn btn-primary d-flex align-items-center"
+            href="#" style="min-width: 130px;">Đăng Nhập</a>
         </div>
       </div>
     </nav>
@@ -132,7 +133,6 @@
                   </label>
                   <input type="text" class="form-control lh-lg" name="startDate" id="startDate-input"
                     placeholder="dd/mm/yyyy">
-                  <span class="input-group-append"></span>
                 </div>
               </div>
             </div>
@@ -338,61 +338,73 @@
       </div>
     </div>
   </main>
-        <!-- Script -->
-        <script type="text/javascript">
-          $(document).ready(function () {
-            $('#datepicker').datepicker();
-            $("#city-slider").owlCarousel({
-              loop: true,
-              nav: true,
-              navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
-                "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
-              autoplay: true,
-              autoplayTimeout: 4000,
-              autoplayHoverPause: true,
-              smartSpeed: 1000,
-              responsive: {
-                0: {
-                  items: 1
-                },
-                400:{
-                  items: 2
-                },
-                800: {
-                  items: 3
-                },
-                1200: {
-                  items: 4
-                }
-              }
-            });
-      
-            $("#garage-slider").owlCarousel({
-              loop: true,
-              nav: true,
-              navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
-                "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
-              autoplay: true,
-              autoplayTimeout: 4000,
-              autoplayHoverPause: true,
-              smartSpeed: 1000,
-              responsive: {
-                0: {
-                  items: 1
-                },
-                400:{
-                  items: 2
-                },
-                800: {
-                  items: 3
-                },
-                1200: {
-                  items: 4
-                }
-              }
-            });
-          });
-        </script>
+  <!-- Script -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#startDate-input').datepicker({
+        format: "dd/mm/yyyy",
+        container: "#datepicker",
+        laguage: "en",
+        maxViewMode: 2,
+        todayHighlight: true,
+        showOtherMonths: true,
+        selectOtherMonths: true,
+        autoclose: true,
+        changeMonth: true,
+        changeYear: true,
+        orientation: "bottom left"
+      });
+      $("#city-slider").owlCarousel({
+        loop: true,
+        nav: true,
+        navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
+          "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        responsive: {
+          0: {
+            items: 1
+          },
+          400: {
+            items: 2
+          },
+          800: {
+            items: 3
+          },
+          1200: {
+            items: 4
+          }
+        }
+      });
+
+      $("#garage-slider").owlCarousel({
+        loop: true,
+        nav: true,
+        navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
+          "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        responsive: {
+          0: {
+            items: 1
+          },
+          400: {
+            items: 2
+          },
+          800: {
+            items: 3
+          },
+          1200: {
+            items: 4
+          }
+        }
+      });
+    });
+  </script>
   <!-- Footer -->
   <footer class="bg-info" id="footer">
     <!-- Grid container -->
