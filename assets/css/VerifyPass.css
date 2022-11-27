@@ -61,7 +61,8 @@
 
 #leftContainer .sampleIMG {
     position: relative;
-    top: -4rem;
+    margin: auto;
+    left: -2rem;
 }
 
     /* Right Container */
@@ -76,7 +77,6 @@
 #rightContainer a {
     color: var(--primary-blue);
 }
-
 #rightContainer a:hover {
     color: var(--green);
 }
@@ -87,6 +87,11 @@
     background-color: var(--white);
 }
 
+#rightContainer #guideText {
+    color: black;
+    font-weight: 600;
+}
+
 #rightContainer .form-floating label {
     color:rgba(0, 0, 0, 0.5);
 }
@@ -95,21 +100,46 @@
     border-radius: 28px;
 }
 
-#rightContainer #login-btn {
+
+#rightContainer #cont-btn {
+    color: var(--white);
     background-color: var(--primary-blue);
     border: 2px solid var(--primary-blue);
 }
 
 #rightContainer #btn-group .btn:hover {
     background-color: var(--green);
-    border: 2px solid var(--green) !important;
-    color: var(--white) !important;
+    border: 2px solid var(--green);
+    color: var(--white);
 }
 
-#rightContainer #btn-group #register-btn {
+#rightContainer #resend-btn {
     border: 2px solid var(--primary-blue);
     color: var(--primary-blue);
 }
+
+#rightContainer #return-btn,
+#rightContainer #btn-group #return-btn:hover {
+    background-color: var(--white);
+    border: none;
+    text-decoration: underline;
+}
+
+#rightContainer #btn-group #return-btn:hover {
+    color: var(--green);
+}
+
+#rightContainer #return-btn:hover i {
+    color: var(--green);
+}
+
+#rightContainer #btn-group i {
+    display: inline-block;
+    width: fit-content;
+    padding: auto;
+}
+
+
 
 /* Responsive */
 @media (max-width:768px) {

@@ -17,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="/assets/css/RegisterPage.css">
-    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="/assets/css/VerifyPass.css">
+    <title>Quên Mật Khẩu</title>
 </head>
 
 <body>
@@ -29,22 +29,17 @@
                     <i class="fa-solid fa-house fs-5"></i>
                 </a>
                 <p class="fs-1 fw-bold row col-11 mb-0 d-flex justify-content-center">HPQL</p>
-                <div class="sampleIMG row col-11">
-                    <img src="/assets/img/loginIMG.svg" alt="travelStoryset">
+                <div class="sampleIMG row col-9">
+                    <img src="/assets/img/changePassIMG.svg" alt="resetPassStoryset">
                 </div>
             </div>
             <div id="rightContainer" class="d-flex flex-column justify-content-center">
-                <p class="fs-2 fw-bold text-uppercase mt-4 d-flex justify-content-center">Đăng Ký</p>
+                <p class="fs-2 fw-bold text-uppercase my-4 d-flex justify-content-center">Quên Mật Khẩu</p>
                 <form method="GET" action="">
-                    <div class="inputGroup row mt-2 d-flex justify-content-center" id="emailGroup">
-                        <i class="fa-solid fa-envelope col-1"></i>
-                        <div class="form-floating col-9">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
-                            <label for="email" class="ps-4 fw-bold">Email:</label>
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="inputGroup row mt-3 d-flex justify-content-center" id="passGroup">
+                    <p id="guideText" class="fs-6 d-flex justify-content-center mb-3 text-center">
+                        Vui lòng nhập mật khẩu mới
+                    </p>
+                    <div class="inputGroup row d-flex justify-content-center" id="passGroup">
                         <i class="fa-solid fa-lock col-1"></i>
                         <div class="form-floating col-9">
                             <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
@@ -58,17 +53,21 @@
                             <label for="repass" class="ps-4 fw-bold">Xác nhận mật khẩu:</label>
                         </div>
                     </div>
-                    <div class="inputGroup row mt-3 d-flex justify-content-center" id="emailGroup">
-                        <i class="fa-solid fa-envelope col-1"></i>
-                        <div class="form-floating col-9">
-                            <input type="text" class="form-control" id="phonenum" name="phonenum" placeholder="*********" required>
-                            <label for="phonenum" class="ps-4 fw-bold">Số điện thoại:</label>
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
                     <div id="btn-group" class="my-4 d-flex flex-column align-items-center">
-                        <button type="submit" class="btn btn-primary mb-3 row col-5 text-uppercase fw-bold" id="login-btn">Đăng Ký</button>
-                        <a href="/assets/page/LoginPage.html" class="mb-3 row col-7 col-md-6 d-flex justify-content-center">Đã có tài khoản? Đăng nhập ngay</a>
+                        <a name="continue-btn" id="cont-btn"
+                            class="btn btn-primary mb-5 row col-5 text-uppercase fw-bold"
+                            href="/assets/page/LoginPage.html" role="button">Xác Nhận</a>
+                        <!-- <button type="button" id="resend-btn"
+                            class="btn btn-outline-primary mb-4 row col-5 text-uppercase fw-bold">Gửi Lại Mã</button> -->
+                        <div class="col-12 d-flex justify-content-end">
+                            <a name="return-btn" id="return-btn"
+                                class="btn btn-primary col-3 d-flex justify-content-center align-items-center"
+                                href="/assets/page/VerifyPassChange.html" role="button"><i
+                                    class="fa-solid fa-chevron-left fs-6 pe-1"></i>Trở Về</a>
+                            <div class="col-1"></div>
+                        </div>
+                        <!-- <a id="prev-btn" class="btn btn-outline-primary row col-5 align-items-center justify-content-center"
+                            href="/assets/page/LoginPage.html" role="button"><i class="fa-solid fa-circle-chevron-left d-inline"></i>Trở Về</a> -->
                     </div>
                 </form>
             </div>

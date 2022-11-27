@@ -61,7 +61,8 @@
 
 #leftContainer .sampleIMG {
     position: relative;
-    top: -4rem;
+    margin: auto;
+    left: -2rem;
 }
 
     /* Right Container */
@@ -76,7 +77,6 @@
 #rightContainer a {
     color: var(--primary-blue);
 }
-
 #rightContainer a:hover {
     color: var(--green);
 }
@@ -87,6 +87,11 @@
     background-color: var(--white);
 }
 
+#rightContainer #guideText {
+    color: black;
+    font-weight: 600;
+}
+
 #rightContainer .form-floating label {
     color:rgba(0, 0, 0, 0.5);
 }
@@ -95,7 +100,9 @@
     border-radius: 28px;
 }
 
-#rightContainer #login-btn {
+
+#rightContainer #cont-btn {
+    color: var(--white);
     background-color: var(--primary-blue);
     border: 2px solid var(--primary-blue);
 }
@@ -106,7 +113,7 @@
     color: var(--white) !important;
 }
 
-#rightContainer #btn-group #register-btn {
+#rightContainer #btn-group #prev-btn {
     border: 2px solid var(--primary-blue);
     color: var(--primary-blue);
 }
