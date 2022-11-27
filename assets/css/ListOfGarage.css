@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+:root{
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB;
+
+    --fs-xl: 10vw;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+} 
+
+body {
+    background-color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+main {
+    margin-top: 60px;
+}
+
+/* ----- Nav Bar Start ----- */
+.navbar {
+    background-color: var(--white)!important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    padding: 0px;
+}
+
+/* Nav Bar Logo */
+.navbar-brand {
+    padding: 4px;
+}
+
+.navbar-brand img {
+    height: 52px;
+}
+
+/* ---------- */
+
+ul.navbar-nav {
+    margin-right: 16px;
+}
+
+li.nav-item {
+    padding: 0px 20px;
+    margin: 4px 8px;
+    border-radius: 12px;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--white) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+}
+
+li.nav-item.active {
+    border: 2px solid var(--green);
+}
+
+/* Note: !important color here */
+li.nav-item a.nav-link {
+    color: var(--primary-blue) !important;
+    font-weight: 600;
+}
+
+/* Note: !important color here */
+li.active a.nav-link {
+    color: var(--green) !important;
+}
+
+li.nav-item:hover {
+    background-position: top left;
+}
+
+/* Note: !important color here */
+li:hover a.nav-link {
+    color: var(--white) !important;
+}
+
+/* Note: !important color here */
+div.navbar-collapse .btn {
+    height: 40px;
+    padding: 0px 16px;
+    color: var(--white) !important;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--primary-blue) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+    border: none;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+div.navbar-collapse .btn:hover {
+    background-position: top left;
+}
+
+/* Nav Bar Toggle */
+.navbar-toggler {
+    background-color: var(--primary-blue);
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:hover {
+    background-color: var(--green);
+}
+
+.navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+}
+
+/* ---------- */
+/* ----- Nav Bar End ----- */
+/* Content */
+main h2 {
+    color: var(--primary-blue);
+}
+    /* Search Button */
+.contentContainer .inputGroup {
+    background-color: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+}
+
+.contentContainer .inputGroup:hover {
+    background-color: var(--white);
+    border-color: var(--green);
+    border-radius: 16px;
+}
+
+.contentContainer .inputGroup i {
+    color: var(--primary-blue);
+}
+
+.contentContainer .inputGroup:hover i {
+    color: var(--green);
+}
+
+.contentContainer .inputGroup .form-control::placeholder {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.contentContainer .inputGroup .form-control {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.contentContainer .inputGroup .form-control:focus {
+    box-shadow: none;
+    outline: none;
+}
+    /* Search Button End */
+    /* List Of Garage */
+.card {
+    background-color: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.card .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    border-right: 2px solid var(--primary-blue);
+}
+
+.card .btn {
+    border-radius: 12px;
+    border: 2px solid var(--primary-blue);
+    background-color: var(--primary-blue);
+}
+
+.card .btn:hover {
+    border-color: var(--green);
+    background-color: var(--white);
+    color: var(--green);
+}
+
+.pagination .page-link {
+    font-weight: bold;
+    color: var(--primary-blue);
+    background-color: var(--white);
+}
+
+.pagination li.active .page-link {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.pagination #prevPage .page-link{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.pagination #contPage .page-link{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.topbtnContainer .btn {
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 8px;
+}
+
+.topbtnContainer .btn:hover {
+    background-color: var(--green);
+}
+
+@media (max-width: 768px) {
+    .card .card-img {
+        border-right: none;
+    }
+}
+
+/* Content End */
+/*-----Footer----*/
+#footer {
+    background-color: var(--primary-blue) !important;
+    color: var(--white)!important;
+    margin-top: 40px;
+    font-size: var(--fs-400);
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+#footer-Logo{
+  width: 50%;
+  height: auto;
+}
+
+.sm-text-align{
+    text-align: start;
+}
+
+@media (min-width:768px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 0.8rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+
+    #footer-Logo{
+        width: 75%;
+        height: auto;
+      }
+}
+
+@media (min-width:840px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+}
+
+@media (min-width:1144px){ /*subtract 20px (real at 1144)*/
+    :root{
+        --fs-600: 1.75rem;
+        --fs-500: 1.5rem;
+        --fs-400: 1.25rem;
+    }  
+    .sm-text-align{
+        text-align: end!important;
+    }
+}
