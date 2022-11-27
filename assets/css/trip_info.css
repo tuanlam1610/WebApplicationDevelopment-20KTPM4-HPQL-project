@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB;
+}
+
+body {
+    background-color: var(--white) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+h2.trip-name {
+    text-align: center;
+    padding-top: 40px;
+    color: var(--green);
+}
+
+h2.trip-name i+i {
+    margin-left: -12px;
+}
+
+ul.content {
+    width: 100%;
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+    margin: 0 auto;
+    padding: 1.5rem 5%;
+    position: relative;
+    margin-bottom: 40px;
+    
+}
+
+ul.content li {
+    padding-bottom: 0.8rem;
+}
+
+li.info>*:first-child {
+    font-weight: bold !important;
+}
+
+.garage-name {
+    color: var(--primary-blue) !important;
+    text-decoration: none !important;
+    font-style: italic;
+    font-weight: 700 !important;
+    font-size: 20px;
+}
+
+.garage-name:hover{
+    color: var(--green) !important;
+}
+
+li p.time {
+    position: relative;
+}
+
+li p i.fa-circle {
+    font-size: 5px;
+    position: absolute;
+    top: 40%;
+}
+
+.station {
+    width: 48%;
+}
+
+.sub{
+    font-style: italic;
+}
+
+ul.utility{
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.sub-list li:last-child{
+    padding-bottom: 0;
+}
+
+ul.utility i{
+    display: inline-block;
+    width: 2rem;
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 20px;
+}
+
+.fa-bottle-water{
+    font-size: 28px !important;
+    margin-top: 4px;
+}
+
+.primary-info{
+    color: var(--primary-blue);
+    font-weight: 500 !important;
+}
+
+.last-info{
+    padding-bottom: 0 !important;
+    margin-bottom: 50px !important;
+}
+
+.book-btn{
+    font-size: 20px !important;
+    font-weight: bold !important;
+    background-color: var(--primary-blue) !important;
+    border: none !important;
+    border-radius: 1rem !important;
+    width: 15rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.book-btn:hover{
+    background-color: var(--green) !important;
+}
