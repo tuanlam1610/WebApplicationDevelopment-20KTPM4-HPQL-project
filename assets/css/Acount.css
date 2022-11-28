@@ -126,6 +126,7 @@ div.navbar-collapse .btn:hover {
 
 /* ------------- Quản lí tài khoản ------------ */
 
+
 .wrapper {
     height: 80%;
 }
@@ -150,41 +151,62 @@ div.navbar-collapse .btn:hover {
     border-radius: 16px;
     padding: 50px 50px;
 }
-.wrapper .selection ul {
-    list-style-type: none
+
+    /* ----------------- Selection ------------------*/
+.selection {
+    padding: 0;
 }
 
-.selection li.item {
-    background-size: 200% 200%;
+.selection .item {
     background-color: var(--white);
-    padding: 0px 20px;
-    margin: 4px 8px;
-}
-
-.selection li.item a {
-    font-size: 25px;
-    color: var(--primary-blue);
-    font-weight: 500;
-}
-
-.selection li a:hover {
-    opacity: 0.7;
     border-radius: 10px;
-    color: var(--white) !important;
-    background-size: 200% 200%;
-    background-color: var(--primary-blue) !important;
+    padding: 5px;
+    margin-bottom: 2px;
 }
 
-.selection li.item.active {
-    background-color: var(--primary-blue) !important;
+.selection .item a {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--primary-blue);
 }
 
-li.active a.item-link {
-    color: var(--white) !important;
-}
-
-li.item i {
+.selection .item i {
     padding-right: 5px;
+}
+
+.selection .item.active {
+    background-color: var(--primary-blue);
+}
+
+.selection .item.active a {
+    color: var(--white) !important;
+}
+
+.selection .item:hover {
+    background-color: var(--primary-blue);
+    opacity: 0.6;
+}
+
+.selection .item:hover a{
+    color: var(--white);
+}
+
+    /* ----------------- Content ------------------*/
+
+.content {
+    margin-left: 7%;
+    max-width: 745px;
+    padding: 0;
+}   
+
+.content .displayField {
+    font-size: 25px;
+    font-weight: 500;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    background-color: white;
+    padding: 10px 10px 10px 20px;
+    margin-bottom: 40px;
 }
 
 /*-----Footer----*/
