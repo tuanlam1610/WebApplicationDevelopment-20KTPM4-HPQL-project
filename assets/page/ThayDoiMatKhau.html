@@ -18,7 +18,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- CSS File -->
-    <link rel="stylesheet" href="/assets/css/ChinhSuaThongTin.css">
+    <link rel="stylesheet" href="/assets/css/ThayDoiMatKhu.css">
 
     <!--OWL Carousel-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
@@ -34,7 +34,7 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <title>Chỉnh sửa thông tin</title>
+    <title>Thay đổi mật khẩu</title>
 </head>
 
 <body>
@@ -71,14 +71,16 @@
     <div class="wrapper">
         <div class="header">Quản Lí Tài Khoản</div>
         <div class="container row">
-            <div class="selection col-md-3">
+            <div class="selection col-md-4">
                 <div class="item">
-                    <a role="button" href="http://127.0.0.1:5500/assets/page/ThongTinTaiKhoan.html"><i class="fa-regular fa-circle-user"></i>Thông tin tài khoản</a>
+                    <a role="button" href="http://127.0.0.1:5500/assets/page/ThongTinTaiKhoan.html"><i
+                            class="fa-regular fa-circle-user"></i>Thông tin tài khoản</a>
+                </div>
+                <div class="item">
+                    <a role="button" href="http://127.0.0.1:5500/assets/page/ChinhSuaThongTin.html"><i
+                            class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
                 </div>
                 <div class="item active">
-                    <a role="button" href="http://127.0.0.1:5500/assets/page/ChinhSuaThongTin.html"><i class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
-                </div>
-                <div class="item">
                     <a role="button" href="http://127.0.0.1:5500/assets/page/ThayDoiMatKhau.html"><i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
                 </div>
                 <div class="item">
@@ -89,30 +91,18 @@
                 </div>
             </div>
 
-            <div class="content col-md-9">
-                <div class="fullname">
-                    <h4>Họ và tên</h4>
-                    <div class="displayField">
-                        <div>Nguyễn Gia Huy</div><i class="fa-regular fa-pen-to-square"></i>
-                    </div>
+            <div class="content col-md-8">
+                <div class="currentPassword password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Mật khẩu cũ" required>
                 </div>
-                <div class="email">
-                    <h4>Email</h4>
-                    <div class="displayField">
-                        <div>abc@gmail.com</div><i class="fa-regular fa-pen-to-square"></i>
-                    </div>
+                <div class="newPassword password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Mật khẩu mới" required>
                 </div>
-                <div class="phone">
-                    <h4>Số điện thoại</h4>
-                    <div class="displayField">
-                        <div>0123456789</div><i class="fa-regular fa-pen-to-square"></i>
-                    </div>
-                </div>
-                <div class="dob">
-                    <h4>Ngày sinh</h4>
-                    <div class="displayField">
-                        <div>05/12/2002</div><i class="fa-regular fa-pen-to-square"></i>
-                    </div>
+                <div class="confirmPassword password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Xác nhận mật khẩu" required>
                 </div>
                 <button>Lưu</button>
             </div>
