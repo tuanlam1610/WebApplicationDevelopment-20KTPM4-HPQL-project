@@ -13,6 +13,8 @@ a {
     --primary-blue: #4F98CA;
     --green: #50D890;
     --white: #EFFFFB;
+    --whitest: #FFFFFF;
+    --gray: #AAAAAA;
 
     --fs-xl: 10vw;
     --fs-600: 1.5rem;
@@ -513,6 +515,11 @@ main .container .sub-title{
         width: 75%;
         height: auto;
       }
+    
+    .dvx-chuyenXeFilter > *{
+        flex-basis:5%;
+        
+    }
 }
 
 @media (min-width:840px){
