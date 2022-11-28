@@ -4,11 +4,23 @@
     box-sizing: border-box;
 }
 
-:root {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+:root{
     --primary-blue: #4F98CA;
     --green: #50D890;
-    --white: #EFFFFB
-}
+    --white: #EFFFFB;
+
+    --fs-xl: 10vw;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+}  
+
+
 
 
 body {
@@ -19,9 +31,7 @@ body {
 
 /* ----- Nav Bar Start ----- */
 .navbar {
-    display: flex;
-    align-items: center;
-    background-color: var(--white);
+    background-color: var(--white)!important;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
     padding: 0px;
@@ -43,14 +53,16 @@ ul.navbar-nav {
 }
 
 li.nav-item {
-    display: flex;
-    align-items: center;
     padding: 0px 20px;
     margin: 4px 8px;
     border-radius: 12px;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--white) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
 }
 
-li.active {
+li.nav-item.active {
     border: 2px solid var(--green);
 }
 
@@ -65,8 +77,8 @@ li.active a.nav-link {
     color: var(--green) !important;
 }
 
-li:hover {
-    background-color: var(--green);
+li.nav-item:hover {
+    background-position: top left;
 }
 
 /* Note: !important color here */
@@ -80,10 +92,18 @@ div.navbar-collapse .btn {
     padding: 0px 16px;
     color: var(--white) !important;
     background-color: var(--primary-blue);
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--primary-blue) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
     border: none;
     border-radius: 12px;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+div.navbar-collapse .btn:hover {
+    background-position: top left;
 }
 
 /* Nav Bar Toggle */
@@ -105,19 +125,327 @@ div.navbar-collapse .btn {
 /* ---------- */
 /* ----- Nav Bar End ----- */
 
+/*----- Find Ticket -----*/
+#findTicket {
+    position: relative;
+    height: 95vh;
+    margin-top: 60px;
+    background-image: url("../img/FindTicket-BG.png");
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#findTicket .form-control:focus, .btn:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+#findTicket .container-fluid {
+    background-color: rgba(255, 255, 255, 0.3);
+    top: 0;
+    height: 100%;
+}
+
+#findTicket .row {
+    --bs-gutter-x: 0px;
+}
+
+#findTicket .col-md-1 {
+    min-width: 124px;
+}
+
+#findTicket i {
+    color: var(--primary-blue);
+}
+
+#findTicket #typeVehicle {
+    background-color: var(--white);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: var(--primary-blue);
+}
+
+#findTicket #typeVehicle p {
+    margin:0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#findTicket #inputTicket {
+    margin-top: 2px;
+    padding: 0;
+}
+#findTicket #inputTicket .dropdown-menu,
+#findTicket #inputTicket .dropdown-divider{
+    /* Scrollable Menu */
+    max-height: 10rem;
+    /* --------------- */
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+#findTicket #inputTicket .dropdown-header {
+    padding: 0.5rem;
+    color: var(--white);
+    background-color: var(--primary-blue);
+}
+
+#findTicket #inputTicket input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+#inputTicket #startDes {
+    background-color: var(--white);
+    border-radius: 0;
+    border-bottom-left-radius: 8px;
+}
+
+#inputTicket #endDes {
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    border-right: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+#inputTicket #endDes,
+#inputTicket #startDate {
+    background-color: var(--white);
+    border-radius: 0;
+}
+
+#startDes #startDes-input,
+#endDes #endDes-input,
+#startDate #startDate-input
+ {
+    background: transparent;
+    border-color: transparent;
+}
+
+    /* CSS For Datepicker Plugin */
+#inputTicket #startDate .datepicker {
+    border-radius: 8px;
+    margin-top: 2px;
+    padding: 0.5rem;
+    max-height: max-content;
+    background-color: var(--white);
+}
+
+#startDate .datepicker th,
+#startDate .datepicker td {
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+#startDate .datepicker td {
+    font-weight: 500;
+    color:rgba(0, 0, 0, 0.7);
+}
+
+#startDate thead {
+    color: var(--primary-blue);
+    border-radius: 8px;
+}
+
+#startDate .datepicker-days th:hover,
+#startDate .datepicker-days td:hover{
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#startDate .datepicker-days th:active,
+#startDate .datepicker-days td:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+#startDate .datepicker-months,
+#startDate .datepicker-years {
+    margin: auto;
+    max-height: 10rem;
+    overflow-y: auto;
+}
+#startDate .datepicker-months thead,
+#startDate .datepicker-years thead {
+  display: flex;
+}
+
+#startDate .datepicker-months th,
+#startDate .datepicker-years th {
+    padding: 0.3rem 0.7rem;
+}
+
+#startDate .datepicker-months td,
+#startDate .datepicker-years td {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#startDate .datepicker-months span,
+#startDate .datepicker-years span {
+    border-radius: 8px;
+    padding: 0.3rem;
+}
+
+#startDate .datepicker-months th:hover,
+#startDate .datepicker-months span:hover,
+#startDate .datepicker-years th:hover,
+#startDate .datepicker-years span:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#startDate .datepicker-months th:active,
+#startDate .datepicker-months span:active,
+#startDate .datepicker-years th:active,
+#startDate .datepicker-years span:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+    /* ----- End Datepicker ----- */
+
+#inputTicket .btn {
+    border: none;
+    border-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--primary-blue);
+}
+
+@media (max-width: 752px) {
+    #inputTicket #endDes {
+        border: none;
+        border-top-right-radius: 8px;
+        margin: 0 0 2px 2px;
+    }
+
+    #inputTicket #startDes {
+        border-radius: 0;
+    }
+
+    #inputTicket #startDes .dropdown-menu {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    #inputTicket #startDate {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    #inputTicket .btn {
+        border-radius: 8px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* ----- Find Ticker End ----- */
+
+/*Slider*/
+.city-container{
+    padding-top: 40px;
+}
+
+#owl-carousel{
+    position: relative;
+}
+
+.owl-carousel .nav-btn:hover{
+    background: var(--green);
+    opacity: 1;
+}
+.owl-carousel .nav-btn{
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-blue);
+    border-radius: 50px;
+    transition: .5s;
+    opacity: 0.5;
+}
+
+.owl-carousel .nav-btn i{
+    margin: 14px 0px;
+    color: var(--white); 
+}
+.owl-carousel .prev-slide{
+    left: -5%;
+}
+.owl-carousel .next-slide{
+    right: -5%;
+}
+
+img{
+    width: 100%;
+}
+
+.garage-item:hover .garage-item-image img,
+.city-item:hover .city-item-image img {
+	transform: scale(1.1);
+	transition: .5s;
+}
+
+.garage-item-image,
+.city-item-image{
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.garage-item,
+.city-item{
+    margin:  0 0.8rem;
+}
+
+.owl-wrapper{
+    padding: 20px 0;
+    width: 100%;
+}
+
+.garage-item a .garage-name,
+.city-item a .city-name{
+    text-align: center;
+    padding: 12px 0px;
+}
+
+main .container .title{
+    font-weight: bold;
+    padding-left: 1.5rem;
+}
+
+main .container .sub-title{
+    color: gray;
+    padding-left: 2.5rem;
+}
+
+    /* ---------- */
+
 /* ----- Các chuyến xe nổi bật ------*/
 
-.container .trips {
+.trip-container .trips {
     display: flex;
     justify-content: center;
 }
 
-.container .text header {
+.trip-container .text header {
     font-size: 25px;
     font-weight: bold;
 }
 
-.container .text h6 {
+.trip-container .text h6 {
     opacity: 0.75;
 }
 
@@ -155,20 +483,58 @@ div.navbar-collapse .btn {
     width: 50%;
     height: 180px;
 }
-
 /*-----Footer----*/
 #footer {
     background-color: var(--primary-blue) !important;
-    color: var(--white) !important;
-    margin-top: 100px;
-    padding: 30px 0;
+    color: var(--white)!important;
+    margin-top: 40px;
+    font-size: var(--fs-400);
+    padding: 0 1.5rem 0 1.5rem;
 }
 
-.diachi {
-    display: flex;
-    flex-direction: row;
+#footer-Logo{
+  width: 50%;
+  height: auto;
 }
 
-.copyright {
-    padding: 15px 0 0 0;
+.sm-text-align{
+    text-align: start;
+}
+
+@media (min-width:768px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 0.8rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+
+    #footer-Logo{
+        width: 75%;
+        height: auto;
+      }
+}
+
+@media (min-width:840px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+}
+
+@media (min-width:1144px){ /*subtract 20px (real at 1144)*/
+    :root{
+        --fs-600: 1.75rem;
+        --fs-500: 1.5rem;
+        --fs-400: 1.25rem;
+    }  
+    .sm-text-align{
+        text-align: end!important;
+    }
 }
