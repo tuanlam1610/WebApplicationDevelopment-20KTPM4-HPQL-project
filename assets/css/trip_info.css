@@ -70,59 +70,7 @@ li p i.fa-circle {
     width: 48%;
 }
 
-.sub {
-    font-style: italic;
-}
-
-ul.utility {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul.sub-list li:last-child {
-    padding-bottom: 0;
-}
-
-ul.utility i {
-    display: inline-block;
-    width: 2rem;
-    text-align: center;
-    color: var(--primary-blue);
-    font-size: 20px;
-}
-
-.fa-bottle-water {
-    font-size: 28px !important;
-    margin-top: 4px;
-}
-
-.primary-info {
-    color: var(--primary-blue);
-    font-weight: 500 !important;
-}
-
-.last-info {
-    padding-bottom: 0 !important;
-    margin-bottom: 50px !important;
-}
-
-.book-btn {
-    font-size: 20px !important;
-    font-weight: bold !important;
-    background-color: var(--primary-blue) !important;
-    border: none !important;
-    border-radius: 1rem !important;
-    width: 15rem;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.book-btn:hover {
-    background-color: var(--green) !important;
-}
-
+/* Css for slider of bus img */
 #owl-carousel {
     position: relative;
 }
@@ -182,7 +130,9 @@ ul.utility i {
 .owl-nav {
     height: 0;
 }
+/* end of slider */
 
+/* css to open modal to zoom img */
 .modal {
     z-index: 2;
     display: none;
@@ -193,7 +143,6 @@ ul.utility i {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.8);
 }
 
@@ -228,4 +177,58 @@ ul.utility i {
 
 .zoom-img img{
     border-radius: 10px;
+}
+/* end the modal css */
+
+.sub {
+    font-style: italic;
+}
+
+ul.utility {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.sub-list li:last-child {
+    padding-bottom: 0;
+}
+
+ul.utility i {
+    display: inline-block;
+    width: 2rem;
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 20px;
+}
+
+.fa-bottle-water {
+    font-size: 28px !important;
+    margin-top: 4px;
+}
+
+.primary-info {
+    color: var(--primary-blue);
+    font-weight: 500 !important;
+}
+
+.last-info {
+    padding-bottom: 0 !important;
+    margin-bottom: 50px !important;
+}
+
+.book-btn {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    background-color: var(--primary-blue) !important;
+    border: none !important;
+    border-radius: 1rem !important;
+    width: 15rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.book-btn:hover {
+    background-color: var(--green) !important;
 }
