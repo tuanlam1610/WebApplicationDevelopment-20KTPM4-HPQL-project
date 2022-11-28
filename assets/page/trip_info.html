@@ -25,6 +25,9 @@
         </script>
 
     <!-- Owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
         integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,6 +37,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
@@ -93,8 +98,33 @@
                 <li class="info">
                     <span>Loại xe:</span>
                     <span>Giường nằm</span>
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <img src="/assets/img/Bus_img_1.png" alt="" onclick="onClick(this)">
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/Bus_img_2.png" alt="" onclick="onClick(this)">
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/Bus_img_3.png" alt="" onclick="onClick(this)">
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/Bus_img_4.png" alt="" onclick="onClick(this)">
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/Bus_img_5.png" alt="" onclick="onClick(this)">
+                        </div>
+                        <div class="item">
+                            <img src="/assets/img/Bus_img_6.png" alt="" onclick="onClick(this)">
+                        </div>
+                    </div>
                 </li>
-
+                <div id="show-modal" class="modal" onclick="this.style.display='none'">
+                    <div class="close-modal-btn"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="zoom-img">
+                        <img id="show-img" style="width:100%">
+                    </div>
+                </div>
                 <li class="info">
                     <span>Tiện ích:</span>
                     <ul class="utility sub-list">
@@ -136,7 +166,7 @@
                     <span>Số lượng ghế:</span>
                     <span class="primary-info">34 ghế</span>
                 </li>
-                
+
                 <a href="#" class="btn btn-primary book-btn" tabindex="-1" role="button" aria-disabled="true">Đặt vé</a>
             </ul>
         </div>
@@ -144,6 +174,29 @@
     <footer>
         <!-- place footer here -->
     </footer>
+    <script>
+        function onClick(element) {
+            document.getElementById("show-img").src = element.src;
+            document.getElementById("show-modal").style.display = "block";
+        }
+    </script>
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+            nav: true,
+            navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
+                "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
+            smartSpeed: 1000,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                900: {
+                    items: 2
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
