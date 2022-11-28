@@ -64,7 +64,7 @@
         </div>
       </div>
       <!-- Rating & comment about the garage -->
-      <div id="review" class="part">
+      <div id="review" class="part position-relative">
         <h4 class="title">Đánh giá</h4>
         <div class="rating d-flex">
           <i class="fa-solid fa-star not-chevron"></i>
@@ -500,22 +500,188 @@
           </div>
         </div>
 
+        <div class="view-more position-absolute" onclick="openOverlay()">
+          <span class="">Hiển thị thêm <i class="fa-solid fa-circle-chevron-right"></i></span>
+        </div>
+
+        <div id="overlay">
+          <div class="overlay-block">
+            <div class="close-overlay" onclick="closeOverlay()">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="content-view-more">
+              <h4 class="title-overlay">Đánh giá</h4>
+              <div class="rating d-flex">
+                <i class="fa-solid fa-star not-chevron"></i>
+                <h4 class="rate">4.5/5</h4>
+                <p class="number-of-ratings">(145 lượt đánh giá)</p>
+              </div>
+              <div class="add comments row d-flex justify-content-center">
+                <div class="comment-item col-md-6 mx-2 mb-4">
+                  <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex">
+                      <div class="user-avatar">
+                        <img src="/assets/img/user.png" alt="">
+                      </div>
+                      <div class="user-infor">
+                        <p class="date-post">
+                          04/11/2022
+                        </p>
+                        <p class="user-name">
+                          Nguyễn Thị Bích Loan Anh
+                        </p>
+                      </div>
+                    </div>
+                    <div class="user-rate">
+                      <p class="type-bus">
+                        Loại xe: <span>Ghế ngồi</span>
+                      </p>
+                      <p class="star">
+                        Đánh giá:
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                    Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.
+                  </div>
+                </div>
+
+                <div class="comment-item col-md-6 mx-2 mb-4">
+                  <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex">
+                      <div class="user-avatar">
+                        <img src="/assets/img/user.png" alt="">
+                      </div>
+                      <div class="user-infor">
+                        <p class="date-post">
+                          04/11/2022
+                        </p>
+                        <p class="user-name">
+                          Nguyễn Thị Bích Loan Anh
+                        </p>
+                      </div>
+                    </div>
+                    <div class="user-rate">
+                      <p class="type-bus">
+                        Loại xe: <span>Ghế ngồi</span>
+                      </p>
+                      <p class="star">
+                        Đánh giá:
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                    Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.
+                  </div>
+                </div>
+
+                <div class="comment-item col-md-6 mx-2 mb-4">
+                  <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex">
+                      <div class="user-avatar">
+                        <img src="/assets/img/user.png" alt="">
+                      </div>
+                      <div class="user-infor">
+                        <p class="date-post">
+                          04/11/2022
+                        </p>
+                        <p class="user-name">
+                          Nguyễn Thị Bích Loan Anh
+                        </p>
+                      </div>
+                    </div>
+                    <div class="user-rate">
+                      <p class="type-bus">
+                        Loại xe: <span>Ghế ngồi</span>
+                      </p>
+                      <p class="star">
+                        Đánh giá:
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                    Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.
+                  </div>
+                </div>
+
+                <div class="comment-item col-md-6 mx-2 mb-4">
+                  <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex">
+                      <div class="user-avatar">
+                        <img src="/assets/img/user.png" alt="">
+                      </div>
+                      <div class="user-infor">
+                        <p class="date-post">
+                          04/11/2022
+                        </p>
+                        <p class="user-name">
+                          Nguyễn Thị Bích Loan Anh
+                        </p>
+                      </div>
+                    </div>
+                    <div class="user-rate">
+                      <p class="type-bus">
+                        Loại xe: <span>Ghế ngồi</span>
+                      </p>
+                      <p class="star">
+                        Đánh giá:
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="comment-text">
+                    Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.
+                  </div>
+                </div>
+              </div>
+              <div id="viewMore" class="float_right" onclick="viewMore()">
+                <span class="">Xem thêm <i class="fa-solid fa-circle-chevron-down"></i></span>
+              </div>
+              <div id="viewLess" class="float_right" onclick="viewLess()">
+                <span class="">Rút gọn <i class="fa-solid fa-circle-chevron-down"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- Contact of the garage -->
       <div id="contact" class="part">
         <h4 class="title">Thông tin liên hệ</h4>
         <div class="d-flex">
-          <i class="fa-solid fa-phone not-chevron"></i><p>Số điện thoại:<span> 028 3838 6852</span></p>
+          <i class="fa-solid fa-phone not-chevron"></i>
+          <p>Số điện thoại:<span> 028 3838 6852</span></p>
         </div>
         <div class="d-flex">
-          <i class="fa-solid fa-location-dot not-chevron"></i><p>Địa chỉ:<span> Số 1 Tô Hiến Thành, phường 3, thành phố Đà
-            Lạt, tỉnh Lâm Đồng, Việt Nam</span></p>
+          <i class="fa-solid fa-location-dot not-chevron"></i>
+          <p>Địa chỉ:<span> Số 1 Tô Hiến Thành, phường 3, thành phố Đà
+              Lạt, tỉnh Lâm Đồng, Việt Nam</span></p>
         </div>
         <div class="d-flex">
-          <i class="fa-solid fa-envelope not-chevron"></i> <p>Email:<span> hotro@futa.vn</span></p> 
+          <i class="fa-solid fa-envelope not-chevron"></i>
+          <p>Email:<span> hotro@futa.vn</span></p>
         </div>
         <div class="d-flex">
-          <i class="fa-solid fa-laptop not-chevron"></i> <p>Website:<span> futabus.vn</span></p>
+          <i class="fa-solid fa-laptop not-chevron"></i>
+          <p>Website:<span> futabus.vn</span></p>
         </div>
       </div>
     </div>
@@ -549,6 +715,40 @@
       wrap: false,
       ride: false
     })
+  </script>
+
+  <script>
+    function openOverlay() {
+      document.getElementById("overlay").style.display = "block";
+    }
+    function closeOverlay() {
+      document.getElementById("overlay").style.display = "none";
+    }
+    function viewMore() {
+      document.getElementById("viewLess").style.display = "block";
+      addOneElement();
+      addOneElement();
+      addOneElement();
+      addOneElement();
+    }
+    function addOneElement() {
+      var content_block = document.querySelector(".add");
+
+      const new_comment = document.createElement('div')
+      new_comment.className = 'comment-item col-md-6 mx-2 mb-4'
+      new_comment.innerHTML = '<div class="d-flex justify-content-between flex-wrap"><div class="d-flex"><div class="user-avatar"><img src="/assets/img/user.png" alt=""></div><div class="user-infor"><p class="date-post">04/11/2022</p><p class="user-name">Nguyễn Thị Bích Loan Anh</p></div></div><div class="user-rate"><p class="type-bus">Loại xe: <span>Ghế ngồi</span></p><p class="star">Đánh giá:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p></div></div><div class="comment-text">Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.</div></div>';
+      content_block.appendChild(new_comment)
+      console.log(content_block)
+    }
+    function viewLess() {
+      document.getElementById("viewLess").style.display = "none";
+      var content_block = document.querySelector(".add");
+      content_block.innerHTML ="";
+      addOneElement();
+      addOneElement();
+      addOneElement();
+      addOneElement();
+    }
   </script>
 </body>
 

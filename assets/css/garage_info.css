@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: var(--white) !important;
     font-family: 'Inter', sans-serif !important;
 }
@@ -15,13 +15,13 @@ a {
     color: black;
 }
 
-:root{
+:root {
     --primary-blue: #4F98CA;
     --green: #50D890;
     --white: #EFFFFB;
-} 
+}
 
-.garage-name{
+.garage-name {
     text-align: center;
     color: var(--green);
     padding-top: 40px;
@@ -29,72 +29,81 @@ a {
     text-transform: uppercase;
 }
 
-.container .title{
+.container .title {
     font-weight: bold;
     margin-left: -2rem;
 }
 
-.container .part{
+.container .part {
     padding: 0 5rem;
     padding-bottom: 24px;
 }
-.container p.introduction-paragraph{
-    text-align:justify;
+
+.container p.introduction-paragraph {
+    text-align: justify;
     text-indent: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.08rem;
 }
-.container .introduction-image{
+
+.container .introduction-image {
     text-align: center;
 }
-.container .introduction-image img{
+
+.container .introduction-image img {
     width: 100%;
     border-radius: 1rem;
 }
 
 
-.rate{
+.rate {
     /* font-family: 'Changa One', cursive; */
     color: var(--primary-blue);
     font-weight: 700;
 }
-.rating > *{
+
+.rating>* {
     padding: 4px 0.1rem;
 }
 
-.number-of-ratings{
+.number-of-ratings {
     font-size: 0.7rem;
     font-style: italic;
 }
 
-i.not-chevron{
+i.not-chevron {
     font-size: 1.8rem;
     color: var(--primary-blue);
 }
 
-#contact i{
+#contact {
+    margin-top: 1rem;
+}
+
+#contact i {
     display: inline-block;
     min-width: 3rem;
     text-align: center;
     padding: 0.5rem 0;
-} 
+}
 
-#contact div{
+#contact div {
     color: var(--primary-blue);
     font-weight: 700;
 }
 
-#contact div span{
+#contact div span {
     color: black;
     font-weight: normal;
 }
 
-#contact div p{
+#contact div p {
     margin: 0;
     padding-top: 0.7rem;
 }
-/* trips */
 
+/* trips */
+#overlay .comment-item,
 #comment-slider .comment-item {
     width: 100%;
     max-width: 500px;
@@ -103,51 +112,52 @@ i.not-chevron{
     padding: 0;
 }
 
-@media (max-width : 500px){
-    .container .part{
+@media (max-width : 500px) {
+    .container .part {
         padding: 0 3rem;
         padding-bottom: 24px;
     }
 
-    .user-avatar{
+    .user-avatar {
         width: 10vw !important;
         height: 10vw !important;
-        
+
     }
 
     #comment-slider .comment-item {
         max-width: 190px !important;
     }
 
-    .carousel-prev-btn{
+    .carousel-prev-btn {
         left: -20% !important;
     }
-    
-    .carousel-next-btn{
+
+    .carousel-next-btn {
         right: -20% !important;
     }
 }
 
-@media (max-width : 800px){
+@media (max-width : 800px) {
     #comment-slider .comment-item {
         max-width: 250px;
     }
 
-    .carousel-prev-btn{
+    .carousel-prev-btn {
         left: -20% !important;
     }
-    
-    .carousel-next-btn{
+
+    .carousel-next-btn {
         right: -20% !important;
     }
 }
 
-@media (max-width : 1200px){
+@media (max-width : 1200px) {
     #comment-slider .comment-item {
         max-width: 350px;
     }
 }
-.user-avatar img{
+
+.user-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -155,53 +165,56 @@ i.not-chevron{
     margin-left: 0.25rem;
     margin-top: 0.25rem;
 }
-.user-avatar{
+
+.user-avatar {
     width: 5vh;
     height: 5vh;
 }
 
-.user-infor{
-    padding-left: 0.5rem ;
+.user-infor {
+    padding-left: 0.5rem;
 }
 
 .star,
 .type-bus,
-.date-post{
+.date-post {
     padding: 0.5rem;
     margin: 0;
     font-style: italic;
     font-size: 14px;
 }
-.star{
+
+.star {
     padding-top: 0;
 }
 
-.star i{
+.star i {
     color: var(--primary-blue);
 }
 
 .type-bus,
-.date-post{
+.date-post {
     font-size: 12px;
 }
 
-.type-bus span{
+.type-bus span {
     font-weight: bold;
 }
 
-.user-name{
+.user-name {
     font-weight: bold;
     padding: 0 0.5rem 0.5rem 0.5rem;
     margin: 0;
 }
 
-.comment-text{
+.comment-text {
     text-align: justify;
     padding: 1rem 5%;
 }
+
 /* trips end */
 
-.nav-btn{
+.nav-btn {
     height: 2.75rem;
     width: 2.75rem;
     border-radius: 50px;
@@ -213,24 +226,95 @@ i.not-chevron{
 }
 
 .carousel-prev-btn,
-.carousel-next-btn{
+.carousel-next-btn {
     position: absolute;
-    top: 50% ;
-    transform: translateY(-50%);
+    top: 50%;
+    transform: translateY(-75%);
     width: 2.75rem;
     height: 2.75rem;
     text-align: center;
 }
 
-.nav-btn:hover{
+.nav-btn:hover {
     background: var(--green);
     opacity: 1;
 }
 
-.carousel-prev-btn{
+.carousel-prev-btn {
     left: 0;
 }
 
-.carousel-next-btn{
+.carousel-next-btn {
     right: 0;
+}
+
+.view-more {
+    right: 10%;
+    cursor: pointer;
+    text-decoration: underline;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(239,255,251,0.7);
+    z-index: 2;
+}
+
+.close-overlay {
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    font-size: 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.close-overlay:hover {
+    color: rgb(254, 85, 85);
+}
+
+.overlay-block {
+    position: relative;
+    margin: 5% auto;
+    width: 80%;
+    height: 80%;
+    background-color: var(--white);
+    z-index: 10;
+    border-radius: 16px;
+    box-shadow: 2px 2px 20px black;
+    
+}
+
+.content-view-more{
+    clear: both;
+    height: calc( 100% - 3rem);
+    overflow: auto;
+    padding: 0 1rem;
+    border-top: 1px solid var(--primary-blue) !important;
+}
+
+.title-overlay{
+    font-weight: bold;
+}
+
+.float_right{
+    float: right;
+    cursor: pointer;
+    text-decoration: underline;
+    font-style: italic;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+#viewLess{
+    display: none;
 }
