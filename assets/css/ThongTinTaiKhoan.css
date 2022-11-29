@@ -121,6 +121,11 @@ div.navbar-collapse .btn:hover {
     box-shadow: none;
 }
 
+.btn-group .dropdown-item:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
 /* ---------- */
 /* ----- Nav Bar End ----- */
 

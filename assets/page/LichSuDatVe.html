@@ -59,9 +59,29 @@
                             <a class="nav-link" href="#">Danh Sách Chuyến Xe</a>
                         </li>
                     </ul>
-                    <a role="button" class="btn btn-primary d-flex align-items-center" href="#"
-                        style="min-width: 130px;">Đăng
-                        Nhập</a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Đăng nhập
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item"
+                                    href="http://127.0.0.1:5500/assets/page/ThongTinTaiKhoan.html"><i
+                                        class="fa-regular fa-circle-user"></i>Thông tin tài khoản</a></li>
+                            <li><a class="dropdown-item"
+                                    href="http://127.0.0.1:5500/assets/page/ChinhSuaThongTin.html"><i
+                                        class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông
+                                    tin</a></li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:5500/assets/page/ThayDoiMatKhau.html"><i
+                                        class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
+                            </li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:5500/assets/page/LichSuDatVe.html"><i
+                                        class="fa-solid fa-clock"></i>Lịch
+                                    sử đặt vé</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i>Đăng
+                                    xuất</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -80,13 +100,13 @@
                     <a role="button" href="http://127.0.0.1:5500/assets/page/ChinhSuaThongTin.html"><i
                             class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
                 </div>
-                <div class="item active">
+                <div class="item">
                     <a role="button" href="http://127.0.0.1:5500/assets/page/ThayDoiMatKhau.html"><i
                             class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
                 </div>
-                <div class="item">
+                <div class="item active">
                     <a role="button" href="http://127.0.0.1:5500/assets/page/LichSuDatVe.html"><i
-                            class="fa-solid fa-clock"></i></i>Lịch sử đặt vé</a>
+                            class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
                 </div>
                 <div class="item">
                     <a role="button" href="#"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
@@ -126,7 +146,7 @@
                                             <td>Thành phố Hồ Chí Minh</td>
                                             <td>Đã thanh toán</td>
                                         </tr>
-                                
+
                                     </tbody>
                                 </table>
                             </div>
@@ -229,8 +249,30 @@
                                 </table>
                             </div>
                         </div>
+
+
                     </div>
                 </section>
+
+                <!----------------------------- Pagination ----------------------------->
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <!--<li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
