@@ -175,6 +175,133 @@ body{
     font-weight: bold;
 }
 
+/*#datepicker*/
+#inputTicket #startDate .datepicker {
+    border-radius: 8px;
+    margin-top: 2px;
+    padding: 0.5rem;
+    max-height: max-content;
+    background-color: var(--white);
+}
+
+#startDate .datepicker th,
+#startDate .datepicker td {
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+#startDate .datepicker td {
+    font-weight: 500;
+    color:rgba(0, 0, 0, 0.7);
+}
+
+#startDate thead {
+    color: var(--primary-blue);
+    border-radius: 8px;
+}
+
+#startDate .datepicker-days th:hover,
+#startDate .datepicker-days td:hover{
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#startDate .datepicker-days th:active,
+#startDate .datepicker-days td:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+#startDate .datepicker-months,
+#startDate .datepicker-years {
+    margin: auto;
+    max-height: 10rem;
+    overflow-y: auto;
+}
+#startDate .datepicker-months thead,
+#startDate .datepicker-years thead {
+  display: flex;
+}
+
+#startDate .datepicker-months th,
+#startDate .datepicker-years th {
+    padding: 0.3rem 0.7rem;
+}
+
+#startDate .datepicker-months td,
+#startDate .datepicker-years td {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#startDate .datepicker-months span,
+#startDate .datepicker-years span {
+    border-radius: 8px;
+    padding: 0.3rem;
+}
+
+#startDate .datepicker-months th:hover,
+#startDate .datepicker-months span:hover,
+#startDate .datepicker-years th:hover,
+#startDate .datepicker-years span:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#startDate .datepicker-months th:active,
+#startDate .datepicker-months span:active,
+#startDate .datepicker-years th:active,
+#startDate .datepicker-years span:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+    /* ----- End Datepicker ----- */
+
+#inputTicket .btn {
+    border: none;
+    border-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--primary-blue);
+}
+
+@media (max-width: 752px) {
+    #inputTicket #endDes {
+        border: none;
+        border-top-right-radius: 8px;
+        margin: 0 0 2px 2px;
+    }
+
+    #inputTicket #startDes {
+        border-radius: 0;
+    }
+
+    #inputTicket #startDes .dropdown-menu {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    #inputTicket #startDate {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    #inputTicket .btn {
+        border-radius: 8px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+}
+
+/* ----- Find Ticker End ----- */
 
 /*Tìm vé xe page 2*/
 /*DVX box*/
@@ -212,4 +339,54 @@ body{
     color: var(--white);
     font-weight: 600;
     font-size:var(--fs-400)
+}
+.seat-column{
+    
+}
+
+.seat{
+    border-style: solid;
+    border-color: var(--primary-blue);
+    border-radius: 0.75rem;  
+
+    text-align: center;
+
+
+    width:4rem;
+    height:3.8rem;
+    margin:0.5rem 0rem;
+    padding: 0.5rem 0rem;
+    font-size: var(--fs-500)
+}
+
+.seat.selected{
+    background-color: var(--green);
+    border-color: var(--whitest);
+    color: var(--white);
+    outline: solid var(--green)
+}
+
+.seat.sold{
+    
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+.showcase {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    
+    font-size:var(--fs-500);
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+#showcaseElement{
+    display: flex;
+    align-items: center;
+}
+
+#showcaseElement div{
+    padding: 0rem 1rem;
 }

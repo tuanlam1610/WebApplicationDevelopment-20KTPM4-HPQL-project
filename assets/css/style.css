@@ -516,10 +516,7 @@ main .container .sub-title{
         height: auto;
       }
     
-    .dvx-chuyenXeFilter > *{
-        flex-basis:5%;
-        
-    }
+      
 }
 
 @media (min-width:840px){
