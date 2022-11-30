@@ -102,6 +102,7 @@ body{
     border-style: solid;
     border-color: var(--primary-blue);
     border-radius: 1.5rem;
+    min-height: 600px;
 }/*----- Find Ticket -----*/
 #dvx-findTicket {
     position: relative;
@@ -340,15 +341,14 @@ body{
     font-weight: 600;
     font-size:var(--fs-400)
 }
-.seat-column{
-    
-}
+
 
 .seat{
     border-style: solid;
     border-color: var(--primary-blue);
     border-radius: 0.75rem;  
 
+    
     text-align: center;
 
 
@@ -359,11 +359,19 @@ body{
     font-size: var(--fs-500)
 }
 
+.seat:not(.sold):hover{
+    cursor:pointer;
+    background-color: var(--primary-blue);
+    border-color: var(--whitest);
+    color: var(--white);
+    outline: solid var(--primary-blue);
+}
+
 .seat.selected{
     background-color: var(--green);
     border-color: var(--whitest);
     color: var(--white);
-    outline: solid var(--green)
+    outline: solid var(--green);
 }
 
 .seat.sold{
@@ -389,4 +397,73 @@ body{
 
 #showcaseElement div{
     padding: 0rem 1rem;
+}
+
+/*Xac Nhan Ve*/
+.dvx-xacNhanTime{
+
+    background-color: var(--white);
+    border-style: solid;
+    border-radius: 1rem;
+    border-color:var(--primary-blue);
+    color: var(--primary-blue);
+    font-weight: 1000;
+    font-size:var(--fs-800);
+    margin: 1.5rem 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.dvx-xacNhanBox{
+    background-color: var(--white);
+    border-style: solid;
+    border-radius: 1rem;
+    border-color:var(--primary-blue);
+    color: var(--primary-blue);
+    font-weight: 500;
+    font-size:var(--fs-800);
+    margin: 1.5rem 1rem;
+    padding: 0.5rem 3rem;
+    line-height: 4rem;
+}
+
+.dvx-linebreak{
+    border-style: solid; 
+    width: 60%;
+    border-color:var(--primary-blue);
+    border-width: 2px;
+    border-radius: 1rem;
+    margin: 1rem 0rem;
+}
+
+.dvx-TinhTien{
+     font-size:var(--fs-800);
+     font-weight:400;
+     
+}
+
+.dvx-TotalMoney{
+    display: flex;
+    align-items: center;
+    justify-content: space-between!important;
+    width:50%;
+    margin: 1rem 0rem;
+}
+
+.btn-dvx-transaction{   
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border-style: solid;
+    border-color: var(--primary-blue);
+    border-radius: 1rem;
+    font-size:var(--fs-400);
+    font-weight: 400;
+}
+
+.btn-dvx-confirm{
+    background-color: var(--primary-blue);
+    color:var(--white);
+    font-size:var(--fs-400);
+    font-weight: 600;
+    width:20%;
+    margin: 1.5rem;
 }

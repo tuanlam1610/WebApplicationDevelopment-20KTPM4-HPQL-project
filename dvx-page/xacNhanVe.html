@@ -18,8 +18,8 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <!-- CSS File -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/dvx-style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dvx-style.css">
 
   <!--OWL Carousel-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
@@ -69,10 +69,10 @@
           <span class="progress-count" id="beforeItem">Chọn giờ</span>
         </li>
         <li class="step-wizard-item">
-          <span class="progress-count" id="currentItem">Chọn chỗ</span>
+          <span class="progress-count" id="beforeItem">Chọn chỗ</span>
         </li>
         <li class="step-wizard-item">
-          <span class="progress-count" id="afterItem">Xác nhận</span>
+          <span class="progress-count" id="currentItem">Xác nhận</span>
         </li>
       </ul>
     </div>
@@ -80,105 +80,62 @@
     <div class="dvx-box container d-flex justify-content-center flex-column">
       <!-- Chuyến xe element-->
       <div>
-        <div class="row dvx-chuyenXeBox align-items-center">
+        <div class="dvx-chuyenXeBox  d-flex justify-content-center flex-column align-items-center">
           <!-- info-->
-          <div class="col-md-10 text-left">
-            <div class="row">
+            <div class="dvx-xacNhanTime text-center">
               <p class="m-0 p-0">00:03 <i class="fa-solid fa-chevron-right"></i> 00:08</p>
             </div>
-            <div class="row">
-              170,000đ ~ Giường ~ Còn 34 Chỗ
+            <div class="dvx-xacNhanBox text-center">
+              <div class="d-flex flex-column flex-lg-row  ">
+                <div class="h-75">
+                  Bến xe miền tây
+                </div>
+                <div class=""> -> </div>
+                <div class="">
+                  Bến xe Long Xuyên
+                </div>
+               
+              </div>
+              <div class="">
+                Loại xe: Giường
+              </div>
+              <div class="">
+                Vé đã chọn: B5, A6, B6
+              </div>
             </div>
-            <div class="row">
-              Bến xe miền tây -> bến xe Long Xuyên
+            <div class="dvx-TinhTien text-end w-50">
+              <div>170,000đ</div>
+              <div>x 3 vé</div>
             </div>
+            <div class="dvx-linebreak"></div>
+            <div class="dvx-TotalMoney">
+              <div class="dvx-TinhTien">
+                Tổng:
+              </div>
+              <div class="dvx-TinhTien">
+                510,000đ
+              </div>
+            </div>
+            <div class="dropdown">
+              <div id="startDes" class="d-flex flex-row px-3">
+                <button class="btn btn-dvx-transaction dropdown-toggle" type="button" id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Phương thức thanh toán
+                  <span class="caret"></span>
+                </button>
+    
+                <ul class="dropdown-menu mx-3 text-center overflow-auto">
+                  <h6 class="dropdown-header fw-bold">PTTT</h6>
+                  <div class="dropdown-divider"></div>
+                  <li class="dropdown-item" href="#">Trực tiếp</li>
+                  <li class="dropdown-item" href="#">Momo</li>
+                  <li class="dropdown-item" href="#">Thẻ Visa</li>
+                </ul>
+              </div>
+            </div>
+            <a name="" id="" class="btn btn-dvx-confirm" href="#" role="button">Thanh Toán</a>
           </div>
-          <!--button-->
-          <div class="col-md-2 text-center ">
-            <a name="" id="" class="btn btn-dvx" href="#" role="button">></a>
-          </div>
-          <!--seat-->
-          <div class="seat-container row g-0">
-            <div class="col-md-6 mx-auto ">
-              <div class="title text-center">
-                Tầng dưới (A)
-              </div>
-              <div class="text-center row">
-                <div class="seat-column">
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                </div>
-                <div class="seat-column col-md-4">
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                </div>
-                <div class="seat-column col-md-4">
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="title text-center">
-                Tầng trên (B)
-              </div>
-              <div class="text-center row">
-                <div class="seat-column col-md-4">
-                  <div class="seat sold">S1</div>
-                  <div class="seat selected">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                </div>
-                <div class="seat-column col-md-4">
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                </div>
-                <div class="seat-column col-md-4">
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                  <div class="seat">S1</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--end of seat-->
-          <!--showcase-->
-          <ul class="showcase ">
-            <li id ="showcaseElement">
-              <div class="seat"></div>
-              <div>Còn chỗ</div>
-            </li>
-            <li id ="showcaseElement">
-              <div class="seat selected"></div>
-              <div>Đang chọn</div>
-            </li>
-            <li id ="showcaseElement">
-              <div class="seat sold"></div>
-              <div>Đã đặt</div>
-            </li>
-          </ul>
-        </div>
+          
 
 
       </div>
