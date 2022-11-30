@@ -87,7 +87,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -121,7 +121,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -155,7 +155,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -189,7 +189,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -226,7 +226,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -260,7 +260,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -294,7 +294,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -328,7 +328,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -365,7 +365,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -399,7 +399,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -433,7 +433,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -467,7 +467,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -504,8 +504,8 @@
           <span class="">Hiển thị thêm <i class="fa-solid fa-circle-chevron-right"></i></span>
         </div>
 
-        <div id="overlay">
-          <div class="overlay-block">
+        <div id="overlay" onclick="closeOverlay()">
+          <div class="overlay-block" onclick="blockCloseOverlay()">
             <div class="close-overlay" onclick="closeOverlay()">
               <i class="fa-solid fa-xmark"></i>
             </div>
@@ -528,7 +528,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -562,7 +562,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -596,7 +596,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -630,7 +630,7 @@
                           04/11/2022
                         </p>
                         <p class="user-name">
-                          Nguyễn Thị Bích Loan Anh
+                          Nguyễn Văn A
                         </p>
                       </div>
                     </div>
@@ -718,6 +718,9 @@
   </script>
 
   <script>
+    function blockCloseOverlay(){
+      event.stopPropagation();
+    }
     function openOverlay() {
       document.getElementById("overlay").style.display = "block";
     }
@@ -736,7 +739,7 @@
 
       const new_comment = document.createElement('div')
       new_comment.className = 'comment-item col-md-6 mx-2 mb-4'
-      new_comment.innerHTML = '<div class="d-flex justify-content-between flex-wrap"><div class="d-flex"><div class="user-avatar"><img src="/assets/img/user.png" alt=""></div><div class="user-infor"><p class="date-post">04/11/2022</p><p class="user-name">Nguyễn Thị Bích Loan Anh</p></div></div><div class="user-rate"><p class="type-bus">Loại xe: <span>Ghế ngồi</span></p><p class="star">Đánh giá:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p></div></div><div class="comment-text">Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.</div></div>';
+      new_comment.innerHTML = '<div class="d-flex justify-content-between flex-wrap"><div class="d-flex"><div class="user-avatar"><img src="/assets/img/user.png" alt=""></div><div class="user-infor"><p class="date-post">04/11/2022</p><p class="user-name">Nguyễn Văn A</p></div></div><div class="user-rate"><p class="type-bus">Loại xe: <span>Ghế ngồi</span></p><p class="star">Đánh giá:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p></div></div><div class="comment-text">Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.</div></div>';
       content_block.appendChild(new_comment)
       console.log(content_block)
     }

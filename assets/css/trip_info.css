@@ -17,8 +17,10 @@ body {
 
 h2.trip-name {
     text-align: center;
-    padding-top: 40px;
+    padding: 40px 0;
     color: var(--green);
+    font-weight: bold;
+
 }
 
 h2.trip-name i+i {
