@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB;
+}
+
+body {
+    background-color: var(--white) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+h2.trip-name {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--green);
+    font-weight: bold;
+
+}
+
+h2.trip-name i+i {
+    margin-left: -12px;
+}
+
+ul.content {
+    width: 100%;
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+    margin: 0 auto;
+    padding: 1.5rem 5%;
+    position: relative;
+    margin-bottom: 40px;
+
+}
+
+ul.content li {
+    padding-bottom: 0.8rem;
+}
+
+li.info>*:first-child {
+    font-weight: bold !important;
+}
+
+.garage-name {
+    color: var(--primary-blue) !important;
+    text-decoration: none !important;
+    font-style: italic;
+    font-weight: 700 !important;
+    font-size: 20px;
+}
+
+.garage-name:hover {
+    color: var(--green) !important;
+}
+
+li p.time {
+    position: relative;
+}
+
+li p i.fa-circle {
+    font-size: 5px;
+    position: absolute;
+    top: 40%;
+}
+
+.station {
+    width: 48%;
+}
+
+/* Css for slider of bus img */
+#owl-carousel {
+    position: relative;
+}
+
+.owl-carousel .nav-btn:hover {
+    background: var(--green);
+    opacity: 1;
+}
+
+.owl-carousel .nav-btn {
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 50%;
+    transform: translateY(50%);
+    background: var(--primary-blue);
+    border-radius: 50px;
+    transition: .5s;
+    opacity: 0.5;
+}
+
+.owl-carousel .nav-btn i {
+    margin: 14px 0px;
+    color: var(--white);
+}
+
+.owl-prev.disabled,
+.owl-next.disabled {
+    display: none !important;
+}
+
+.owl-carousel .prev-slide {
+    left: -3%;
+}
+
+.owl-carousel .next-slide {
+    right: -3%;
+}
+
+.owl-carousel .item img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.owl-carousel .item:hover img {
+    scale: 1.1;
+}
+
+.owl-carousel .item {
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.owl-carousel .owl-item{
+    padding: 0.5rem;
+}
+
+.owl-nav {
+    height: 0;
+}
+/* end of slider */
+
+/* css to open modal to zoom img */
+.modal {
+    z-index: 2;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.close-modal-btn{
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.close-modal-btn:hover i{
+    color: var(--green) !important;
+}
+
+.close-modal-btn i{
+    color: var(--white);
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.zoom-img{
+    margin: auto;
+    width: 60%;
+    animation: animatezoom 0.7s;
+}
+
+.zoom-img img{
+    border-radius: 10px;
+}
+/* end the modal css */
+
+.sub {
+    font-style: italic;
+}
+
+ul.utility {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.sub-list li:last-child {
+    padding-bottom: 0;
+}
+
+ul.utility i {
+    display: inline-block;
+    width: 2rem;
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 20px;
+}
+
+.fa-bottle-water {
+    font-size: 28px !important;
+    margin-top: 4px;
+}
+
+.primary-info {
+    color: var(--primary-blue);
+    font-weight: 500 !important;
+}
+
+.last-info {
+    padding-bottom: 0 !important;
+    margin-bottom: 50px !important;
+}
+
+.book-btn {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    background-color: var(--primary-blue) !important;
+    border: none !important;
+    border-radius: 1rem !important;
+    width: 15rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.book-btn:hover {
+    background-color: var(--green) !important;
+}

@@ -25,6 +25,11 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
 /* ----- Nav Bar Start ----- */
 .navbar {
     background-color: var(--white)!important;
