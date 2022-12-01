@@ -128,51 +128,141 @@ div.navbar-collapse .btn:hover {
 main h2 {
     color: var(--primary-blue);
 }
-    /* Search Button */
-.contentContainer .inputGroup {
+/* Sort Trip */
+#sortTrip .btn {
     background-color: var(--white);
-    border: 2px solid var(--primary-blue);
-    border-radius: 16px;
+    border: 2px solid var(--white);
+    border-radius: 12px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 600;
 }
 
-.contentContainer .inputGroup:hover {
+#sortTrip .btn:hover {
     background-color: var(--white);
     border-color: var(--green);
-    border-radius: 16px;
-}
-
-.contentContainer .inputGroup i {
-    color: var(--primary-blue);
-}
-
-.contentContainer .inputGroup:hover i {
     color: var(--green);
 }
 
-.contentContainer .inputGroup .form-control::placeholder {
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.contentContainer .inputGroup .form-control {
-    background-color: transparent;
-    border-color: transparent;
-}
-
-.contentContainer .inputGroup .form-control:focus {
+#sortTrip .btn:focus {
     box-shadow: none;
-    outline: none;
+    background-color: var(--green);
+    border-color: var(--green);
+    color: var(--white);
 }
-    /* Search Button End */
-    /* List Of Garage */
-.card {
+
+#sortTrip .active-btn {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Filter Section */
+#filter {
+    height: fit-content;
+    border: 2px solid var(--primary-blue);
+    border-radius: 28px;
+}
+
+#filter .filterOpt .form-control {
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    background-color: var(--white);
+}
+
+#filter .dropdown-menu,
+#filter .dropdown-divider{
+    /* Scrollable Menu */
+    max-height: 10rem;
+    /* --------------- */
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+#filter .dropdown-header {
+    padding: 0.5rem;
+    color: var(--white);
+    background-color: var(--primary-blue);
+}
+
+#filter .timeStart label {
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    color: black;
+}
+
+#filter .timeStart label:hover {
+    background-color: var(--white);
+    border-color: var(--green);
+    color: var(--green);
+}
+
+#filter .filterOpt .form-check-input {
+    background-color: var(--white);
+    border: 2px solid var(--primary-blue);
+}
+
+#filter .filterOpt .form-check-input:checked {
+    background-color: var(--primary-blue);
+}
+
+#filter .numGroup .btn {
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--primary-blue);
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#filter .numGroup .btn:hover {
+    border-color: var(--green);
+    background-color: var(--white);
+    color: var(--green);
+}
+
+#filter .btnGroup .btn {
+    background-color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    color: var(--white);
+    font-weight: 600;
+}
+
+#filter .btnGroup .btn-outline-primary {
+    background-color: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+#filter .btnGroup .btn:hover {
+    background-color: var(--white);
+    border-color: var(--green);
+    color: var(--green);
+}
+
+#filter .btnGroup .btn:focus {
+    box-shadow: none;
+    background-color: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+}
+
+/* List Of Trip */
+#listTrip .card {
     background-color: var(--white);
     border: 2px solid var(--primary-blue);
     border-radius: 16px;
     overflow: hidden;
 }
 
-.card .card-img {
+#listTrip .card:hover {
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.3);
+}
+
+#listTrip .card .card-img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -180,18 +270,36 @@ main h2 {
     border-right: 2px solid var(--primary-blue);
 }
 
-.card .btn {
+#listTrip .card .btn {
     border-radius: 12px;
     border: 2px solid var(--primary-blue);
     background-color: var(--primary-blue);
 }
 
-.card .btn:hover {
+#listTrip .card .btn-link {
+    border-radius: 8px;
+    border: none;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    box-shadow: none;
+    outline: none;
+}
+
+#listTrip .card .btn:hover {
     border-color: var(--green);
     background-color: var(--white);
     color: var(--green);
 }
 
+#listTrip .card .price {
+    color: var(--primary-blue);
+}
+
+#listTrip .card .validSeat {
+    color: var(--green);
+}
+
+/* Pagination */
 .pagination .page-link {
     font-weight: bold;
     color: var(--primary-blue);
@@ -222,13 +330,11 @@ main h2 {
 .topbtnContainer .btn:hover {
     background-color: var(--green);
 }
-
-@media (max-width: 768px) {
-    .card .card-img {
+@media (max-width:768px) {
+    #listTrip .card .card-img {
         border-right: none;
     }
 }
-
 /* Content End */
 /*-----Footer----*/
 #footer {

@@ -16,6 +16,10 @@
     --fs-400: 1rem;
 }  
 
+body {
+    overflow-x: hidden;
+}
+
 /* Background Pattern Format */
 #background-format {
     height: 100vh;
@@ -28,7 +32,6 @@
     width: 70%;
     background-color: var(--white);
     border-radius: 28px;
-    overflow: hidden;
     display: flex;
     box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.3);
 }

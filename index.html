@@ -41,24 +41,24 @@
   <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="./assets/img/HPQL-Light.svg" alt="logo"></a>
+        <a class="navbar-brand" href="/index.html"><img src="./assets/img/HPQL-Light.svg" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
-            <li class="nav-item d-flex align-items-center active" style="min-width: 156px;">
-              <a class="nav-link" href="#">Trang Chủ</a>
+          <ul class="navbar-nav ms-auto me-0 mb-3 mb-lg-0">
+            <li class="nav-item d-flex justify-content-sm-center align-items-center active" style="min-width: 156px;">
+              <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/index.html">Trang Chủ</a>
             </li>
             <li class="nav-item d-flex align-items-center" style="min-width: 216px;">
-              <a class="nav-link" href="/assets/page/ListOfGarage.html">Danh Sách Nhà Xe</a>
+              <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/assets/page/ListOfGarage.html">Danh Sách Nhà Xe</a>
             </li>
             <li class="nav-item d-flex align-items-center" style="min-width: 250px;">
-              <a class="nav-link" href="#">Danh Sách Chuyến Xe</a>
+              <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/assets/page/ListOfTrip.html">Danh Sách Chuyến Xe</a>
             </li>
           </ul>
-          <a role="button" class="btn btn-primary d-flex align-items-center"
+          <a role="button" class="btn btn-primary d-flex align-items-center justify-content-center mx-3 mb-3 mx-md-0 mb-md-0"
             href="/assets/page/LoginPage.html" style="min-width: 130px;">Đăng Nhập</a>
         </div>
       </div>
@@ -75,7 +75,10 @@
               <i class="fa-solid fa-bus-simple fs-5"></i>
               <p class="fs-6 fw-bold ms-3">Xe Khách</p>
             </div>
-            <div class="col-6 col-md-5"></div>
+            <!-- Padding Grid Column -->
+            <div class="col-6 col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
           </div>
           <!-- Second Row -->
           <div class="row mb-3 d-flex justify-content-center" id="inputTicket">
@@ -299,7 +302,7 @@
         <p class="sub-title">Các chuyến xe nổi bật</p>
 
         <div class="trips row">
-          <div class="trip col-md-6 me-4 mb-4">
+          <div class="trip col-md-6 me-0 me-md-4 mb-4">
             <img src="./assets/img/TPHCM.png" alt="Thành phố Hồ Chí Minh - Đà Lạt"></img>
             <div class="name-trip">
               <div class="from text-center mb-3">Thành phố Hồ Chí Minh</div>
@@ -308,7 +311,7 @@
             </div>
           </div>
 
-          <div class="trip col-md-6 me-4 mb-4">
+          <div class="trip col-md-6 me-0 me-md-4 mb-4">
             <img src="./assets/img/HaNoi.png" alt="Hà Nội - Ninh Bình"></img>
             <div class="name-trip">
               <div class="from text-center mb-3">Hà Nội</div>
@@ -317,7 +320,7 @@
             </div>
           </div>
 
-          <div class="trip col-md-6 me-4 mb-4">
+          <div class="trip col-md-6 me-0 me-md-4 mb-4">
             <img src="./assets/img/DaLat.png" alt="Đà Lạt - Thành phố Hồ Chí Minh"></img>
             <div class="name-trip">
               <div class="from text-center mb-3">Đà Lạt</div>
@@ -326,7 +329,7 @@
             </div>
           </div>
 
-          <div class="trip col-md-6 me-4 mb-4">
+          <div class="trip col-md-6 me-0 me-md-4 mb-4">
             <img src="./assets/img/DaNang.png" alt="Đà Nẵng - Đà Lạt"></img>
             <div class="name-trip">
               <div class="from text-center mb-3">Đà Nẵng</div>
