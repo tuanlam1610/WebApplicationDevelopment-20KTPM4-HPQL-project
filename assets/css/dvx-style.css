@@ -467,3 +467,7 @@ body{
     width:20%;
     margin: 1.5rem;
 }
+
+.dropdown-item{
+    cursor: pointer;
+}
