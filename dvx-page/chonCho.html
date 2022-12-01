@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- GG Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!-- CSS File -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dvx-style.css">
+
+  <!--OWL Carousel-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+    integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <title>HPQL</title>
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="./assets/img/HPQL-Light.svg" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+          <li class="nav-item active" style="min-width: 156px;">
+            <a class="nav-link" href="#">Trang Chủ</a>
+          </li>
+          <li class="nav-item" style="min-width: 216px;">
+            <a class="nav-link" href="#">Danh Sách Nhà Xe</a>
+          </li>
+          <li class="nav-item" style="min-width: 250px;">
+            <a class="nav-link" href="#">Danh Sách Chuyến Xe</a>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-primary" style="min-width: 130px;">Đăng Nhập</button>
+      </div>
+    </div>
+  </nav>
+  <!-- Dat ve Frame-->
+  <main>
+    <!-- Multistep progress bar-->
+    <div class="step-wizard">
+      <ul class="step-wizard-list">
+        <li class="step-wizard-item ">
+          <span class="progress-count" id="beforeItem">Chuyến Xe</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count" id="beforeItem">Chọn giờ</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count" id="currentItem">Chọn chỗ</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count" id="afterItem">Xác nhận</span>
+        </li>
+      </ul>
+    </div>
+    <!-- Box Tìm Vé-->
+    <div class="dvx-box container d-flex justify-content-center flex-column">
+      <!-- Chuyến xe element-->
+      <div>
+        <div class="row dvx-chuyenXeBox align-items-center" style="margin: 3rem 2rem;">
+          <!-- info-->
+          <div class="col-md-10 text-left">
+            <div class="row">
+              <p class="m-0 p-0">00:03 <i class="fa-solid fa-chevron-right"></i> 00:08</p>
+            </div>
+            <div class="row">
+              170,000đ ~ Giường ~ Còn 34 Chỗ
+            </div>
+            <div class="row">
+              Bến xe miền tây -> bến xe Long Xuyên
+            </div>
+          </div>
+          <!--button-->
+          <div class="col-md-2 text-center ">
+            <a name="" id="" class="btn btn-dvx" href="#" role="button">></a>
+          </div>
+          <!--seat-->
+          <div class="seat-container row g-0">
+            <div class="col-md-5 mx-auto p-0">
+              <div class="title text-center p-0">
+                Tầng dưới (A)
+              </div>
+              <div class="text-center row ">
+                <div class="seat-column col-md-4 g-0 d-flex justify-content-start flex-column align-items-center  ">
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                </div>
+                <div class="seat-column col-md-4 g-0 d-flex justify-content-center flex-column align-items-center">
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                </div>
+                <div class="seat-column col-md-4 g-0 d-flex justify-content-center flex-column align-items-center">
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 mx-auto p-0">
+              <div class="title text-center p-0">
+                Tầng trên (B)
+              </div>
+              <div class="text-center row ">
+                <div class="seat-column col-md-4 g-0 d-flex justify-content-center flex-column align-items-center">
+                  <div class="seat sold">S1</div>
+                  <div class="seat selected">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                </div>
+                <div class="seat-column col-md-4 g-0 d-flex justify-content-center flex-column align-items-center">
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                </div>
+                <div class="seat-column col-md-4 g-0 d-flex justify-content-center flex-column align-items-center">
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                  <div class="seat">S1</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end of seat-->
+          <!--showcase-->
+          <ul class="showcase ">
+            <li id ="showcaseElement">
+              <div class="seat"></div>
+              <div>Còn chỗ</div>
+            </li>
+            <li id ="showcaseElement">
+              <div class="seat selected"></div>
+              <div>Đang chọn</div>
+            </li>
+            <li id ="showcaseElement">
+              <div class="seat sold"></div>
+              <div>Đã đặt</div>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-info" id="footer">
+    <!-- Grid container -->
+    <div class="row mx-0 g-0">
+      <div class="col-md-9 col-sm-12 ">
+        <div class="row g-0 pt-3">
+          <div class="col-md-4 col-sm-12 fw-bold text-center"> THÔNG TIN LIÊN HỆ:
+          </div>
+          <div class="col-md-3 col-sm-12 text-left">
+            <i class="fa-brands fa-facebook mt-1 me-2 mb-3"></i>Facebook: HPQL
+          </div>
+          <div class="col-md-5 col-sm-12 sm-text-align">
+            <i class="fa-solid fa-phone mt-1 me-2 mb-3 visible-lg-* "></i>HPQL Hotline: 028 1234 567
+          </div>
+        </div>
+        <div class="row g-0 text-left">
+          <div class="col-md-4  col-sm-12"></div>
+          <div class="col-md-8  col-sm-12 d-flex flex-row">
+            <i class="fa-solid fa-location-dot mt-1 ms-1 me-2 mb-3"></i>
+            Địa Chỉ Liên Hệ: 227 Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3 col-sm-12 d-flex align-items-center justify-content-center"> <img
+          src="./assets/img/HPQL-Footer.svg" id="footer-Logo" alt="logo">
+
+      </div>
+      <div class="row pb-3 text-center copyright">
+        <div class=" fs-7">
+          Made By HPQL Team 2022
+        </div>
+      </div>
+
+    </div>
+
+
+
+    </div>
+    <!-- Grid container -->
+
+  </footer>
+  <script src="dvxScript.js">
+  </script>
+  <!-- Footer -->
+</body>
+
+</html>

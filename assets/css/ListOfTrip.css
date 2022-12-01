@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+:root{
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB;
+
+    --fs-xl: 10vw;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+} 
+
+body {
+    background-color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+main {
+    margin-top: 60px;
+}
+
+/* ----- Nav Bar Start ----- */
+.navbar {
+    background-color: var(--white)!important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    padding: 0px;
+}
+
+/* Nav Bar Logo */
+.navbar-brand {
+    padding: 4px;
+}
+
+.navbar-brand img {
+    height: 52px;
+}
+
+/* ---------- */
+
+ul.navbar-nav {
+    margin-right: 16px;
+}
+
+li.nav-item {
+    padding: 0px 0px;
+    margin: 4px 8px;
+    border-radius: 12px;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--white) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+}
+
+li.nav-item.active {
+    border: 2px solid var(--green);
+}
+
+/* Note: !important color here */
+li.nav-item a.nav-link {
+    color: var(--primary-blue) !important;
+    font-weight: 600;
+}
+
+/* Note: !important color here */
+li.active a.nav-link {
+    color: var(--green) !important;
+}
+
+li.nav-item:hover {
+    background-position: top left;
+}
+
+/* Note: !important color here */
+li:hover a.nav-link {
+    color: var(--white) !important;
+}
+
+/* Note: !important color here */
+div.navbar-collapse .btn {
+    height: 40px;
+    padding: 0px 16px;
+    color: var(--white) !important;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--primary-blue) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+    border: none;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+div.navbar-collapse .btn:hover {
+    background-position: top left;
+}
+
+/* Nav Bar Toggle */
+.navbar-toggler {
+    background-color: var(--primary-blue);
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:hover {
+    background-color: var(--green);
+}
+
+.navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+}
+
+/* ---------- */
+/* ----- Nav Bar End ----- */
+/* Content */
+main h2 {
+    color: var(--primary-blue);
+}
+/* Sort Trip */
+#sortTrip .btn {
+    background-color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 12px;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+}
+
+#sortTrip .btn:hover {
+    background-color: var(--white);
+    border-color: var(--green);
+    color: var(--green);
+}
+
+#sortTrip .btn:focus {
+    box-shadow: none;
+    background-color: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+}
+
+#sortTrip .active-btn {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Filter Section */
+#filter {
+    height: fit-content;
+    border: 2px solid var(--primary-blue);
+    border-radius: 28px;
+}
+
+#filter .filterOpt .form-control {
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    background-color: var(--white);
+}
+
+#filter .dropdown-menu,
+#filter .dropdown-divider{
+    /* Scrollable Menu */
+    max-height: 10rem;
+    /* --------------- */
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+#filter .dropdown-header {
+    padding: 0.5rem;
+    color: var(--white);
+    background-color: var(--primary-blue);
+}
+
+#filter .timeStart label {
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    color: black;
+}
+
+#filter .timeStart label:hover {
+    background-color: var(--white);
+    border-color: var(--green);
+    color: var(--green);
+}
+
+#filter .filterOpt .form-check-input {
+    background-color: var(--white);
+    border: 2px solid var(--primary-blue);
+}
+
+#filter .filterOpt .form-check-input:checked {
+    background-color: var(--primary-blue);
+}
+
+#filter .numGroup .btn {
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--primary-blue);
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#filter .numGroup .btn:hover {
+    border-color: var(--green);
+    background-color: var(--white);
+    color: var(--green);
+}
+
+#filter .btnGroup .btn {
+    background-color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    color: var(--white);
+    font-weight: 600;
+}
+
+#filter .btnGroup .btn-outline-primary {
+    background-color: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-radius: 12px;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+#filter .btnGroup .btn:hover {
+    background-color: var(--white);
+    border-color: var(--green);
+    color: var(--green);
+}
+
+#filter .btnGroup .btn:focus {
+    box-shadow: none;
+    background-color: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+}
+
+/* List Of Trip */
+#listTrip .card {
+    background-color: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+#listTrip .card:hover {
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.3);
+}
+
+#listTrip .card .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    border-right: 2px solid var(--primary-blue);
+}
+
+#listTrip .card .btn {
+    border-radius: 12px;
+    border: 2px solid var(--primary-blue);
+    background-color: var(--primary-blue);
+}
+
+#listTrip .card .btn-link {
+    border-radius: 8px;
+    border: none;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    box-shadow: none;
+    outline: none;
+}
+
+#listTrip .card .btn:hover {
+    border-color: var(--green);
+    background-color: var(--white);
+    color: var(--green);
+}
+
+#listTrip .card .price {
+    color: var(--primary-blue);
+}
+
+#listTrip .card .validSeat {
+    color: var(--green);
+}
+
+/* Pagination */
+.pagination .page-link {
+    font-weight: bold;
+    color: var(--primary-blue);
+    background-color: var(--white);
+}
+
+.pagination li.active .page-link {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.pagination #prevPage .page-link{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.pagination #contPage .page-link{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.topbtnContainer .btn {
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 8px;
+}
+
+.topbtnContainer .btn:hover {
+    background-color: var(--green);
+}
+@media (max-width:768px) {
+    #listTrip .card .card-img {
+        border-right: none;
+    }
+}
+/* Content End */
+/*-----Footer----*/
+#footer {
+    background-color: var(--primary-blue) !important;
+    color: var(--white)!important;
+    margin-top: 40px;
+    font-size: var(--fs-400);
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+#footer-Logo{
+  width: 50%;
+  height: auto;
+}
+
+.sm-text-align{
+    text-align: start;
+}
+
+@media (min-width:768px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 0.8rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+
+    #footer-Logo{
+        width: 75%;
+        height: auto;
+      }
+}
+
+@media (min-width:840px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+}
+
+@media (min-width:1144px){ /*subtract 20px (real at 1144)*/
+    :root{
+        --fs-600: 1.75rem;
+        --fs-500: 1.5rem;
+        --fs-400: 1.25rem;
+    }  
+    .sm-text-align{
+        text-align: end!important;
+    }
+}

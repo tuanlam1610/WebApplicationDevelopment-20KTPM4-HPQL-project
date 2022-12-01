@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root{
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB;
+
+    --fs-xl: 10vw;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+}  
+
+body {
+    overflow-x: hidden;
+}
+
+/* Background Pattern Format */
+#background-format {
+    height: 100vh;
+    background-image: url("/assets/img/login-bg-pattern.svg");
+}
+
+/* Main Container */
+#formContainer {
+    height: 75%;
+    width: 70%;
+    background-color: var(--white);
+    border-radius: 28px;
+    display: flex;
+    box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.3);
+}
+
+#formContainer #rightContainer,
+#formContainer #leftContainer {
+    height: 100%;
+    width: 50%;
+}
+
+    /* Left Container */
+#formContainer #leftContainer {
+    background-image: url("/assets/img/MaskLoginWave.svg");
+    background-size: auto;
+    background-position: left bottom;
+    background-size: cover;
+    color: var(--white);
+}
+
+#leftContainer .btn {
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 8px;
+}
+
+#leftContainer .btn:hover {
+    color: var(--primary-blue);
+    background-color: var(--white);
+}
+
+#leftContainer .sampleIMG {
+    position: relative;
+    top: -4rem;
+}
+
+    /* Right Container */
+#rightContainer i,
+#rightContainer p {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+#rightContainer a {
+    color: var(--primary-blue);
+}
+#rightContainer a:hover {
+    color: var(--green);
+}
+
+#rightContainer .form-control {
+    border-radius: 20px;
+    border: 2px solid var(--primary-blue);
+    background-color: var(--white);
+}
+
+#rightContainer .form-floating label {
+    color:rgba(0, 0, 0, 0.5);
+}
+
+#rightContainer #btn-group .btn {
+    border-radius: 28px;
+}
+
+
+#rightContainer #login-btn {
+    background-color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+#rightContainer #btn-group .btn:hover {
+    background-color: var(--green);
+    border: 2px solid var(--green) !important;
+    color: var(--white) !important;
+}
+
+#rightContainer #btn-group #register-btn {
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* Responsive */
+@media (max-width:768px) {
+    #background-format {
+        height: auto;
+        padding: 0;
+    }
+    #formContainer {
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #formContainer #leftContainer {
+        width: 100%;
+        background-color: var(--primary-blue);
+    }
+
+    #leftContainer .sampleIMG,
+    #leftContainer p {
+        margin: auto;
+    }
+
+    #formContainer #rightContainer {
+        width: 100%;
+        height: 100%;
+    }
+}

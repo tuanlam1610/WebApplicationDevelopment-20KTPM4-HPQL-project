@@ -9,7 +9,7 @@ a {
     color: black;
 }
 
-:root {
+:root{
     --primary-blue: #4F98CA;
     --green: #50D890;
     --white: #EFFFFB;
@@ -18,19 +18,21 @@ a {
     --fs-600: 1.5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
-}
-
-
-
+} 
 
 body {
-    height: 200vh;
     background-color: var(--white);
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
+main {
+    margin-top: 60px;
+}
+
+/* ----- Nav Bar Start ----- */
 .navbar {
-    background-color: var(--white) !important;
+    background-color: var(--white)!important;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
     padding: 0px;
@@ -52,7 +54,7 @@ ul.navbar-nav {
 }
 
 li.nav-item {
-    padding: 0px 20px;
+    padding: 0px 0px;
     margin: 4px 8px;
     border-radius: 12px;
     background: linear-gradient(to bottom right, var(--green) 50%, var(--white) 50%);
@@ -90,7 +92,6 @@ div.navbar-collapse .btn {
     height: 40px;
     padding: 0px 16px;
     color: var(--white) !important;
-    background-color: var(--primary-blue);
     background: linear-gradient(to bottom right, var(--green) 50%, var(--primary-blue) 50%);
     background-size: 200% 200%;
     background-position: bottom right;
@@ -103,20 +104,6 @@ div.navbar-collapse .btn {
 
 div.navbar-collapse .btn:hover {
     background-position: top left;
-}
-
-.btn-group .dropdown-menu a {
-    font-size: 15px;
-    color: var(--primary-blue);
-}
- 
-.btn-group .dropdown-item i {
-    padding-right: 5px;
-}
-
-.btn-group .dropdown-item:hover {
-    background-color: var(--primary-blue);
-    color: var(--white);
 }
 
 /* Nav Bar Toggle */
@@ -137,180 +124,164 @@ div.navbar-collapse .btn:hover {
 
 /* ---------- */
 /* ----- Nav Bar End ----- */
-
-/* ------------- Quản lí tài khoản ------------ */
-
-
-.wrapper {
-    height: 80%;
-}
-
-.wrapper .header{ 
-    display: flex;   
-    align-items: center;
-    justify-content: center;
-    margin: 3% 0;
-    font-size: 45px;
-    font-weight: bolder;
+/* Content */
+main h2 {
     color: var(--primary-blue);
 }
-
-.wrapper .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    /* Search Button */
+.contentContainer .inputGroup {
     background-color: var(--white);
     border: 2px solid var(--primary-blue);
     border-radius: 16px;
-    padding: 50px 50px;
 }
 
-    /* ----------------- Selection ------------------*/
-.selection {
-    padding: 0;
-}
-
-.selection .item {
+.contentContainer .inputGroup:hover {
     background-color: var(--white);
-    border-radius: 10px;
-    padding: 5px;
-    margin-bottom: 2px;
+    border-color: var(--green);
+    border-radius: 16px;
 }
 
-.selection .item a {
-    font-size: 24px;
-    font-weight: 500;
+.contentContainer .inputGroup i {
     color: var(--primary-blue);
 }
 
-.selection .item i {
-    padding-right: 5px;
+.contentContainer .inputGroup:hover i {
+    color: var(--green);
 }
 
-.selection .item.active {
-    background-color: var(--primary-blue);
+.contentContainer .inputGroup .form-control::placeholder {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
 }
 
-.selection .item.active a {
-    color: var(--white) !important;
+.contentContainer .inputGroup .form-control {
+    background-color: transparent;
+    border-color: transparent;
 }
 
-.selection .item:hover {
-    background-color: var(--primary-blue);
-    opacity: 0.6;
+.contentContainer .inputGroup .form-control:focus {
+    box-shadow: none;
+    outline: none;
 }
-
-.selection .item:hover a{
-    color: var(--white);
-}
-
-    /* ----------------- Content ------------------*/
-
-.content {
-    margin-left: 7%;
-    max-width: 745px;
-    padding: 0;
-}   
-
-.content .displayField {
-    display: flex;
-    justify-content: space-between;
-    font-size: 25px;
-    font-weight: 500;
+    /* Search Button End */
+    /* List Of Garage */
+.card {
+    background-color: var(--white);
     border: 2px solid var(--primary-blue);
-    border-radius: 8px;
-    background-color: white;
-    padding: 10px 10px 10px 20px;
-    margin-bottom: 40px;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
-.content .displayField i {
-    font-size: 150%;
-    cursor: pointer;
+.card .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    border-right: 2px solid var(--primary-blue);
 }
 
-.container .displayField i:hover {
-    scale: 1.1;
-    color: var(--primary-blue);
-}
-
-.content .btn {
-    display: flex;
-    justify-content: center;
-}
-
-.content .btn button {
-    color: var(--white);
-    font-size: 20px;
-    border: 3px solid;
-    border-radius: 10px;
-    padding: 10px 60px;
+.card .btn {
+    border-radius: 12px;
+    border: 2px solid var(--primary-blue);
     background-color: var(--primary-blue);
 }
 
-.content button:hover {
-    border: 3px solid var(--green);
+.card .btn:hover {
+    border-color: var(--green);
     background-color: var(--white);
     color: var(--green);
 }
 
+.pagination .page-link {
+    font-weight: bold;
+    color: var(--primary-blue);
+    background-color: var(--white);
+}
+
+.pagination li.active .page-link {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.pagination #prevPage .page-link{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.pagination #contPage .page-link{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.topbtnContainer .btn {
+    background-color: var(--primary-blue);
+    border: none;
+    border-radius: 8px;
+}
+
+.topbtnContainer .btn:hover {
+    background-color: var(--green);
+}
+
+@media (max-width: 768px) {
+    .card .card-img {
+        border-right: none;
+    }
+}
+
+/* Content End */
 /*-----Footer----*/
 #footer {
     background-color: var(--primary-blue) !important;
-    color: var(--white) !important;
+    color: var(--white)!important;
     margin-top: 40px;
     font-size: var(--fs-400);
     padding: 0 1.5rem 0 1.5rem;
 }
 
-#footer-Logo {
-    width: 50%;
-    height: auto;
+#footer-Logo{
+  width: 50%;
+  height: auto;
 }
 
-.sm-text-align {
+.sm-text-align{
     text-align: start;
 }
 
-@media (min-width:768px) {
-    :root {
+@media (min-width:768px){
+    :root{
         --fs-600: 1.5rem;
         --fs-500: 1.25rem;
         --fs-400: 0.8rem;
-    }
-
-    .sm-text-align {
+    }  
+    .sm-text-align{
         text-align: end;
     }
 
-    #footer-Logo {
+    #footer-Logo{
         width: 75%;
         height: auto;
-    }
+      }
 }
 
-@media (min-width:840px) {
-    :root {
+@media (min-width:840px){
+    :root{
         --fs-600: 1.5rem;
         --fs-500: 1.25rem;
         --fs-400: 1rem;
-    }
-
-    .sm-text-align {
+    }  
+    .sm-text-align{
         text-align: end;
     }
 }
 
-@media (min-width:1144px) {
-
-    /*subtract 20px (real at 1144)*/
-    :root {
+@media (min-width:1144px){ /*subtract 20px (real at 1144)*/
+    :root{
         --fs-600: 1.75rem;
         --fs-500: 1.5rem;
         --fs-400: 1.25rem;
-    }
-
-    .sm-text-align {
-        text-align: end !important;
+    }  
+    .sm-text-align{
+        text-align: end!important;
     }
 }

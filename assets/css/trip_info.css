@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB;
+}
+
+body {
+    background-color: var(--white) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* ----- Nav Bar Start ----- */
+.navbar {
+    background-color: var(--white)!important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    padding: 0px;
+}
+
+/* Nav Bar Logo */
+.navbar-brand {
+    padding: 4px;
+}
+
+.navbar-brand img {
+    height: 52px;
+}
+
+/* ---------- */
+
+ul.navbar-nav {
+    margin-right: 16px;
+}
+
+li.nav-item {
+    padding: 0px 0px;
+    margin: 4px 8px;
+    border-radius: 12px;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--white) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+    
+}
+
+li.nav-item.active {
+    border: 2px solid var(--green);
+}
+
+/* Note: !important color here */
+li.nav-item a.nav-link {
+    color: var(--primary-blue) !important;
+    font-weight: 600;
+}
+
+/* Note: !important color here */
+li.active a.nav-link {
+    color: var(--green) !important;
+}
+
+li.nav-item:hover {
+    background-position: top left;
+}
+
+/* Note: !important color here */
+li:hover a.nav-link {
+    color: var(--white) !important;
+}
+
+/* Note: !important color here */
+div.navbar-collapse .btn {
+    height: 40px;
+    padding: 0px 16px;
+    color: var(--white) !important;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--primary-blue) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+    border: none;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+div.navbar-collapse .btn:hover {
+    background-position: top left;
+}
+
+/* Nav Bar Toggle */
+.navbar-toggler {
+    background-color: var(--primary-blue);
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:hover {
+    background-color: var(--green);
+}
+
+.navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+}
+
+/* ---------- */
+/* ----- Nav Bar End ----- */
+.container{
+    margin-top: 60px;
+}
+
+h2.trip-name {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--green);
+    font-weight: bold;
+
+}
+
+h2.trip-name i+i {
+    margin-left: -12px;
+}
+
+ul.content {
+    width: 100%;
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+    margin: 0 auto;
+    padding: 1.5rem 5%;
+    position: relative;
+    margin-bottom: 40px;
+
+}
+
+ul.content li {
+    padding-bottom: 0.8rem;
+}
+
+li.info>*:first-child {
+    font-weight: bold !important;
+}
+
+.garage-name {
+    color: var(--primary-blue) !important;
+    text-decoration: none !important;
+    font-style: italic;
+    font-weight: 700 !important;
+    font-size: 20px;
+}
+
+.garage-name:hover {
+    color: var(--green) !important;
+}
+
+li p.time {
+    position: relative;
+}
+
+li p i.fa-circle {
+    font-size: 5px;
+    position: absolute;
+    top: 40%;
+}
+
+.station {
+    width: 48%;
+}
+
+/* Css for slider of bus img */
+#owl-carousel {
+    position: relative;
+}
+
+.owl-carousel .nav-btn:hover {
+    background: var(--green);
+    opacity: 1;
+}
+
+.owl-carousel .nav-btn {
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    cursor: pointer;
+    bottom: 50%;
+    transform: translateY(50%);
+    background: var(--primary-blue);
+    border-radius: 50px;
+    transition: .5s;
+    opacity: 0.5;
+}
+
+.owl-carousel .nav-btn i {
+    margin: 14px 0px;
+    color: var(--white);
+}
+
+.owl-prev.disabled,
+.owl-next.disabled {
+    display: none !important;
+}
+
+.owl-carousel .prev-slide {
+    left: -3%;
+}
+
+.owl-carousel .next-slide {
+    right: -3%;
+}
+
+.owl-carousel .item img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.owl-carousel .item:hover img {
+    scale: 1.1;
+}
+
+.owl-carousel .item {
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.owl-carousel .owl-item{
+    padding: 0.5rem;
+}
+
+.owl-nav {
+    height: 0;
+}
+/* end of slider */
+
+/* css to open modal to zoom img */
+.modal {
+    z-index: 2;
+    display: none;
+    padding-top: 100px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.close-modal-btn{
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.close-modal-btn:hover i{
+    color: var(--green) !important;
+}
+
+.close-modal-btn i{
+    color: var(--white);
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.zoom-img{
+    margin: auto;
+    width: 60%;
+    animation: animatezoom 0.7s;
+}
+
+.zoom-img img{
+    border-radius: 10px;
+}
+/* end the modal css */
+
+.sub {
+    font-style: italic;
+}
+
+ul.utility {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.sub-list li:last-child {
+    padding-bottom: 0;
+}
+
+ul.utility i {
+    display: inline-block;
+    width: 2rem;
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 20px;
+}
+
+.fa-bottle-water {
+    font-size: 28px !important;
+    margin-top: 4px;
+}
+
+.primary-info {
+    color: var(--primary-blue);
+    font-weight: 500 !important;
+}
+
+.last-info {
+    padding-bottom: 0 !important;
+    margin-bottom: 50px !important;
+}
+
+.book-btn {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    background-color: var(--primary-blue) !important;
+    border: none !important;
+    border-radius: 1rem !important;
+    width: 15rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.book-btn:hover {
+    background-color: var(--green) !important;
+}
+
+/* footer */
+#footer {
+    background-color: var(--primary-blue) !important;
+    color: var(--white)!important;
+    margin-top: 40px;
+    font-size: var(--fs-400);
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+#footer-Logo{
+  width: 50%;
+  height: auto;
+}
+
+.sm-text-align{
+    text-align: start;
+}
+
+@media (min-width:768px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 0.8rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+
+    #footer-Logo{
+        width: 75%;
+        height: auto;
+      }
+}
+
+@media (min-width:840px){
+    :root{
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }  
+    .sm-text-align{
+        text-align: end;
+    }
+}
+
+@media (min-width:1144px){ /*subtract 20px (real at 1144)*/
+    :root{
+        --fs-600: 1.75rem;
+        --fs-500: 1.5rem;
+        --fs-400: 1.25rem;
+    }  
+    .sm-text-align{
+        text-align: end!important;
+    }
+}

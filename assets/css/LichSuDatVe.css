@@ -157,7 +157,6 @@ div.navbar-collapse .btn:hover {
 
 .wrapper .container {
     width: 100%;
-    height: 700px;
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--white);
@@ -209,7 +208,7 @@ div.navbar-collapse .btn:hover {
 /* ----------------- Content ------------------*/
 
 .content {
-    max-height: 93%;
+    height: 450px;
     padding: 0;
     border-radius: 16px;
     background-color: white;
@@ -219,7 +218,6 @@ div.navbar-collapse .btn:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
 }
 
 #filter #filter_button {
@@ -239,7 +237,7 @@ div.navbar-collapse .btn:hover {
     font-weight: bold;
     border-radius: 0;
     border: none;
-    background-color: white;
+    background-color: var(--white) !important;
 }
 
 #filter_button .active {
@@ -248,9 +246,10 @@ div.navbar-collapse .btn:hover {
 }
 
 #filter #filter_data {
-    height: 83%;
+    height: 400px;
     border: 2px solid var(--primary-blue);
     border-radius: 16px;
+    overflow: auto;
 }
 
 .element_type .table {
@@ -259,6 +258,12 @@ div.navbar-collapse .btn:hover {
 
 table {
     width: 100%;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--white) !important;
 }
 
 td, th {
