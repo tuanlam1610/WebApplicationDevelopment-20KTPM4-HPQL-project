@@ -13,8 +13,13 @@ a {
     --primary-blue: #4F98CA;
     --green: #50D890;
     --white: #EFFFFB;
+    --whitest: #FFFFFF;
+    --gray: #AAAAAA;
 
     --fs-xl: 10vw;
+    --fs-1200: 2.5rem;
+    --fs-1000: 2rem;
+    --fs-800: 1.75rem;
     --fs-600: 1.5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
@@ -503,6 +508,7 @@ main .container .sub-title{
 
 @media (min-width:768px){
     :root{
+        --fs-800: 1.5rem;
         --fs-600: 1.5rem;
         --fs-500: 1.25rem;
         --fs-400: 0.8rem;
@@ -515,10 +521,13 @@ main .container .sub-title{
         width: 75%;
         height: auto;
       }
+    
+      
 }
 
 @media (min-width:840px){
     :root{
+        --fs-800: 2rem;
         --fs-600: 1.5rem;
         --fs-500: 1.25rem;
         --fs-400: 1rem;
