@@ -460,7 +460,7 @@ body{
 }
 
 .btn-dvx-confirm{
-    background-color: var(--primary-blue);
+    background-color: var(--primary-blue);  
     color:var(--white);
     font-size:var(--fs-400);
     font-weight: 600;
