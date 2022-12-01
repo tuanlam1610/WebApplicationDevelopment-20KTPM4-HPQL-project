@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- GG Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="/assets/css/ThayDoiMatKhau.css">
+
+    <!--OWL Carousel-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Bootstrap Datepicker -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <title>Thay đổi mật khẩu</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/assets/img/HPQL-Light.svg" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+                        <li class="nav-item d-flex align-items-center" style="min-width: 156px;">
+                            <a class="nav-link" href="#">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center" style="min-width: 216px;">
+                            <a class="nav-link" href="#">Danh Sách Nhà Xe</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center" style="min-width: 250px;">
+                            <a class="nav-link" href="#">Danh Sách Chuyến Xe</a>
+                        </li>
+                    </ul>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Đăng nhập
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item"
+                                    href="http://127.0.0.1:5500/assets/page/ThongTinTaiKhoan.html"><i
+                                        class="fa-regular fa-circle-user"></i>Thông tin tài khoản</a></li>
+                            <li><a class="dropdown-item"
+                                    href="http://127.0.0.1:5500/assets/page/ChinhSuaThongTin.html"><i
+                                        class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông
+                                    tin</a></li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:5500/assets/page/ThayDoiMatKhau.html"><i
+                                        class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
+                            </li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:5500/assets/page/LichSuDatVe.html"><i
+                                        class="fa-solid fa-clock"></i>Lịch
+                                    sử đặt vé</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i>Đăng
+                                    xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Quản Lí Tài Khoản-->
+    <div class="wrapper">
+        <div class="header">Quản Lí Tài Khoản</div>
+        <div class="container row">
+            <div class="selection col-md-4">
+                <div class="item">
+                    <a role="button" href="http://127.0.0.1:5500/assets/page/ThongTinTaiKhoan.html"><i
+                            class="fa-regular fa-circle-user"></i>Thông tin tài khoản</a>
+                </div>
+                <div class="item">
+                    <a role="button" href="http://127.0.0.1:5500/assets/page/ChinhSuaThongTin.html"><i
+                            class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
+                </div>
+                <div class="item active">
+                    <a role="button" href="http://127.0.0.1:5500/assets/page/ThayDoiMatKhau.html"><i
+                            class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
+                </div>
+                <div class="item">
+                    <a role="button" href="http://127.0.0.1:5500/assets/page/LichSuDatVe.html"><i
+                            class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
+                </div>
+                <div class="item">
+                    <a role="button" href="#"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                </div>
+            </div>
+
+            <div class="content col-md-8">
+                <div class="currentPassword password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Mật khẩu cũ" required>
+                </div>
+                <div class="newPassword password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Mật khẩu mới" required>
+                </div>
+                <div class="confirmPassword password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Xác nhận mật khẩu" required>
+                </div>
+                <div class="btn"><button>Lưu</button></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-info" id="footer">
+        <!-- Grid container -->
+        <div class="row mx-0 g-0">
+            <div class="col-md-9 col-sm-12 ">
+
+                <div class="row g-0 pt-3">
+                    <div class="col-md-4 col-sm-12 fw-bold text-center"> THÔNG TIN LIÊN HỆ:
+                    </div>
+                    <div class="col-md-3 col-sm-12 text-left">
+                        <i class="fa-brands fa-facebook mt-1 me-2 mb-3"></i>Facebook: HPQL
+                    </div>
+                    <div class="col-md-5 col-sm-12 sm-text-align">
+                        <i class="fa-solid fa-phone mt-1 me-2 mb-3 visible-lg-* "></i>HPQL Hotline: 028 1234 567
+                    </div>
+                </div>
+                <div class="row g-0 text-left">
+                    <div class="col-md-4  col-sm-12"></div>
+                    <div class="col-md-8  col-sm-12 d-flex flex-row">
+                        <i class="fa-solid fa-location-dot mt-1 ms-1 me-2 mb-3"></i>
+                        Địa Chỉ Liên Hệ: 227 Nguyễn Văn Cừ, Phường 4, Quận 5, Thành phố Hồ Chí Minh
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-sm-12 d-flex align-items-center justify-content-center"> <img
+                    src="/assets/img/HPQL-Footer.svg" id="footer-Logo" alt="logo">
+
+            </div>
+            <div class="row pb-3 text-center copyright">
+                <div class=" fs-7">
+                    Made By HPQL Team 2022
+                </div>
+            </div>
+
+        </div>
+
+
+
+        </div>
+        <!-- Grid container -->
+
+    </footer>
+    <!-- Footer -->
+</body>
+
+
+</html>

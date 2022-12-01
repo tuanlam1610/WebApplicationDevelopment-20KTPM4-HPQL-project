@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+:root {
+    --primary-blue: #4F98CA;
+    --green: #50D890;
+    --white: #EFFFFB;
+
+    --fs-xl: 10vw;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1rem;
+}
+
+
+
+
+body {
+    height: 200vh;
+    background-color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+    background-color: var(--white) !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    padding: 0px;
+}
+
+/* Nav Bar Logo */
+.navbar-brand {
+    padding: 4px;
+}
+
+.navbar-brand img {
+    height: 52px;
+}
+
+/* ---------- */
+
+ul.navbar-nav {
+    margin-right: 16px;
+}
+
+li.nav-item {
+    padding: 0px 20px;
+    margin: 4px 8px;
+    border-radius: 12px;
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--white) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+}
+
+li.nav-item.active {
+    border: 2px solid var(--green);
+}
+
+/* Note: !important color here */
+li.nav-item a.nav-link {
+    color: var(--primary-blue) !important;
+    font-weight: 600;
+}
+
+/* Note: !important color here */
+li.active a.nav-link {
+    color: var(--green) !important;
+}
+
+li.nav-item:hover {
+    background-position: top left;
+}
+
+/* Note: !important color here */
+li:hover a.nav-link {
+    color: var(--white) !important;
+}
+
+/* Note: !important color here */
+div.navbar-collapse .btn {
+    height: 40px;
+    padding: 0px 16px;
+    color: var(--white) !important;
+    background-color: var(--primary-blue);
+    background: linear-gradient(to bottom right, var(--green) 50%, var(--primary-blue) 50%);
+    background-size: 200% 200%;
+    background-position: bottom right;
+    transition: all .3s ease-out;
+    border: none;
+    border-radius: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+div.navbar-collapse .btn:hover {
+    background-position: top left;
+}
+
+.btn-group .dropdown-menu a {
+    font-size: 15px;
+    color: var(--primary-blue);
+}
+ 
+.btn-group .dropdown-item i {
+    padding-right: 5px;
+}
+
+.btn-group .dropdown-item:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+/* Nav Bar Toggle */
+.navbar-toggler {
+    background-color: var(--primary-blue);
+    border: none;
+    outline: none;
+}
+
+.navbar-toggler:hover {
+    background-color: var(--green);
+}
+
+.navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+}
+
+/* ---------- */
+/* ----- Nav Bar End ----- */
+
+/* ------------- Quản lí tài khoản ------------ */
+
+
+.wrapper {
+    height: 80%;
+}
+
+.wrapper .header{ 
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+    margin: 3% 0;
+    font-size: 45px;
+    font-weight: bolder;
+    color: var(--primary-blue);
+}
+
+.wrapper .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+    padding: 50px 50px;
+}
+
+    /* ----------------- Selection ------------------*/
+.selection {
+    padding: 0;
+}
+
+.selection .item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 2px;
+}
+
+.selection .item a {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--primary-blue);
+}
+
+.selection .item i {
+    padding-right: 5px;
+}
+
+.selection .item.active {
+    background-color: var(--primary-blue);
+}
+
+.selection .item.active a {
+    color: var(--white) !important;
+}
+
+.selection .item:hover {
+    background-color: var(--primary-blue);
+    opacity: 0.6;
+}
+
+.selection .item:hover a{
+    color: var(--white);
+}
+
+    /* ----------------- Content ------------------*/
+
+.content {
+    margin-left: 7%;
+    max-width: 745px;
+    padding: 0;
+}   
+
+.content .displayField {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    font-weight: 500;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    background-color: white;
+    padding: 10px 10px 10px 20px;
+    margin-bottom: 40px;
+}
+
+.content .displayField i {
+    font-size: 150%;
+    cursor: pointer;
+}
+
+.container .displayField i:hover {
+    scale: 1.1;
+    color: var(--primary-blue);
+}
+
+.content .btn {
+    display: flex;
+    justify-content: center;
+}
+
+.content .btn button {
+    color: var(--white);
+    font-size: 20px;
+    border: 3px solid;
+    border-radius: 10px;
+    padding: 10px 60px;
+    background-color: var(--primary-blue);
+}
+
+.content button:hover {
+    border: 3px solid var(--green);
+    background-color: var(--white);
+    color: var(--green);
+}
+
+/*-----Footer----*/
+#footer {
+    background-color: var(--primary-blue) !important;
+    color: var(--white) !important;
+    margin-top: 40px;
+    font-size: var(--fs-400);
+    padding: 0 1.5rem 0 1.5rem;
+}
+
+#footer-Logo {
+    width: 50%;
+    height: auto;
+}
+
+.sm-text-align {
+    text-align: start;
+}
+
+@media (min-width:768px) {
+    :root {
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 0.8rem;
+    }
+
+    .sm-text-align {
+        text-align: end;
+    }
+
+    #footer-Logo {
+        width: 75%;
+        height: auto;
+    }
+}
+
+@media (min-width:840px) {
+    :root {
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }
+
+    .sm-text-align {
+        text-align: end;
+    }
+}
+
+@media (min-width:1144px) {
+
+    /*subtract 20px (real at 1144)*/
+    :root {
+        --fs-600: 1.75rem;
+        --fs-500: 1.5rem;
+        --fs-400: 1.25rem;
+    }
+
+    .sm-text-align {
+        text-align: end !important;
+    }
+}
