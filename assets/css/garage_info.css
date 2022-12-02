@@ -378,6 +378,10 @@ i.not-chevron {
     text-decoration: none;
 }
 
+.default-a:hover{
+    color: black;
+}
+
 
 .content-view-more .title-overlay,
 .content-view-more .rating {
