@@ -94,13 +94,13 @@ div.navbar-collapse .btn:hover {
 
 /* Nav Bar Toggle */
 .navbar-toggler {
-    background-color: var(--primary-blue);
-    border: none;
+    background-color: var(--primary-blue) !important;
+    border: none !important;
     outline: none;
 }
 
 .navbar-toggler:hover {
-    background-color: var(--green);
+    background-color: var(--green) !important;
 }
 
 .navbar-toggler:focus {
