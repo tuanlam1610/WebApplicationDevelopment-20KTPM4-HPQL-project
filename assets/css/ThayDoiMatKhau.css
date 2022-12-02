@@ -52,7 +52,7 @@ ul.navbar-nav {
 }
 
 li.nav-item {
-    padding: 0px 20px;
+    padding: 0px 0px;
     margin: 4px 8px;
     border-radius: 12px;
     background: linear-gradient(to bottom right, var(--green) 50%, var(--white) 50%);
@@ -164,7 +164,7 @@ div.navbar-collapse .btn:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3% 0;
+    margin: 4% 0;
     font-size: 45px;
     font-weight: bolder;
     color: var(--primary-blue);
