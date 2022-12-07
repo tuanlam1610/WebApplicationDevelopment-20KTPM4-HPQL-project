@@ -1,16 +1,62 @@
-@import './style.css';
+    @import './style.css';
 
 body{
     background-color: var(--whitest);
 }
 
 @media (min-width:740px){
+    :root{
+        --fs-font-progress-count: 1rem;
+        --fs-font-seating: 1.5rem;
+        --fs-font-payment: 1.75rem;
+    }
     /*Tìm vé xe page 2*/
     .dvx-chuyenXeFilter{
         gap:0rem;
     }
     .dvx-chuyenXeFilter .dropdown{
         flex-basis:5%;
+    }
+
+    .step-wizard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5rem 0 0 0;
+        background-color: var(--whitest);
+    }
+    
+    
+    .step-wizard-list{
+        background:var(--primary-blue);
+        /*box-shadow: 0 15 25px rgba(0, 0, 0, 1);*/
+        list-style-type: none;
+        border-radius: 1.5rem;
+        display: flex;
+        position: relative;
+        z-index: 10;
+        justify-content: center;
+        align-items: center;
+        padding-left: 0;
+        padding: 0.5rem;
+        gap: 0.2rem;
+    }
+    
+    .step-wizard-item{
+        background-color: var(--white);
+        border-radius: 1.5rem;  
+        min-width: 170px!important;
+        position: relative;
+        padding: 0.3rem;
+    }
+    
+    
+    .seat{
+        width:4rem!important;
+        height:3.8rem!important;
+        margin:0.5rem 0rem;
+        padding: 0.5rem 0rem!important;
+        font-size: var(--fs-font-seating);
     }
 }
 /*Tìm vé xe page 1*/
@@ -42,7 +88,8 @@ body{
 .step-wizard-item{
     background-color: var(--white);
     border-radius: 1.5rem;  
-    min-width: 170px;
+    font-size: var(--fs-font-progress-count);
+    min-width: 60px;
     position: relative;
     padding: 0.3rem;
 }
@@ -50,7 +97,8 @@ body{
 
 .progress-count{
     background-color: var(--gray);
-    color:var(--white);
+    color:var(--primary-blue);
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,6 +106,8 @@ body{
     font-weight: 600;
     margin: 0 auto;
     position: relative;
+
+    padding: 0.2rem 0.5rem;
 }
 
 #currentItem{
@@ -73,8 +123,8 @@ body{
 }
 
 #beforeItem{
-    background-color: var(--green);
-    color: transparent;
+    background-color: rgba(50, 50, 50, 0.3);
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,8 +135,9 @@ body{
 }
 
 #afterItem{
-    background-color: var(--gray);
-    color: transparent;
+    border: 2px solid var(--primary-blue);
+    background-color: var(--whitest);
+    color: var(--primary-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -352,11 +403,11 @@ body{
     text-align: center;
 
 
-    width:4rem;
-    height:3.8rem;
+    width:3rem;
+    height:2.85rem;
     margin:0.5rem 0rem;
-    padding: 0.5rem 0rem;
-    font-size: var(--fs-500)
+    padding: 0rem 0rem;
+    font-size: var(--fs-font-seating);
 }
 
 .seat:not(.sold):hover{
@@ -381,11 +432,13 @@ body{
 }
 
 .showcase {
+    margin: 0rem 1rem;
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
     
-    font-size:var(--fs-500);
+    line-height: 1.5rem;
+    font-size: var(--fs-font-seating);
     font-weight: 600;
     color: var(--primary-blue);
 }
@@ -413,17 +466,22 @@ body{
     padding: 0.5rem 1rem;
 }
 
+
 .dvx-xacNhanBox{
     background-color: var(--white);
     border-style: solid;
     border-radius: 1rem;
     border-color:var(--primary-blue);
-    color: var(--primary-blue);
+    color: black;
     font-weight: 500;
-    font-size:var(--fs-800);
+    font-size:var(--fs-font-payment);
     margin: 1.5rem 1rem;
-    padding: 0.5rem 3rem;
-    line-height: 4rem;
+    padding: 0.5rem 1.5rem;
+    line-height: 3rem;
+}
+
+.dvx-xacNhanBox #Highlight{
+    color: black;
 }
 
 .dvx-linebreak{
@@ -436,9 +494,8 @@ body{
 }
 
 .dvx-TinhTien{
-     font-size:var(--fs-800);
-     font-weight:400;
-     
+     font-size:var(--fs-font-payment);
+     font-weight: 400;
 }
 
 .dvx-TotalMoney{
@@ -447,6 +504,12 @@ body{
     justify-content: space-between!important;
     width:50%;
     margin: 1rem 0rem;
+    
+}
+
+.dvx-TotalMoney #Bold{
+    font-weight:600;
+    
 }
 
 .btn-dvx-transaction{   
@@ -464,7 +527,7 @@ body{
     color:var(--white);
     font-size:var(--fs-400);
     font-weight: 600;
-    width:20%;
+    width:30%;
     margin: 1.5rem;
 }
 
