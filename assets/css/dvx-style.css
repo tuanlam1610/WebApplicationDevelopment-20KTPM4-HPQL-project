@@ -472,7 +472,7 @@ body{
     border-style: solid;
     border-radius: 1rem;
     border-color:var(--primary-blue);
-    color: var(--primary-blue);
+    color: black;
     font-weight: 500;
     font-size:var(--fs-font-payment);
     margin: 1.5rem 1rem;
@@ -495,8 +495,7 @@ body{
 
 .dvx-TinhTien{
      font-size:var(--fs-font-payment);
-     font-weight:400;
-     
+     font-weight: 400;
 }
 
 .dvx-TotalMoney{
@@ -505,6 +504,12 @@ body{
     justify-content: space-between!important;
     width:50%;
     margin: 1rem 0rem;
+    
+}
+
+.dvx-TotalMoney #Bold{
+    font-weight:600;
+    
 }
 
 .btn-dvx-transaction{   
