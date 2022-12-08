@@ -81,7 +81,7 @@ body{
     justify-content: center;
     align-items: center;
     padding-left: 0;
-    padding: 0.5rem;
+    padding: 0.4rem 0.5rem;
     gap: 0.2rem;
 }
 
@@ -111,6 +111,7 @@ body{
 }
 
 #currentItem{
+    border: 2px solid var(--green);
     background-color: var(--green);
     color:var(--white);
     display: flex;
@@ -123,6 +124,7 @@ body{
 }
 
 #beforeItem{
+  
     background-color: rgba(50, 50, 50, 0.3);
     color: var(--white);
     display: flex;
