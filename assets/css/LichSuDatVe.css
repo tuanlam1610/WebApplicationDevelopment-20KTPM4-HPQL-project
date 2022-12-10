@@ -170,39 +170,30 @@ div.navbar-collapse .btn:hover {
     padding: 0;
 }
 
-.selection .item {
+.selection .list-group a {
     background-color: var(--white);
     border-radius: 10px;
-    padding: 5px;
     margin-bottom: 2px;
-    width: 270px;
-}
-
-.selection .item a {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     color: var(--primary-blue);
+    padding: 5px auto;
+    border: none;
 }
 
-.selection .item i {
+.selection .list-group .list-group-item i {
     padding-right: 5px;
 }
 
-.selection .item.active {
+.selection .list-group .active {
     background-color: var(--primary-blue);
-}
-
-.selection .item.active a {
     color: var(--white) !important;
 }
 
-.selection .item:hover {
+.selection .list-group .list-group-item:hover {
     background-color: var(--primary-blue);
-    opacity: 0.6;
-}
-
-.selection .item:hover a {
     color: var(--white);
+    opacity: 0.6;
 }
 
 /* ----------------- Content ------------------*/
@@ -233,7 +224,7 @@ div.navbar-collapse .btn:hover {
     justify-content: center;
     width: calc(100% / 3);
     color: black;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 0;
     border: none;
@@ -269,6 +260,7 @@ thead th {
 td, th {
     text-align: center;
     vertical-align: middle;
+    font-size: 16px;
 }
 
 /* ---------------------------- Pagination -----------------------*/
