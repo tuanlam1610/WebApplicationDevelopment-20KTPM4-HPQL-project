@@ -93,39 +93,34 @@
         <div class="header">Quản Lí Tài Khoản</div>
         <div class="container row">
             <div class="selection col-md-3 col-sm-12">
-                <div class="item">
-                    <a role="button" href="/assets/page/ThongTinTaiKhoan.html"><i
-                            class="fa-regular fa-circle-user"></i>Thông tin tài khoản</a>
-                </div>
-                <div class="item">
-                    <a role="button" href="/assets/page/ChinhSuaThongTin.html"><i
-                            class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
-                </div>
-                <div class="item">
-                    <a role="button" href="/assets/page/ThayDoiMatKhau.html"><i
-                            class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
-                </div>
-                <div class="item active">
-                    <a role="button" href="/assets/page/LichSuDatVe.html"><i
-                            class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
-                </div>
-                <div class="item">
-                    <a role="button" href="/index.html"><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                <div class="list-group">
+                    <a href="/assets/page/ThongTinTaiKhoan.html" class="list-group-item list-group-item-action">
+                        <i class="fa-regular fa-circle-user"></i>Thông tin tài khoản
+                    </a>
+                    <a href="/assets/page/ChinhSuaThongTin.html" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
+                    <a href="/assets/page/ThayDoiMatKhau.html" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
+                    <a href="/assets/page/LichSuDatVe.html" class="list-group-item list-group-item-action active"
+                        aria-current="true">
+                        <i class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
+                    <a href="/index.html" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
                 </div>
             </div>
 
             <div class="content col-md-9 col-sm-12">
                 <section id="filter">
                     <div id="filter_button">
-                        <a class="btn btn-primary active" data-filter="current">Hiện tại</a>
-                        <a class="btn btn-primary" data-filter="booked">Đã đặt</a>
+                        <a class="btn btn-primary active" data-filter="booked">Đã đặt</a>
+                        <a class="btn btn-primary" data-filter="finished">Hoàn thành</a>
                         <a class="btn btn-primary" data-filter="cancelled">Đã hủy</a>
                     </div>
                     <div id="filter_data">
 
                         <!-- ---------------------Hiện tại--------------------->
 
-                        <div class="element_type" data-item="current">
+                        <div class="element_type" data-item="booked">
                             <div class="infor">
                                 <table class="table table-striped">
                                     <thead>
@@ -155,7 +150,7 @@
 
                         <!-- ---------------------Đã đặt--------------------->
 
-                        <div class="element_type" data-item="booked">
+                        <div class="element_type" data-item="finished">
                             <div class="infor">
                                 <table class="table table-striped">
                                     <thead>

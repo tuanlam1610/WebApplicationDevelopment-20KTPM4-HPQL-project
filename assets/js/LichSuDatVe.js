@@ -2,7 +2,7 @@ const element_types = document.querySelectorAll('.element_type')
 const filter_button = document.querySelectorAll('#filter_button .btn')
 
 Array.from(element_types).forEach((ele) => {
-    if (ele.dataset.item === 'current') {
+    if (ele.dataset.item === 'booked') {
         ele.style.display = 'block'
     }
     else {
