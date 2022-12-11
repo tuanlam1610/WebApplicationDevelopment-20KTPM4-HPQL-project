@@ -142,16 +142,18 @@ div.navbar-collapse .btn:hover {
 
 
 .wrapper {
-    height: 80%;
+    height: 100%;
+    min-height: 1000px;
 }
 
 .wrapper .header{ 
     display: flex;   
-    align-items: center;
     justify-content: center;
-    margin: 4% 0;
-    font-size: 45px;
+    margin-top: 60px;
+    padding: 30px 0;
+    font-size: 35px;
     font-weight: bolder;
+    text-transform: uppercase;
     color: var(--primary-blue);
 }
 
