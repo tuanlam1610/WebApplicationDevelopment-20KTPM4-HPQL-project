@@ -1,0 +1,27 @@
+{
+  "name": "webapplicationdevelopment-20ktpm4-hpql-project",
+  "version": "1.0.0",
+  "description": "Link web demo: https://ptudw-20ktpm4-03.onrender.com/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuanlam1610/WebApplicationDevelopment-20KTPM4-HPQL-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tuanlam1610/WebApplicationDevelopment-20KTPM4-HPQL-project/issues"
+  },
+  "homepage": "https://github.com/tuanlam1610/WebApplicationDevelopment-20KTPM4-HPQL-project#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.27.0"
+  }
+}
