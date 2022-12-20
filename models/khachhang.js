@@ -11,10 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      KhachHang.hasMany(models.DanhGia, {foreignKey: 'ID_KH'});
     }
   }
   KhachHang.init({
-    ID_KH: DataTypes.CHAR(8),
+    ID_KH:{
+      type: DataTypes.CHAR(8),
+      primaryKey: true
+    },
     email: DataTypes.STRING,
     sdt: DataTypes.CHAR(10),
     hoten: DataTypes.STRING,
