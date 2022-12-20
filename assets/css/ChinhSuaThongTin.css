@@ -142,16 +142,18 @@ div.navbar-collapse .btn:hover {
 
 
 .wrapper {
-    height: 80%;
+    height: 100%;
+    min-height: 1000px;
 }
 
 .wrapper .header{ 
     display: flex;   
-    align-items: center;
     justify-content: center;
-    margin: 4% 0;
-    font-size: 45px;
+    margin-top: 60px;
+    padding: 30px 0;
+    font-size: 35px;
     font-weight: bolder;
+    text-transform: uppercase;
     color: var(--primary-blue);
 }
 
@@ -170,52 +172,48 @@ div.navbar-collapse .btn:hover {
     padding: 0;
 }
 
-.selection .item {
+.selection .list-group a {
     background-color: var(--white);
     border-radius: 10px;
-    padding: 5px;
     margin-bottom: 2px;
-}
-
-.selection .item a {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
     color: var(--primary-blue);
+    padding: 5px auto;
+    border: none;
 }
 
-.selection .item i {
+.selection .list-group .list-group-item i {
     padding-right: 5px;
 }
 
-.selection .item.active {
+.selection .list-group .active {
     background-color: var(--primary-blue);
-}
-
-.selection .item.active a {
     color: var(--white) !important;
 }
 
-.selection .item:hover {
+.selection .list-group .list-group-item:hover {
     background-color: var(--primary-blue);
-    opacity: 0.6;
-}
-
-.selection .item:hover a{
     color: var(--white);
+    opacity: 0.6;
 }
 
     /* ----------------- Content ------------------*/
 
 .content {
-    margin-left: 7%;
+    /*margin-left: 7%;*/
     max-width: 745px;
     padding: 0;
-}   
+}  
+
+.content h4 {
+    font-size: 20px;
+}
 
 .content .displayField {
     display: flex;
     justify-content: space-between;
-    font-size: 25px;
+    font-size: 16px;
     font-weight: 500;
     border: 2px solid var(--primary-blue);
     border-radius: 8px;
@@ -241,10 +239,10 @@ div.navbar-collapse .btn:hover {
 
 .content .btn button {
     color: var(--white);
-    font-size: 20px;
+    font-size: 16px;
     border: 3px solid;
     border-radius: 10px;
-    padding: 10px 60px;
+    padding: 10px 50px;
     background-color: var(--primary-blue);
 }
 
