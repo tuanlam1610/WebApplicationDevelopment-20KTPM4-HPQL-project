@@ -39,7 +39,7 @@ module.exports = {
       "ID_KH": "23602644",
       "ngayDanhGia": "2022/03/28",
       "loaiGhe": "Giường nằm",
-      "soSao": 6,
+      "soSao": 5,
       "noiDung": "Sed ante. Vivamus tortor. Duis mattis egestas metus."
     }, {
       "ID_NX": "89543639",

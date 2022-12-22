@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.CHAR(8),
       primaryKey: true
     },
-    ngayDanhGia: DataTypes.DATE,
+    ngayDanhGia: DataTypes.DATEONLY,
     loaiGhe: DataTypes.STRING,
     soSao: {
       type: DataTypes.INTEGER,

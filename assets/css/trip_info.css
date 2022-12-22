@@ -213,7 +213,6 @@ li p i.fa-circle {
 }
 
 .owl-carousel .item img {
-    width: 200px;
     height: 300px;
     object-fit: cover;
     transition: 0.5s;
