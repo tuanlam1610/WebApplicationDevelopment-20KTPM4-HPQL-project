@@ -11,10 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      NhaXe.hasMany(models.DanhGia, {foreignKey: 'ID_NX'});
     }
   }
   NhaXe.init({
-    ID_NX: DataTypes.CHAR(8),
+    ID_NX: {
+      type: DataTypes.CHAR(8),
+      primaryKey: true
+    },
     tennhaxe: DataTypes.STRING,
     doangioithieu: DataTypes.TEXT,
     imagepath: DataTypes.TEXT,
