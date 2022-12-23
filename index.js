@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
 const trip_info_route = require('./routes/trip_info_route');
-const garage_info_route = require('./routes/garage_info_route')
+const garage_info_route = require('./routes/garage_info_route');
 
 app.engine('hbs', expressHbs.engine({
     extname: 'hbs',
@@ -127,6 +127,10 @@ app.get('/', (req, res) => {
 app.use('/trip_info', trip_info_route);
 
 app.use('/garage_info', garage_info_route);
+
+app.use('/login', require('./routes/login_route'));
+
+app.use('/register', require('./routes/register_route'));
 
 app.get('/createTables', (req, res) => {
     let models = require('./models');
