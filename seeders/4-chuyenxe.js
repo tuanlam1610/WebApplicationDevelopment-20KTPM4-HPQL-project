@@ -15,7 +15,7 @@ module.exports = {
     let items =
       [{
         "IDChuyenXe": "08070650",
-        "id_NX": "71741578",
+        "id_NX": "81165038",
         "moTaChinhSach": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
         "imagePath": "/assets/images/08070650/",
         "noiBatDau": "Krotoszyn",
@@ -27,7 +27,7 @@ module.exports = {
         "tongSoGhe": "46",
         "soGheTrong": "00",
         "giaVe": "644994"
-      }, {
+      },{
         "IDChuyenXe": "24356105",
         "id_NX": "47633170",
         "moTaChinhSach": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
