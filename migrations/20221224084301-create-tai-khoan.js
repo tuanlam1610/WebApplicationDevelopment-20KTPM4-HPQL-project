@@ -22,10 +22,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       ngaysinh: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
       password: {
         type: Sequelize.STRING
+      },
+      isAdmin: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
