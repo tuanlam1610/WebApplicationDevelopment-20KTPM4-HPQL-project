@@ -20,7 +20,7 @@ const controller = {
                         ID_NX: garageFound.ID_NX
                     },
                     include: [{
-                        model: models.KhachHang,
+                        model: models.TaiKhoan,
                         attributes: ['hoten'],
                         require: true
                     }],
@@ -40,6 +40,7 @@ const controller = {
         })
         //res.locals.cmts = cmtFound;
         res.locals.garage = { garageinfo: garageFound, num_of_cmts: count_CMT, cmts: listCMT};
+        res.locals.styleLink = "/assets/css/garage_info.css";
         res.render('garage_info');
     }
 }
