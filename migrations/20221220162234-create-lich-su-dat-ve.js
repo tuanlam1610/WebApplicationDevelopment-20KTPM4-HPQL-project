@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ID_KH: {
+      ID_TK: {
         type: Sequelize.STRING
       },
       ID_Ve: {

@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   LichSuDatVe.init({
-    ID_KH: DataTypes.CHAR(8),
+    ID_TK: DataTypes.CHAR(8),
     ID_Ve: DataTypes.CHAR(8),
     thoigiandat: DataTypes.DATE,
     trangthaive: DataTypes.STRING
