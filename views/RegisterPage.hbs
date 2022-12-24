@@ -1,0 +1,52 @@
+<div id="leftContainer">
+    <a href="/" role="button" class="btn btn-outline-primary px-2 py-2 mx-4 my-4">
+        <i class="fa-solid fa-house fs-5"></i>
+    </a>
+    <p class="fs-1 fw-bold row col-11 mb-0 d-flex justify-content-center">HPQL</p>
+    <div class="sampleIMG row col-11">
+        <img src="/assets/img/loginIMG.svg" alt="travelStoryset">
+    </div>
+</div>
+<div id="rightContainer" class="d-flex flex-column justify-content-center">
+    <p class="fs-2 fw-bold text-uppercase mt-4 d-flex justify-content-center">Đăng Ký</p>
+    <form method="GET" action="">
+        <div class="inputGroup row mt-2 d-flex justify-content-center" id="emailGroup">
+            <i class="fa-solid fa-envelope col-1"></i>
+            <div class="form-floating col-9">
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com"
+                    required>
+                <label for="email" class="ps-4 fw-bold">Email:</label>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div class="inputGroup row mt-3 d-flex justify-content-center" id="passGroup">
+            <i class="fa-solid fa-lock col-1"></i>
+            <div class="form-floating col-9">
+                <input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
+                <label for="pass" class="ps-4 fw-bold">Mật khẩu:</label>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div class="inputGroup row mt-3 d-flex justify-content-center" id="repassGroup">
+            <div class="form-floating col-9">
+                <input type="password" class="form-control" id="repass" name="repass" placeholder="Re-Password"
+                    required>
+                <label for="repass" class="ps-4 fw-bold">Xác nhận mật khẩu:</label>
+            </div>
+        </div>
+        <div class="inputGroup row mt-3 d-flex justify-content-center" id="emailGroup">
+            <i class="fa-solid fa-envelope col-1"></i>
+            <div class="form-floating col-9">
+                <input type="text" class="form-control" id="phonenum" name="phonenum" placeholder="*********" required>
+                <label for="phonenum" class="ps-4 fw-bold">Số điện thoại:</label>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div id="btn-group" class="my-4 d-flex flex-column align-items-center">
+            <button type="submit" class="btn btn-primary mb-3 row col-5 text-uppercase fw-bold" id="login-btn">Đăng
+                Ký</button>
+            <a href="/login" class="mb-3 row col-7 col-md-6 d-flex justify-content-center">Đã có tài khoản? Đăng
+                nhập ngay</a>
+        </div>
+    </form>
+</div>

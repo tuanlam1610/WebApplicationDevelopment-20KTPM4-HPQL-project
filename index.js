@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
 const trip_info_route = require('./routes/trip_info_route');
-const garage_info_route = require('./routes/garage_info_route')
+const garage_info_route = require('./routes/garage_info_route');
 
 app.engine('hbs', expressHbs.engine({
     extname: 'hbs',
@@ -38,6 +38,14 @@ app.use(express.static(__dirname + '/'))
 app.get('/', (req, res) => {
     res.render('index');
 })
+
+app.use('/login', require('./routes/login_route'));
+
+app.use('/register', require('./routes/register_route'));
+
+app.use('/listofgarage', require('./routes/ListOfGarage_route'));
+
+app.use('/listoftrip', require('./routes/ListOfTrip_route'));
 
 app.use('/trip_info', trip_info_route);
 

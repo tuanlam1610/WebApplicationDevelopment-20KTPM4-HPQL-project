@@ -1,0 +1,559 @@
+<main>
+    <div class="container px-0">
+        <h2 class="fw-bold text-uppercase py-5 mb-0 d-flex justify-content-center">Danh Sách Chuyến Xe</h2>
+        <div class="contentContainer">
+            <!-- Sort Section -->
+            <div id="sortTrip" class="row mb-4 d-flex justify-content-center g-0">
+                <p class="col-12 col-md-2 fw-bold fs-5 mb-md-0 d-flex justify-content-center align-items-center">Sắp
+                    Xếp Theo:
+                </p>
+                <button type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-1 active-btn">Giờ Đi Sớm
+                    Nhất</button>
+                <button type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-md-1">Giờ Đi Muộn
+                    Nhất</button>
+                <button type="button" class="col-5 col-md-2 btn btn-primary me-1">Giá Vé Tăng Dần</button>
+                <button type="button" class="col-5 col-md-2 btn btn-primary">Giá Vé Giảm Dần</button>
+            </div>
+            <!-- Filter and List -->
+            <div id="filterAndList" class="row d-sm-flex justify-content-center">
+                <div id="filter" class="col-10 col-md-3 mb-3 mb-md-0">
+                    <h4 class="fs-4 fw-bold my-3 text-center">Bộ Lọc</h4>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Điểm Khởi Hành:</h5>
+                        <div id="startDes" class="px-3">
+                            <input type="text" name="Start Destination" id="startDes-input" class="form-control lh-md"
+                                placeholder="Điểm khởi hành" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            <ul class="dropdown-menu text-center overflow-auto">
+                                <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
+                                <div class="dropdown-divider"></div>
+                                <li class="dropdown-item" href="#">Hồ Chí Minh</li>
+                                <li class="dropdown-item" href="#">Hà Nội</li>
+                                <li class="dropdown-item" href="#">Đà Lạt</li>
+                                <li class="dropdown-item" href="#">Đà Nẵng</li>
+                                <li class="dropdown-item" href="#">Quảng Ninh</li>
+                                <li class="dropdown-item" href="#">Ninh Bình</li>
+                                <li class="dropdown-item" href="#">Nha Trang</li>
+                                <li class="dropdown-item" href="#">Phan Thiết</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Điểm Đến:</h5>
+                        <div id="endDes" class="d-flex flex-row px-3">
+                            <input type="text" name="End Destination" id="endDes-input" class="form-control lh-md"
+                                placeholder="Điểm đến" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            <ul class="dropdown-menu text-center overflow-auto">
+                                <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
+                                <div class="dropdown-divider"></div>
+                                <li class="dropdown-item" href="#">Hồ Chí Minh</li>
+                                <li class="dropdown-item" href="#">Hà Nội</li>
+                                <li class="dropdown-item" href="#">Đà Lạt</li>
+                                <li class="dropdown-item" href="#">Đà Nẵng</li>
+                                <li class="dropdown-item" href="#">Quảng Ninh</li>
+                                <li class="dropdown-item" href="#">Ninh Bình</li>
+                                <li class="dropdown-item" href="#">Nha Trang</li>
+                                <li class="dropdown-item" href="#">Phan Thiết</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Giờ Khởi Hành:</h5>
+                        <div class="timeGroup">
+                            <div class="row m-2 d-flex justify-content-center">
+                                <div class="timeStart col-6 text-center p-0">
+                                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="btncheck1"
+                                        style="white-space: nowrap;">Sáng Sớm<br>(00:00 - 06:00)</label>
+                                </div>
+                                <div class="timeStart col-6 text-center p-0">
+                                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="btncheck2"
+                                        style="white-space: nowrap;">Buổi Sáng<br>(06:01 - 12:00)</label>
+                                </div>
+                            </div>
+                            <div class="row m-2 d-flex justify-content-center">
+                                <div class="timeStart col-6 text-center p-0">
+                                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="btncheck3"
+                                        style="white-space: nowrap;">Buổi Chiều<br>(12:01 - 18:00)</label>
+                                </div>
+                                <div class="timeStart col-6 text-center p-0">
+                                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                                    <label class="btn btn-outline-primary w-100" for="btncheck4"
+                                        style="white-space: nowrap;">Buổi Tối<br>(18:01 - 23:59)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Giá Vé:</h5>
+                        <div class="form-check mb-2 ps-3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
+                            <label class="form-check-label" for=""> Thấp hơn 100.000đ</label>
+                        </div>
+                        <div class="form-check mb-2 ps-3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
+                            <label class="form-check-label" for="">Từ 100.000đ - 300.000đ</label>
+                        </div>
+                        <div class="form-check mb-2 ps-3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
+                            <label class="form-check-label" for="">Từ 300.000đ - 500.000đ</label>
+                        </div>
+                        <div class="form-check mb-2 ps-3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
+                            <label class="form-check-label" for="">Trên 500.000đ</label>
+                        </div>
+                    </div>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Nhà Xe:</h5>
+                        <div class="px-3">
+                            <input type="text" class="form-control lh-md" name="" id="" aria-describedby="helpId"
+                                placeholder="Tên nhà xe">
+                        </div>
+                    </div>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Số Ghế Trống:</h5>
+                        <div class="row m-2 d-flex justify-content-center numGroup">
+                            <button type="button" class="col-2 btn btn-primary rounded-circle">&#8722;</button>
+                            <div class="col-5 d-flex justify-content-center align-items-center">
+                                <input type="text" name="" id="" class="form-control lh-md text-center"
+                                    placeholder="Số ghế">
+                            </div>
+                            <button type="button" class="col-2 btn btn-primary rounded-circle">&#43;</button>
+                        </div>
+                    </div>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Loại Ghế / Giường:</h5>
+                        <div class="form-check mb-2 ps-3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
+                            <label class="form-check-label" for="">Ghế ngồi</label>
+                        </div>
+                        <div class="form-check mb-2 ps-3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
+                            <label class="form-check-label" for="">Giường nằm</label>
+                        </div>
+                        <div class="form-check mb-2 ps-3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
+                            <label class="form-check-label" for="">Giường nằm đôi</label>
+                        </div>
+                    </div>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Đánh Giá:</h5>
+                        <div class="starChoice d-flex justify-content-center align-items-center"><img
+                                src="/assets/img/2 stars.svg" alt="2stars" class="mb-3 me-2"> trở lên</div>
+                        <div class="starChoice d-flex justify-content-center align-items-center"><img
+                                src="/assets/img/3 stars.svg" alt="2stars" class="mb-3 me-2"> trở lên</div>
+                        <div class="starChoice d-flex justify-content-center align-items-center"><img
+                                src="/assets/img/4 stars.svg" alt="2stars" class="mb-3 me-2"> trở lên</div>
+                    </div>
+                    <div class="row btnGroup my-3 px-3 d-flex justify-content-center">
+                        <button type="button" class="col-7 btn btn-primary me-1">Lọc Kết Quả</button>
+                        <button type="button" class="col-4 btn btn-outline-primary">Xóa Lọc</button>
+                    </div>
+                </div>
+                <div id="listTrip" class="col-11 col-md-9 p-0">
+                    <!-- cardItem for max width row -->
+                    <div class="cardItem mb-3 row d-flex justify-content-center">
+                        <!-- Card element center by using cardItem -->
+                        <div class="card col-10 col-md-10 px-0">
+                            <!-- Grid Layout For Card Element -->
+                            <div class="row g-0">
+                                <!-- CardIMG -->
+                                <div class="card-mask col-md-5 pe-0">
+                                    <img class="card-img" src="/assets/img/TripIMG.jpeg" alt="Hình ảnh nhà xe">
+                                </div>
+                                <!-- Card Details -->
+                                <div class="col-md-7 card-body">
+                                    <div class="row g-0 px-3">
+                                        <h4 class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center">Xe
+                                            Phương Trang</h4>
+                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">300.000đ</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <p class="typeVehicle col-6">Giường nằm 40 chỗ</p>
+                                        <p class="numEmptySeat col-6 d-flex justify-content-end"> Còn <span
+                                                class="validSeat mx-1 fw-bold">40</span> chỗ trống</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <div class="schedule col-7">
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-regular fa-circle"></i>
+                                                <span class="startTime ms-2">00:30</span>
+                                                <span class="startDes ms-2">TP. Hồ Chí Minh</span>
+                                            </p>
+                                            <div class="col-12 py-3 mb-1"
+                                                style="border-left: dashed; margin-left: 0.4rem;">
+                                                <p class="totalTime m-0 ps-3">9h00m</p>
+                                            </div>
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-solid fa-location-dot fa-lg"></i>
+                                                <span class="startTime ms-2">09:30</span>
+                                                <span class="startDes ms-2">Nha Trang</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="btnGroup col-4 d-flex flex-column justify-content-center">
+                                            <p class="lh-sm"></p>
+                                            <a name="orderTicket" id="order-btn" class="btn btn-primary my-3"
+                                                href="/assets/dvx-page/chonCho.html" role="button">Đặt Vé</a>
+                                            <a name="detail-btn" id="detail-btn" class="btn btn-link lh-sm p-0"
+                                                href="/assets/page/trip_info.html" role="button"
+                                                style="font-size: 12px;">Thông tin chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cardItem for max width row -->
+                    <div class="cardItem mb-3 row d-flex justify-content-center">
+                        <!-- Card element center by using cardItem -->
+                        <div class="card col-10 col-md-10 px-0">
+                            <!-- Grid Layout For Card Element -->
+                            <div class="row g-0">
+                                <!-- CardIMG -->
+                                <div class="card-mask col-md-5 pe-0">
+                                    <img class="card-img" src="/assets/img/TripIMG.jpeg" alt="Hình ảnh nhà xe">
+                                </div>
+                                <!-- Card Details -->
+                                <div class="col-md-7 card-body">
+                                    <div class="row g-0 px-3">
+                                        <h4 class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center">Xe
+                                            Phương Trang</h4>
+                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">300.000đ</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <p class="typeVehicle col-6">Giường nằm 40 chỗ</p>
+                                        <p class="numEmptySeat col-6 d-flex justify-content-end"> Còn <span
+                                                class="validSeat mx-1 fw-bold">40</span> chỗ trống</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <div class="schedule col-7">
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-regular fa-circle"></i>
+                                                <span class="startTime ms-2">00:30</span>
+                                                <span class="startDes ms-2">TP. Hồ Chí Minh</span>
+                                            </p>
+                                            <div class="col-12 py-3 mb-1"
+                                                style="border-left: dashed; margin-left: 0.4rem;">
+                                                <p class="totalTime m-0 ps-3">9h00m</p>
+                                            </div>
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-solid fa-location-dot fa-lg"></i>
+                                                <span class="startTime ms-2">09:30</span>
+                                                <span class="startDes ms-2">Nha Trang</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="btnGroup col-4 d-flex flex-column justify-content-center">
+                                            <p class="lh-sm"></p>
+                                            <a name="orderTicket" id="order-btn" class="btn btn-primary my-3"
+                                                href="/assets/dvx-page/chonCho.html" role="button">Đặt Vé</a>
+                                            <a name="detail-btn" id="detail-btn" class="btn btn-link lh-sm p-0"
+                                                href="/assets/page/trip_info.html" role="button"
+                                                style="font-size: 12px;">Thông tin chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cardItem for max width row -->
+                    <div class="cardItem mb-3 row d-flex justify-content-center">
+                        <!-- Card element center by using cardItem -->
+                        <div class="card col-10 col-md-10 px-0">
+                            <!-- Grid Layout For Card Element -->
+                            <div class="row g-0">
+                                <!-- CardIMG -->
+                                <div class="card-mask col-md-5 pe-0">
+                                    <img class="card-img" src="/assets/img/TripIMG.jpeg" alt="Hình ảnh nhà xe">
+                                </div>
+                                <!-- Card Details -->
+                                <div class="col-md-7 card-body">
+                                    <div class="row g-0 px-3">
+                                        <h4 class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center">Xe
+                                            Phương Trang</h4>
+                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">300.000đ</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <p class="typeVehicle col-6">Giường nằm 40 chỗ</p>
+                                        <p class="numEmptySeat col-6 d-flex justify-content-end"> Còn <span
+                                                class="validSeat mx-1 fw-bold">40</span> chỗ trống</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <div class="schedule col-7">
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-regular fa-circle"></i>
+                                                <span class="startTime ms-2">00:30</span>
+                                                <span class="startDes ms-2">TP. Hồ Chí Minh</span>
+                                            </p>
+                                            <div class="col-12 py-3 mb-1"
+                                                style="border-left: dashed; margin-left: 0.4rem;">
+                                                <p class="totalTime m-0 ps-3">9h00m</p>
+                                            </div>
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-solid fa-location-dot fa-lg"></i>
+                                                <span class="startTime ms-2">09:30</span>
+                                                <span class="startDes ms-2">Nha Trang</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="btnGroup col-4 d-flex flex-column justify-content-center">
+                                            <p class="lh-sm"></p>
+                                            <a name="orderTicket" id="order-btn" class="btn btn-primary my-3"
+                                                href="/assets/dvx-page/chonCho.html" role="button">Đặt Vé</a>
+                                            <a name="detail-btn" id="detail-btn" class="btn btn-link lh-sm p-0"
+                                                href="/assets/page/trip_info.html" role="button"
+                                                style="font-size: 12px;">Thông tin chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cardItem for max width row -->
+                    <div class="cardItem mb-3 row d-flex justify-content-center">
+                        <!-- Card element center by using cardItem -->
+                        <div class="card col-10 col-md-10 px-0">
+                            <!-- Grid Layout For Card Element -->
+                            <div class="row g-0">
+                                <!-- CardIMG -->
+                                <div class="card-mask col-md-5 pe-0">
+                                    <img class="card-img" src="/assets/img/TripIMG.jpeg" alt="Hình ảnh nhà xe">
+                                </div>
+                                <!-- Card Details -->
+                                <div class="col-md-7 card-body">
+                                    <div class="row g-0 px-3">
+                                        <h4 class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center">Xe
+                                            Phương Trang</h4>
+                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">300.000đ</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <p class="typeVehicle col-6">Giường nằm 40 chỗ</p>
+                                        <p class="numEmptySeat col-6 d-flex justify-content-end"> Còn <span
+                                                class="validSeat mx-1 fw-bold">40</span> chỗ trống</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <div class="schedule col-7">
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-regular fa-circle"></i>
+                                                <span class="startTime ms-2">00:30</span>
+                                                <span class="startDes ms-2">TP. Hồ Chí Minh</span>
+                                            </p>
+                                            <div class="col-12 py-3 mb-1"
+                                                style="border-left: dashed; margin-left: 0.4rem;">
+                                                <p class="totalTime m-0 ps-3">9h00m</p>
+                                            </div>
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-solid fa-location-dot fa-lg"></i>
+                                                <span class="startTime ms-2">09:30</span>
+                                                <span class="startDes ms-2">Nha Trang</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="btnGroup col-4 d-flex flex-column justify-content-center">
+                                            <p class="lh-sm"></p>
+                                            <a name="orderTicket" id="order-btn" class="btn btn-primary my-3"
+                                                href="/assets/dvx-page/chonCho.html" role="button">Đặt Vé</a>
+                                            <a name="detail-btn" id="detail-btn" class="btn btn-link lh-sm p-0"
+                                                href="/assets/page/trip_info.html" role="button"
+                                                style="font-size: 12px;">Thông tin chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cardItem for max width row -->
+                    <div class="cardItem mb-3 row d-flex justify-content-center">
+                        <!-- Card element center by using cardItem -->
+                        <div class="card col-10 col-md-10 px-0">
+                            <!-- Grid Layout For Card Element -->
+                            <div class="row g-0">
+                                <!-- CardIMG -->
+                                <div class="card-mask col-md-5 pe-0">
+                                    <img class="card-img" src="/assets/img/TripIMG.jpeg" alt="Hình ảnh nhà xe">
+                                </div>
+                                <!-- Card Details -->
+                                <div class="col-md-7 card-body">
+                                    <div class="row g-0 px-3">
+                                        <h4 class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center">Xe
+                                            Phương Trang</h4>
+                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">300.000đ</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <p class="typeVehicle col-6">Giường nằm 40 chỗ</p>
+                                        <p class="numEmptySeat col-6 d-flex justify-content-end"> Còn <span
+                                                class="validSeat mx-1 fw-bold">40</span> chỗ trống</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <div class="schedule col-7">
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-regular fa-circle"></i>
+                                                <span class="startTime ms-2">00:30</span>
+                                                <span class="startDes ms-2">TP. Hồ Chí Minh</span>
+                                            </p>
+                                            <div class="col-12 py-3 mb-1"
+                                                style="border-left: dashed; margin-left: 0.4rem;">
+                                                <p class="totalTime m-0 ps-3">9h00m</p>
+                                            </div>
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-solid fa-location-dot fa-lg"></i>
+                                                <span class="startTime ms-2">09:30</span>
+                                                <span class="startDes ms-2">Nha Trang</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="btnGroup col-4 d-flex flex-column justify-content-center">
+                                            <p class="lh-sm"></p>
+                                            <a name="orderTicket" id="order-btn" class="btn btn-primary my-3"
+                                                href="/assets/dvx-page/chonCho.html" role="button">Đặt Vé</a>
+                                            <a name="detail-btn" id="detail-btn" class="btn btn-link lh-sm p-0"
+                                                href="/assets/page/trip_info.html" role="button"
+                                                style="font-size: 12px;">Thông tin chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cardItem for max width row -->
+                    <div class="cardItem mb-3 row d-flex justify-content-center">
+                        <!-- Card element center by using cardItem -->
+                        <div class="card col-10 col-md-10 px-0">
+                            <!-- Grid Layout For Card Element -->
+                            <div class="row g-0">
+                                <!-- CardIMG -->
+                                <div class="card-mask col-md-5 pe-0">
+                                    <img class="card-img" src="/assets/img/TripIMG.jpeg" alt="Hình ảnh nhà xe">
+                                </div>
+                                <!-- Card Details -->
+                                <div class="col-md-7 card-body">
+                                    <div class="row g-0 px-3">
+                                        <h4 class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center">Xe
+                                            Phương Trang</h4>
+                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">300.000đ</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <p class="typeVehicle col-6">Giường nằm 40 chỗ</p>
+                                        <p class="numEmptySeat col-6 d-flex justify-content-end"> Còn <span
+                                                class="validSeat mx-1 fw-bold">40</span> chỗ trống</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <div class="schedule col-7">
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-regular fa-circle"></i>
+                                                <span class="startTime ms-2">00:30</span>
+                                                <span class="startDes ms-2">TP. Hồ Chí Minh</span>
+                                            </p>
+                                            <div class="col-12 py-3 mb-1"
+                                                style="border-left: dashed; margin-left: 0.4rem;">
+                                                <p class="totalTime m-0 ps-3">9h00m</p>
+                                            </div>
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-solid fa-location-dot fa-lg"></i>
+                                                <span class="startTime ms-2">09:30</span>
+                                                <span class="startDes ms-2">Nha Trang</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="btnGroup col-4 d-flex flex-column justify-content-center">
+                                            <p class="lh-sm"></p>
+                                            <a name="orderTicket" id="order-btn" class="btn btn-primary my-3"
+                                                href="/assets/dvx-page/chonCho.html" role="button">Đặt Vé</a>
+                                            <a name="detail-btn" id="detail-btn" class="btn btn-link lh-sm p-0"
+                                                href="/assets/page/trip_info.html" role="button"
+                                                style="font-size: 12px;">Thông tin chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cardItem for max width row -->
+                    <div class="cardItem mb-3 row d-flex justify-content-center">
+                        <!-- Card element center by using cardItem -->
+                        <div class="card col-10 col-md-10 px-0">
+                            <!-- Grid Layout For Card Element -->
+                            <div class="row g-0">
+                                <!-- CardIMG -->
+                                <div class="card-mask col-md-5 pe-0">
+                                    <img class="card-img" src="/assets/img/TripIMG.jpeg" alt="Hình ảnh nhà xe">
+                                </div>
+                                <!-- Card Details -->
+                                <div class="col-md-7 card-body">
+                                    <div class="row g-0 px-3">
+                                        <h4 class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center">Xe
+                                            Phương Trang</h4>
+                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">300.000đ</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <p class="typeVehicle col-6">Giường nằm 40 chỗ</p>
+                                        <p class="numEmptySeat col-6 d-flex justify-content-end"> Còn <span
+                                                class="validSeat mx-1 fw-bold">40</span> chỗ trống</p>
+                                    </div>
+                                    <div class="row g-0 px-3">
+                                        <div class="schedule col-7">
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-regular fa-circle"></i>
+                                                <span class="startTime ms-2">00:30</span>
+                                                <span class="startDes ms-2">TP. Hồ Chí Minh</span>
+                                            </p>
+                                            <div class="col-12 py-3 mb-1"
+                                                style="border-left: dashed; margin-left: 0.4rem;">
+                                                <p class="totalTime m-0 ps-3">9h00m</p>
+                                            </div>
+                                            <p class="col-12 p-0 mb-1">
+                                                <i class="fa-solid fa-location-dot fa-lg"></i>
+                                                <span class="startTime ms-2">09:30</span>
+                                                <span class="startDes ms-2">Nha Trang</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-1"></div>
+                                        <div class="btnGroup col-4 d-flex flex-column justify-content-center">
+                                            <p class="lh-sm"></p>
+                                            <a name="orderTicket" id="order-btn" class="btn btn-primary my-3"
+                                                href="/assets/dvx-page/chonCho.html" role="button">Đặt Vé</a>
+                                            <a name="detail-btn" id="detail-btn" class="btn btn-link lh-sm p-0"
+                                                href="/assets/page/trip_info.html" role="button"
+                                                style="font-size: 12px;">Thông tin chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination -->
+        <div class="row">
+            <div class="col-2"></div>
+            <nav class="col-8 d-flex justify-content-center my-5" aria-label="Page navigation">
+                <ul class="pagination mb-0">
+                    <li id="prevPage" class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                    <!-- <li class="page-item"><a class="page-link" href="#">2</a></li> -->
+                    <li id="contPage" class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="col-1"></div>
+            <div class="topbtnContainer col-1 d-flex align-items-center justify-content-end">
+                <a name="top-btn" id="toTop" class="btn btn-primary d-flex flex-column justify-content-center py-2 px-2"
+                    href="#" role="button">
+                    <i class="fa-sharp fa-solid fa-chevron-up"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>

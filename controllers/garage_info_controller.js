@@ -2,7 +2,7 @@ const models = require('../models/index')
 
 const controller = {
     show: async (req, res) => {
-        res.render('garage_info');
+        res.render('garage_info', {styleLink: "/assets/css/garage_info.css"});
     },
     showDetails: async (req, res) => {
         let count = 0;
