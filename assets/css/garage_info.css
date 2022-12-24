@@ -237,6 +237,7 @@ i.not-chevron {
 .type-bus,
 .date-post {
     padding: 0.5rem;
+    padding-bottom: 0;
     margin: 0;
     font-style: italic;
     font-size: 14px;
@@ -250,10 +251,10 @@ i.not-chevron {
     color: var(--primary-blue);
 }
 
-.type-bus,
+/* .type-bus,
 .date-post {
     font-size: 12px;
-}
+} */
 
 .type-bus span {
     font-weight: bold;

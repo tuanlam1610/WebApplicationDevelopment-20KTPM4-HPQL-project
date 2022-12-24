@@ -13,106 +13,21 @@ app.engine('hbs', expressHbs.engine({
         allowProtoPropertiesByDefault: true
     },
     helpers: {
-        load_cmts: function (value, options) {
-            let lengthCarousel = Math.floor(value.length / 4);
-            if (value.length % 4 != 0) {
-                lengthCarousel += 1;
+        generateStar: function (value, options) {
+            let result = "";
+            const full_star = Math.floor(value);
+            const half_star = value - full_star;
+            let i = 0;
+            for (;i < full_star; i++){
+                result += '<i class="fa-solid fa-star"></i>'
             }
-            let result = ''
-            for (let j = 0; j < lengthCarousel; j++) {
-                if (j == 0) result = '<div class="carousel-item active">'
-                else result += '<div class="carousel-item">'
-                result += '<div class="comments row d-flex justify-content-center">'
-                for (let i = 0; i < 4; i++) {
-                    if (j * 4 + i < value.length) {
-                        let sao = parseInt(value[j * 4 + i].soSao);
-
-                        result += '<div class="comment-item col-md-6 mx-2 mb-4">' +
-                            '<div class="d-flex justify-content-between flex-wrap">' +
-                            '<div class="d-flex">' +
-                            '<div class="user-avatar">' +
-                            '<img src="/assets/img/user.png" alt="">' +
-                            '</div>' +
-                            '<div class="user-infor">' +
-                            '<p class="date-post">'
-                            + options.fn(value[j * 4 + i].ngayDanhGia) +
-                            '</p>' +
-                            '<p class="user-name">'
-                            + options.fn(value[j * 4 + i].KhachHang.hoten) +
-                            '</p>' +
-                            '</div>' +
-                            '</div>' +
-                            '<div class="user-rate">' +
-                            '<p class="type-bus">' +
-                            'Loại xe: <span>'
-                            + options.fn(value[j * 4 + i].loaiGhe) +
-                            '</span>' +
-                            '</p>' +
-                            '<p class="star">' +
-                            'Đánh giá: ';
-                        for (let k = 0; k < sao; k++) {
-                            result += '<i class="fa-solid fa-star"></i>'
-                        }
-                        for (let k = 0; k < 5 - sao; k++) {
-                            result += '<i class="fa-regular fa-star"></i>'
-                        }
-                        result += '</p>' +
-                            '</div>' +
-                            '</div>' +
-                            '<div class="comment-text">'
-                            + options.fn(value[j * 4 + i].noiDung) +
-                            '</div>' + '</div>'
-                    }
-                }
-                result += '</div> </div>'
+            if (half_star > 0){
+                result += '<i class="fa-regular fa-star-half-stroke"></i>'
+            }
+            for (; i < 5; i++){
+                result += '<i class="fa-regular fa-star"></i>'
             }
             return result
-        },
-        load_cmts_add: function (value, options) {
-            let result = '<div class="add comments row d-flex justify-content-center">';
-            result += '<div class="comments row d-flex justify-content-center">'
-            for (let i = 0; i < value.length; i++) {
-
-                let sao = parseInt(value[i].soSao);
-
-                result += '<div class="comment-item col-md-6 mx-2 mb-4">' +
-                    '<div class="d-flex justify-content-between flex-wrap">' +
-                    '<div class="d-flex">' +
-                    '<div class="user-avatar">' +
-                    '<img src="/assets/img/user.png" alt="">' +
-                    '</div>' +
-                    '<div class="user-infor">' +
-                    '<p class="date-post">'
-                    + options.fn(value[i].ngayDanhGia) +
-                    '</p>' +
-                    '<p class="user-name">'
-                    + options.fn(value[i].KhachHang.hoten) +
-                    '</p>' +
-                    '</div>' +
-                    '</div>' +
-                    '<div class="user-rate">' +
-                    '<p class="type-bus">' +
-                    'Loại xe: <span>'
-                    + options.fn(value[i].loaiGhe) +
-                    '</span>' +
-                    '</p>' +
-                    '<p class="star">' +
-                    'Đánh giá: ';
-                for (let k = 0; k < sao; k++) {
-                    result += '<i class="fa-solid fa-star"></i>'
-                }
-                for (let k = 0; k < 5 - sao; k++) {
-                    result += '<i class="fa-regular fa-star"></i>'
-                }
-                result += '</p>' +
-                    '</div>' +
-                    '</div>' +
-                    '<div class="comment-text">'
-                    + options.fn(value[i].noiDung) +
-                    '</div>' + '</div>'
-
-            }
-            return result +"</div> </div>"
         }
     }
 }));
@@ -141,6 +56,32 @@ app.get('/createTables', (req, res) => {
     models.sequelize.sync().then(() => {
         res.send("Tables Created");
     });
+});
+
+function getSum(total, item){
+    return total + item.soSao
+}
+
+app.get('/calcStar', async (req, res) => {
+    const models = require('./models/index')
+    let garages = await models.NhaXe.findAll({
+        include:[{
+            model: models.DanhGia
+        }]
+    });
+    garages.forEach(item => {
+        let stars = 0;
+        if (item.DanhGia.length > 0){
+            stars = item.DanhGia.reduce(getSum, 0) / item.DanhGia.length;
+        }
+        console.log(stars)
+        item.sosaoTB = stars;
+        item.update({
+            sosaoTB: stars.toFixed(1)
+        },{
+            where: {ID_NX: item.ID_NX}
+        })
+    })
 });
 
 app.set('port', process.env.PORT || 5000);
