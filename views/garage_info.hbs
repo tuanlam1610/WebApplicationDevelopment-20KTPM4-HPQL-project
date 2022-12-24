@@ -21,13 +21,49 @@
             <div class="rating d-flex">
                 <i class="fa-solid fa-star not-chevron"></i>
                 <h4 class="rate">{{garageinfo.sosaoTB}}/5</h4>
-                <p class="number-of-ratings">(145 lượt đánh giá)</p>
+                <p class="number-of-ratings">({{num_of_cmts}} lượt đánh giá)</p>
             </div>
 
         </div>
-        <div id="comment-slider" class="carousel slide" data-bs-ride="carousel">
+        <div id="comment-slider" class="carousel slide" data-interval="1000000">
             <div class="carousel-inner" role="listbox">
-                {{#load_cmts cmts}}{{this}}{{/load_cmts}}
+                {{#each cmts}}
+                <div class="carousel-item">
+                    <div class="comments row d-flex justify-content-center">
+                        {{#each this}}
+                        <div class="comment-item col-md-6 mx-2 mb-4">
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <div class="d-flex">
+                                    <div class="user-avatar">
+                                        <img src="/assets/img/user.png" alt="">
+                                    </div>
+                                    <div class="user-infor">
+                                        <p class="date-post">
+                                            {{this.ngayDanhGia}}
+                                        </p>
+                                        <p class="user-name">
+                                            {{this.KhachHang.hoten}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="user-rate">
+                                    <p class="type-bus">
+                                        Loại xe: <span>{{this.loaiGhe}}</span>
+                                    </p>
+                                    <p class="star">
+                                        Đánh giá:
+                                        {{{generateStar this.soSao}}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="comment-text">
+                                {{this.noiDung}}
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/each}}
             </div>
             <div class="left carousel-prev-btn" type="button" data-bs-target="#comment-slider" data-bs-slide="prev">
                 <div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>
@@ -53,146 +89,42 @@
                         <h4 class="rate">4.5/5</h4>
                         <p class="number-of-ratings">(145 lượt đánh giá)</p>
                     </div>
-                    <div class="hehe">
-                        {{#load_cmts_add cmts}}{{this}}{{/load_cmts_add}}
+
+                    <div class="add comments row d-flex justify-content-center">
+                        {{#each cmts}}
+                        {{#each this}}
+                        <div class="comment-item col-md-6 mx-2 mb-4">
+                            <div class="d-flex justify-content-between flex-wrap">
+                                <div class="d-flex">
+                                    <div class="user-avatar">
+                                        <img src="/assets/img/user.png" alt="">
+                                    </div>
+                                    <div class="user-infor">
+                                        <p class="date-post">
+                                            {{this.ngayDanhGia}}
+                                        </p>
+                                        <p class="user-name">
+                                            {{this.KhachHang.hoten}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="user-rate">
+                                    <p class="type-bus">
+                                        Loại xe: <span>{{this.loaiGhe}}</span>
+                                    </p>
+                                    <p class="star">
+                                        Đánh giá:
+                                        {{{generateStar this.soSao}}}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="comment-text">
+                                {{this.noiDung}}
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{/each}}
                     </div>
-                    {{!-- <div class="add comments row d-flex justify-content-center">
-                        <div class="comment-item col-md-6 mx-2 mb-4">
-                            <div class="d-flex justify-content-between flex-wrap">
-                                <div class="d-flex">
-                                    <div class="user-avatar">
-                                        <img src="/assets/img/user.png" alt="">
-                                    </div>
-                                    <div class="user-infor">
-                                        <p class="date-post">
-                                            04/11/2022
-                                        </p>
-                                        <p class="user-name">
-                                            Nguyễn Văn Nguyễn Văn A
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="user-rate">
-                                    <p class="type-bus">
-                                        Loại xe: <span>Ghế ngồi</span>
-                                    </p>
-                                    <p class="star">
-                                        Đánh giá:
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="comment-text">
-                                Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.
-                            </div>
-                        </div>
-
-                        <div class="comment-item col-md-6 mx-2 mb-4">
-                            <div class="d-flex justify-content-between flex-wrap">
-                                <div class="d-flex">
-                                    <div class="user-avatar">
-                                        <img src="/assets/img/user.png" alt="">
-                                    </div>
-                                    <div class="user-infor">
-                                        <p class="date-post">
-                                            04/11/2022
-                                        </p>
-                                        <p class="user-name">
-                                            Nguyễn Văn A
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="user-rate">
-                                    <p class="type-bus">
-                                        Loại xe: <span>Ghế ngồi</span>
-                                    </p>
-                                    <p class="star">
-                                        Đánh giá:
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="comment-text">
-                                Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.
-                            </div>
-                        </div>
-
-                        <div class="comment-item col-md-6 mx-2 mb-4">
-                            <div class="d-flex justify-content-between flex-wrap">
-                                <div class="d-flex">
-                                    <div class="user-avatar">
-                                        <img src="/assets/img/user.png" alt="">
-                                    </div>
-                                    <div class="user-infor">
-                                        <p class="date-post">
-                                            04/11/2022
-                                        </p>
-                                        <p class="user-name">
-                                            Nguyễn Văn A
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="user-rate">
-                                    <p class="type-bus">
-                                        Loại xe: <span>Ghế ngồi</span>
-                                    </p>
-                                    <p class="star">
-                                        Đánh giá:
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="comment-text">
-                                Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.
-                            </div>
-                        </div>
-
-                        <div class="comment-item col-md-6 mx-2 mb-4">
-                            <div class="d-flex justify-content-between flex-wrap">
-                                <div class="d-flex">
-                                    <div class="user-avatar">
-                                        <img src="/assets/img/user.png" alt="">
-                                    </div>
-                                    <div class="user-infor">
-                                        <p class="date-post">
-                                            04/11/2022
-                                        </p>
-                                        <p class="user-name">
-                                            Nguyễn Văn A
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="user-rate">
-                                    <p class="type-bus">
-                                        Loại xe: <span>Ghế ngồi</span>
-                                    </p>
-                                    <p class="star">
-                                        Đánh giá:
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="comment-text">
-                                Chất lượng nhà xe rất tốt, tài xế nhiệt tình, xe sạch đẹp, đệm êm.
-                            </div>
-                        </div>
-                    </div> --}}
                     <div id="viewMore" class="float_right" onclick="viewMore()">
                         <span class="">Xem thêm <i class="fa-solid fa-circle-chevron-down"></i></span>
                     </div>
@@ -235,14 +167,14 @@
             var $this;
             $this = $("#comment-slider");
             if ($("#comment-slider .carousel-inner .carousel-item:first").hasClass("active")) {
-                $this.children(".left").css("display", "none");;
-                $this.children(".right").css("display", "");;
+                $this.children(".left").css("display", "none");
+                $this.children(".right").css("display", "");
             } else if ($("#comment-slider .carousel-inner .carousel-item:last").hasClass("active")) {
-                $this.children(".right").css("display", "none");;
-                $this.children(".left").css("display", "");;
+                $this.children(".right").css("display", "none");
+                $this.children(".left").css("display", "");
             } else {
-                $this.children(".carousel-prev-btn").css("display", "");;
-                $this.children(".carousel-next-btn").css("display", "");;
+                $this.children(".carousel-prev-btn").css("display", "");
+                $this.children(".carousel-next-btn").css("display", "");
             }
         };
 
@@ -253,12 +185,31 @@
     <script>
         const myCarouselElement = document.querySelector('#comment-slider')
         const carousel = new bootstrap.Carousel(myCarouselElement, {
-            wrap: false,
-            ride: false
+            wrap: false
         })
     </script>
 
     <script>
+        const number_of_CMT_added = 4;
+        var count = number_of_CMT_added * 2;
+        const listCMTS = document.getElementsByClassName("add")[0].children;
+        window.onload = function () {
+            const carousel_inner = document.getElementsByClassName("carousel-inner")[0];
+            document.getElementsByClassName("carousel-prev-btn")[0].style.display = "none";
+            if (carousel_inner.childElementCount == 0) carousel_inner.innerHTML = "<p>Hiện tại chưa có comment nào</p>";
+            if (carousel_inner.childElementCount == 1) {
+                document.getElementsByClassName("carousel-prev-btn")[0].style.display = "none";
+                document.getElementsByClassName("carousel-next-btn")[0].style.display = "none";
+            }
+            if (carousel_inner.childElementCount < 4) {
+                document.getElementsByClassName("view-more")[0].style.display = "none";
+            }
+            const carousel_inner_first = document.getElementsByClassName("carousel-inner")[0].firstElementChild;
+            carousel_inner_first.classList.add("active")
+            for (let i = number_of_CMT_added; i < listCMTS.length; i++) {
+                listCMTS[i].style.display = "none";
+            }
+        }
         function blockCloseOverlay() {
             event.stopPropagation();
         }
@@ -270,10 +221,13 @@
         }
         function viewMore() {
             document.getElementById("viewLess").style.display = "block";
-            addOneElement();
-            addOneElement();
-            addOneElement();
-            addOneElement();
+            if (count >= listCMTS.length) {
+                document.getElementById("viewMore").style.display = "none";
+            }
+            for (let i = 0; i < count; i++) {
+                listCMTS[i].style.display = "block";
+            }
+            count += number_of_CMT_added;
         }
         function addOneElement() {
             var content_block = document.querySelector(".add");
@@ -287,8 +241,11 @@
         function viewLess() {
             setTimeout(function () {
                 document.getElementById("viewLess").style.display = "none";
-                var content_block = document.querySelector(".hehe");
-                content_block.textContent = "{{#load_cmts_add cmts}}{{this}}{{/load_cmts_add}}";
+                document.getElementById("viewMore").style.display = "block";
+                for (let i = number_of_CMT_added; i < listCMTS.length; i++) {
+                    listCMTS[i].style.display = "none";
+                }
+                count = number_of_CMT_added * 2;
             }, 500);
 
         }
