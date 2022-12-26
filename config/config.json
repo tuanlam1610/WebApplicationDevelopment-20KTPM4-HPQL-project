@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "postgres",
-    "password": "V1p3v0N7",
+    "password": "ShadowWarrior2",
     "database": "DBTest",
     "host": "127.0.0.1",
     "dialect": "postgres"
-  },
+  },  
   "test": {
     "username": "root",
     "password": null,
@@ -20,4 +20,5 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
+  
 }
