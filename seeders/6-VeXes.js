@@ -15,44 +15,44 @@ module.exports = {
     let items =
       [{
         "IDVe": "64857833",
-        "IDChuyenXe": "53016947",
-        "viTriGhe": "3"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A01"
       }, {
         "IDVe": "22397613",
-        "IDChuyenXe": "67551793",
-        "viTriGhe": "6"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A02"
       }, {
         "IDVe": "04504427",
-        "IDChuyenXe": "04738555",
-        "viTriGhe": "25"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A03"
       }, {
         "IDVe": "91526498",
-        "IDChuyenXe": "04045459",
-        "viTriGhe": "12"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A04"
       }, {
         "IDVe": "17176508",
-        "IDChuyenXe": "71977105",
-        "viTriGhe": "28"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A05"
       }, {
         "IDVe": "34167050",
-        "IDChuyenXe": "21804817",
-        "viTriGhe": "2"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A06"
       }, {
         "IDVe": "18955976",
-        "IDChuyenXe": "54525526",
-        "viTriGhe": "30"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A07"
       }, {
         "IDVe": "63928870",
-        "IDChuyenXe": "74036437",
-        "viTriGhe": "22"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A08"
       }, {
         "IDVe": "66922310",
-        "IDChuyenXe": "08408549",
-        "viTriGhe": "22"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A09"
       }, {
         "IDVe": "89817362",
-        "IDChuyenXe": "18714595",
-        "viTriGhe": "13"
+        "IDChuyenXe": "02652053",
+        "viTriGhe": "A10"
       }];
     items.forEach(item => {
       item.createdAt = Sequelize.literal('NOW()');

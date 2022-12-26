@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   VeXe.init({
-    IDVe: DataTypes.STRING,
-    IDChuyenXe: DataTypes.STRING,
-    viTriGhe: DataTypes.STRING
+    IDVe: DataTypes.CHAR(8),
+    IDChuyenXe: DataTypes.CHAR(8),
+    viTriGhe: DataTypes.CHAR(3)
   }, {
     sequelize,
     modelName: 'VeXe',
