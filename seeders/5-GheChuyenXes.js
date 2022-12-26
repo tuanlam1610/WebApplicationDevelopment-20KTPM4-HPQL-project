@@ -6,43 +6,43 @@ module.exports = {
     let items =
     [{
       "IDChuyenXe": "02652053",
-      "viTriGhe": "11",
-      "trangThaiGhe": true
-    }, {
-      "IDChuyenXe": "09876702",
-      "viTriGhe": "6",
+      "viTriGhe": "A10",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "67098819",
-      "viTriGhe": "17",
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A09",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "54567944",
-      "viTriGhe": "8",
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A08",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "89914776",
-      "viTriGhe": "11",
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A07",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "19927537",
-      "viTriGhe": "24",
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A06",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "57831552",
-      "viTriGhe": "26",
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A05",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "37005973",
-      "viTriGhe": "2",
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A04",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "19539668",
-      "viTriGhe": "2",
-      "trangThaiGhe": true
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A03",
+      "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "48261405",
-      "viTriGhe": "30",
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A02",
+      "trangThaiGhe": false
+    }, {
+      "IDChuyenXe": "02652053",
+      "viTriGhe": "A01",
       "trangThaiGhe": false
     }];
     

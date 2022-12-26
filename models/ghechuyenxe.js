@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   GheChuyenXe.init({
-    IDChuyenXe: DataTypes.STRING,
-    viTriGhe: DataTypes.STRING,
+    IDChuyenXe: DataTypes.CHAR(8),
+    viTriGhe: DataTypes.CHAR(3),
     trangThaiGhe: DataTypes.BOOLEAN
   }, {
     sequelize,
