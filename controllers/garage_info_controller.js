@@ -8,7 +8,7 @@ const controller = {
         let count = 0;
         const garageFound = await models.NhaXe.findOne({
             where: {
-                tennhaxe: req.params.name
+                ID_NX: req.params.id
             }
         });
         console.log(garageFound.ID_NX);
