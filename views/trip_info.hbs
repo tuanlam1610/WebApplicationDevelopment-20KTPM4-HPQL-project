@@ -1,0 +1,151 @@
+<main>
+    <div class="container">
+        {{#trip}}
+        <h2 class="trip-name">
+            {{noiBatDau}}<i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i>{{noiKetThuc}}
+        </h2>
+        <ul class="content">
+            <li class="info">
+                <span>Nhà xe:</span>
+                <a href="/garage_info/{{NhaXe.tennhaxe}}" class="garage-name">{{NhaXe.tennhaxe}}</a>
+            </li>
+            <div class="d-flex justify-content-between">
+                <li class="info station">
+                    <p>Điểm đón khách:</p>
+                    <span class="time sub d-flex py-1">17:50 <ul class="sub-list">
+                            <li>Trụ sở nhà xe Phương Trang</li>
+                        </ul></span>
+                    <span class="time sub d-flex py-1">18:10 <ul class="sub-list">
+                            <li>Bến xe Miền Tây</li>
+                        </ul></span>
+                    <span class="time sub d-flex py-1">18:30 <ul class="sub-list">
+                            <li>Ngã tư An Sương</li>
+                        </ul></span>
+                </li>
+                <li class="info station">
+                    <p>Điểm trả khách:</p>
+                    <span class="time sub d-flex py-1">20:50 <ul class="sub-list">
+                            <li>Bến xe An Giang</li>
+                        </ul></span>
+                    <span class="time sub d-flex py-1">21:20 <ul class="sub-list">
+                            <li>Bến xe Long Xuyên</li>
+                        </ul></span>
+                    <span class="time sub d-flex py-1">21:30 <ul class="sub-list">
+                            <li>Trụ sở nhà xe Phương Trang ở Long Xuyên</li>
+                        </ul></span>
+                </li>
+            </div>
+            <li class="info">
+                <span>Ngày:</span>
+                <span>{{gioKhoiHanh}}</span>
+            </li>
+            <li class="info">
+                <span>Thời gian xuất phát:</span>
+                <span>{{gioKhoiHanh}}<span class="sub">({{noiBatDau}})</span></span>
+            </li>
+            <li class="info">
+                <span>Thời gian đến nơi:</span>
+                <span>{{gioKetThuc}}<span class="sub">({{noiKetThuc}})</span></span>
+            </li>
+
+            <li class="info">
+                <span>Loại xe:</span>
+                <span>{{loaiXe}}</span>
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="/assets/img/Bus_img_1.png" alt="" onclick="onClick(this)">
+                    </div>
+                    <div class="item">
+                        <img src="/assets/img/Bus_img_2.png" alt="" onclick="onClick(this)">
+                    </div>
+                    <div class="item">
+                        <img src="/assets/img/Bus_img_3.png" alt="" onclick="onClick(this)">
+                    </div>
+                    <div class="item">
+                        <img src="/assets/img/Bus_img_4.png" alt="" onclick="onClick(this)">
+                    </div>
+                    <div class="item">
+                        <img src="/assets/img/Bus_img_5.png" alt="" onclick="onClick(this)">
+                    </div>
+                    <div class="item">
+                        <img src="/assets/img/Bus_img_6.png" alt="" onclick="onClick(this)">
+                    </div>
+                </div>
+            </li>
+            <div id="show-modal" class="modal" onclick="this.style.display='none'">
+                <div class="close-modal-btn"><i class="fa-solid fa-xmark"></i></div>
+                <div class="zoom-img">
+                    <img id="show-img" style="width:100%">
+                </div>
+            </div>
+            <li class="info">
+                <span>Tiện ích:</span>
+                <ul class="utility sub-list">
+                    <li>
+                        <i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-wifi"></i>Wifi tốc độ cao
+                    </li>
+                </ul>
+            </li>
+            <li class="info">
+                <span>Chính sách</span>
+                <ul class="sub-list">
+                    <li>
+                        <span>
+                            Chính sách hủy vé: miễn phí hủy vé trong vòng 1 ngày kể từ khi đặt vé. Nếu sau 1 ngày
+                            phí hủy sẽ được tính theo thời gian và giá vé xe.
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            Trẻ em dưới 6 tuổi được miễn phí vé nếu ngồi cùng với bố/mẹ.
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li class="info">
+                <span>Giá vé:</span>
+                <span class="primary-info">{{giaVe}}</span>
+            </li>
+            <li class="info last-info">
+                <span>Số lượng ghế:</span>
+                <span class="primary-info">{{soGheTrong}}/{{tongSoGhe}}</span>
+            </li>
+
+            <a href="/assets/dvx-page/chonCho.html" class="btn btn-primary book-btn" tabindex="-1" role="button"
+                aria-disabled="true">Đặt vé</a>
+        </ul>
+        {{/trip}}
+    </div>
+    <script>
+        function onClick(element) {
+            document.getElementById("show-img").src = element.src;
+            document.getElementById("show-modal").style.display = "block";
+        }
+    </script>
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+            nav: true,
+            navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
+                "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
+            smartSpeed: 1000,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                900: {
+                    items: 2
+                }
+            }
+        });
+    </script>
+</main>
