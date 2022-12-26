@@ -10,13 +10,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      //VeXe.belongsTo(models.GheChuyenXe, {foreignKey: 'IDChuyenXe'});
+      VeXe.belongsTo(models.GheChuyenXe, {foreignKey: 'IDChuyenXe'});
       //VeXe.belongsTo(models.GheChuyenXe, {foreignKey: 'viTriGhe'});
-      //VeXe.hasMany(models.LichSuDatVe, {foreignKey: 'IDVe'});
+      VeXe.hasOne(models.LichSuDatVe, {foreignKey: 'ID_Ve'});
     }
   }
   VeXe.init({
-    IDVe: DataTypes.CHAR(8),
+    IDVe: { 
+      type: DataTypes.CHAR(8),
+      primaryKey: true
+    },
     IDChuyenXe: DataTypes.CHAR(8),
     viTriGhe: DataTypes.CHAR(3)
   }, {

@@ -11,11 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      LichSuDatVe.belongsTo(models.TaiKhoan, {foreignKey: 'ID_TK'});
+      LichSuDatVe.belongsTo(models.VeXe, {foreignKey: 'ID_Ve'});
     }
   }
   LichSuDatVe.init({
-    ID_TK: DataTypes.CHAR(8),
-    ID_Ve: DataTypes.CHAR(8),
+    ID_TK: { 
+      type: DataTypes.CHAR(8),
+      primaryKey: true
+    },
+    ID_Ve: { 
+      type: DataTypes.CHAR(8),
+      primaryKey: true
+    },
     thoigiandat: DataTypes.DATE,
     trangthaive: DataTypes.STRING
   }, {

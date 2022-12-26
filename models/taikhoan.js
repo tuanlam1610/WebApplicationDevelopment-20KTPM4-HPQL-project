@@ -12,6 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       TaiKhoan.hasMany(models.DanhGia, {foreignKey: 'ID_TK'});
+      TaiKhoan.hasMany(models.LichSuDatVe, {foreignKey: 'ID_TK'});
+      
     }
   }
   TaiKhoan.init({

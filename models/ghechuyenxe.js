@@ -10,14 +10,21 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      //GheChuyenXe.hasMany(models.VeXe, {foreignKey: 'IDChuyenXe'});
-      //.hasMany(models.VeXe, {foreignKey: 'viTriGhe'});
-      //GheChuyenXe.belongsTo(models.ChuyenXe, {foreignKey: 'IDChuyenXe'})
+      GheChuyenXe.hasOne(models.VeXe, {foreignKey: 'IDChuyenXe'});
+      //GheChuyenXe.hasOne(models.VeXe, {foreignKey: 'viTriGhe'});
+      
+      GheChuyenXe.belongsTo(models.ChuyenXe, {foreignKey: 'IDChuyenXe'})
     }
   }
   GheChuyenXe.init({
-    IDChuyenXe: DataTypes.CHAR(8),
-    viTriGhe: DataTypes.CHAR(3),
+    IDChuyenXe: { 
+      type: DataTypes.CHAR(8),
+      primaryKey: true
+    },
+    viTriGhe: { 
+      type: DataTypes.CHAR(3),
+      primaryKey: true
+    },
     trangThaiGhe: DataTypes.BOOLEAN
   }, {
     sequelize,

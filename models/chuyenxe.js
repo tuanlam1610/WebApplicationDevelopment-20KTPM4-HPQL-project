@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const ghechuyenxe = require('./ghechuyenxe');
 module.exports = (sequelize, DataTypes) => {
   class ChuyenXe extends Model {
     /**
@@ -11,11 +12,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      //ChuyenXe.belongsTo(models.NhaXe, {foreignKey: 'id_NX'});
+      ChuyenXe.belongsTo(models.NhaXe, {foreignKey: 'ID_NX'});
+      ChuyenXe.hasMany(models.GheChuyenXe, {foreignKey: 'IDChuyenXe'});
     }
   }
   ChuyenXe.init({
-    IDChuyenXe: DataTypes.CHAR(8),
+    IDChuyenXe:{ 
+      type: DataTypes.CHAR(8),
+      primaryKey: true
+    },
     ID_NX: DataTypes.CHAR(8),
     moTaChinhSach: DataTypes.ARRAY(DataTypes.TEXT),
     imagePath: DataTypes.ARRAY(DataTypes.STRING),

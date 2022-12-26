@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('chuyenxes', {
+    /*await queryInterface.createTable('chuyenxes', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,8 +12,8 @@ module.exports = {
       IDChuyenXe: {
         type: Sequelize.STRING
       },
-      id_NX: {
-        type: Sequelize.STRING
+      ID_NX: {
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       moTaChinhSach: {
         type: Sequelize.TEXT
@@ -56,7 +56,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    });*/
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('chuyenxes');
