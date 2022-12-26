@@ -15,13 +15,13 @@ module.exports = {
     let items =
       [{
         "IDChuyenXe": "08070650",
-        "id_NX": "81165038",
+        "ID_NX": "1",
         "moTaChinhSach": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-        "imagePath": "/assets/images/08070650/",
+        "imagePath": "[/assets/images/08070650/a.png, /assets/images/08070650/a.png]",
         "noiBatDau": "Krotoszyn",
         "noiKetThuc": "Bangko",
-        "gioKhoiHanh": "07/25/2022",
-        "gioKetThuc": "03/10/2022",
+        "gioKhoiHanh": "2022/07/25",
+        "gioKetThuc": "2022/03/10",
         "tongThoiGian": "6:39 AM",
         "loaiXe": "Giường",
         "tongSoGhe": "46",
@@ -29,7 +29,7 @@ module.exports = {
         "giaVe": "644994"
       },{
         "IDChuyenXe": "24356105",
-        "id_NX": "47633170",
+        "ID_NX": "1",
         "moTaChinhSach": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
         "imagePath": "/assets/images/24356105/",
         "noiBatDau": "Eci",
@@ -43,7 +43,7 @@ module.exports = {
         "giaVe": "647033"
       }, {
         "IDChuyenXe": "03446327",
-        "id_NX": "49941145",
+        "ID_NX": "2",
         "moTaChinhSach": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
         "imagePath": "/assets/images/03446327/",
         "noiBatDau": "Wiskitki",
@@ -57,7 +57,7 @@ module.exports = {
         "giaVe": "163840"
       }, {
         "IDChuyenXe": "03441046",
-        "id_NX": "88365439",
+        "ID_NX": "2",
         "moTaChinhSach": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
         "imagePath": "/assets/images/03441046/",
         "noiBatDau": "Soca",
@@ -71,7 +71,7 @@ module.exports = {
         "giaVe": "311344"
       }, {
         "IDChuyenXe": "80653602",
-        "id_NX": "19694716",
+        "ID_NX": "3",
         "moTaChinhSach": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
         "imagePath": "/assets/images/80653602/",
         "noiBatDau": "Sosnovaya Polyana",
@@ -85,7 +85,7 @@ module.exports = {
         "giaVe": "175468"
       }, {
         "IDChuyenXe": "65121825",
-        "id_NX": "09981757",
+        "ID_NX": "3",
         "moTaChinhSach": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
         "imagePath": "/assets/images/65121825/",
         "noiBatDau": "Pudong",
@@ -99,7 +99,7 @@ module.exports = {
         "giaVe": "182423"
       }, {
         "IDChuyenXe": "54682631",
-        "id_NX": "37612463",
+        "ID_NX": "4",
         "moTaChinhSach": "In congue. Etiam justo. Etiam pretium iaculis justo.",
         "imagePath": "/assets/images/54682631/",
         "noiBatDau": "Mundybash",
@@ -113,7 +113,7 @@ module.exports = {
         "giaVe": "714574"
       }, {
         "IDChuyenXe": "16930988",
-        "id_NX": "03706523",
+        "ID_NX": "4",
         "moTaChinhSach": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
         "imagePath": "/assets/images/16930988/",
         "noiBatDau": "Orikhiv",
@@ -127,7 +127,7 @@ module.exports = {
         "giaVe": "965451"
       }, {
         "IDChuyenXe": "35697028",
-        "id_NX": "19780820",
+        "ID_NX": "5",
         "moTaChinhSach": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
         "imagePath": "/assets/images/35697028/",
         "noiBatDau": "Saint-Pierre",
@@ -141,7 +141,7 @@ module.exports = {
         "giaVe": "818425"
       }, {
         "IDChuyenXe": "66686448",
-        "id_NX": "19222819",
+        "ID_NX": "5",
         "moTaChinhSach": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
         "imagePath": "/assets/images/66686448/",
         "noiBatDau": "Guolemude",
