@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       NhaXe.hasMany(models.DanhGia, {foreignKey: 'ID_NX'});
-      NhaXe.hasMany(models.chuyenxe, {foreignKey: 'id_NX'});
+      NhaXe.hasMany(models.ChuyenXe, {foreignKey: 'id_NX'});
     }
   }
   NhaXe.init({
