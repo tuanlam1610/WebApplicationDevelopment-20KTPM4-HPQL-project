@@ -14,43 +14,43 @@ module.exports = {
     */
     let items =
       [{
-        "IDVe": "64857833",
+        "IDVe": "H0000001",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A01"
       }, {
-        "IDVe": "22397613",
+        "IDVe": "H0000002",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A02"
       }, {
-        "IDVe": "04504427",
+        "IDVe": "P0000001",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A03"
       }, {
-        "IDVe": "91526498",
+        "IDVe": "P0000002",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A04"
       }, {
-        "IDVe": "17176508",
+        "IDVe": "Q0000001",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A05"
       }, {
-        "IDVe": "34167050",
+        "IDVe": "Q0000002",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A06"
       }, {
-        "IDVe": "18955976",
+        "IDVe": "L0000001",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A07"
       }, {
-        "IDVe": "63928870",
+        "IDVe": "L0000002",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A08"
       }, {
-        "IDVe": "66922310",
+        "IDVe": "L0000003",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A09"
       }, {
-        "IDVe": "89817362",
+        "IDVe": "L0000004",
         "IDChuyenXe": "02652053",
         "viTriGhe": "A10"
       }];
