@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       VeXe.belongsTo(models.GheChuyenXe, {foreignKey: 'IDChuyenXe'});
-      //VeXe.belongsTo(models.GheChuyenXe, {foreignKey: 'viTriGhe'});
+      VeXe.belongsTo(models.GheChuyenXe, {foreignKey: 'viTriGhe'});
       VeXe.hasOne(models.LichSuDatVe, {foreignKey: 'ID_Ve'});
     }
   }

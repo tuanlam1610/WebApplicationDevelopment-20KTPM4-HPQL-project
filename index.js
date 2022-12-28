@@ -4,6 +4,11 @@ const expressHbs = require('express-handlebars');
 const trip_info_route = require('./routes/trip_info_route');
 const garage_info_route = require('./routes/garage_info_route');
 
+const ticket_find_route = require('./routes/ticket_find_route');
+const ticket_time_route = require('./routes/ticket_time_route');
+const ticket_seat_route = require('./routes/ticket_seat_route');
+const ticket_confirm_route = require('./routes/ticket_confirm_route');
+
 app.engine('hbs', expressHbs.engine({
     extname: 'hbs',
     defaultLayout: 'layout',
@@ -57,6 +62,14 @@ app.get('/createTables', (req, res) => {
         res.send("Tables Created");
     });
 });
+
+//Đặt vé
+app.use('/find_ticket', ticket_find_route);
+app.use('/time_ticket', ticket_time_route);
+app.use('/seat_ticket', ticket_seat_route);
+app.use('/confirm_ticket', ticket_confirm_route);
+
+
 
 function getSum(total, item){
     return total + item.soSao
