@@ -3,6 +3,7 @@ const app = express();
 const expressHbs = require('express-handlebars');
 const trip_info_route = require('./routes/trip_info_route');
 const garage_info_route = require('./routes/garage_info_route');
+const moment = require('moment');
 
 app.engine('hbs', expressHbs.engine({
     extname: 'hbs',
@@ -28,6 +29,15 @@ app.engine('hbs', expressHbs.engine({
                 result += '<i class="fa-regular fa-star"></i>'
             }
             return result
+        },
+        formatDate: function(datetime, format){
+            if (moment) {
+                // can use other formats like 'lll' too
+                return moment(datetime).format(format);
+              }
+              else {
+                return datetime;
+              }
         }
     }
 }));
