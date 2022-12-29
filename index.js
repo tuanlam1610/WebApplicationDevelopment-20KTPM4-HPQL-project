@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
-const trip_info_route = require('./routes/trip_info_route');
-const garage_info_route = require('./routes/garage_info_route');
+const moment = require('moment');
+
+const ticket_find_route = require('./routes/ticket_find_route');
+const ticket_time_route = require('./routes/ticket_time_route');
+const ticket_seat_route = require('./routes/ticket_seat_route');
+const ticket_confirm_route = require('./routes/ticket_confirm_route');
 
 app.engine('hbs', expressHbs.engine({
     extname: 'hbs',
@@ -28,6 +32,15 @@ app.engine('hbs', expressHbs.engine({
                 result += '<i class="fa-regular fa-star"></i>'
             }
             return result
+        },
+        formatDate: function(datetime, format){
+            if (moment) {
+                // can use other formats like 'lll' too
+                return moment(datetime).format(format);
+              }
+              else {
+                return datetime;
+              }
         }
     }
 }));
@@ -35,9 +48,7 @@ app.engine('hbs', expressHbs.engine({
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/'))
 
-app.get('/', (req, res) => {
-    res.render('index');
-})
+app.use('/', require('./routes/index_route'))
 
 app.use('/login', require('./routes/login_route'));
 
@@ -47,9 +58,9 @@ app.use('/listofgarage', require('./routes/ListOfGarage_route'));
 
 app.use('/listoftrip', require('./routes/ListOfTrip_route'));
 
-app.use('/trip_info', trip_info_route);
+app.use('/trip_info', require('./routes/trip_info_route'));
 
-app.use('/garage_info', garage_info_route);
+app.use('/garage_info', require('./routes/garage_info_route'));
 
 app.get('/createTables', (req, res) => {
     let models = require('./models');
@@ -57,6 +68,14 @@ app.get('/createTables', (req, res) => {
         res.send("Tables Created");
     });
 });
+
+//Đặt vé
+app.use('/find_ticket', ticket_find_route);
+app.use('/time_ticket', ticket_time_route);
+app.use('/seat_ticket', ticket_seat_route);
+app.use('/confirm_ticket', ticket_confirm_route);
+
+
 
 function getSum(total, item){
     return total + item.soSao

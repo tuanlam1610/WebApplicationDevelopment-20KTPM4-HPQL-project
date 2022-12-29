@@ -1,0 +1,98 @@
+<main>
+    <!-- Multistep progress bar-->
+    <div class="step-wizard">
+      <ul class="step-wizard-list">
+        <li class="step-wizard-item ">
+          <span class="progress-count" id="currentItem">Chuyến Xe</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count" id="afterItem">Chọn giờ</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count" id="afterItem">Chọn chỗ</span>
+        </li>
+        <li class="step-wizard-item">
+          <span class="progress-count" id="afterItem">Xác nhận</span>
+        </li>
+      </ul>
+    </div>
+    <!-- Box Tìm Vé-->
+    <div class="dvx-box container d-flex justify-content-center align-items-center">
+      <!-- Find Ticket -->
+      <div id="dvx-findTicket" style="width: 80%">
+        <div class="container d-flex justify-content-center align-items-center">
+          <div id="contentFindTicket" class="w-100">
+            <!-- First Row -->
+            <div class="row d-flex justify-content-center">
+              <div id="typeVehicle" class="col-6 col-md-3 py-2 px-2 d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-bus-simple fs-5"></i>
+                <p class="fs-6 fw-bold ms-3">Xe Khách</p>
+              </div>
+              <div class="col-6 col-md-9"></div>
+            </div>
+            <!-- Second Row -->
+            <div class="row mb-3 d-flex justify-content-center" id="inputTicket">
+              <!-- Start Des Col -->
+              <div class="col-6 col-md-3 dropdown">
+                <div id="startDes" class="d-flex flex-row px-3">
+                  <label for="startDes-input" class="d-flex align-items-center">
+                    <i class="fa-solid fa-location-dot fa-lg d-flex align-items-center"></i>
+                  </label>
+                  <input type="text" name="Start Destination" id="startDes-input" class="form-control lh-lg"
+                    placeholder="Điểm khởi hành" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
+                    <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
+                    <div class="dropdown-divider"></div>
+                    <li class="dropdown-item" href="#">Hồ Chí Minh</li>
+                    <li class="dropdown-item" href="#">Hà Nội</li>
+                    <li class="dropdown-item" href="#">Đà Lạt</li>
+                    <li class="dropdown-item" href="#">Đà Nẵng</li>
+                    <li class="dropdown-item" href="#">Quảng Ninh</li>
+                    <li class="dropdown-item" href="#">Ninh Bình</li>
+                    <li class="dropdown-item" href="#">Nha Trang</li>
+                    <li class="dropdown-item" href="#">Phan Thiết</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End Des Col -->
+              <div class="col-6 col-md-3 dropdown">
+                <div id="endDes" class="d-flex flex-row px-3">
+                  <label for="endDes-input" class="d-flex align-items-center">
+                    <i class="fa-solid fa-location-dot fa-lg d-flex align-items-center"></i>
+                  </label>
+                  <input type="text" name="End Destination" id="endDes-input" class="form-control lh-lg"
+                    placeholder="Điểm đến" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
+                    <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
+                    <div class="dropdown-divider"></div>
+                    <li class="dropdown-item" href="#">Hồ Chí Minh</li>
+                    <li class="dropdown-item" href="#">Hà Nội</li>
+                    <li class="dropdown-item" href="#">Đà Lạt</li>
+                    <li class="dropdown-item" href="#">Đà Nẵng</li>
+                    <li class="dropdown-item" href="#">Quảng Ninh</li>
+                    <li class="dropdown-item" href="#">Ninh Bình</li>
+                    <li class="dropdown-item" href="#">Nha Trang</li>
+                    <li class="dropdown-item" href="#">Phan Thiết</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Start Date Col -->
+              <div class="col-12 col-md-3">
+                <div id="startDate" class="d-flex flex-row px-3">
+                  <!-- <input id="startDate-input" class="form-control lh-lg" type="date"/> -->
+                  <div class="input-group date" id="datepicker">
+                    <label for="startDate-input" class="d-flex align-items-center">
+                      <i class="fa-solid fa-calendar-days fa-lg d-flex align-items-center"></i>
+                    </label>
+                    <input type="text" class="form-control lh-lg" name="startDate" id="startDate-input"
+                      placeholder="dd/mm/yyyy">
+                  </div>
+                </div>
+              </div>
+              <a role="button" href="/assets/dvx-page/chonGio.html" class="col-6 col-md-1 btn btn-primary d-flex justify-content-center align-items-center">Tìm Vé</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>

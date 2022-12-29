@@ -430,6 +430,18 @@ img{
     border-radius: 12px;
 }
 
+.city-item-image img{
+    height: 200px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.garage-item-image img{
+    height: 250px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
 .garage-item,
 .city-item{
     margin:  0 0.8rem;

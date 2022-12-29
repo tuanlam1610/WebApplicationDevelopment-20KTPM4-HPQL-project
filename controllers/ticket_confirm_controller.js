@@ -2,15 +2,16 @@ const models = require('../models/index')
 
 const controller = {
     show: async (req, res) => {
-        res.render('garage_info', {styleLink: "/assets/css/garage_info.css"});
-    },
-    showDetails: async (req, res) => {
+        res.render('ticket_confirm', {styleLink: "/assets/css/dvx-style.css"});
+    }
+    /*showDetails: async (req, res) => {
         let count = 0;
         const garageFound = await models.NhaXe.findOne({
             where: {
                 ID_NX: req.params.id
             }
         });
+        console.log(garageFound.ID_NX);
         var listCMT = []
         while(true){
             const cmtFound = await models.DanhGia.findAll(
@@ -41,6 +42,6 @@ const controller = {
         res.locals.garage = { garageinfo: garageFound, num_of_cmts: count_CMT, cmts: listCMT};
         res.locals.styleLink = "/assets/css/garage_info.css";
         res.render('garage_info');
-    }
+    }*/
 }
 module.exports = controller;

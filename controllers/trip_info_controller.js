@@ -7,18 +7,17 @@ const controller = {
         res.render('trip_info', {styleLink: "/assets/css/trip_info.css"});
     },
     showDetails: async (req, res) => {
-        const tripFound = await models.chuyenxe.findOne({
+        const tripFound = await models.ChuyenXe.findOne({
             where:{
                 IDChuyenXe: req.params.id
             },
             include:[{
                 model: models.NhaXe,
-                attributes: ['tennhaxe'],
+                attributes: ['ID_NX','tennhaxe'],
                 require: true
             }
             ]
         })
-        console.log(tripFound)
         res.locals.trip = tripFound;
         res.render('trip_info', {styleLink: "/assets/css/trip_info.css"});
     }
