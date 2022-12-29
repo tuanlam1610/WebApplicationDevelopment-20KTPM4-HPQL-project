@@ -53,7 +53,7 @@ module.exports = {
       item.createdAt = Sequelize.literal('NOW()');
       item.updatedAt = Sequelize.literal('NOW()');
     })
-    await queryInterface.bulkInsert('DanhGias', items, {});
+    await queryInterface.bulkInsert('DanhGia', items, {});
   },
 
   async down(queryInterface, Sequelize) {
@@ -63,6 +63,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('DanhGias', null, {})
+    await queryInterface.bulkDelete('DanhGia', null, {})
   }
 };
