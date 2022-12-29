@@ -172,45 +172,19 @@
     <!-- Các chuyến xe nổi bật -->
     <div class="trip-container">
       <h4 class="title">Danh sách chuyến xe</h4>
-      <p class="sub-title">Các chuyến xe nổi bật</p>
+      <p class="sub-title">Các chuyến xe mới nhất</p>
 
       <div class="trips row">
         {{#each trip}}
-        <div class="trip col-md-6 me-0 me-md-4 mb-4">
-          <img src="./assets/img/TPHCM.png" alt="{{noiBatDau}} - {{noiKetThuc}}"></img>
+        <a href="/trip_info/{{IDChuyenXe}}" class="trip col-md-6 me-0 me-md-4 mb-4">
+          <img src="{{imagePath.[0]}}" alt="{{tpDi}} - {{tpDen}}"></img>
           <div class="name-trip">
-            <div class="from text-center mb-3">{{noiBatDau}}</div>
+            <div class="from text-center mb-3">{{tpDi}}</div>
             <i class="fa-sharp fa-solid fa-chevron-right"></i>
-            <div class="to text-center mt-3">{{noiKetThuc}}</div>
+            <div class="to text-center mt-3">{{tpDen}}</div>
           </div>
-        </div>
+        </a>
         {{/each}}
-        <div class="trip col-md-6 me-0 me-md-4 mb-4">
-          <img src="./assets/img/HaNoi.png" alt="Hà Nội - Ninh Bình"></img>
-          <div class="name-trip">
-            <div class="from text-center mb-3">Hà Nội</div>
-            <i class="fa-sharp fa-solid fa-chevron-right"></i>
-            <div class="to text-center mt-3">Ninh Bình</div>
-          </div>
-        </div>
-
-        <div class="trip col-md-6 me-0 me-md-4 mb-4">
-          <img src="./assets/img/DaLat.png" alt="Đà Lạt - Thành phố Hồ Chí Minh"></img>
-          <div class="name-trip">
-            <div class="from text-center mb-3">Đà Lạt</div>
-            <i class="fa-sharp fa-solid fa-chevron-right"></i>
-            <div class="to text-center mt-3">Thành phố Hồ Chí Minh</div>
-          </div>
-        </div>
-
-        <div class="trip col-md-6 me-0 me-md-4 mb-4">
-          <img src="./assets/img/DaNang.png" alt="Đà Nẵng - Đà Lạt"></img>
-          <div class="name-trip">
-            <div class="from text-center mb-3">Đà Nẵng</div>
-            <i class="fa-sharp fa-solid fa-chevron-right"></i>
-            <div class="to text-center mt-3">Đà Lạt</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
