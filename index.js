@@ -41,6 +41,16 @@ app.engine('hbs', expressHbs.engine({
               else {
                 return datetime;
               }
+        },
+        formatCurrency: function(currency){
+            var result = "";
+            // while(Math.floor(currency / 1000) != 0) {
+            //     result = ".000" + result;
+            //     currency = Math.floor(currency/1000);
+            // }
+            result = new Intl.NumberFormat().format(currency) + "đ";
+            result = result.replace(",", ".");
+            return result;
         }
     }
 }));
