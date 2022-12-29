@@ -16,45 +16,35 @@
             </div>
             <!-- Filter and List -->
             <div id="filterAndList" class="row d-sm-flex justify-content-center">
-                <div id="filter" class="col-10 col-md-3 mb-3 mb-md-0">
+                <form id="filter" class="col-10 col-md-3 mb-3 mb-md-0">
                     <h4 class="fs-4 fw-bold my-3 text-center">Bộ Lọc</h4>
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Điểm Khởi Hành:</h5>
                         <div id="startDes" class="px-3">
-                            <input type="text" name="Start Destination" id="startDes-input" class="form-control lh-md"
+                            <input type="text" name="StartDestination" id="startDes-input" class="form-control lh-md"
                                 placeholder="Điểm khởi hành" data-bs-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                             <ul class="dropdown-menu text-center overflow-auto">
                                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                                 <div class="dropdown-divider"></div>
-                                <li class="dropdown-item" href="#">Hồ Chí Minh</li>
-                                <li class="dropdown-item" href="#">Hà Nội</li>
-                                <li class="dropdown-item" href="#">Đà Lạt</li>
-                                <li class="dropdown-item" href="#">Đà Nẵng</li>
-                                <li class="dropdown-item" href="#">Quảng Ninh</li>
-                                <li class="dropdown-item" href="#">Ninh Bình</li>
-                                <li class="dropdown-item" href="#">Nha Trang</li>
-                                <li class="dropdown-item" href="#">Phan Thiết</li>
+                                {{#each tpDi}}
+                                <li class="dropdown-item" href="#" onclick="loadDropdown(this)">{{tpDi}}</li>
+                                {{/each}}
                             </ul>
                         </div>
                     </div>
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Điểm Đến:</h5>
                         <div id="endDes" class="d-flex flex-row px-3">
-                            <input type="text" name="End Destination" id="endDes-input" class="form-control lh-md"
+                            <input type="text" name="EndDestination" id="endDes-input" class="form-control lh-md"
                                 placeholder="Điểm đến" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                                aria-expanded="false" value={{curtpDi}}>
                             <ul class="dropdown-menu text-center overflow-auto">
                                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                                 <div class="dropdown-divider"></div>
-                                <li class="dropdown-item" href="#">Hồ Chí Minh</li>
-                                <li class="dropdown-item" href="#">Hà Nội</li>
-                                <li class="dropdown-item" href="#">Đà Lạt</li>
-                                <li class="dropdown-item" href="#">Đà Nẵng</li>
-                                <li class="dropdown-item" href="#">Quảng Ninh</li>
-                                <li class="dropdown-item" href="#">Ninh Bình</li>
-                                <li class="dropdown-item" href="#">Nha Trang</li>
-                                <li class="dropdown-item" href="#">Phan Thiết</li>
+                                {{#each tpDen}}
+                                <li class="dropdown-item" href="#" onclick="loadDropdown(this)">{{tpDen}}</li>
+                                {{/each}}
                             </ul>
                         </div>
                     </div>
@@ -149,10 +139,10 @@
                                 src="/assets/img/4 stars.svg" alt="2stars" class="mb-3 me-2"> trở lên</div>
                     </div>
                     <div class="row btnGroup my-3 px-3 d-flex justify-content-center">
-                        <button type="button" class="col-7 btn btn-primary me-1">Lọc Kết Quả</button>
+                        <button type="submit" class="col-7 btn btn-primary me-1">Lọc Kết Quả</button>
                         <button type="button" class="col-4 btn btn-outline-primary">Xóa Lọc</button>
                     </div>
-                </div>
+                </form>
                 <div id="listTrip" class="col-11 col-md-9 p-0">
                     {{#each trips}}
                     <!-- cardItem for max width row -->
@@ -163,13 +153,15 @@
                             <div class="row g-0">
                                 <!-- CardIMG -->
                                 <div class="card-mask col-md-5 pe-0">
-                                    <img class="card-img" src={{imagePath.[0]}} alt="Hình ảnh nhà xe">
+                                    <img class="card-img" src={{imagePath.[0]}} alt="Hình ảnh chuyến xe">
                                 </div>
                                 <!-- Card Details -->
                                 <div class="col-md-7 card-body">
                                     <div class="row g-0 px-3">
-                                        <a class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center" href="/garage_info/{{ID_NX}}">{{NhaXe.tennhaxe}}</a>
-                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">{{{formatCurrency giaVe}}}</p>
+                                        <a class="card-title col-6 fw-bold mb-1 fs-5 d-flex align-items-center"
+                                            href="/garage_info/{{ID_NX}}">{{NhaXe.tennhaxe}}</a>
+                                        <p class="price col-6 d-flex justify-content-end mb-1 fs-4 fw-bold">
+                                            {{{formatCurrency giaVe}}}</p>
                                     </div>
                                     <div class="row g-0 px-3">
                                         <p class="typeVehicle col-6">{{loaiXe}}</p>
@@ -178,18 +170,18 @@
                                     </div>
                                     <div class="row g-0 px-3">
                                         <div class="schedule col-7">
-                                            <p class="col-12 p-0 mb-1">
-                                                <i class="fa-regular fa-circle"></i>
-                                                <span class="startTime ms-2">{{{formatDate gioKhoiHanh "hh:mm"}}}</span>
+                                            <p class="col-12 p-0 mb-1 d-flex">
+                                                <i class="fa-regular fa-circle d-flex align-items-center"></i>
+                                                <span class="startTime ms-2">{{{formatDate gioKhoiHanh "hh:mm (DD/MM/YY)"}}}</span>
                                                 <span class="startDes ms-2">{{tpDi}}</span>
                                             </p>
                                             <div class="col-12 py-3 mb-1"
                                                 style="border-left: dashed; margin-left: 0.4rem;">
                                                 <p class="totalTime m-0 ps-3">{{tongThoiGian}}</p>
                                             </div>
-                                            <p class="col-12 p-0 mb-1">
-                                                <i class="fa-solid fa-location-dot fa-lg"></i>
-                                                <span class="startTime ms-2">{{{formatDate gioKetThuc "hh:mm"}}}</span>
+                                            <p class="col-12 p-0 mb-1 d-flex">
+                                                <i class="fa-solid fa-location-dot fa-lg d-flex align-items-center"></i>
+                                                <span class="startTime ms-2">{{{formatDate gioKetThuc "hh:mm (DD/MM/YY)"}}}</span>
                                                 <span class="startDes ms-2">{{tpDen}}</span>
                                             </p>
                                         </div>
@@ -293,3 +285,9 @@
     </div>
     </div>
 </main>
+<script>
+    function loadDropdown(e) {
+        e.parentElement.parentElement.children[0].value = e.innerText;
+        console.log(e.innerText);
+    }
+</script>

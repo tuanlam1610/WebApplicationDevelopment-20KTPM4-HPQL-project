@@ -2,7 +2,9 @@ const models = require('../models')
 const { QueryTypes } = require('sequelize');
 const controller = {
     show: async (req, res) => {
-        res.locals.garages = await models.NhaXe.findAll();
+        res.locals.garages = await models.NhaXe.findAll({
+            order: [["sosaoTB", "DESC"]]
+        });
         res.render('ListOfGarage', {styleLink: "/assets/css/ListOfGarage.css"});
     }
 }

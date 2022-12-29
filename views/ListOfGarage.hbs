@@ -5,13 +5,13 @@
             <!-- Search Input -->
             <div class="row mb-3 d-md-flex justify-content-md-start justify-content-center">
                 <div class="col-md-2"></div>
-                <div class="col-10 col-md-3 d-flex inputGroup">
+                <form id="searchForm" class="col-10 col-md-3 d-flex inputGroup">
                     <label for="searchGara" class="d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </label>
                     <input type="text" class="form-control lh-lg search-input" name="search-garage" id="searchGara"
                         placeholder="Tìm kiếm nhà xe">
-                </div>
+                </form>
             </div>
             <!-- List Of Garage -->
             <div class="listGara">
@@ -28,8 +28,9 @@
                             </div>
                             <!-- Card Details -->
                             <div class="col-md-7 card-body px-3">
-                                <h4 class="card-title text-center fw-bold fs-4 mb-3">{{tennhaxe}}</h4>
-                                <p class="card-text fw-bold mb-2">Số điện thoại: <span class="fw-normal">{{sdt}}</span></p>
+                                <h4 class="card-title text-center fw-bold fs-4 mb-3">Nhà Xe {{tennhaxe}}</h4>
+                                <p class="card-text fw-bold mb-2">Số điện thoại: <span class="fw-normal">{{sdt}}</span>
+                                </p>
                                 <p class="card-text fw-bold mb-2">Địa chỉ: <span class="fw-normal">{{diachi}}</span></p>
                                 <div class="w-100 d-flex justify-content-center justify-content-md-end">
                                     <a name="moreDetail" id="detail-btn" class="btn btn-primary float-right me-1"
