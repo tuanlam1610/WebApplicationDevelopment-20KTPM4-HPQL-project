@@ -28,7 +28,7 @@
                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                 <div class="dropdown-divider"></div>
                 {{#each diemBatDau}}
-                <li class="dropdown-item" href="#">{{tpDi}}</li>
+                <li class="dropdown-item" href="#" onclick="loadDropdown(this)">{{noiBatDau}}</li>
                 {{/each}}
               </ul>
             </div>
@@ -45,7 +45,7 @@
                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                 <div class="dropdown-divider"></div>
                 {{#each diemKetThuc}}
-                <li class="dropdown-item" href="#">{{tpDen}}</li>
+                <li class="dropdown-item" href="#" onclick="loadDropdown(this)">{{noiKetThuc}}</li>
                 {{/each}}
               </ul>
             </div>
@@ -265,4 +265,10 @@
       }
     });
   });
+</script>
+<script>
+    function loadDropdown(e) {
+        e.parentElement.parentElement.children[0].value = e.innerText;
+        console.log(e.innerText);
+    }
 </script>
