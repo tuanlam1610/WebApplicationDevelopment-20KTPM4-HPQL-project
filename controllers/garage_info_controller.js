@@ -11,7 +11,6 @@ const controller = {
                 ID_NX: req.params.id
             }
         });
-        console.log(garageFound.ID_NX);
         var listCMT = []
         while(true){
             const cmtFound = await models.DanhGia.findAll(

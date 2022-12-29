@@ -193,7 +193,7 @@
         window.onload = function () {
             const carousel_inner = document.getElementsByClassName("carousel-inner")[0];
             document.getElementsByClassName("carousel-prev-btn")[0].style.display = "none";
-            if (carousel_inner.childElementCount == 0) carousel_inner.innerHTML = "<p>Hiện tại chưa có comment nào</p>";
+            if (carousel_inner.childElementCount == 0) carousel_inner.innerHTML = "<p style='text-align:center; font-style:italic;'>Hiện tại chưa có comment nào</p>";
             if (carousel_inner.childElementCount == 1) {
                 document.getElementsByClassName("carousel-prev-btn")[0].style.display = "none";
                 document.getElementsByClassName("carousel-next-btn")[0].style.display = "none";

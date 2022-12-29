@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
-const trip_info_route = require('./routes/trip_info_route');
-const garage_info_route = require('./routes/garage_info_route');
 const moment = require('moment');
 
 app.engine('hbs', expressHbs.engine({
@@ -45,9 +43,7 @@ app.engine('hbs', expressHbs.engine({
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/'))
 
-app.get('/', (req, res) => {
-    res.render('index');
-})
+app.use('/', require('./routes/index_route'))
 
 app.use('/login', require('./routes/login_route'));
 
@@ -57,9 +53,9 @@ app.use('/listofgarage', require('./routes/ListOfGarage_route'));
 
 app.use('/listoftrip', require('./routes/ListOfTrip_route'));
 
-app.use('/trip_info', trip_info_route);
+app.use('/trip_info', require('./routes/trip_info_route'));
 
-app.use('/garage_info', garage_info_route);
+app.use('/garage_info', require('./routes/garage_info_route'));
 
 app.get('/createTables', (req, res) => {
     let models = require('./models');

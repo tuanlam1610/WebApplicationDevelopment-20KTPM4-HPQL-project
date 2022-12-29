@@ -1,6 +1,3 @@
-<head>
-  <link rel="stylesheet" href="/assets/css/style.css">
-</head>
 <main>
   <!-- Find Ticket -->
   <div id="findTicket" class="">
@@ -30,14 +27,9 @@
               <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                 <div class="dropdown-divider"></div>
-                <li class="dropdown-item" href="#">Hồ Chí Minh</li>
-                <li class="dropdown-item" href="#">Hà Nội</li>
-                <li class="dropdown-item" href="#">Đà Lạt</li>
-                <li class="dropdown-item" href="#">Đà Nẵng</li>
-                <li class="dropdown-item" href="#">Quảng Ninh</li>
-                <li class="dropdown-item" href="#">Ninh Bình</li>
-                <li class="dropdown-item" href="#">Nha Trang</li>
-                <li class="dropdown-item" href="#">Phan Thiết</li>
+                {{#each diemBatDau}}
+                <li class="dropdown-item" href="#">{{noiBatDau}}</li>
+                {{/each}}
               </ul>
             </div>
           </div>
@@ -52,14 +44,9 @@
               <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                 <div class="dropdown-divider"></div>
-                <li class="dropdown-item" href="#">Hồ Chí Minh</li>
-                <li class="dropdown-item" href="#">Hà Nội</li>
-                <li class="dropdown-item" href="#">Đà Lạt</li>
-                <li class="dropdown-item" href="#">Đà Nẵng</li>
-                <li class="dropdown-item" href="#">Quảng Ninh</li>
-                <li class="dropdown-item" href="#">Ninh Bình</li>
-                <li class="dropdown-item" href="#">Nha Trang</li>
-                <li class="dropdown-item" href="#">Phan Thiết</li>
+                {{#each diemKetThuc}}
+                <li class="dropdown-item" href="#">{{noiKetThuc}}</li>
+                {{/each}}
               </ul>
             </div>
           </div>
@@ -168,68 +155,16 @@
         <div class="col-lg-10">
           <div id="garage-slider" class="owl-carousel">
             <!-- 1 -->
+            {{#each garage}}
             <div class="garage-item">
-              <a href="">
+              <a href="/garage_info/{{ID_NX}}">
                 <div class="garage-item-image">
-                  <img src="./assets/img/nha_xe_PT.png" alt="">
+                  <img src="{{imagepath}}" alt="">
                 </div>
-                <div class="garage-name">Nhà xe Phương Trang</div>
+                <div class="garage-name">Nhà xe {{tennhaxe}}</div>
               </a>
             </div>
-            <!-- 2 -->
-            <div class="garage-item">
-              <a href="">
-                <div class="garage-item-image">
-                  <img src="./assets/img/nha_xe_PT.png" alt="">
-                </div>
-                <div class="garage-name">Nhà xe Phương Trang</div>
-              </a>
-            </div>
-            <!-- 3 -->
-            <div class="garage-item">
-              <a href="">
-                <div class="garage-item-image">
-                  <img src="./assets/img/nha_xe_PT.png" alt="">
-                </div>
-                <div class="garage-name">Nhà xe Phương Trang</div>
-              </a>
-            </div>
-            <!-- 4 -->
-            <div class="garage-item">
-              <a href="">
-                <div class="garage-item-image">
-                  <img src="./assets/img/nha_xe_PT.png" alt="">
-                </div>
-                <div class="garage-name">Nhà xe Phương Trang</div>
-              </a>
-            </div>
-            <!-- 5 -->
-            <div class="garage-item">
-              <a href="">
-                <div class="garage-item-image">
-                  <img src="./assets/img/nha_xe_PT.png" alt="">
-                </div>
-                <div class="garage-name">Nhà xe Phương Trang</div>
-              </a>
-            </div>
-            <!-- 6 -->
-            <div class="garage-item">
-              <a href="">
-                <div class="garage-item-image">
-                  <img src="./assets/img/nha_xe_PT.png" alt="">
-                </div>
-                <div class="garage-name">Nhà xe Phương Trang</div>
-              </a>
-            </div>
-            <!-- 7 -->
-            <div class="garage-item">
-              <a href="">
-                <div class="garage-item-image">
-                  <img src="./assets/img/nha_xe_PT.png" alt="">
-                </div>
-                <div class="garage-name">Nhà xe Phương Trang</div>
-              </a>
-            </div>
+            {{/each}}
           </div>
         </div>
       </div>
@@ -240,15 +175,16 @@
       <p class="sub-title">Các chuyến xe nổi bật</p>
 
       <div class="trips row">
+        {{#each trip}}
         <div class="trip col-md-6 me-0 me-md-4 mb-4">
-          <img src="./assets/img/TPHCM.png" alt="Thành phố Hồ Chí Minh - Đà Lạt"></img>
+          <img src="./assets/img/TPHCM.png" alt="{{noiBatDau}} - {{noiKetThuc}}"></img>
           <div class="name-trip">
-            <div class="from text-center mb-3">Thành phố Hồ Chí Minh</div>
+            <div class="from text-center mb-3">{{noiBatDau}}</div>
             <i class="fa-sharp fa-solid fa-chevron-right"></i>
-            <div class="to text-center mt-3">Đà Lạt</div>
+            <div class="to text-center mt-3">{{noiKetThuc}}</div>
           </div>
         </div>
-
+        {{/each}}
         <div class="trip col-md-6 me-0 me-md-4 mb-4">
           <img src="./assets/img/HaNoi.png" alt="Hà Nội - Ninh Bình"></img>
           <div class="name-trip">
@@ -281,6 +217,16 @@
 </main>
 <!-- Script -->
 <script type="text/javascript">
+  window.onload = function () {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = dd + '/' + mm + '/' + yyyy;
+    const dateSelect = document.getElementsByClassName("date")[0];
+    dateSelect.getElementsByClassName("form-control")[0].placeholder = today.toString();
+  }
   $(document).ready(function () {
     $('#startDate-input').datepicker({
       format: "dd/mm/yyyy",
@@ -301,7 +247,7 @@
       navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
         "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
       autoplay: true,
-      autoplayTimeout: 4000,
+      autoplayTimeout: 10000,
       autoplayHoverPause: true,
       smartSpeed: 1000,
       responsive: {
@@ -326,7 +272,7 @@
       navText: ["<div class='nav-btn prev-slide'><i class='fa fa-chevron-left'></i></div>",
         "<div class='nav-btn next-slide'><i class='fa fa-chevron-right'></i></div>"],
       autoplay: true,
-      autoplayTimeout: 4000,
+      autoplayTimeout: 10000,
       autoplayHoverPause: true,
       smartSpeed: 1000,
       responsive: {
@@ -334,13 +280,13 @@
           items: 1
         },
         400: {
-          items: 2
+          items: 1
         },
         800: {
-          items: 3
+          items: 2
         },
         1200: {
-          items: 4
+          items: 3
         }
       }
     });
