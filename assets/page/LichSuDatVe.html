@@ -88,190 +88,192 @@
         </nav>
     </header>
 
-    <!--Quản Lí Tài Khoản-->
-    <div class="wrapper">
-        <div class="header">Quản Lí Tài Khoản</div>
-        <div class="container row">
-            <div class="selection col-md-3 col-sm-12">
-                <div class="list-group">
-                    <a href="/assets/page/ThongTinTaiKhoan.html" class="list-group-item list-group-item-action">
-                        <i class="fa-regular fa-circle-user"></i>Thông tin tài khoản
-                    </a>
-                    <a href="/assets/page/ChinhSuaThongTin.html" class="list-group-item list-group-item-action">
-                        <i class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
-                    <a href="/assets/page/ThayDoiMatKhau.html" class="list-group-item list-group-item-action">
-                        <i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
-                    <a href="/assets/page/LichSuDatVe.html" class="list-group-item list-group-item-action active"
-                        aria-current="true">
-                        <i class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
-                    <a href="/index.html" class="list-group-item list-group-item-action">
-                        <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+    <main>
+        <!--Quản Lí Tài Khoản-->
+        <div class="wrapper">
+            <div class="header">Quản Lí Tài Khoản</div>
+            <div class="container row">
+                <div class="selection col-md-3 col-sm-12">
+                    <div class="list-group">
+                        <a href="/assets/page/ThongTinTaiKhoan.html" class="list-group-item list-group-item-action">
+                            <i class="fa-regular fa-circle-user"></i>Thông tin tài khoản
+                        </a>
+                        <a href="/assets/page/ChinhSuaThongTin.html" class="list-group-item list-group-item-action">
+                            <i class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
+                        <a href="/assets/page/ThayDoiMatKhau.html" class="list-group-item list-group-item-action">
+                            <i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
+                        <a href="/assets/page/LichSuDatVe.html" class="list-group-item list-group-item-action active"
+                            aria-current="true">
+                            <i class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
+                        <a href="/index.html" class="list-group-item list-group-item-action">
+                            <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="content col-md-9 col-sm-12">
-                <section id="filter">
-                    <div id="filter_button">
-                        <a class="btn btn-primary active" data-filter="booked">Đã đặt</a>
-                        <a class="btn btn-primary" data-filter="finished">Hoàn thành</a>
-                        <a class="btn btn-primary" data-filter="cancelled">Đã hủy</a>
-                    </div>
-                    <div id="filter_data">
-
-                        <!-- ---------------------Hiện tại--------------------->
-
-                        <div class="element_type" data-item="booked">
-                            <div class="infor">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" style="width:5%;">Mã vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian đặt vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm đến</th>
-                                            <th scope="col" style="width:15%;">Thanh toán</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
+                <div class="content col-md-9 col-sm-12">
+                    <section id="filter">
+                        <div id="filter_button">
+                            <a class="btn btn-primary active" data-filter="booked">Đã đặt</a>
+                            <a class="btn btn-primary" data-filter="finished">Hoàn thành</a>
+                            <a class="btn btn-primary" data-filter="cancelled">Đã hủy</a>
                         </div>
+                        <div id="filter_data">
 
-                        <!-- ---------------------Đã đặt--------------------->
+                            <!-- ---------------------Hiện tại--------------------->
 
-                        <div class="element_type" data-item="finished">
-                            <div class="infor">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" style="width:5%;">Mã vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian đặt vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm đến</th>
-                                            <th scope="col" style="width:15%;">Thanh toán</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">A0001</th>
-                                            <td>13:52:12 11/05/2022</td>
-                                            <td>15:00:00 12/05/2022</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Long xuyên</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0005</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="element_type" data-item="booked">
+                                <div class="infor">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" style="width:5%;">Mã vé</th>
+                                                <th scope="col" style="width:15%;">Thời gian đặt vé</th>
+                                                <th scope="col" style="width:15%;">Thời gian xuất phát</th>
+                                                <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
+                                                <th scope="col" style="width:25%;">Địa điểm đến</th>
+                                                <th scope="col" style="width:15%;">Thanh toán</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">A0100</th>
+                                                <td>08:52:12 13/09/2022</td>
+                                                <td>15:30:00 15/09/2022</td>
+                                                <td>Long Xuyên</td>
+                                                <td>Thành phố Hồ Chí Minh</td>
+                                                <td>Đã thanh toán</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- ---------------------Đã hủy --------------------->
+                            <!-- ---------------------Đã đặt--------------------->
 
-                        <div class="element_type" data-item="cancelled">
-                            <div class="infor">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col" style="width:5%;">Mã vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian đặt vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm đến</th>
-                                            <th scope="col" style="width:15%;">Thanh toán</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">A1205</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Cần Thơ</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã hoàn tiền</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="element_type" data-item="finished">
+                                <div class="infor">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" style="width:5%;">Mã vé</th>
+                                                <th scope="col" style="width:15%;">Thời gian đặt vé</th>
+                                                <th scope="col" style="width:15%;">Thời gian xuất phát</th>
+                                                <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
+                                                <th scope="col" style="width:25%;">Địa điểm đến</th>
+                                                <th scope="col" style="width:15%;">Thanh toán</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">A0001</th>
+                                                <td>13:52:12 11/05/2022</td>
+                                                <td>15:00:00 12/05/2022</td>
+                                                <td>Thành phố Hồ Chí Minh</td>
+                                                <td>Long xuyên</td>
+                                                <td>Đã thanh toán</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">A0005</th>
+                                                <td>08:52:12 13/09/2022</td>
+                                                <td>15:30:00 15/09/2022</td>
+                                                <td>Long Xuyên</td>
+                                                <td>Thành phố Hồ Chí Minh</td>
+                                                <td>Đã thanh toán</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">A0100</th>
+                                                <td>08:52:12 13/09/2022</td>
+                                                <td>15:30:00 15/09/2022</td>
+                                                <td>Long Xuyên</td>
+                                                <td>Thành phố Hồ Chí Minh</td>
+                                                <td>Đã thanh toán</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">A0100</th>
+                                                <td>08:52:12 13/09/2022</td>
+                                                <td>15:30:00 15/09/2022</td>
+                                                <td>Long Xuyên</td>
+                                                <td>Thành phố Hồ Chí Minh</td>
+                                                <td>Đã thanh toán</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">A0100</th>
+                                                <td>08:52:12 13/09/2022</td>
+                                                <td>15:30:00 15/09/2022</td>
+                                                <td>Long Xuyên</td>
+                                                <td>Thành phố Hồ Chí Minh</td>
+                                                <td>Đã thanh toán</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">A0100</th>
+                                                <td>08:52:12 13/09/2022</td>
+                                                <td>15:30:00 15/09/2022</td>
+                                                <td>Long Xuyên</td>
+                                                <td>Thành phố Hồ Chí Minh</td>
+                                                <td>Đã thanh toán</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+
+                            <!-- ---------------------Đã hủy --------------------->
+
+                            <div class="element_type" data-item="cancelled">
+                                <div class="infor">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" style="width:5%;">Mã vé</th>
+                                                <th scope="col" style="width:15%;">Thời gian đặt vé</th>
+                                                <th scope="col" style="width:15%;">Thời gian xuất phát</th>
+                                                <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
+                                                <th scope="col" style="width:25%;">Địa điểm đến</th>
+                                                <th scope="col" style="width:15%;">Thanh toán</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">A1205</th>
+                                                <td>08:52:12 13/09/2022</td>
+                                                <td>15:30:00 15/09/2022</td>
+                                                <td>Cần Thơ</td>
+                                                <td>Thành phố Hồ Chí Minh</td>
+                                                <td>Đã hoàn tiền</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
                         </div>
+                    </section>
 
+                    <!----------------------------- Pagination ----------------------------->
 
-                    </div>
-                </section>
-
-                <!----------------------------- Pagination ----------------------------->
-
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <!--<li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <!--<li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-info" id="footer">
