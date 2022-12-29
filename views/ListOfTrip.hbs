@@ -7,12 +7,12 @@
                 <p class="col-12 col-md-2 fw-bold fs-5 mb-md-0 d-flex justify-content-center align-items-center">Sắp
                     Xếp Theo:
                 </p>
-                <button type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-1 active-btn">Giờ Đi Sớm
+                <button id="earlierTime" type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-1 active-btn">Giờ Đi Sớm
                     Nhất</button>
-                <button type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-md-1">Giờ Đi Muộn
+                <button id="laterTime" type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-md-1">Giờ Đi Muộn
                     Nhất</button>
-                <button type="button" class="col-5 col-md-2 btn btn-primary me-1">Giá Vé Tăng Dần</button>
-                <button type="button" class="col-5 col-md-2 btn btn-primary">Giá Vé Giảm Dần</button>
+                <button id="ascPrice" type="button" class="col-5 col-md-2 btn btn-primary me-1">Giá Vé Tăng Dần</button>
+                <button id="descPrice" type="button" class="col-5 col-md-2 btn btn-primary">Giá Vé Giảm Dần</button>
             </div>
             <!-- Filter and List -->
             <div id="filterAndList" class="row d-sm-flex justify-content-center">
@@ -23,7 +23,7 @@
                         <div id="startDes" class="px-3">
                             <input type="text" name="StartDestination" id="startDes-input" class="form-control lh-md"
                                 placeholder="Điểm khởi hành" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                                aria-expanded="false" value="{{query.StartDestination}}">
                             <ul class="dropdown-menu text-center overflow-auto">
                                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                                 <div class="dropdown-divider"></div>
@@ -38,7 +38,7 @@
                         <div id="endDes" class="d-flex flex-row px-3">
                             <input type="text" name="EndDestination" id="endDes-input" class="form-control lh-md"
                                 placeholder="Điểm đến" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" value={{curtpDi}}>
+                                aria-expanded="false" value="{{query.EndDestination}}">
                             <ul class="dropdown-menu text-center overflow-auto">
                                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                                 <div class="dropdown-divider"></div>
@@ -48,7 +48,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="filterOpt mb-3">
+                    {{!-- <div class="filterOpt mb-3">
                         <h5 class="ms-3">Giờ Khởi Hành:</h5>
                         <div class="timeGroup">
                             <div class="row m-2 d-flex justify-content-center">
@@ -76,67 +76,59 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Giá Vé:</h5>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
-                            <label class="form-check-label" for=""> Thấp hơn 100.000đ</label>
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="1" id="1">
+                            <label class="form-check-label" for="1"> Thấp hơn 100.000đ</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
-                            <label class="form-check-label" for="">Từ 100.000đ - 300.000đ</label>
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="2" id="2">
+                            <label class="form-check-label" for="2">Từ 100.000đ - 300.000đ</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
-                            <label class="form-check-label" for="">Từ 300.000đ - 500.000đ</label>
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="3" id="3">
+                            <label class="form-check-label" for="3">Từ 300.000đ - 500.000đ</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
-                            <label class="form-check-label" for="">Trên 500.000đ</label>
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="4" id="4">
+                            <label class="form-check-label" for="4">Trên 500.000đ</label>
                         </div>
                     </div>
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Nhà Xe:</h5>
                         <div class="px-3">
-                            <input type="text" class="form-control lh-md" name="" id="" aria-describedby="helpId"
-                                placeholder="Tên nhà xe">
+                            <input type="text" class="form-control lh-md" name="garageName" id="garageName" placeholder="Tên nhà xe" value="{{query.garageName}}">
                         </div>
                     </div>
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Số Ghế Trống:</h5>
                         <div class="row m-2 d-flex justify-content-center numGroup">
-                            <button type="button" class="col-2 btn btn-primary rounded-circle">&#8722;</button>
+                            <button type="button" class="col-2 btn btn-primary rounded-circle"
+                                onclick="minusSeat(this)">&#8722;</button>
                             <div class="col-5 d-flex justify-content-center align-items-center">
-                                <input type="text" name="" id="" class="form-control lh-md text-center"
-                                    placeholder="Số ghế">
+                                <input type="text" name="seatNum" id="seatNum" class="form-control lh-md text-center"
+                                    placeholder="Số ghế" value="{{query.seatNum}}">
                             </div>
-                            <button type="button" class="col-2 btn btn-primary rounded-circle">&#43;</button>
+                            <button type="button" class="col-2 btn btn-primary rounded-circle"
+                                onclick="plusSeat(this)">&#43;</button>
                         </div>
                     </div>
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Loại Ghế / Giường:</h5>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
-                            <label class="form-check-label" for="">Ghế ngồi</label>
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="1" id="1">
+                            <label class="form-check-label" for="1">Ghế ngồi</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
-                            <label class="form-check-label" for="">Giường nằm</label>
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="2" id="2">
+                            <label class="form-check-label" for="2">Giường nằm</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" value="" id="">
-                            <label class="form-check-label" for="">Giường nằm đôi</label>
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="3" id="3">
+                            <label class="form-check-label" for="3">Giường đôi</label>
                         </div>
-                    </div>
-                    <div class="filterOpt mb-3">
-                        <h5 class="ms-3">Đánh Giá:</h5>
-                        <div class="starChoice d-flex justify-content-center align-items-center"><img
-                                src="/assets/img/2 stars.svg" alt="2stars" class="mb-3 me-2"> trở lên</div>
-                        <div class="starChoice d-flex justify-content-center align-items-center"><img
-                                src="/assets/img/3 stars.svg" alt="2stars" class="mb-3 me-2"> trở lên</div>
-                        <div class="starChoice d-flex justify-content-center align-items-center"><img
-                                src="/assets/img/4 stars.svg" alt="2stars" class="mb-3 me-2"> trở lên</div>
                     </div>
                     <div class="row btnGroup my-3 px-3 d-flex justify-content-center">
                         <button type="submit" class="col-7 btn btn-primary me-1">Lọc Kết Quả</button>
@@ -172,7 +164,8 @@
                                         <div class="schedule col-7">
                                             <p class="col-12 p-0 mb-1 d-flex">
                                                 <i class="fa-regular fa-circle d-flex align-items-center"></i>
-                                                <span class="startTime ms-2">{{{formatDate gioKhoiHanh "hh:mm (DD/MM/YY)"}}}</span>
+                                                <span class="startTime ms-2">{{{formatDate gioKhoiHanh "hh:mm
+                                                    (DD/MM/YY)"}}}</span>
                                                 <span class="startDes ms-2">{{tpDi}}</span>
                                             </p>
                                             <div class="col-12 py-3 mb-1"
@@ -181,7 +174,8 @@
                                             </div>
                                             <p class="col-12 p-0 mb-1 d-flex">
                                                 <i class="fa-solid fa-location-dot fa-lg d-flex align-items-center"></i>
-                                                <span class="startTime ms-2">{{{formatDate gioKetThuc "hh:mm (DD/MM/YY)"}}}</span>
+                                                <span class="startTime ms-2">{{{formatDate gioKetThuc "hh:mm
+                                                    (DD/MM/YY)"}}}</span>
                                                 <span class="startDes ms-2">{{tpDen}}</span>
                                             </p>
                                         </div>
@@ -289,5 +283,22 @@
     function loadDropdown(e) {
         e.parentElement.parentElement.children[0].value = e.innerText;
         console.log(e.innerText);
+    }
+
+    function plusSeat(button) {
+        var inputDiv = button.parentElement.children[1];
+        console.log(inputDiv.children[0].value);
+        if (parseInt(inputDiv.children[0].value) < 99) {
+            inputDiv.children[0].value = parseInt(inputDiv.children[0].value) + 1;
+        }
+        console.log(inputDiv.children[0].value);
+    }
+
+    function minusSeat(button) {
+        var inputDiv = button.parentElement.children[1];
+        if (parseInt(inputDiv.children[0].value) > 0) {
+            inputDiv.children[0].value = parseInt(inputDiv.children[0].value) - 1;
+        }
+        console.log(inputDiv.children[0].value);
     }
 </script>

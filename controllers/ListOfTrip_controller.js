@@ -5,6 +5,7 @@ const controller = {
     show: async (req, res) => {
         var tpdi = req.query.StartDestination;
         var tpden = req.query.EndDestination;
+        console.log(req.query.ticketPrice);
         var query = {
             order: [["createdAt", "DESC"]],
             include:[{
@@ -29,7 +30,7 @@ const controller = {
             attributes: ['tpDen'],
             group: ['tpDen']
         })
-        res.locals.curtpDi = req.query.StartDestination;
+        res.locals.query = req.query;
         res.render('ListOfTrip', {styleLink: "/assets/css/ListOfTrip.css"});
     }
 }
