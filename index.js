@@ -8,6 +8,12 @@ const ticket_time_route = require('./routes/ticket_time_route');
 const ticket_seat_route = require('./routes/ticket_seat_route');
 const ticket_confirm_route = require('./routes/ticket_confirm_route');
 
+
+const account_info_route = require('./routes/account_info_route');
+const edit_info_route = require('./routes/edit_info_route');
+const change_password_route = require('./routes/change_password_route');
+const history_route = require('./routes/history_route');
+
 app.engine('hbs', expressHbs.engine({
     extname: 'hbs',
     defaultLayout: 'layout',
@@ -85,7 +91,11 @@ app.use('/time_ticket', ticket_time_route);
 app.use('/seat_ticket', ticket_seat_route);
 app.use('/confirm_ticket', ticket_confirm_route);
 
-
+// Thông tin tài khoản
+app.use('/account_info', account_info_route);
+app.use('/edit_info', edit_info_route);
+app.use('/change_password', change_password_route);
+app.use('/history', history_route);
 
 function getSum(total, item){
     return total + item.soSao
