@@ -5,11 +5,11 @@ const controller = {
     show: async (req, res) => {
         const list_city_start = await models.ChuyenXe.findAll({
             attributes: ['tpDi'],
-            distinct: true
+            group: ['tpDi']
         })
         const list_city_end = await models.ChuyenXe.findAll({
             attributes: ['tpDen'],
-            distinct: true
+            group: ['tpDen']
         })
         const list_garage = await models.NhaXe.findAll({
             attributes: ['tennhaxe','ID_NX','imagepath'],
