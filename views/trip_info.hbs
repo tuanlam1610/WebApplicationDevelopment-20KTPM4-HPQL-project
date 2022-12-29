@@ -2,12 +2,12 @@
     <div class="container">
         {{#trip}}
         <h2 class="trip-name">
-            {{noiBatDau}}<i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i>{{noiKetThuc}}
+            {{noiBatDau}} <i class="fa-solid fa-chevron-right"></i><i class="fa-solid fa-chevron-right"></i> {{noiKetThuc}}
         </h2>
         <ul class="content">
             <li class="info">
                 <span>Nhà xe:</span>
-                <a href="/garage_info/{{NhaXe.tennhaxe}}" class="garage-name">{{NhaXe.tennhaxe}}</a>
+                <a href="/garage_info/{{NhaXe.ID_NX}}" class="garage-name">{{NhaXe.tennhaxe}}</a>
             </li>
             <div class="d-flex justify-content-between">
                 <li class="info station">
@@ -37,39 +37,26 @@
             </div>
             <li class="info">
                 <span>Ngày:</span>
-                <span>{{gioKhoiHanh}}</span>
+                <span>{{{formatDate  gioKhoiHanh "DD/MM/YYYY"}}}</span>
             </li>
             <li class="info">
                 <span>Thời gian xuất phát:</span>
-                <span>{{gioKhoiHanh}}<span class="sub">({{noiBatDau}})</span></span>
+                <span>{{{formatDate  gioKhoiHanh "HH:mm - DD/MM/YYYY"}}}<span class="sub">({{noiBatDau}})</span></span>
             </li>
             <li class="info">
                 <span>Thời gian đến nơi:</span>
-                <span>{{gioKetThuc}}<span class="sub">({{noiKetThuc}})</span></span>
+                <span>{{{formatDate  gioKetThuc "HH:mm - DD/MM/YYYY"}}}<span class="sub">({{noiKetThuc}})</span></span>
             </li>
 
             <li class="info">
                 <span>Loại xe:</span>
                 <span>{{loaiXe}}</span>
                 <div class="owl-carousel owl-theme">
+                    {{#each imagePath}}
                     <div class="item">
-                        <img src="/assets/img/Bus_img_1.png" alt="" onclick="onClick(this)">
+                        <img src="{{this}}" alt="" onclick="onClick(this)">
                     </div>
-                    <div class="item">
-                        <img src="/assets/img/Bus_img_2.png" alt="" onclick="onClick(this)">
-                    </div>
-                    <div class="item">
-                        <img src="/assets/img/Bus_img_3.png" alt="" onclick="onClick(this)">
-                    </div>
-                    <div class="item">
-                        <img src="/assets/img/Bus_img_4.png" alt="" onclick="onClick(this)">
-                    </div>
-                    <div class="item">
-                        <img src="/assets/img/Bus_img_5.png" alt="" onclick="onClick(this)">
-                    </div>
-                    <div class="item">
-                        <img src="/assets/img/Bus_img_6.png" alt="" onclick="onClick(this)">
-                    </div>
+                    {{/each}}
                 </div>
             </li>
             <div id="show-modal" class="modal" onclick="this.style.display='none'">
@@ -81,23 +68,23 @@
             <li class="info">
                 <span>Tiện ích:</span>
                 <ul class="utility sub-list">
+                    {{#each tienIch}}
                     <li>
-                        <i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí
+                        {{{this}}}
                     </li>
-                    <li>
-                        <i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-wifi"></i>Wifi tốc độ cao
-                    </li>
+                    {{/each}}
                 </ul>
             </li>
             <li class="info">
                 <span>Chính sách</span>
                 <ul class="sub-list">
+                    {{#each moTaChinhSach}}
+                    <li>
+                        <span>
+                            {{this}}
+                        </span>
+                    </li>
+                    {{/each}}
                     <li>
                         <span>
                             Chính sách hủy vé: miễn phí hủy vé trong vòng 1 ngày kể từ khi đặt vé. Nếu sau 1 ngày
@@ -126,6 +113,10 @@
         {{/trip}}
     </div>
     <script>
+        window.onload = function(){
+            document.getElementsByClassName("owl-carousel")[0].children[0].classList.add("active");
+            document.getElementsByClassName("owl-carousel")[0].children[1].classList.add("active");
+        }
         function onClick(element) {
             document.getElementById("show-img").src = element.src;
             document.getElementById("show-modal").style.display = "block";
