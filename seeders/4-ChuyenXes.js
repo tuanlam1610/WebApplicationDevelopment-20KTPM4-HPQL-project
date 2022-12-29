@@ -158,7 +158,7 @@ module.exports = {
       item.createdAt = Sequelize.literal('NOW()');
       item.updatedAt = Sequelize.literal('NOW()');
     })
-    await queryInterface.bulkInsert('chuyenxes', items, {});
+    await queryInterface.bulkInsert('ChuyenXes', items, {});
   },
 
   async down(queryInterface, Sequelize) {

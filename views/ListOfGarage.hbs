@@ -15,8 +15,33 @@
             </div>
             <!-- List Of Garage -->
             <div class="listGara">
+                {{#each garages}}
                 <!-- cardItem for max width row -->
                 <div class="cardItem mb-3 row d-flex justify-content-center">
+                    <!-- Card element center by using cardItem -->
+                    <div class="card col-10 col-md-8 px-0">
+                        <!-- Grid Layout For Card Element -->
+                        <div class="row g-0">
+                            <!-- CardIMG -->
+                            <div class="card-mask col-md-5 pe-0">
+                                <img class="card-img" src={{imagepath}} alt="Hình ảnh nhà xe">
+                            </div>
+                            <!-- Card Details -->
+                            <div class="col-md-7 card-body px-3">
+                                <h4 class="card-title text-center fw-bold fs-4 mb-3">{{tennhaxe}}</h4>
+                                <p class="card-text fw-bold mb-2">Số điện thoại: <span class="fw-normal">{{sdt}}</span></p>
+                                <p class="card-text fw-bold mb-2">Địa chỉ: <span class="fw-normal">{{diachi}}</span></p>
+                                <div class="w-100 d-flex justify-content-center justify-content-md-end">
+                                    <a name="moreDetail" id="detail-btn" class="btn btn-primary float-right me-1"
+                                        href="/garage_info/{{ID_NX}}" role="button">Xem Thêm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                <!-- cardItem for max width row -->
+                {{!-- <div class="cardItem mb-3 row d-flex justify-content-center">
                     <!-- Card element center by using cardItem -->
                     <div class="card col-10 col-md-8 px-0">
                         <!-- Grid Layout For Card Element -->
@@ -40,137 +65,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- cardItem for max width row -->
-                <div class="cardItem mb-3 row d-flex justify-content-center">
-                    <!-- Card element center by using cardItem -->
-                    <div class="card col-10 col-md-8 px-0">
-                        <!-- Grid Layout For Card Element -->
-                        <div class="row g-0">
-                            <!-- CardIMG -->
-                            <div class="card-mask col-md-5 pe-0">
-                                <img class="card-img" src="/assets/img/GarageIMG.jpg" alt="Hình ảnh nhà xe">
-                            </div>
-                            <!-- Card Details -->
-                            <div class="col-md-7 card-body px-3">
-                                <h4 class="card-title text-center fw-bold fs-4 mb-3">Nhà Xe Phương Trang</h4>
-                                <p class="card-text fw-bold mb-2">Số điện thoại: <span class="fw-normal">028 3838 68
-                                        52</span></p>
-                                <p class="card-text fw-bold mb-2">Địa chỉ: <span class="fw-normal">Số 1 Tô Hiến
-                                        Thành, phường 2, thành phố Đà Lạt,
-                                        tỉnh Lâm Đồng, Việt Nam</span></p>
-                                <div class="w-100 d-flex justify-content-center justify-content-md-end">
-                                    <a name="moreDetail" id="detail-btn" class="btn btn-primary float-right me-1"
-                                        href="/assets/page/garage_info.html" role="button">Xem Thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- cardItem for max width row -->
-                <div class="cardItem mb-3 row d-flex justify-content-center">
-                    <!-- Card element center by using cardItem -->
-                    <div class="card col-10 col-md-8 px-0">
-                        <!-- Grid Layout For Card Element -->
-                        <div class="row g-0">
-                            <!-- CardIMG -->
-                            <div class="card-mask col-md-5 pe-0">
-                                <img class="card-img" src="/assets/img/GarageIMG.jpg" alt="Hình ảnh nhà xe">
-                            </div>
-                            <!-- Card Details -->
-                            <div class="col-md-7 card-body px-3">
-                                <h4 class="card-title text-center fw-bold fs-4 mb-3">Nhà Xe Phương Trang</h4>
-                                <p class="card-text fw-bold mb-2">Số điện thoại: <span class="fw-normal">028 3838 68
-                                        52</span></p>
-                                <p class="card-text fw-bold mb-2">Địa chỉ: <span class="fw-normal">Số 1 Tô Hiến
-                                        Thành, phường 2, thành phố Đà Lạt,
-                                        tỉnh Lâm Đồng, Việt Nam</span></p>
-                                <div class="w-100 d-flex justify-content-center justify-content-md-end">
-                                    <a name="moreDetail" id="detail-btn" class="btn btn-primary float-right me-1"
-                                        href="/assets/page/garage_info.html" role="button">Xem Thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- cardItem for max width row -->
-                <div class="cardItem mb-3 row d-flex justify-content-center">
-                    <!-- Card element center by using cardItem -->
-                    <div class="card col-10 col-md-8 px-0">
-                        <!-- Grid Layout For Card Element -->
-                        <div class="row g-0">
-                            <!-- CardIMG -->
-                            <div class="card-mask col-md-5 pe-0">
-                                <img class="card-img" src="/assets/img/GarageIMG.jpg" alt="Hình ảnh nhà xe">
-                            </div>
-                            <!-- Card Details -->
-                            <div class="col-md-7 card-body px-3">
-                                <h4 class="card-title text-center fw-bold fs-4 mb-3">Nhà Xe Phương Trang</h4>
-                                <p class="card-text fw-bold mb-2">Số điện thoại: <span class="fw-normal">028 3838 68
-                                        52</span></p>
-                                <p class="card-text fw-bold mb-2">Địa chỉ: <span class="fw-normal">Số 1 Tô Hiến
-                                        Thành, phường 2, thành phố Đà Lạt,
-                                        tỉnh Lâm Đồng, Việt Nam</span></p>
-                                <div class="w-100 d-flex justify-content-center justify-content-md-end">
-                                    <a name="moreDetail" id="detail-btn" class="btn btn-primary float-right me-1"
-                                        href="/assets/page/garage_info.html" role="button">Xem Thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- cardItem for max width row -->
-                <div class="cardItem mb-3 row d-flex justify-content-center">
-                    <!-- Card element center by using cardItem -->
-                    <div class="card col-10 col-md-8 px-0">
-                        <!-- Grid Layout For Card Element -->
-                        <div class="row g-0">
-                            <!-- CardIMG -->
-                            <div class="card-mask col-md-5 pe-0">
-                                <img class="card-img" src="/assets/img/GarageIMG.jpg" alt="Hình ảnh nhà xe">
-                            </div>
-                            <!-- Card Details -->
-                            <div class="col-md-7 card-body px-3">
-                                <h4 class="card-title text-center fw-bold fs-4 mb-3">Nhà Xe Phương Trang</h4>
-                                <p class="card-text fw-bold mb-2">Số điện thoại: <span class="fw-normal">028 3838 68
-                                        52</span></p>
-                                <p class="card-text fw-bold mb-2">Địa chỉ: <span class="fw-normal">Số 1 Tô Hiến
-                                        Thành, phường 2, thành phố Đà Lạt,
-                                        tỉnh Lâm Đồng, Việt Nam</span></p>
-                                <div class="w-100 d-flex justify-content-center justify-content-md-end">
-                                    <a name="moreDetail" id="detail-btn" class="btn btn-primary float-right me-1"
-                                        href="/assets/page/garage_info.html" role="button">Xem Thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- cardItem for max width row -->
-                <div class="cardItem mb-3 row d-flex justify-content-center">
-                    <!-- Card element center by using cardItem -->
-                    <div class="card col-10 col-md-8 px-0">
-                        <!-- Grid Layout For Card Element -->
-                        <div class="row g-0">
-                            <!-- CardIMG -->
-                            <div class="card-mask col-md-5 pe-0">
-                                <img class="card-img" src="/assets/img/GarageIMG.jpg" alt="Hình ảnh nhà xe">
-                            </div>
-                            <!-- Card Details -->
-                            <div class="col-md-7 card-body px-3">
-                                <h4 class="card-title text-center fw-bold fs-4 mb-3">Nhà Xe Phương Trang</h4>
-                                <p class="card-text fw-bold mb-2">Số điện thoại: <span class="fw-normal">028 3838 68
-                                        52</span></p>
-                                <p class="card-text fw-bold mb-2">Địa chỉ: <span class="fw-normal">Số 1 Tô Hiến
-                                        Thành, phường 2, thành phố Đà Lạt,
-                                        tỉnh Lâm Đồng, Việt Nam</span></p>
-                                <div class="w-100 d-flex justify-content-center justify-content-md-end">
-                                    <a name="moreDetail" id="detail-btn" class="btn btn-primary float-right me-1"
-                                        href="/assets/page/garage_info.html" role="button">Xem Thêm</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
             </div>
             <!-- Pagination -->
             <div class="row">
