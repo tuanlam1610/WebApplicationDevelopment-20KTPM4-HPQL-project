@@ -17,7 +17,7 @@ const controller = {
             order: [['sosaoTB', 'DESC']]
         });
         const list_trip = await models.ChuyenXe.findAll({
-            attributes: ['IDChuyenXe','noiBatDau','noiKetThuc','imagePath'],
+            attributes: ['IDChuyenXe','tpDi','tpDen','imagePath'],
             limit: 4,
             order: [['updatedAt', 'DESC']]
         })

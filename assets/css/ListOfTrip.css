@@ -262,6 +262,10 @@ main h2 {
     box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.3);
 }
 
+#listTrip .card .card-mask {
+    height: 228px;
+}
+
 #listTrip .card .card-img {
     height: 100%;
     width: 100%;
