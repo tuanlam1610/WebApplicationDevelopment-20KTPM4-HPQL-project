@@ -17,8 +17,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   NhaXe.init({
     ID_NX: {
-      type: DataTypes.CHAR(8),
-      primaryKey: true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
     tennhaxe: DataTypes.STRING,
     doangioithieu: DataTypes.TEXT,

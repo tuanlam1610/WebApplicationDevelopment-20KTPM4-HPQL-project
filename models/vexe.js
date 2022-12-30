@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.CHAR(8),
       primaryKey: true
     },
-    IDChuyenXe: DataTypes.CHAR(8),
+    IDChuyenXe: DataTypes.INTEGER,
     viTriGhe: DataTypes.CHAR(3)
   }, {
     sequelize,

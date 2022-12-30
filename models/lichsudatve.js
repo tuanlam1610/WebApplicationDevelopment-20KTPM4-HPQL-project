@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   LichSuDatVe.init({
     ID_TK: { 
-      type: DataTypes.CHAR(8),
+      type: DataTypes.INTEGER,
       primaryKey: true
     },
     ID_Ve: { 

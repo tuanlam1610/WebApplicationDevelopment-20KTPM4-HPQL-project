@@ -18,8 +18,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   TaiKhoan.init({
     ID_TK: {
-      type: DataTypes.CHAR(8),
-      primaryKey: true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
     email: DataTypes.STRING,
     sdt: DataTypes.CHAR(10),

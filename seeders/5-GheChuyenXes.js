@@ -5,43 +5,43 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     let items =
     [{
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A10",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A09",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A08",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A07",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A06",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A05",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A04",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A03",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A02",
       "trangThaiGhe": false
     }, {
-      "IDChuyenXe": "08070650",
+      "IDChuyenXe": "1",
       "viTriGhe": "A01",
       "trangThaiGhe": false
     }];

@@ -17,11 +17,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   DanhGia.init({
     ID_NX: {
-      type: DataTypes.CHAR(8),
+      type: DataTypes.INTEGER,
       primaryKey: true
     },
     ID_TK: {
-      type: DataTypes.CHAR(8),
+      type: DataTypes.INTEGER,
       primaryKey: true
     },
     ngayDanhGia: DataTypes.DATEONLY,

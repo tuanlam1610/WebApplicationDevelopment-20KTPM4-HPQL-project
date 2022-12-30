@@ -15,43 +15,43 @@ module.exports = {
     let items =
       [{
         "IDVe": "H0000001",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A01"
       }, {
         "IDVe": "H0000002",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A02"
       }, {
         "IDVe": "P0000001",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A03"
       }, {
         "IDVe": "P0000002",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A04"
       }, {
         "IDVe": "Q0000001",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A05"
       }, {
         "IDVe": "Q0000002",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A06"
       }, {
         "IDVe": "L0000001",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A07"
       }, {
         "IDVe": "L0000002",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A08"
       }, {
         "IDVe": "L0000003",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A09"
       }, {
         "IDVe": "L0000004",
-        "IDChuyenXe": "02652053",
+        "IDChuyenXe": "1",
         "viTriGhe": "A10"
       }];
     items.forEach(item => {
