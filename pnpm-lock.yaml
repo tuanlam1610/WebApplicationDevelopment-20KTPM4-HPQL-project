@@ -8,6 +8,7 @@ specifiers:
   express-formidable: ^1.2.0
   express-handlebars: ^6.0.6
   express-session: ^1.17.3
+  express-handlebars-paginate: ^1.0.3
   moment: ^2.29.4
   pg: ^8.8.0
   pg-hstore: ^2.3.4
@@ -22,6 +23,7 @@ dependencies:
   express-formidable: 1.2.0
   express-handlebars: 6.0.6
   express-session: 1.17.3
+  express-handlebars-paginate: 1.0.3
   moment: 2.29.4
   pg: 8.8.0
   pg-hstore: 2.3.4
@@ -302,6 +304,14 @@ packages:
   /@babel/helper-optimise-call-expression/7.18.6:
     resolution: {integrity: sha512-HP59oD9/fEHQkdcbgFCnbmgH5vIQTJbxh2yf+CdM89/glUNnuzr87Q8GIjGEnOktTROemO0Pe0iPAYbqZuOUiA==}
     engines: {node: '>=6.9.0'}
+
+  /express-handlebars-paginate/1.0.3:
+    resolution: {integrity: sha512-dj1d8ntEfneIU+gs//7s8KYpn7w6RQxovQ0ThSqO5ziqbhhlMaGex+vQgVHqCLYxWFXNrN2EEoMmQjJS07lBgg==}
+    dev: false
+
+  /express-handlebars/6.0.6:
+    resolution: {integrity: sha512-E4QHYCh+9fyfdBEb8uKJ8p6HD4qq/sUSHBq83lRNlLJp2TQKEg2nFJYbVdC+M3QzaV19dODe43lgjQWVaIpbyQ==}
+    engines: {node: '>=v12.22.9'}
     dependencies:
       '@babel/types': 7.20.7
     dev: false
