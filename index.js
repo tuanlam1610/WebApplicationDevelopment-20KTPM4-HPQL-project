@@ -13,6 +13,7 @@ const account_info_route = require('./routes/account_info_route');
 const edit_info_route = require('./routes/edit_info_route');
 const change_password_route = require('./routes/change_password_route');
 const history_route = require('./routes/history_route');
+const paginateHelper = require('express-handlebars-paginate');
 
 app.engine('hbs', expressHbs.engine({
     extname: 'hbs',
@@ -50,14 +51,11 @@ app.engine('hbs', expressHbs.engine({
         },
         formatCurrency: function(currency){
             var result = "";
-            // while(Math.floor(currency / 1000) != 0) {
-            //     result = ".000" + result;
-            //     currency = Math.floor(currency/1000);
-            // }
             result = new Intl.NumberFormat().format(currency) + "đ";
             result = result.replace(",", ".");
             return result;
-        }
+        },
+        createPagination: paginateHelper.createPagination
     }
 }));
 

@@ -7,9 +7,11 @@
                 <p class="col-12 col-md-2 fw-bold fs-5 mb-md-0 d-flex justify-content-center align-items-center">Sắp
                     Xếp Theo:
                 </p>
-                <button id="earlierTime" type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-1 active-btn">Giờ Đi Sớm
+                <button id="earlierTime" type="button"
+                    class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-1 active-btn">Giờ Đi Sớm
                     Nhất</button>
-                <button id="laterTime" type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-md-1">Giờ Đi Muộn
+                <button id="laterTime" type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-md-1">Giờ Đi
+                    Muộn
                     Nhất</button>
                 <button id="ascPrice" type="button" class="col-5 col-md-2 btn btn-primary me-1">Giá Vé Tăng Dần</button>
                 <button id="descPrice" type="button" class="col-5 col-md-2 btn btn-primary">Giá Vé Giảm Dần</button>
@@ -48,6 +50,16 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="filterOpt mb-3">
+                        <h5 class="ms-3">Ngày Khởi Hành:</h5>
+                        <div id="startDate" class="d-flex flex-row px-3">
+                            <!-- <input id="startDate-input" class="form-control lh-lg" type="date"/> -->
+                            <div class="input-group date" id="datepicker">
+                                <input type="text" class="form-control lh-md" name="startDate" id="startDate-input"
+                                    placeholder="dd/mm/yyyy">
+                            </div>
+                        </div>
+                    </div>
                     {{!-- <div class="filterOpt mb-3">
                         <h5 class="ms-3">Giờ Khởi Hành:</h5>
                         <div class="timeGroup">
@@ -80,26 +92,31 @@
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Giá Vé:</h5>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="1" id="1">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="1"
+                                id="ticketPrice1">
                             <label class="form-check-label" for="1"> Thấp hơn 100.000đ</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="2" id="2">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="2"
+                                id="ticketPrice2">
                             <label class="form-check-label" for="2">Từ 100.000đ - 300.000đ</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="3" id="3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="3"
+                                id="ticketPrice3">
                             <label class="form-check-label" for="3">Từ 300.000đ - 500.000đ</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="4" id="4">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="ticketPrice" value="4"
+                                id="ticketPrice4">
                             <label class="form-check-label" for="4">Trên 500.000đ</label>
                         </div>
                     </div>
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Nhà Xe:</h5>
                         <div class="px-3">
-                            <input type="text" class="form-control lh-md" name="garageName" id="garageName" placeholder="Tên nhà xe" value="{{query.garageName}}">
+                            <input type="text" class="form-control lh-md" name="garageName" id="garageName"
+                                placeholder="Tên nhà xe" value="{{query.garageName}}">
                         </div>
                     </div>
                     <div class="filterOpt mb-3">
@@ -109,7 +126,7 @@
                                 onclick="minusSeat(this)">&#8722;</button>
                             <div class="col-5 d-flex justify-content-center align-items-center">
                                 <input type="text" name="seatNum" id="seatNum" class="form-control lh-md text-center"
-                                    placeholder="Số ghế" value="{{query.seatNum}}">
+                                    placeholder="Số ghế" value="0">
                             </div>
                             <button type="button" class="col-2 btn btn-primary rounded-circle"
                                 onclick="plusSeat(this)">&#43;</button>
@@ -118,21 +135,25 @@
                     <div class="filterOpt mb-3">
                         <h5 class="ms-3">Loại Ghế / Giường:</h5>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="1" id="1">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="1"
+                                id="typeSeat1">
                             <label class="form-check-label" for="1">Ghế ngồi</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="2" id="2">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="2"
+                                id="typeSeat2">
                             <label class="form-check-label" for="2">Giường nằm</label>
                         </div>
                         <div class="form-check mb-2 ps-3">
-                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="3" id="3">
+                            <input class="form-check-input fs-4 m-0 me-2" type="checkbox" name="typeSeat" value="3"
+                                id="typeSeat3">
                             <label class="form-check-label" for="3">Giường đôi</label>
                         </div>
                     </div>
                     <div class="row btnGroup my-3 px-3 d-flex justify-content-center">
                         <button type="submit" class="col-7 btn btn-primary me-1">Lọc Kết Quả</button>
-                        <button type="button" class="col-4 btn btn-outline-primary">Xóa Lọc</button>
+                        <button type="button" class="col-4 btn btn-outline-primary" onclick="resetFilter()">Xóa
+                            Lọc</button>
                     </div>
                 </form>
                 <div id="listTrip" class="col-11 col-md-9 p-0">
@@ -253,8 +274,9 @@
         <!-- Pagination -->
         <div class="row">
             <div class="col-2"></div>
-            <nav class="col-8 d-flex justify-content-center my-5" aria-label="Page navigation">
-                <ul class="pagination mb-0">
+            <nav class="col-8 d-flex justify-content-center my-5" aria-label="Page navigation" id="pagination">
+                {{{createPagination pagination paginationClass="pagination mb-0" leftText="Trước" rightText="Sau"}}}
+                {{!-- <ul class="pagination mb-0">
                     <li id="prevPage" class="page-item disabled">
                         <a class="page-link" href="#" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
@@ -267,7 +289,7 @@
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
             </nav>
             <div class="col-1"></div>
             <div class="topbtnContainer col-1 d-flex align-items-center justify-content-end">
@@ -280,11 +302,63 @@
     </div>
 </main>
 <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    // Datepicker
+    $(document).ready(function () {
+        $('#startDate-input').datepicker({
+            startDate: new Date(),
+            format: "dd/mm/yyyy",
+            container: "#datepicker",
+            laguage: "en",
+            maxViewMode: 2,
+            todayHighlight: true,
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            autoclose: true,
+            changeMonth: true,
+            changeYear: true,
+            orientation: "bottom left"
+        });
+    })
+    
+    // Update from params
+    let checkedPrice = urlParams.getAll("ticketPrice");
+    checkedPrice.forEach(checkbox => {
+        document.getElementById("ticketPrice" + checkbox).checked = true;
+    });
+    let checkedTypeSeat = urlParams.getAll("typeSeat");
+    checkedTypeSeat.forEach(checkbox => {
+        document.getElementById("typeSeat" + checkbox).checked = true;
+    });
+    let numOfSeat = urlParams.get("seatNum");
+    if(numOfSeat != null && numOfSeat != "") {
+        document.getElementById("seatNum").value = numOfSeat;
+    }
+    // Set Pagination
+    let pagination = document.getElementById("pagination");
+    let currentPage = pagination.children[0].children[urlParams.get("page")];
+    let prevButton = pagination.children[0].firstChild;
+    let nextButton = pagination.children[0].lastChild;
+    pagination.querySelectorAll('li').forEach(item => {
+        item.classList.add('page-item');
+    })
+    pagination.querySelectorAll('a').forEach(item => {
+        item.classList.add('page-link');
+    })
+    prevButton.id = "prevPage";
+    nextButton.id = "contPage";
+    currentPage.classList.add('active');
+    if (urlParams.get("page") == 1) {
+        prevButton.classList.add("disabled");
+    }
+    if ((pagination.children[0].childElementCount - 2) == urlParams.get("page")) {
+        nextButton.classList.add("disabled");
+    }
+    // Functions
     function loadDropdown(e) {
         e.parentElement.parentElement.children[0].value = e.innerText;
         console.log(e.innerText);
     }
-
     function plusSeat(button) {
         var inputDiv = button.parentElement.children[1];
         console.log(inputDiv.children[0].value);
@@ -293,12 +367,14 @@
         }
         console.log(inputDiv.children[0].value);
     }
-
     function minusSeat(button) {
         var inputDiv = button.parentElement.children[1];
         if (parseInt(inputDiv.children[0].value) > 0) {
             inputDiv.children[0].value = parseInt(inputDiv.children[0].value) - 1;
         }
         console.log(inputDiv.children[0].value);
+    }
+    function resetFilter() {
+        window.location.href = "/listoftrip";
     }
 </script>

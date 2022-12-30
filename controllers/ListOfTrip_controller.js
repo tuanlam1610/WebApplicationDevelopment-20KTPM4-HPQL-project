@@ -1,5 +1,5 @@
 const models = require('../models')
-const { Op } = require("sequelize");
+const { Op, DATEONLY } = require("sequelize");
 
 const controller = {
     show: async (req, res) => {
@@ -9,6 +9,7 @@ const controller = {
         var giaVe = req.query.ticketPrice;
         var tennhaxe = req.query.garageName;
         var loaiGhe = req.query.typeSeat;
+        var ngayKhoiHanh = req.query.startDate;
         const PriceOption = {"1": [0,100000], "2":[100000,300000], "3":[300000,500000], "4": [500000,1000000]}
         const TypeSeatOption = {"1": "Ghế ngồi", "2": "Giường nằm", "3": "Giường đôi"}
         var query = {
@@ -58,7 +59,20 @@ const controller = {
             }
             query.where.loaiXe = { [Op.in]: typeArray}
         }
-        res.locals.trips = await models.ChuyenXe.findAll(query);
+
+        // Paginate Setting
+        let page = req.query.page || 1;
+        let limit = 7;
+        query.limit = limit;
+        query.offset = limit * (page - 1);
+        let {rows, count} = await models.ChuyenXe.findAndCountAll(query);
+        res.locals.trips = rows;
+        res.locals.pagination = {
+            page,
+            limit,
+            totalRows: count,
+        }
+
         res.locals.tpDi = await models.ChuyenXe.findAll({
             attributes: ['tpDi'],
             group: ['tpDi']
