@@ -26,7 +26,11 @@ module.exports = (sequelize, DataTypes) => {
     imagepath: DataTypes.TEXT,
     sdt: DataTypes.CHAR(10),
     diachi: DataTypes.TEXT,
-    email: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
+      primaryKey: false
+    },
     website: DataTypes.STRING,
     sosaoTB: DataTypes.FLOAT
   }, {

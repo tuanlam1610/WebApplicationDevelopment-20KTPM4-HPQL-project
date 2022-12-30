@@ -2,6 +2,15 @@ const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
 const moment = require('moment');
+const AdminJS = require('adminjs')
+const AdminJSExpress = require('@adminjs/express')
+const AdminJSSequelize = require('@adminjs/sequelize')
+AdminJS.registerAdapter(AdminJSSequelize)
+
+const admin = require('./routes/admin_route')
+
+const adminRouter = AdminJSExpress.buildRouter(admin)
+app.use(admin.options.rootPath, adminRouter)
 
 const ticket_find_route = require('./routes/ticket_find_route');
 const ticket_time_route = require('./routes/ticket_time_route');
@@ -96,9 +105,6 @@ app.use('/account_info', account_info_route);
 app.use('/edit_info', edit_info_route);
 app.use('/change_password', change_password_route);
 app.use('/history', history_route);
-
-//admin
-app.use('/admin', require('./routes/admin_route'));
 
 function getSum(total, item){
     return total + item.soSao
