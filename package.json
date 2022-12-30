@@ -18,12 +18,18 @@
   },
   "homepage": "https://github.com/tuanlam1610/WebApplicationDevelopment-20KTPM4-HPQL-project#readme",
   "dependencies": {
+    "@adminjs/express": "^5.0.1",
+    "@adminjs/sequelize": "^3.0.0",
+    "adminjs": "^6.7.2",
     "express": "^4.18.2",
+    "express-formidable": "^1.2.0",
     "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
     "express-handlebars-paginate": "^1.0.3",
     "moment": "^2.29.4",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.27.0"
+    "sequelize": "^6.27.0",
+    "tslib": "^2.4.1"
   }
 }
