@@ -1,170 +1,139 @@
- <main>
-    <!-- Multistep progress bar-->
-    <div class="step-wizard">
-      <ul class="step-wizard-list">
-        <li class="step-wizard-item ">
-          <span class="progress-count" id="beforeItem">Chuyến Xe</span>
-        </li>
-        <li class="step-wizard-item">
-          <span class="progress-count" id="currentItem">Chọn giờ</span>
-        </li>
-        <li class="step-wizard-item">
-          <span class="progress-count" id="afterItem">Chọn chỗ</span>
-        </li>
-        <li class="step-wizard-item">
-          <span class="progress-count" id="afterItem">Xác nhận</span>
-        </li>
-      </ul>
-    </div>
-    <!-- Box Tìm Vé-->
-    <div class="dvx-box container d-flex justify-content-center flex-column">
-      <!-- dropdown filter-->
-      <div class="dvx-chuyenXeFilter container d-flex flex-wrap">
-        <div class="dropdown">
-          <div id="startDes" class="d-flex flex-row px-3">
-            <button class="btn btn-dvx-filter dropdown-toggle" type="button" id="dropdownMenuButton1"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Giá
-              <span class="caret"></span>
-            </button>
+<main>
+  <!-- Multistep progress bar-->
+  <div class="step-wizard">
+    <ul class="step-wizard-list">
+      <li class="step-wizard-item ">
+        <span class="progress-count" id="beforeItem">Chuyến Xe</span>
+      </li>
+      <li class="step-wizard-item">
+        <span class="progress-count" id="currentItem">Chọn giờ</span>
+      </li>
+      <li class="step-wizard-item">
+        <span class="progress-count" id="afterItem">Chọn chỗ</span>
+      </li>
+      <li class="step-wizard-item">
+        <span class="progress-count" id="afterItem">Xác nhận</span>
+      </li>
+    </ul>
+  </div>
+  <!-- Box Tìm Vé-->
+  <div class="dvx-box container d-flex justify-content-center flex-column">
+    <!-- dropdown filter-->
+    <div class="dvx-chuyenXeFilter container d-flex flex-wrap">
+      <div class="dropdown">
+        <div id="startDes" class="d-flex flex-row px-3">
+          <button class="btn btn-dvx-filter dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Giá
+            <span class="caret"></span>
+          </button>
 
-            <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
-              <h6 class="dropdown-header fw-bold">Giá</h6>
-              <div class="dropdown-divider"></div>
-              <li class="dropdown-item" href="#">Cao -> Thấp</li>
-              <li class="dropdown-item" href="#">Thấp -> Cao</li>
-            </ul>
-          </div>
+          <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
+            <h6 class="dropdown-header fw-bold">Giá</h6>
+            <div class="dropdown-divider"></div>
+            <li class="dropdown-item" href="#">Cao -> Thấp</li>
+            <li class="dropdown-item" href="#">Thấp -> Cao</li>
+          </ul>
         </div>
-        <div class="dropdown">
-          <div id="startDes" class="d-flex flex-row px-3">
-            <button class="btn btn-dvx-filter dropdown-toggle" type="button" id="dropdownMenuButton1"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Loại
-              <span class="caret"></span>
-            </button>
-
-            <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
-              <h6 class="dropdown-header fw-bold">Loại</h6>
-              <div class="dropdown-divider"></div>
-              <li class="dropdown-item" href="#">Ghế</li>
-              <li class="dropdown-item" href="#">Giường</li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown">
-          <div id="startDes" class="d-flex flex-row px-3">
-            <button class="btn btn-dvx-filter dropdown-toggle" type="button" id="dropdownMenuButton1"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Đi
-              <span class="caret"></span>
-            </button>
-
-            <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
-              <h6 class="dropdown-header fw-bold">Đi</h6>
-              <div class="dropdown-divider"></div>
-              <li class="dropdown-item" href="#">Hồ Chí Minh</li>
-              <li class="dropdown-item" href="#">Hà Nội</li>
-              <li class="dropdown-item" href="#">Đà Lạt</li>
-              <li class="dropdown-item" href="#">Đà Nẵng</li>
-              <li class="dropdown-item" href="#">Quảng Ninh</li>
-              <li class="dropdown-item" href="#">Ninh Bình</li>
-              <li class="dropdown-item" href="#">Nha Trang</li>
-              <li class="dropdown-item" href="#">Phan Thiết</li>
-            </ul>
-          </div>
-        </div>
-        <div class="dropdown">
-          <div id="startDes" class="d-flex flex-row px-3">
-            <button class="btn btn-dvx-filter dropdown-toggle" type="button" id="dropdownMenuButton1"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Về
-              <span class="caret"></span>
-            </button>
-
-            <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
-              <h6 class="dropdown-header fw-bold">Về</h6>
-              <div class="dropdown-divider"></div>
-              <li class="dropdown-item" href="#">Hồ Chí Minh</li>
-              <li class="dropdown-item" href="#">Hà Nội</li>
-              <li class="dropdown-item" href="#">Đà Lạt</li>
-              <li class="dropdown-item" href="#">Đà Nẵng</li>
-              <li class="dropdown-item" href="#">Quảng Ninh</li>
-              <li class="dropdown-item" href="#">Ninh Bình</li>
-              <li class="dropdown-item" href="#">Nha Trang</li>
-              <li class="dropdown-item" href="#">Phan Thiết</li>
-            </ul>
-          </div>
-        </div>
-
       </div>
-      <!-- Chuyến xe element-->
-      <div>
-        <div class="row dvx-chuyenXeBox align-items-center">
-          <div class="col-md-10 text-left">
-            <div class="row">
-              <p class="m-0 p-0">00:03 <i class="fa-solid fa-chevron-right"></i> 00:08</p>
-            </div>
-            <div class="row">
-              170,000đ ~ Giường ~ Còn 34 Chỗ
-            </div>
-            <div class="row">
-              Bến xe miền tây -> bến xe Long Xuyên
-            </div>
-          </div>
-          <div class="col-md-2 text-center ">
-            <a name="" id="" class="btn btn-dvx" href="/assets/dvx-page/chonCho.html" role="button">></a>
-          </div>
+      <div class="dropdown">
+        <div id="startDes" class="d-flex flex-row px-3">
+          <button class="btn btn-dvx-filter dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Loại
+            <span class="caret"></span>
+          </button>
+
+          <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
+            <h6 class="dropdown-header fw-bold">Loại</h6>
+            <div class="dropdown-divider"></div>
+            <li class="dropdown-item" href="#">Ghế</li>
+            <li class="dropdown-item" href="#">Giường</li>
+          </ul>
         </div>
-        <div class="row dvx-chuyenXeBox align-items-center">
-          <div class="col-md-10 text-left">
-            <div class="row">
-              <p class="m-0 p-0">00:03 <i class="fa-solid fa-chevron-right"></i> 00:08</p>
-            </div>
-            <div class="row">
-              170,000đ ~ Giường ~ Còn 34 Chỗ
-            </div>
-            <div class="row">
-              Bến xe miền tây -> bến xe Long Xuyên
-            </div>
-          </div>
-          <div class="col-md-2 text-center ">
-            <a name="" id="" class="btn btn-dvx" href="/assets/dvx-page/chonCho.html" role="button">></a>
-          </div>
+      </div>
+      <div class="dropdown">
+        <div id="startDes" class="d-flex flex-row px-3">
+          <button class="btn btn-dvx-filter dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Đi
+            <span class="caret"></span>
+          </button>
+
+          <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
+            <h6 class="dropdown-header fw-bold">Đi</h6>
+            <div class="dropdown-divider"></div>
+            <li class="dropdown-item" href="#">Hồ Chí Minh</li>
+            <li class="dropdown-item" href="#">Hà Nội</li>
+            <li class="dropdown-item" href="#">Đà Lạt</li>
+            <li class="dropdown-item" href="#">Đà Nẵng</li>
+            <li class="dropdown-item" href="#">Quảng Ninh</li>
+            <li class="dropdown-item" href="#">Ninh Bình</li>
+            <li class="dropdown-item" href="#">Nha Trang</li>
+            <li class="dropdown-item" href="#">Phan Thiết</li>
+          </ul>
         </div>
-        <div class="row dvx-chuyenXeBox align-items-center">
-          <div class="col-md-10 text-left">
-            <div class="row">
-              <p class="m-0 p-0">00:03 <i class="fa-solid fa-chevron-right"></i> 00:08</p>
-            </div>
-            <div class="row">
-              170,000đ ~ Giường ~ Còn 34 Chỗ
-            </div>
-            <div class="row">
-              Bến xe miền tây -> bến xe Long Xuyên
-            </div>
-          </div>
-          <div class="col-md-2 text-center ">
-            <a name="" id="" class="btn btn-dvx" href="/assets/dvx-page/chonCho.html" role="button">></a>
-          </div>
+      </div>
+      <div class="dropdown">
+        <div id="startDes" class="d-flex flex-row px-3">
+          <button class="btn btn-dvx-filter dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Về
+            <span class="caret"></span>
+          </button>
+
+          <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
+            <h6 class="dropdown-header fw-bold">Về</h6>
+            <div class="dropdown-divider"></div>
+            <li class="dropdown-item" href="#">Hồ Chí Minh</li>
+            <li class="dropdown-item" href="#">Hà Nội</li>
+            <li class="dropdown-item" href="#">Đà Lạt</li>
+            <li class="dropdown-item" href="#">Đà Nẵng</li>
+            <li class="dropdown-item" href="#">Quảng Ninh</li>
+            <li class="dropdown-item" href="#">Ninh Bình</li>
+            <li class="dropdown-item" href="#">Nha Trang</li>
+            <li class="dropdown-item" href="#">Phan Thiết</li>
+          </ul>
         </div>
-        <div class="row dvx-chuyenXeBox align-items-center">
-          <div class="col-md-10 text-left">
-            <div class="row">
-              <p class="m-0 p-0">00:03 <i class="fa-solid fa-chevron-right"></i> 00:08</p>
-            </div>
-            <div class="row">
-              170,000đ ~ Giường ~ Còn 34 Chỗ
-            </div>
-            <div class="row">
-              Bến xe miền tây -> bến xe Long Xuyên
-            </div>
+      </div>
+
+    </div>
+    <!-- Chuyến xe element-->
+
+      {{#each trips}}
+      <div class="row dvx-chuyenXeBox align-items-center">
+        <div class="col-md-10 text-left">
+          <div class="row">
+            {{{NhaXe.tennhaxe}}}
           </div>
-          <div class="col-md-2 text-center ">
-            <a name="" id="" class="btn btn-dvx" href="/assets/dvx-page/chonCho.html" role="button">></a>
+          <div class="row">
+            <p class="m-0 p-0">{{{formatDate gioKhoiHanh "hh:mm - DD/MM/yyyy"}}}
+              <i class="fa-solid fa-chevron-right"></i>
+              {{{formatDate gioKetThuc "hh:mm - DD/MM/yyyy"}}}
+            </p>
+          </div>
+          <div class="row">
+            {{{formatCurrency giaVe}}} | {{loaiXe}} | Còn {{soGheTrong}} Chỗ
+          </div>
+          <div class="row">
+            {{tpDi}} -> {{tpDen}}
           </div>
         </div>
 
+        <div class="col-md-2 text-center ">
+          <a name="" id="" class="btn btn-dvx" href="/seat_ticket" role="button">></a>
+        </div>
       </div>
-    </div>
-  </main>
+    
+    {{/each}}
+    
+
+  </div>
+  </div>
+  <script>
+    $(".dropdown-menu li").click(function () {
+      $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+      $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+    });
+  </script>
+</main>
