@@ -1,5 +1,6 @@
 const models = require('../models')
 const { Op, DATEONLY } = require("sequelize");
+const sequelize = require('sequelize')
 
 const controller = {
     show: async (req, res) => {
@@ -59,7 +60,9 @@ const controller = {
             }
             query.where.loaiXe = { [Op.in]: typeArray}
         }
-
+        if (req.query.startDate){
+            query.where.gioKhoiHanh = sequelize.where(sequelize.fn('date', sequelize.col('gioKhoiHanh')), '=', ngayKhoiHanh);
+        }
         // Paginate Setting
         let page = req.query.page || 1;
         let limit = 7;
