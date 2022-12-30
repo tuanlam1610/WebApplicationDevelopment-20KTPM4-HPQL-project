@@ -347,18 +347,18 @@
     })
     prevButton.id = "prevPage";
     nextButton.id = "contPage";
-    const nextpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) + 1 : 2;
-    const prevpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) - 1 : 1;
-    urlParams.delete('page');
-    nextButton.children[0].href = "?" + urlParams.toString() + "&page=" + nextpage;
-    prevButton.children[0].href = "?" + urlParams.toString() + "&page=" + prevpage;
-    currentPage.classList.add('active');
     if (urlParams.get("page") == 1) {
         prevButton.classList.add("disabled");
     }
     if ((pagination.children[0].childElementCount - 2) == urlParams.get("page")) {
         nextButton.classList.add("disabled");
     }
+    const nextpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) + 1 : 2;
+    const prevpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) - 1 : 1;
+    urlParams.delete('page');
+    nextButton.children[0].href = "?" + urlParams.toString() + "&page=" + nextpage;
+    prevButton.children[0].href = "?" + urlParams.toString() + "&page=" + prevpage;
+    currentPage.classList.add('active');
     // Functions
     function loadDropdown(e) {
         e.parentElement.parentElement.children[0].value = e.innerText;
