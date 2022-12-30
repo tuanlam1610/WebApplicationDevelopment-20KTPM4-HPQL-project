@@ -1,7 +1,46 @@
-const models = require('../models/index')
+const models = require('../models/index');
+const seatTypeMapBed = require('../views/seatTypeMapBed');
+const seatTypeMapDoubleBed = require('../views/seatTypeMapDoubleBed');
+const seatTypeMapSeat = require('../views/seatTypeMapSeat');
 
 const controller = {
     show: async (req, res) => {
+        var tripID = req.query.tripID;
+        var loaiGhe = req.query.typeSeat;
+        switch(loaiGhe){
+            case "Giường nằm":
+                res.locals.seatTypeMap = seatTypeMapBed;
+                res.locals.totalSeat = 36;
+                break;
+            case "Ghế ngồi":
+                res.locals.seatTypeMap = seatTypeMapSeat; 
+                res.locals.totalSeat = 45;
+                break;
+            case "Giường đôi":
+                res.locals.seatTypeMap = seatTypeMapDoubleBed;
+                res.locals.totalSeat = 24;
+                break;        
+        }
+        
+        
+        var query = {
+            order: [["viTriGhe", "ASC"]],
+            attributes: ['viTriGhe', 'trangThaiGhe'],
+            where: {},
+            raw: true
+        }
+        if(tripID){ 
+            query.where.IDChuyenXe = tripID;
+        }
+       
+
+
+        seatsQuery = await models.GheChuyenXe.findAll(query);
+        //seatList = JSON.stringify(seatsQuery);
+        //console.log(seatList);
+
+        res.locals.seats = seatsQuery;
+
         res.render('ticket_seat', {styleLink: "/assets/css/dvx-style.css"});
     }
     /*showDetails: async (req, res) => {
