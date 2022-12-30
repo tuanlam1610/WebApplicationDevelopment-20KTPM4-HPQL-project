@@ -97,6 +97,9 @@ app.use('/edit_info', edit_info_route);
 app.use('/change_password', change_password_route);
 app.use('/history', history_route);
 
+//admin
+app.use('/admin', require('./routes/admin_route'));
+
 function getSum(total, item){
     return total + item.soSao
 }
