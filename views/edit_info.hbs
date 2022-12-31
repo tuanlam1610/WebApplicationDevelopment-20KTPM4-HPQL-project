@@ -1,5 +1,5 @@
+<!--Quản Lí Tài Khoản-->
 <main>
-    <!--Quản Lí Tài Khoản-->
     <div class="wrapper">
         <div class="header">Quản Lí Tài Khoản</div>
         <div class="container row">
@@ -22,31 +22,37 @@
             <div class="col-md-1"></div>
 
             <div class="content col-md-8 col-sm-12">
-                <div class="fullname">
-                    <h4>Họ và tên</h4>
-                    <div class="displayField">
-                        <div>Nguyễn Gia Huy</div><i class="fa-regular fa-pen-to-square"></i>
+                {{#each accountInfo}}
+                <form action="/edit_info" method="POST">
+                    <div class="fullname">
+                        <h4>Họ và tên</h4>
+                        <div class="displayField">
+                            <input type="text" id="hoten" name="hoten" maxlength="32" value="{{hoten}}">
+                        </div>
                     </div>
-                </div>
-                <div class="email">
-                    <h4>Email</h4>
-                    <div class="displayField">
-                        <div>abc@gmail.com</div><i class="fa-regular fa-pen-to-square"></i>
+                    <div class="email">
+                        <h4>Email</h4>
+                        <div class="displayField">
+                            <input type="text" id="email" name="email" value="{{email}}" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="phone">
-                    <h4>Số điện thoại</h4>
-                    <div class="displayField">
-                        <div>0123456789</div><i class="fa-regular fa-pen-to-square"></i>
+                    <div class="phone">
+                        <h4>Số điện thoại</h4>
+                        <div class="displayField">
+                            <input type="text" id="sdt" name="sdt" maxlength="10" value="{{sdt}}" required>
+                        </div>
                     </div>
-                </div>
-                <div class="dob">
-                    <h4>Ngày sinh</h4>
-                    <div class="displayField">
-                        <div>05/12/2002</div><i class="fa-regular fa-pen-to-square"></i>
+                    <div class="dob">
+                        <h4>Ngày sinh</h4>
+                        <div class="displayField">
+                            <input type="text" id="ngaysinh" name="ngaysinh" value="{{ngaysinh}}">
+                        </div>
                     </div>
-                </div>
-                <div class="btn"><button>Lưu</button></div>
+                    <div class="btn"><button type="submit">Lưu</button></div>
+                </form>
+
+                {{/each}}
+
             </div>
         </div>
     </div>
