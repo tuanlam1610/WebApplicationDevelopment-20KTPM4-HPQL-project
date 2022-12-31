@@ -76,6 +76,10 @@ app.use('/trip_info', require('./routes/trip_info_route'));
 
 app.use('/garage_info', require('./routes/garage_info_route'));
 
+app.use(express.json());
+
+app.use(express.urlencoded({extended: false}));
+
 app.get('/createTables', (req, res) => {
     let models = require('./models');
     models.sequelize.sync().then(() => {
@@ -90,10 +94,10 @@ app.use('/seat_ticket', ticket_seat_route);
 app.use('/confirm_ticket', ticket_confirm_route);
 
 // Thông tin tài khoản
-app.use('/account_info', account_info_route);
-app.use('/edit_info', edit_info_route);
-app.use('/change_password', change_password_route);
-app.use('/history', history_route);
+app.use('/account_info', require('./routes/account_info_route'));
+app.use('/edit_info', require('./routes/edit_info_route'));
+app.use('/change_password', require('./routes/change_password_route'));
+app.use('/history', require('./routes/history_route'));
 
 function getSum(total, item){
     return total + item.soSao
