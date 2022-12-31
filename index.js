@@ -55,7 +55,13 @@ app.engine('hbs', expressHbs.engine({
             result = result.replace(",", ".");
             return result;
         },
-        createPagination: paginateHelper.createPagination
+        createPagination: paginateHelper.createPagination,
+        assign: function (varName, varValue, options) {
+            if (!options.data.root) {
+                options.data.root = {};
+            }
+            options.data.root[varName] = varValue;
+        }
     }
 }));
 

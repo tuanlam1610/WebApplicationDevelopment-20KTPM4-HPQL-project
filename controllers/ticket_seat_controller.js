@@ -10,14 +10,17 @@ const controller = {
         switch(loaiGhe){
             case "Giường nằm":
                 res.locals.seatTypeMap = seatTypeMapBed;
+                res.locals.loaiXe = "Giường nằm";
                 res.locals.totalSeat = 36;
                 break;
             case "Ghế ngồi":
                 res.locals.seatTypeMap = seatTypeMapSeat; 
+                res.locals.loaiXe = "Ghế ngồi";
                 res.locals.totalSeat = 45;
                 break;
             case "Giường đôi":
                 res.locals.seatTypeMap = seatTypeMapDoubleBed;
+                res.locals.loaiXe = "Giường đôi";
                 res.locals.totalSeat = 24;
                 break;        
         }
@@ -33,13 +36,31 @@ const controller = {
             query.where.IDChuyenXe = tripID;
         }
        
-
-
+        
         seatsQuery = await models.GheChuyenXe.findAll(query);
         //seatList = JSON.stringify(seatsQuery);
         //console.log(seatList);
 
         res.locals.seats = seatsQuery;
+
+        var queryChuyenXe = {
+            attributes: ['tpDi', 'tpDen', 'gioKhoiHanh', 'gioKetThuc', 'soGheTrong', 'giaVe'],
+            where: {},
+            raw: true
+        }
+        if(tripID){ 
+            query.where.IDChuyenXe = tripID;
+        }
+        tripsInfoQuery = await models.ChuyenXe.findOne(queryChuyenXe);
+        res.locals.tripInfo = tripsInfoQuery;
+        res.locals.IDChuyenXe = tripID;
+        //res.locals.tpDi = tripsInfoQuery.tpDi;
+       // res.locals.tpDen = tripsInfoQuery.tpDen;
+        //res.locals.gioKhoiHanh = tripsInfoQuery.gioKhoiHanh;
+        //res.locals.gioKetThuc = tripsInfoQuery.gioKetThuc;
+        //res.locals.giaVe = tripsInfoQuery.giaVe;
+        //res.locals. = tripsInfoQuery.tpDi;
+
 
         res.render('ticket_seat', {styleLink: "/assets/css/dvx-style.css"});
     }

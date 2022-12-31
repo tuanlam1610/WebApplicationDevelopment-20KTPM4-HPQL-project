@@ -1,7 +1,8 @@
 //Currently for chon cho
 
 const container = document.querySelector(".seat-container");
-
+const Count = document.getElementsByClassName("seatsCount");
+const SelectedCount = document.getElementsByClassName("selectedSeatsCount")
 // Seat click event
 container.addEventListener("click", (e) => {
     if (
@@ -15,4 +16,16 @@ container.addEventListener("click", (e) => {
 });
 
 // Initial count and total set
+function updateSelectedCount(){
+    const totalSeats = document.getElementsByClassName("seat");
+    const chosenSeats = document.getElementsByClassName("selected");
+    const soldSeats = document.getElementsByClassName("sold");
+
+    const chosenSeatsCount = chosenSeats.length;
+    const totalSeatsCount = totalSeats.length - soldSeats.length - chosenSeats.length;
+
+    Count[0].innerText = totalSeatsCount;
+    SelectedCount[0].innerText = chosenSeatsCount;
+};
+
 updateSelectedCount();
