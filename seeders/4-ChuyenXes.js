@@ -104,7 +104,7 @@ module.exports = {
         "gioKhoiHanh": "2023-01-15 1:00:00",
         "gioKetThuc": "2023-01-15 6:30:00",
         "tongThoiGian": "5:30",
-        "loaiXe": "Giường nằm",
+        "loaiXe": "Ghế ngồi",
         "tongSoGhe": "45",
         "soGheTrong": "45",
         "giaVe": "170000",

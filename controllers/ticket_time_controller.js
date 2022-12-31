@@ -1,9 +1,20 @@
 const models = require('../models/index')
+const { QueryTypes } = require('sequelize');
 
 const controller = {
+
+
     show: async (req, res) => {
+        res.locals.trips = await models.ChuyenXe.findAll({
+            include:[{
+                model: models.NhaXe,
+                attributes: ['ID_NX', 'tennhaxe'],
+                require: true
+            }]
+        });
         res.render('ticket_time', {styleLink: "/assets/css/dvx-style.css"});
     }
+
     /*showDetails: async (req, res) => {
         let count = 0;
         const garageFound = await models.NhaXe.findOne({
