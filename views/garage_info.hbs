@@ -9,7 +9,7 @@
                 {{garageinfo.doangioithieu}}
             </p>
             <div class="introduction-image">
-                <img src="{{garageinfo.imagepath}}" alt="Hình ảnh về nhà xe Phương Trang">
+                <img src="{{garageinfo.imagepath}}" alt="Hình ảnh về nhà xe {{garageinfo.tennhaxe}}">
             </div>
         </div>
         <!-- Rating & comment about the garage -->
@@ -83,8 +83,8 @@
                     <h4 id="top-overlay" class="title-overlay">Đánh giá</h4>
                     <div class="rating d-flex">
                         <i class="fa-solid fa-star not-chevron"></i>
-                        <h4 class="rate">4.5/5</h4>
-                        <p class="number-of-ratings">(145 lượt đánh giá)</p>
+                        <h4 class="rate">{{garageinfo.sosaoTB}}/5</h4>
+                        <p class="number-of-ratings">({{num_of_cmts}} lượt đánh giá)</p>
                     </div>
 
                     <div class="add comments row d-flex justify-content-center">
