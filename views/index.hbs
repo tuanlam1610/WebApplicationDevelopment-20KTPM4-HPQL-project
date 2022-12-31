@@ -198,7 +198,7 @@
 
     today = dd + '/' + mm + '/' + yyyy;
     const dateSelect = document.getElementsByClassName("date")[0];
-    dateSelect.getElementsByClassName("form-control")[0].placeholder = today.toString();
+    dateSelect.getElementsByClassName("form-control")[0].value = today;
   }
   $(document).ready(function () {
     $('#startDate-input').datepicker({
