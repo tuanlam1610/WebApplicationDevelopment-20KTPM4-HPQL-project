@@ -303,6 +303,12 @@
 </main>
 <script>
     const urlParams = new URLSearchParams(window.location.search);
+    window.onload = function() {
+        var listTrip = document.getElementById("listTrip");
+        if(listTrip.childElementCount == 0) {
+            listTrip.innerHTML = "<p class='mt-5' style='text-align:center;'>Không tìm thấy chuyến xe phù hợp</p>"
+        }
+    }
     // Datepicker
     $(document).ready(function () {
         $('#startDate-input').datepicker({
@@ -356,6 +362,13 @@
     const nextpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) + 1 : 2;
     const prevpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) - 1 : 1;
     urlParams.delete('page');
+    var pageNum = 1;
+    pagination.querySelectorAll('a').forEach(item => {
+        if(item.innerText != "Trước" && item.id != "Sau") {
+            item.href = "?" + urlParams.toString() + "&page=" + pageNum;
+            pageNum = pageNum + 1;
+        }
+    })
     nextButton.children[0].href = "?" + urlParams.toString() + "&page=" + nextpage;
     prevButton.children[0].href = "?" + urlParams.toString() + "&page=" + prevpage;
     currentPage.classList.add('active');

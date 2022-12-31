@@ -15,7 +15,7 @@
                 </form>
             </div>
             <!-- List Of Garage -->
-            <div class="listGara">
+            <div id="listGara">
                 {{#each garages}}
                 <!-- cardItem for max width row -->
                 <div class="cardItem mb-3 row d-flex justify-content-center">
@@ -103,8 +103,17 @@
 <script>
     // Set Pagination
     const urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.get("garageName") != null || urlParams.get("garageName") != ""){
+        var searchInput = document.getElementById("searchGara");
+        searchInput.value = urlParams.get("garageName");
+    }
+    window.onload = function () {
+        var listGara = document.getElementById("listGara");
+        if (listGara.childElementCount == 0) {
+            listGara.innerHTML = "<p class='mt-5' style='text-align:center;'>Không tìm thấy nhà xe phù hợp</p>"
+        }
+    }
     let pagination = document.getElementById("pagination");
-    console.log(pagination);
     let currentPage = pagination.children[0].children[urlParams.get("page")];
     let prevButton = pagination.children[0].firstChild;
     let nextButton = pagination.children[0].lastChild;
@@ -116,7 +125,7 @@
     })
     prevButton.id = "prevPage";
     nextButton.id = "contPage";
-        if (urlParams.get("page") == 1) {
+    if (urlParams.get("page") == 1) {
         prevButton.classList.add("disabled");
     }
     if ((pagination.children[0].childElementCount - 2) == urlParams.get("page")) {
@@ -125,6 +134,13 @@
     const nextpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) + 1 : 2;
     const prevpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) - 1 : 1;
     urlParams.delete('page');
+    var pageNum = 1;
+    pagination.querySelectorAll('a').forEach(item => {
+        if (item.innerText != "Trước" && item.id != "Sau") {
+            item.href = "?" + urlParams.toString() + "&page=" + pageNum;
+            pageNum = pageNum + 1;
+        }
+    })
     nextButton.children[0].href = "?" + urlParams.toString() + "&page=" + nextpage;
     prevButton.children[0].href = "?" + urlParams.toString() + "&page=" + prevpage;
     currentPage.classList.add('active');
