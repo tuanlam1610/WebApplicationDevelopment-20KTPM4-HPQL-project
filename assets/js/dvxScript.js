@@ -21,6 +21,14 @@ function updateSelectedCount(){
     const chosenSeats = document.getElementsByClassName("selected");
     const soldSeats = document.getElementsByClassName("sold");
 
+    const btnDatVe = document.getElementById("submitBTN");
+    if(chosenSeats.length == 0){
+        btnDatVe.classList.add("isDisabled");
+    }
+    else{
+        btnDatVe.classList.remove("isDisabled");
+    }
+
     const chosenSeatsCount = chosenSeats.length;
     const totalSeatsCount = totalSeats.length - soldSeats.length - chosenSeats.length;
 

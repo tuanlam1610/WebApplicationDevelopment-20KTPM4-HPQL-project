@@ -49,7 +49,7 @@ const controller = {
             raw: true
         }
         if(tripID){ 
-            query.where.IDChuyenXe = tripID;
+            queryChuyenXe.where.IDChuyenXe = tripID;
         }
         tripsInfoQuery = await models.ChuyenXe.findOne(queryChuyenXe);
         res.locals.tripInfo = tripsInfoQuery;

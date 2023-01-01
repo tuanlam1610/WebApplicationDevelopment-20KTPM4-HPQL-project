@@ -388,6 +388,12 @@ body{
     font-size:var(--fs-400)
 }
 
+.isDisabled{
+    Opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .btn-dvx-filter{
     background-color: var(--primary-blue);
     color: var(--white);
@@ -599,4 +605,8 @@ body{
 
 .seatsCount{
     color: var(--green);
+}
+
+.flexGap{
+    gap: 1rem;
 }
