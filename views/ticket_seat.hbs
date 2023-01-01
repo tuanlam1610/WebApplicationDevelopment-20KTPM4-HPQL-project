@@ -23,19 +23,27 @@
       <div class="row dvx-chuyenXeBox align-items-center" style="margin: 3rem 2rem;">
         <!-- info-->
         <div class="col-md-10 text-left">
-          <div class="row">
-            <p class="m-0 p-0">00:03 <i class="fa-solid fa-chevron-right"></i> 00:08</p>
+          <div class="">
+            <p class="m-0 p-0">{{{formatDate tripInfo.gioKhoiHanh "hh:mm - DD/MM/yyyy"}}}
+              <i class="fa-solid fa-chevron-right"></i>
+              {{{formatDate tripInfo.gioKetThuc "hh:mm - DD/MM/yyyy"}}}
+            </p>
           </div>
-          <div class="row">
-            170,000đ ~ Giường ~ Còn 34 Chỗ
+          <div class="">
+            {{{formatCurrency tripInfo.giaVe}}} | {{loaiXe}} | Còn <span class="seatsCount">{{totalSeat}}</span> chỗ
           </div>
-          <div class="row">
-            Bến xe miền tây -> bến xe Long Xuyên
+          <div class="">
+            {{tripInfo.tpDi}} -> {{tripInfo.tpDen}}
+          </div>
+          <div class="">
+            Đã chọn <span class="selectedSeatsCount">0</span> chỗ
           </div>
         </div>
         <!--button-->
         <div class="col-md-2 text-center ">
-          <a name="" id="" class="btn btn-dvx" href="/confirm_ticket" role="button">></a>
+          <a name="" id="submitBTN" class="btn btn-dvx"
+            href="/confirm_ticket?tripID={{IDChuyenXe}}&typeSeat={{loaiXe}}&soGheTrong=!&soGheChon=!&gheChon=!"
+            role="button"> Đặt vé</a>
         </div>
         <!--seat-->
         {{{seatTypeMap}}}
@@ -43,15 +51,15 @@
         <!--showcase-->
         <ul class="showcase ">
           <li id="showcaseElement">
-            <div class="seat"></div>
+            <div class="seatNormal"></div>
             <div>Còn chỗ</div>
           </li>
           <li id="showcaseElement">
-            <div class="seat selected"></div>
+            <div class="seatSelected"></div>
             <div>Đang chọn</div>
           </li>
           <li id="showcaseElement">
-            <div class="seat sold"></div>
+            <div class="seatSold"></div>
             <div>Đã đặt</div>
           </li>
         </ul>
@@ -62,22 +70,24 @@
   </div>
 
 
-   {{#each seats}}
+  {{#each seats}}
   <span id="seatInfo" style="display: none">
     <span class="seatsID">{{viTriGhe}}</span>
     <span class="seatsStatus">{{trangThaiGhe}}</span>
   </span>
-    
-  {{/each}}
 
+  {{/each}}
+  <div id="chosenSeat">
+  </div>
 </main>
 
 
-<script src="/assets/js/dvxScript.js"></script>
+
 
 
 <script>
   console.log(0);
+  //var soGheTrong = {{ totalSeat }};
   const seatsUI = document.getElementsByClassName("seat");
   const seatsIDList = document.getElementsByClassName("seatsID");
   const seatStatusList = document.getElementsByClassName("seatsStatus");
@@ -89,10 +99,41 @@
     var curSeatsId = seatsIDList.item(i);
     var curStatus = seatStatusList.item(i);
 
-    if(curStatus.innerHTML == "true")
+    if (curStatus.innerHTML == "true") {
+      //soGheTrong = soGheTrong - 1;
       curElement.classList.add("sold");
-
+    }
     var newID = curSeatsId.innerHTML;
-    curElement.innerHTML = curElement.innerHTML.replace(curElement.innerHTML,newID);
+    curElement.innerHTML = curElement.innerHTML.replace(curElement.innerHTML, newID);
   }
+</script>
+
+<script src="/assets/js/dvxScript.js"></script>
+
+<script>
+  const button = document.getElementById("submitBTN");
+
+  button.addEventListener("click", (e) => {
+    //e.preventDefault();
+    const seatValue = document.getElementsByClassName("seatsCount");
+    const selectedSeatValue = document.getElementsByClassName("selectedSeatsCount");
+    
+    const selectedSeatList = document.getElementsByClassName("selected");
+    const SeatContainer = document.getElementById("chosenSeat");
+
+    for(var i = 0; i < selectedSeatList.length; i++){
+      SeatContainer.innerText = SeatContainer.innerText.replace(SeatContainer.innerText, SeatContainer.innerText+"-"+selectedSeatList[i].innerText);
+    }
+
+    var hreflink = button.getAttribute('href');
+    var newHref = hreflink.replace("!", seatValue[0].innerText);
+    newHref = newHref.replace("!", selectedSeatValue[0].innerText);
+
+    
+    newHref = newHref.replace("!", SeatContainer.innerText);
+
+    button.setAttribute('href', newHref);
+    return False;
+
+  });
 </script>
