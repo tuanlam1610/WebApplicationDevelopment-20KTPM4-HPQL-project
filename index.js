@@ -65,6 +65,10 @@ app.engine('hbs', expressHbs.engine({
     }
 }));
 
+app.use(express.json());
+
+app.use(express.urlencoded({extended: false}));
+
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/'))
 
@@ -82,9 +86,6 @@ app.use('/trip_info', require('./routes/trip_info_route'));
 
 app.use('/garage_info', require('./routes/garage_info_route'));
 
-app.use(express.json());
-
-app.use(express.urlencoded({extended: false}));
 
 app.get('/createTables', (req, res) => {
     let models = require('./models');
