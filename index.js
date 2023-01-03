@@ -55,9 +55,19 @@ app.engine('hbs', expressHbs.engine({
             result = result.replace(",", ".");
             return result;
         },
-        createPagination: paginateHelper.createPagination
+        createPagination: paginateHelper.createPagination,
+        assign: function (varName, varValue, options) {
+            if (!options.data.root) {
+                options.data.root = {};
+            }
+            options.data.root[varName] = varValue;
+        }
     }
 }));
+
+app.use(express.json());
+
+app.use(express.urlencoded({extended: false}));
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/'))
@@ -79,6 +89,7 @@ app.use('/listoftrip', require('./routes/ListOfTrip_route'));
 app.use('/trip_info', require('./routes/trip_info_route'));
 
 app.use('/garage_info', require('./routes/garage_info_route'));
+
 
 app.get('/createTables', (req, res) => {
     let models = require('./models');
