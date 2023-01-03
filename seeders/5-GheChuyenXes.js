@@ -4,15 +4,10 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     let items =
-<<<<<<<<< Temporary merge branch 1
     [//Xe giường nằm
       {
-      "IDChuyenXe": "1",
+      "IDChuyenXe": 1,
       "viTriGhe": "A01",
-=========
-    [{
-      "IDChuyenXe": 1,
-      "viTriGhe": "A10",
       "trangThaiGhe": false
     }, {
       "IDChuyenXe": 1,
@@ -28,24 +23,6 @@ module.exports = {
       "trangThaiGhe": false
     }, {
       "IDChuyenXe": 1,
-      "viTriGhe": "A03",
->>>>>>>>> Temporary merge branch 2
-      "trangThaiGhe": false
-    }, {
-      "IDChuyenXe": 1,
-      "viTriGhe": "A02",
-      "trangThaiGhe": false
-    }, {
-<<<<<<<<< Temporary merge branch 1
-      "IDChuyenXe": "1",
-      "viTriGhe": "A03",
-      "trangThaiGhe": false
-    }, {
-      "IDChuyenXe": "1",
-      "viTriGhe": "A04",
-      "trangThaiGhe": false
-    }, {
-      "IDChuyenXe": "1",
       "viTriGhe": "A05",
       "trangThaiGhe": false
     }, {
@@ -178,10 +155,7 @@ module.exports = {
     },
     //Xe giường nằm đôi
     {
-      "IDChuyenXe": "10",
-=========
-      "IDChuyenXe": 1,
->>>>>>>>> Temporary merge branch 2
+      "IDChuyenXe": 10,
       "viTriGhe": "A01",
       "trangThaiGhe": false
     }, {
