@@ -1,0 +1,103 @@
+<main>
+    <!--Quản Lí Tài Khoản-->
+    <div class="wrapper">
+        <div class="header">Quản Lí Tài Khoản</div>
+        <div class="container row">
+            <div class="selection col-md-3 col-sm-12">
+                <div class="list-group">
+                    <a href="/account_info" class="list-group-item list-group-item-action">
+                        <i class="fa-regular fa-circle-user"></i>Thông tin tài khoản
+                    </a>
+                    <a href="/edit_info" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
+                    <a href="/change_password" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
+                    <a href="/history/booked" class="list-group-item list-group-item-action active" aria-current="true">
+                        <i class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
+                    <a href="/index" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                </div>
+            </div>
+
+            <div class="content col-md-9 col-sm-12">
+                <section id="filter">
+                    <div id="filter_button">
+                        <a href="/history/booked" class="btn">Đã đặt</a>
+                        <a href="/history/finished" class="btn">Hoàn thành</a>
+                        <a href="/history/cancelled" class="btn active">Đã hủy</a>
+                    </div>
+                    <div id="filter_data">
+
+                        <!-- ---------------------Đã hủy--------------------->
+
+                        <div class="element_type">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="width:8%;">Mã vé</th>
+                                        <th scope="col" style="width:20%;">Thời gian đặt vé</th>
+                                        <th scope="col" style="width:20%;">Thời gian xuất phát</th>
+                                        <th scope="col" style="width:20%;">Địa điểm xuất phát</th>
+                                        <th scope="col" style="width:20%;">Địa điểm đến</th>
+                                        <th scope="col" style="width:12%;">Thanh toán</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {{#each cancelled}}
+                                    <tr>
+                                        <th scope="row">{{ID_Ve}}</th>
+                                        <td>{{{formatDate LichSuDatVe.thoigiandat "hh:mm DD/MM/YYYY"}}}</td>
+                                        <td>{{{formatDate ChuyenXe.gioKhoiHanh "hh:mm DD/MM/YYYY"}}}</td>
+                                        <td>{{GheChuyenXe.ChuyenXe.tpDi}}</td>
+                                        <td>{{GheChuyenXe.ChuyenXe.tpDen}}</td>
+                                        <td>{{LichSuDatVe.trangthaive}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let pagination = document.getElementById("pagination");
+    let currentPage = pagination.children[0].children[urlParams.get("page")];
+    let prevButton = pagination.children[0].firstChild;
+    let nextButton = pagination.children[0].lastChild;
+    pagination.querySelectorAll('li').forEach(item => {
+        item.classList.add('page-item');
+    })
+    pagination.querySelectorAll('a').forEach(item => {
+        item.classList.add('page-link');
+    })
+    prevButton.id = "prevPage";
+    nextButton.id = "contPage";
+    if (urlParams.get("page") == 1) {
+        prevButton.classList.add("disabled");
+    }
+    if ((pagination.children[0].childElementCount - 2) == urlParams.get("page")) {
+        nextButton.classList.add("disabled");
+    }
+    const nextpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) + 1 : 2;
+    const prevpage = (urlParams.get('page')) ? parseInt(urlParams.get('page')) - 1 : 1;
+    urlParams.delete('page');
+    var pageNum = 1;
+    pagination.querySelectorAll('a').forEach(item => {
+        if (item.innerText != "Trước" && item.id != "Sau") {
+            item.href = "?" + urlParams.toString() + "&page=" + pageNum;
+            pageNum = pageNum + 1;
+        }
+    })
+    nextButton.children[0].href = "?" + urlParams.toString() + "&page=" + nextpage;
+    prevButton.children[0].href = "?" + urlParams.toString() + "&page=" + prevpage;
+    currentPage.classList.add('active');
+
+</script>

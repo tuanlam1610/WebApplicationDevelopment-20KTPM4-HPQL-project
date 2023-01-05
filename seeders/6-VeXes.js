@@ -14,45 +14,53 @@ module.exports = {
     */
     let items =
       [{
-        "IDVe": "H0000001",
+        "ID_Ve": "H0000001",
         "IDChuyenXe": 1,
         "viTriGhe": "A01"
       }, {
-        "IDVe": "H0000002",
+        "ID_Ve": "H0000002",
         "IDChuyenXe": 1,
         "viTriGhe": "A02"
       }, {
-        "IDVe": "P0000001",
+        "ID_Ve": "H0000003",
         "IDChuyenXe": 1,
         "viTriGhe": "A03"
       }, {
-        "IDVe": "P0000002",
+        "ID_Ve": "H0000004",
         "IDChuyenXe": 1,
         "viTriGhe": "A04"
       }, {
-        "IDVe": "Q0000001",
+        "ID_Ve": "H0000005",
         "IDChuyenXe": 1,
         "viTriGhe": "A05"
       }, {
-        "IDVe": "Q0000002",
+        "ID_Ve": "H0000006",
         "IDChuyenXe": 1,
         "viTriGhe": "A06"
       }, {
-        "IDVe": "L0000001",
+        "ID_Ve": "H0000007",
         "IDChuyenXe": 1,
         "viTriGhe": "A07"
       }, {
-        "IDVe": "L0000002",
+        "ID_Ve": "H0000008",
         "IDChuyenXe": 1,
         "viTriGhe": "A08"
       }, {
-        "IDVe": "L0000003",
+        "ID_Ve": "H0000009",
         "IDChuyenXe": 1,
         "viTriGhe": "A09"
       }, {
-        "IDVe": "L0000004",
+        "ID_Ve": "H0000010",
         "IDChuyenXe": 1,
         "viTriGhe": "A10"
+      }, {
+        "ID_Ve": "H0000011",
+        "IDChuyenXe": 1,
+        "viTriGhe": "A11"
+      }, {
+        "ID_Ve": "H0000012",
+        "IDChuyenXe": 1,
+        "viTriGhe": "A12"
       }];
     items.forEach(item => {
       item.createdAt = Sequelize.literal('NOW()');

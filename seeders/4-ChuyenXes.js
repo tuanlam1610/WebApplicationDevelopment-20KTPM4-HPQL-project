@@ -14,7 +14,7 @@ module.exports = {
     */
     let items =
       [{
-        "ID_NX": "1",
+        "ID_NX": 1,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08070650/Bus_img_1.png", "/assets/img/trip/08070650/Bus_img_2.png", "/assets/img/trip/08070650/Bus_img_3.png", "/assets/img/trip/08070650/Bus_img_4.png", "/assets/img/trip/08070650/Bus_img_5.png", "/assets/img/trip/08070650/Bus_img_6.png"],
         "diemDon": ["Bến xe miền tây"],
@@ -30,7 +30,7 @@ module.exports = {
         "giaVe": "170000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "1",
+        "ID_NX": 1,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08070700/Bus_img_1.png", "/assets/img/trip/08070700/Bus_img_2.png", "/assets/img/trip/08070700/Bus_img_3.png", "/assets/img/trip/08070700/Bus_img_4.png", "/assets/img/trip/700/Bus_img_5.png", "/assets/img/trip/08070700/Bus_img_6.png"],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên"],
@@ -46,7 +46,7 @@ module.exports = {
         "giaVe": "170000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "2",
+        "ID_NX": 2,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08080650/Bus_img_1.png", "/assets/img/trip/08080650/Bus_img_2.png", "/assets/img/trip/08080650/Bus_img_3.png", "/assets/img/trip/08080650/Bus_img_4.png", "/assets/img/trip/08080650/Bus_img_5.png", "/assets/img/trip/08080650/Bus_img_6.png",],
         "diemDon": ["Bến xe miền tây", "Bến xe Huỳnh Đạt"],
@@ -62,7 +62,7 @@ module.exports = {
         "giaVe": "150000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "2",
+        "ID_NX": 2,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08080700/Bus_img_1.png", "/assets/img/trip/08080700/Bus_img_2.png", "/assets/img/trip/08080700/Bus_img_3.png", "/assets/img/trip/08080700/Bus_img_4.png", "/assets/img/trip/08080700/Bus_img_5.png", "/assets/img/trip/08080700/Bus_img_6.png",],
         "diemDon": ["Bến xe Vĩnh Long", "Bến xe Tiền Giang"],
@@ -78,7 +78,7 @@ module.exports = {
         "giaVe": "150000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "3",
+        "ID_NX": 3,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08090650/Bus_img_1.png", "/assets/img/trip/08090650/Bus_img_2.png", "/assets/img/trip/08090650/Bus_img_3.png", "/assets/img/trip/08090650/Bus_img_4.png", "/assets/img/trip/08090650/Bus_img_5.png", "/assets/img/trip/08090650/Bus_img_6.png",],
         "diemDon": ["Bến xe miền tây, Bến xe Hùng Cường"],
@@ -94,7 +94,7 @@ module.exports = {
         "giaVe": "170000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "3",
+        "ID_NX": 3,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08090700/Bus_img_1.png", "/assets/img/trip/08090700/Bus_img_2.png", "/assets/img/trip/08090700/Bus_img_3.png", "/assets/img/trip/08090700/Bus_img_4.png", "/assets/img/trip/08090700/Bus_img_5.png", "/assets/img/trip/08090700/Bus_img_6.png",],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên, Bến xe Châu Đốc"],
@@ -110,7 +110,7 @@ module.exports = {
         "giaVe": "170000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "3",
+        "ID_NX": 3,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08091700/Bus_img_1.png", "/assets/img/trip/08091700/Bus_img_2.png", "/assets/img/trip/08091700/Bus_img_3.png", "/assets/img/trip/08091700/Bus_img_4.png", "/assets/img/trip/08091700/Bus_img_5.png", "/assets/img/trip/08091700/Bus_img_6.png",],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên, Bến xe Châu Đốc"],
@@ -126,7 +126,7 @@ module.exports = {
         "giaVe": "170000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "1",
+        "ID_NX": 1,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08071650/Bus_img_1.png", "/assets/img/trip/08071650/Bus_img_2.png", "/assets/img/trip/08071650/Bus_img_3.png", "/assets/img/trip/08071650/Bus_img_4.png", "/assets/img/trip/08071650/Bus_img_5.png", "/assets/img/trip/08071650/Bus_img_6.png",],
         "diemDon": ["Bến xe miền tây"],
@@ -142,7 +142,7 @@ module.exports = {
         "giaVe": "160000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "1",
+        "ID_NX": 1,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08071700/Bus_img_1.png", "/assets/img/trip/08071700/Bus_img_2.png", "/assets/img/trip/08071700/Bus_img_3.png", "/assets/img/trip/08071700/Bus_img_4.png", "/assets/img/trip/08071700/Bus_img_5.png", "/assets/img/trip/08071700/Bus_img_6.png",],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên"],
@@ -158,7 +158,7 @@ module.exports = {
         "giaVe": "160000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
-        "ID_NX": "4",
+        "ID_NX": 4,
         "moTaChinhSach": ["Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est."],
         "imagePath": ["/assets/img/trip/08062700/Bus_img_1.png", "/assets/img/trip/08062700/Bus_img_2.png", "/assets/img/trip/08062700/Bus_img_3.png", "/assets/img/trip/08062700/Bus_img_4.png", "/assets/img/trip/08062700/Bus_img_5.png", "/assets/img/trip/08062700/Bus_img_6.png",],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên"],

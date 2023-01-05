@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       ChuyenXe.belongsTo(models.NhaXe, {foreignKey: 'ID_NX'});
       ChuyenXe.hasMany(models.GheChuyenXe, {foreignKey: 'IDChuyenXe'});
-      ChuyenXe.hasMany(models.VeXe, {foreignKey: 'IDChuyenXe'});
+      //ChuyenXe.hasMany(models.VeXe, {foreignKey: 'IDChuyenXe'});
     }
   }
   ChuyenXe.init({
