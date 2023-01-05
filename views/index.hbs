@@ -15,20 +15,20 @@
           <div class="col-md-1"></div>
         </div>
         <!-- Second Row -->
-        <div class="row mb-3 d-flex justify-content-center" id="inputTicket">
+        <form action="/listoftrip" class="row mb-3 d-flex justify-content-center" id="inputTicket">
           <!-- Start Des Col -->
           <div class="col-6 col-md-2 dropdown">
             <div id="startDes" class="d-flex flex-row px-3">
               <label for="startDes-input" class="d-flex align-items-center">
                 <i class="fa-solid fa-location-dot fa-lg d-flex align-items-center"></i>
               </label>
-              <input type="text" name="Start Destination" id="startDes-input" class="form-control lh-lg"
+              <input type="text" name="StartDestination" id="startDes-input" class="form-control lh-lg"
                 placeholder="Điểm khởi hành" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                 <div class="dropdown-divider"></div>
                 {{#each diemBatDau}}
-                <li class="dropdown-item" href="#" onclick="loadDropdown(this)">{{noiBatDau}}</li>
+                <li class="dropdown-item" onclick="loadDropdown(this)">{{tpDi}}</li>
                 {{/each}}
               </ul>
             </div>
@@ -39,13 +39,13 @@
               <label for="endDes-input" class="d-flex align-items-center">
                 <i class="fa-solid fa-location-dot fa-lg d-flex align-items-center"></i>
               </label>
-              <input type="text" name="End Destination" id="endDes-input" class="form-control lh-lg"
+              <input type="text" name="EndDestination" id="endDes-input" class="form-control lh-lg"
                 placeholder="Điểm đến" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <ul class="dropdown-menu w-75 mx-3 text-center overflow-auto">
                 <h6 class="dropdown-header fw-bold">Tỉnh - Thành phố</h6>
                 <div class="dropdown-divider"></div>
                 {{#each diemKetThuc}}
-                <li class="dropdown-item" href="#" onclick="loadDropdown(this)">{{noiKetThuc}}</li>
+                <li class="dropdown-item" onclick="loadDropdown(this)">{{tpDen}}</li>
                 {{/each}}
               </ul>
             </div>
@@ -63,9 +63,8 @@
               </div>
             </div>
           </div>
-          <a role="button" href="/assets/dvx-page/datVe.html"
-            class="col-6 col-md-1 btn btn-primary d-flex justify-content-center align-items-center">Tìm Vé</a>
-        </div>
+          <button type="submit" class="col-6 col-md-1 btn btn-primary d-flex justify-content-center align-items-center">Tìm Vé</a>
+        </form>
       </div>
     </div>
   </div>
@@ -81,7 +80,7 @@
           <div id="city-slider" class="owl-carousel">
             <!-- 1 -->
             <div class="city-item">
-              <a href="">
+              <a href="/listoftrip?EndDestination=TP.+Hồ+Chí+Minh">
                 <div class="city-item-image">
                   <img src="./assets/img/HCM.png" alt="">
                 </div>
@@ -90,7 +89,7 @@
             </div>
             <!-- 2 -->
             <div class="city-item">
-              <a href="">
+              <a href="/listoftrip?EndDestination=Hà+Nội">
                 <div class="city-item-image">
                   <img src="./assets/img/HN.png" alt="">
                 </div>
@@ -99,7 +98,7 @@
             </div>
             <!-- 3 -->
             <div class="city-item">
-              <a href="">
+              <a href="/listoftrip?EndDestination=Đà+Nẵng">
                 <div class="city-item-image">
                   <img src="./assets/img/DN.png" alt="">
                 </div>
@@ -108,7 +107,7 @@
             </div>
             <!-- 4 -->
             <div class="city-item">
-              <a href="">
+              <a href="/listoftrip?EndDestination=Đà+Lạt">
                 <div class="city-item-image">
                   <img src="./assets/img/DL.png" alt="">
                 </div>
@@ -117,7 +116,7 @@
             </div>
             <!-- 5 -->
             <div class="city-item">
-              <a href="">
+              <a href="/listoftrip?EndDestination=Nha+Trang">
                 <div class="city-item-image">
                   <img src="./assets/img/NT.png" alt="">
                 </div>
@@ -126,7 +125,7 @@
             </div>
             <!-- 6 -->
             <div class="city-item">
-              <a href="">
+              <a href="/listoftrip?EndDestination=Cần+Thơ">
                 <div class="city-item-image">
                   <img src="./assets/img/CT.png" alt="">
                 </div>
@@ -135,7 +134,7 @@
             </div>
             <!-- 7 -->
             <div class="city-item">
-              <a href="">
+              <a href="/listoftrip?EndDestination=Bến+Tre">
                 <div class="city-item-image">
                   <img src="./assets/img/BT.png" alt="">
                 </div>
@@ -199,10 +198,11 @@
 
     today = dd + '/' + mm + '/' + yyyy;
     const dateSelect = document.getElementsByClassName("date")[0];
-    dateSelect.getElementsByClassName("form-control")[0].placeholder = today.toString();
+    dateSelect.getElementsByClassName("form-control")[0].value = today;
   }
   $(document).ready(function () {
     $('#startDate-input').datepicker({
+      startDate: new Date(),
       format: "dd/mm/yyyy",
       container: "#datepicker",
       laguage: "en",
@@ -268,7 +268,7 @@
 </script>
 <script>
     function loadDropdown(e) {
-        e.parentElement.parentElement.children[0].value = e.innerText;
+        e.parentElement.parentElement.children[1].value = e.innerText;
         console.log(e.innerText);
     }
 </script>

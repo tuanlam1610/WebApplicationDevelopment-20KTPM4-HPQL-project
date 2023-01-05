@@ -17,15 +17,20 @@ module.exports = (sequelize, DataTypes) => {
   }
   NhaXe.init({
     ID_NX: {
-      type: DataTypes.CHAR(8),
-      primaryKey: true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
     tennhaxe: DataTypes.STRING,
     doangioithieu: DataTypes.TEXT,
     imagepath: DataTypes.TEXT,
     sdt: DataTypes.CHAR(10),
     diachi: DataTypes.TEXT,
-    email: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      unique: true,
+      primaryKey: false
+    },
     website: DataTypes.STRING,
     sosaoTB: DataTypes.FLOAT
   }, {

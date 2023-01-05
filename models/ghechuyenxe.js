@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   GheChuyenXe.init({
     IDChuyenXe: { 
-      type: DataTypes.CHAR(8),
+      type: DataTypes.INTEGER,
       primaryKey: true
     },
     viTriGhe: { 

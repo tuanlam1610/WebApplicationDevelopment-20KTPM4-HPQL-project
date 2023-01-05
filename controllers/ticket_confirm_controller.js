@@ -1,7 +1,37 @@
 const models = require('../models/index')
 
 const controller = {
+   
     show: async (req, res) => {
+        var tripID = req.query.tripID;
+        var loaiGhe = req.query.typeSeat;
+        var emptySeats = req.query.soGheTrong;
+        var chosenNum = req.query.soGheChon;
+        var chosenSeats = req.query.gheChon;
+
+        var queryChuyenXe = {
+            attributes: ['tpDi', 'tpDen', 'gioKhoiHanh', 'gioKetThuc', 'soGheTrong', 'giaVe'],
+            where: {},
+            raw: true
+        }
+        if(tripID){ 
+            queryChuyenXe.where.IDChuyenXe = tripID;
+        }
+
+        tripsInfoQuery = await models.ChuyenXe.findOne(queryChuyenXe);
+        res.locals.tripInfo = tripsInfoQuery;
+        res.locals.IDChuyenXe = tripID;
+        res.locals.loaiXe = loaiGhe;
+        res.locals.soGheTrong = emptySeats;
+        res.locals.soGheChon = chosenNum;
+
+        //console.log(chosenSeats);
+        var seatsList = chosenSeats.split("-");
+        //console.log(seatsList);
+        seatsList.shift();
+        //console.log(seatsList);
+        res.locals.gheChon = seatsList;
+
         res.render('ticket_confirm', {styleLink: "/assets/css/dvx-style.css"});
     }
     /*showDetails: async (req, res) => {

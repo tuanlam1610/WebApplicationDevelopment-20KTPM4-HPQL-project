@@ -13,6 +13,7 @@ const account_info_route = require('./routes/account_info_route');
 const edit_info_route = require('./routes/edit_info_route');
 const change_password_route = require('./routes/change_password_route');
 const history_route = require('./routes/history_route');
+const paginateHelper = require('express-handlebars-paginate');
 
 app.engine('hbs', expressHbs.engine({
     extname: 'hbs',
@@ -50,16 +51,23 @@ app.engine('hbs', expressHbs.engine({
         },
         formatCurrency: function(currency){
             var result = "";
-            // while(Math.floor(currency / 1000) != 0) {
-            //     result = ".000" + result;
-            //     currency = Math.floor(currency/1000);
-            // }
             result = new Intl.NumberFormat().format(currency) + "đ";
             result = result.replace(",", ".");
             return result;
+        },
+        createPagination: paginateHelper.createPagination,
+        assign: function (varName, varValue, options) {
+            if (!options.data.root) {
+                options.data.root = {};
+            }
+            options.data.root[varName] = varValue;
         }
     }
 }));
+
+app.use(express.json());
+
+app.use(express.urlencoded({extended: false}));
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/'))
@@ -78,6 +86,7 @@ app.use('/trip_info', require('./routes/trip_info_route'));
 
 app.use('/garage_info', require('./routes/garage_info_route'));
 
+
 app.get('/createTables', (req, res) => {
     let models = require('./models');
     models.sequelize.sync().then(() => {
@@ -92,10 +101,10 @@ app.use('/seat_ticket', ticket_seat_route);
 app.use('/confirm_ticket', ticket_confirm_route);
 
 // Thông tin tài khoản
-app.use('/account_info', account_info_route);
-app.use('/edit_info', edit_info_route);
-app.use('/change_password', change_password_route);
-app.use('/history', history_route);
+app.use('/account_info', require('./routes/account_info_route'));
+app.use('/edit_info', require('./routes/edit_info_route'));
+app.use('/change_password', require('./routes/change_password_route'));
+app.use('/history', require('./routes/history_route'));
 
 function getSum(total, item){
     return total + item.soSao

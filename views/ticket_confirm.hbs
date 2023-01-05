@@ -1,90 +1,98 @@
 <main>
-    <!-- Multistep progress bar-->
-    <div class="step-wizard">
-      <ul class="step-wizard-list">
-        <li class="step-wizard-item ">
-          <span class="progress-count" id="beforeItem">Chuyến Xe</span>
-        </li>
-        <li class="step-wizard-item">
-          <span class="progress-count" id="beforeItem">Chọn giờ</span>
-        </li>
-        <li class="step-wizard-item">
-          <span class="progress-count" id="beforeItem">Chọn chỗ</span>
-        </li>
-        <li class="step-wizard-item">
-          <span class="progress-count" id="currentItem">Xác nhận</span>
-        </li>
-      </ul>
-    </div>
-    <!-- Box Tìm Vé-->
-    <div class="dvx-box container d-flex justify-content-center flex-column">
-      <!-- Chuyến xe element-->
-      <div>
-        <div class="dvx-chuyenXeBox  d-flex justify-content-center flex-column align-items-center">
-          <!-- info-->
-          <div class="dvx-xacNhanTime text-center">
-            <p class="m-0 p-0">00:03 <i class="fa-solid fa-chevron-right"></i> 00:08</p>
+  <!-- Multistep progress bar-->
+  <div class="step-wizard">
+    <ul class="step-wizard-list">
+      <li class="step-wizard-item ">
+        <span class="progress-count" id="beforeItem">Chuyến Xe</span>
+      </li>
+      <li class="step-wizard-item">
+        <span class="progress-count" id="beforeItem">Chọn giờ</span>
+      </li>
+      <li class="step-wizard-item">
+        <span class="progress-count" id="beforeItem">Chọn chỗ</span>
+      </li>
+      <li class="step-wizard-item">
+        <span class="progress-count" id="currentItem">Xác nhận</span>
+      </li>
+    </ul>
+  </div>
+  <!-- Box Tìm Vé-->
+  <div class="dvx-box container d-flex justify-content-center flex-column">
+    <!-- Chuyến xe element-->
+    <div>
+      <div class="dvx-chuyenXeBox  d-flex justify-content-center flex-column align-items-center">
+        <!-- info-->
+        <div class="dvx-xacNhanTime text-center">
+          <p class="m-1 p-0">{{formatDate tripInfo.gioKhoiHanh "hh:mm - DD/MM/yyyy"}}</p>
+            <i class="fa-solid fa-chevron-right"></i> 
+          <p class="m-1 p-0">{{formatDate tripInfo.gioKetThuc "hh:mm - DD/MM/yyyy"}}</p>
+        </div>
+        <div class="dvx-xacNhanBox text-center">
+          <div class="d-flex flex-column flex-lg-row gap-2">  
+            <div id="Highlight">
+              {{tripInfo.tpDi}}
+            </div>
+            <div class=""> -> </div>
+            <div class="" id="Highlight">
+              {{tripInfo.tpDen}}
+            </div>
+
           </div>
-          <div class="dvx-xacNhanBox text-center">
-            <div class="d-flex flex-column flex-lg-row gap-2">
-              <div id="Highlight">
-                Bến xe miền tây
-              </div>
-              <div class="" > -> </div>
-              <div class="" id="Highlight">
-                Bến xe Long Xuyên
-              </div>
-
-            </div>
-            <div class="d-flex gap-2 justify-content-center">
-              <div class="">
-                Loại xe:
-              </div>
-              <div class="" id="Highlight">
-                Giường
-              </div>
-            </div>
-
+          <div class="d-flex gap-2 justify-content-center">
             <div class="">
-              Vé đã chọn:
+              Loại xe:
             </div>
             <div class="" id="Highlight">
-              B5, A6, B6
+              {{loaiXe}}
             </div>
           </div>
-          <div class="dvx-TinhTien text-end w-50">
-            <div>170,000đ</div>
-            <div>x 3 vé</div>
-          </div>
-          <div class="dvx-linebreak"></div>
-          <div class="dvx-TotalMoney">
-            <div class="dvx-TinhTien" id="Bold">
-              Tổng:
-            </div>
-            <div class="dvx-TinhTien" id="Bold">
-              510,000đ
-            </div>
-          </div>
-          <div class="dropdown">
-            <div id="startDes" class="d-flex flex-row px-3">
-              <button class="btn btn-dvx-transaction dropdown-toggle" type="button" id="dropdownMenuButton1"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Phương thức thanh toán
-                <span class="caret"></span>
-              </button>
 
-              <ul class="dropdown-menu mx-3 text-center overflow-auto">
-                <h6 class="dropdown-header fw-bold">PTTT</h6>
-                <div class="dropdown-divider"></div>
-                <li class="dropdown-item" href="#">Trực tiếp</li>
-              </ul>
-            </div>
+          <div class="">
+            Vé đã chọn:
           </div>
-          <a name="" id="payment" class="btn btn-dvx-confirm" href="/index.html" role="button">Thanh Toán</a>
+          <div class="d-inline-flex justify-content-center w-100 flexGap">
+            {{#each gheChon}}
+            <div class="" id="SeatID">
+              {{this}}
+            </div>
+            {{/each}}
+          </div>
+
+
         </div>
+        <div class="dvx-TinhTien text-end w-50">
+          <div>{{formatCurrency tripInfo.giaVe}}</div>
+          <div>x {{soGheChon}} vé</div>
+        </div>
+        <div class="dvx-linebreak"></div>
+        <div class="dvx-TotalMoney">
+          <div class="dvx-TinhTien" id="Bold">
+            Tổng:
+          </div>
+          <div class="dvx-TinhTien" id="Bold">
+            510,000đ
+          </div>
+        </div>
+        <div class="dropdown">
+          <div id="startDes" class="d-flex flex-row px-3">
+            <button class="btn btn-dvx-transaction dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Phương thức thanh toán
+              <span class="caret"></span>
+            </button>
 
-
-
+            <ul class="dropdown-menu mx-3 text-center overflow-auto">
+              <h6 class="dropdown-header fw-bold">PTTT</h6>
+              <div class="dropdown-divider"></div>
+              <li class="dropdown-item" href="#">Trực tiếp</li>
+            </ul>
+          </div>
+        </div>
+        <a name="" id="payment" class="btn btn-dvx-confirm" href="/" role="button">Thanh Toán</a>
       </div>
+
+
+
     </div>
-  </main>
+  </div>
+</main>

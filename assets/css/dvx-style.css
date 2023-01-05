@@ -388,6 +388,12 @@ body{
     font-size:var(--fs-400)
 }
 
+.isDisabled{
+    Opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .btn-dvx-filter{
     background-color: var(--primary-blue);
     color: var(--white);
@@ -432,6 +438,62 @@ body{
     background-color: var(--gray);
     color: var(--white);
 }
+
+.seatNormal{
+    border-style: solid;
+    border-color: var(--primary-blue);
+    border-radius: 0.75rem;  
+
+    
+    text-align: center;
+
+
+    width:3rem;
+    height:2.85rem;
+    margin:0.5rem 0rem;
+    padding: 0rem 0rem;
+    font-size: var(--fs-font-seating);
+}
+.seatSelected{
+    border-style: solid;
+    border-color: var(--primary-blue);
+    border-radius: 0.75rem;  
+
+    
+    text-align: center;
+
+
+    width:3rem;
+    height:2.85rem;
+    margin:0.5rem 0rem;
+    padding: 0rem 0rem;
+    font-size: var(--fs-font-seating);
+
+    background-color: var(--green);
+    border-color: var(--whitest);
+    color: var(--white);
+    outline: solid var(--green);
+}
+
+.seatSold{
+    border-style: solid;
+    border-color: var(--primary-blue);
+    border-radius: 0.75rem;  
+
+    
+    text-align: center;
+
+
+    width:3rem;
+    height:2.85rem;
+    margin:0.5rem 0rem;
+    padding: 0rem 0rem;
+    font-size: var(--fs-font-seating);
+    font-size: var(--fs-font-seating);
+    background-color: var(--gray);
+    color: var(--white);
+}
+
 
 .showcase {
     margin: 0rem 1rem;
@@ -535,4 +597,16 @@ body{
 
 .dropdown-item{
     cursor: pointer;
+}
+
+.selectedSeatsCount{
+    color: var(--primary-blue);
+}
+
+.seatsCount{
+    color: var(--green);
+}
+
+.flexGap{
+    gap: 1rem;
 }

@@ -22,30 +22,32 @@
             <div class="col-md-1"></div>
 
             <div class="content col-md-8 col-sm-12">
+                {{#each accountInfo}}
                 <div class="fullname">
                     <h4>Họ và tên</h4>
                     <div class="displayField">
-                        Nguyễn Gia Huy
+                        <input type="text" id="hoten" name="hoten" maxlength="32" value="{{hoten}}" readonly>
                     </div>
                 </div>
                 <div class="email">
-                    <h4>Email</h4>
-                    <div class="displayField">
-                        abc@gmail.com
+                        <h4>Email</h4>
+                        <div class="displayField">
+                            <input type="text" id="email" name="email" value="{{email}}" readonly>
+                        </div>
                     </div>
-                </div>
-                <div class="phone">
-                    <h4>Số điện thoại</h4>
-                    <div class="displayField">
-                        0123456789
+                    <div class="phone">
+                        <h4>Số điện thoại</h4>
+                        <div class="displayField">
+                            <input type="text" id="sdt" name="sdt" maxlength="10" value="{{sdt}}" readonly required>
+                        </div>
                     </div>
-                </div>
-                <div class="dob">
-                    <h4>Ngày sinh</h4>
-                    <div class="displayField">
-                        05/12/2002
+                    <div class="dob">
+                        <h4>Ngày sinh</h4>
+                        <div class="displayField">
+                            <input type="text" id="ngaysinh" name="ngaysinh" value="{{ngaysinh}}" readonly>
+                        </div>
                     </div>
-                </div>
+                {{/each}}
             </div>
         </div>
     </div>

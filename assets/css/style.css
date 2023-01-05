@@ -278,6 +278,10 @@ div.navbar-collapse .btn:hover {
     border-radius: 8px;
 }
 
+#startDate .datepicker-days td.disabled {
+    color: rgba(0, 0, 0, 0.3);
+}
+
 #startDate .datepicker-days th:hover,
 #startDate .datepicker-days td:hover{
     background-color: var(--primary-blue);

@@ -9,7 +9,7 @@ a {
     color: black;
 }
 
-:root{
+:root {
     --primary-blue: #4F98CA;
     --green: #50D890;
     --white: #EFFFFB;
@@ -18,7 +18,7 @@ a {
     --fs-600: 1.5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
-} 
+}
 
 body {
     background-color: var(--white);
@@ -32,7 +32,7 @@ main {
 
 /* ----- Nav Bar Start ----- */
 .navbar {
-    background-color: var(--white)!important;
+    background-color: var(--white) !important;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
     text-transform: uppercase;
     padding: 0px;
@@ -128,6 +128,7 @@ div.navbar-collapse .btn:hover {
 main h2 {
     color: var(--primary-blue);
 }
+
 /* Sort Trip */
 #sortTrip .btn {
     background-color: var(--white);
@@ -170,7 +171,7 @@ main h2 {
 }
 
 #filter .dropdown-menu,
-#filter .dropdown-divider{
+#filter .dropdown-divider {
     /* Scrollable Menu */
     max-height: 10rem;
     /* --------------- */
@@ -308,6 +309,12 @@ main h2 {
     font-weight: bold;
     color: var(--primary-blue);
     background-color: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.pagination li.disabled .page-link{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
 }
 
 .pagination li.active .page-link {
@@ -315,12 +322,12 @@ main h2 {
     border-color: var(--primary-blue);
 }
 
-.pagination #prevPage .page-link{
+.pagination #prevPage .page-link {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
-.pagination #contPage .page-link{
+.pagination #contPage .page-link {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -334,64 +341,165 @@ main h2 {
 .topbtnContainer .btn:hover {
     background-color: var(--green);
 }
+
 @media (max-width:768px) {
     #listTrip .card .card-img {
         border-right: none;
     }
 }
+
 /* Content End */
 /*-----Footer----*/
 #footer {
     background-color: var(--primary-blue) !important;
-    color: var(--white)!important;
+    color: var(--white) !important;
     margin-top: 40px;
     font-size: var(--fs-400);
     padding: 0 1.5rem 0 1.5rem;
 }
 
-#footer-Logo{
-  width: 50%;
-  height: auto;
+#footer-Logo {
+    width: 50%;
+    height: auto;
 }
 
-.sm-text-align{
+.sm-text-align {
     text-align: start;
 }
 
-@media (min-width:768px){
-    :root{
+@media (min-width:768px) {
+    :root {
         --fs-600: 1.5rem;
         --fs-500: 1.25rem;
         --fs-400: 0.8rem;
-    }  
-    .sm-text-align{
+    }
+
+    .sm-text-align {
         text-align: end;
     }
 
-    #footer-Logo{
+    #footer-Logo {
         width: 75%;
         height: auto;
-      }
+    }
 }
 
-@media (min-width:840px){
-    :root{
+@media (min-width:840px) {
+    :root {
         --fs-600: 1.5rem;
         --fs-500: 1.25rem;
         --fs-400: 1rem;
-    }  
-    .sm-text-align{
+    }
+
+    .sm-text-align {
         text-align: end;
     }
 }
 
-@media (min-width:1144px){ /*subtract 20px (real at 1144)*/
-    :root{
+@media (min-width:1144px) {
+
+    /*subtract 20px (real at 1144)*/
+    :root {
         --fs-600: 1.75rem;
         --fs-500: 1.5rem;
         --fs-400: 1.25rem;
-    }  
-    .sm-text-align{
-        text-align: end!important;
+    }
+
+    .sm-text-align {
+        text-align: end !important;
     }
 }
+
+/* CSS For Datepicker Plugin */
+#startDate .datepicker {
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin-top: 2px;
+    padding: 0.5rem;
+    max-height: max-content;
+    background-color: var(--white);
+}
+
+#startDate .datepicker th,
+#startDate .datepicker td {
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+#startDate .datepicker td {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#startDate thead {
+    color: var(--primary-blue);
+    border-radius: 8px;
+}
+
+#startDate .datepicker-days td.disabled {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+#startDate .datepicker-days th:hover,
+#startDate .datepicker-days td:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#startDate .datepicker-days th:active,
+#startDate .datepicker-days td:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+#startDate .datepicker-months,
+#startDate .datepicker-years {
+    margin: auto;
+    max-height: 20rem;
+    overflow-y: auto;
+}
+
+#startDate .datepicker-months thead,
+#startDate .datepicker-years thead {
+    display: flex;
+}
+
+#startDate .datepicker-months th,
+#startDate .datepicker-years th {
+    padding: 0.3rem 0.7rem;
+}
+
+#startDate .datepicker-months td,
+#startDate .datepicker-years td {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#startDate .datepicker-months span,
+#startDate .datepicker-years span {
+    border-radius: 8px;
+    padding: 0.3rem;
+}
+
+#startDate .datepicker-months th:hover,
+#startDate .datepicker-months span:hover,
+#startDate .datepicker-years th:hover,
+#startDate .datepicker-years span:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+#startDate .datepicker-months th:active,
+#startDate .datepicker-months span:active,
+#startDate .datepicker-years th:active,
+#startDate .datepicker-years span:active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+/* ----- End Datepicker ----- */

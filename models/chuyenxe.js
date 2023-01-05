@@ -19,10 +19,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   ChuyenXe.init({
     IDChuyenXe:{ 
-      type: DataTypes.CHAR(8),
-      primaryKey: true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
-    ID_NX: DataTypes.CHAR(8),
+    ID_NX: DataTypes.INTEGER,
     moTaChinhSach: DataTypes.ARRAY(DataTypes.TEXT),
     imagePath: DataTypes.ARRAY(DataTypes.STRING),
     diemDon: DataTypes.ARRAY(DataTypes.STRING),
