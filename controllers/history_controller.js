@@ -1,9 +1,10 @@
+const { sequelize } = require('../models/index');
 const models = require('../models/index')
 
 const controller = {
-    show: async (req, res) => {
 
-        const booked = await models.VeXe.findAll({
+    showBooked: async (req, res) => {
+        var booked = {
             //attributes: ["ID_Ve", "thoigiandatve", "trangthaive"],
             include: [
                 {
@@ -16,19 +17,48 @@ const controller = {
                     },
                 },
                 {
-                    model: models.ChuyenXe,
-                    attributes: ["gioKhoiHanh", "tpDi", "tpDen"],
+                    model: models.GheChuyenXe,
+                    on: {viTriGhe: sequelize.where(sequelize.col("VeXe.viTriGhe"), "=", sequelize.col("GheChuyenXe.viTriGhe")),
+                    IDChuyenXe: sequelize.where(sequelize.col("VeXe.IDChuyenXe"), "=", sequelize.col("GheChuyenXe.IDChuyenXe"))},
+                    include: [
+                        {
+                            model: models.ChuyenXe,
+                            attributes: ["gioKhoiHanh", "tpDi", "tpDen"],
+                            required: true,
+                        },
+                    ],
                     required: true,
                 },
+                
                 // {
                 //     model: models.GheChuyenXe,
                 //     attributes: ["viTriGhe"],
                 //     required: true,
                 // },
             ],
-        }); 
+        };
 
-        const finished = await models.VeXe.findAll({
+        //Paginate Setting
+        let page = req.query.page || 1;
+        let limit = 8;
+        booked.limit = limit;
+        booked.offset = limit * (page - 1);
+        let {rows, count} = await models.VeXe.findAndCountAll(booked);
+        //console.log(JSON.stringify(rows))
+        res.locals.tickets = rows;
+        res.locals.pagination = {
+            page,
+            limit,
+            totalRows: count,
+        }
+
+        //res.locals.booked = req.query;
+        res.render('booked', { styleLink: "/assets/css/LichSuDatVe.css" });
+    },
+
+    showFinished: async (req, res) => {
+
+        var finished = {
             //attributes: ["ID_Ve", "thoigiandatve", "trangthaive"],
             include: [
                 {
@@ -41,14 +71,42 @@ const controller = {
                     },
                 },
                 {
-                    model: models.ChuyenXe,
-                    attributes: ["gioKhoiHanh", "tpDi", "tpDen"],
+                    model: models.GheChuyenXe,
+                    on: {viTriGhe: sequelize.where(sequelize.col("VeXe.viTriGhe"), "=", sequelize.col("GheChuyenXe.viTriGhe")),
+                    IDChuyenXe: sequelize.where(sequelize.col("VeXe.IDChuyenXe"), "=", sequelize.col("GheChuyenXe.IDChuyenXe"))},
+                    include: [
+                        {
+                            model: models.ChuyenXe,
+                            attributes: ["gioKhoiHanh", "tpDi", "tpDen"],
+                            required: true,
+                        },
+                    ],
                     required: true,
                 },
             ],
-        }); 
+        };
 
-        const cancelled = await models.VeXe.findAll({
+        //Paginate Setting
+        let page = req.query.page || 1;
+        let limit = 8;
+        finished.limit = limit;
+        finished.offset = limit * (page - 1);
+        let {rows, count} = await models.VeXe.findAndCountAll(finished);
+        console.log(JSON.stringify(rows))
+        res.locals.tickets = rows;
+        res.locals.pagination = {
+            page,
+            limit,
+            totalRows: count,
+        }
+
+        //res.locals.booked = req.query;
+        res.render('finished', { styleLink: "/assets/css/LichSuDatVe.css" });
+    },
+
+    showCancelled: async (req, res) => {
+
+        var cancelled = {
             //attributes: ["ID_Ve", "thoigiandatve", "trangthaive"],
             include: [
                 {
@@ -61,20 +119,39 @@ const controller = {
                     },
                 },
                 {
-                    model: models.ChuyenXe,
-                    attributes: ["gioKhoiHanh", "tpDi", "tpDen"],
+                    model: models.GheChuyenXe,
+                    on: {viTriGhe: sequelize.where(sequelize.col("VeXe.viTriGhe"), "=", sequelize.col("GheChuyenXe.viTriGhe")),
+                    IDChuyenXe: sequelize.where(sequelize.col("VeXe.IDChuyenXe"), "=", sequelize.col("GheChuyenXe.IDChuyenXe"))},
+                    include: [
+                        {
+                            model: models.ChuyenXe,
+                            attributes: ["gioKhoiHanh", "tpDi", "tpDen"],
+                            required: true,
+                        },
+                    ],
                     required: true,
                 },
             ],
-        }); 
+        };
 
-        //console.log(booked)
-        res.locals.booked = booked;
-        res.locals.finished = finished;
-        res.locals.cancelled = cancelled;
-        //console.log(JSON.stringify(finished, null, 2));
-        res.render('history', {styleLink: "/assets/css/LichSuDatVe.css"});
-    }
-    
+        //Paginate Setting
+        let page = req.query.page || 1;
+        let limit = 8;
+        cancelled.limit = limit;
+        cancelled.offset = limit * (page - 1);
+        let {rows, count} = await models.VeXe.findAndCountAll(cancelled);
+        console.log(JSON.stringify(rows))
+        res.locals.tickets = rows;
+        res.locals.pagination = {
+            page,
+            limit,
+            totalRows: count,
+        }
+
+        //res.locals.booked = req.query;
+        res.render('cancelled', { styleLink: "/assets/css/LichSuDatVe.css" });
+    },
 }
+
+
 module.exports = controller;
