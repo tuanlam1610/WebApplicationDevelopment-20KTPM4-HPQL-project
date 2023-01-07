@@ -202,7 +202,7 @@ div.navbar-collapse .btn:hover {
 /* ----------------- Content ------------------*/
 
 .content {
-    height: 450px;
+    height: 454px;
     padding: 0;
     border-radius: 16px;
     background-color: white;
@@ -241,10 +241,10 @@ div.navbar-collapse .btn:hover {
 }
 
 #filter #filter_data {
-    height: 400px;
+    height: 410px !important;
     border: 2px solid var(--primary-blue);
     border-radius: 16px;
-    overflow: auto;
+    overflow-y: scroll;
 }
 
 .element_type .table {
@@ -253,12 +253,17 @@ div.navbar-collapse .btn:hover {
 
 table {
     width: 100%;
+    
 }
 
 thead th {
     position: sticky;
     top: 0;
     background-color: var(--white) !important;
+}
+
+tr {
+    height: 45px;
 }
 
 td, th {
@@ -269,10 +274,32 @@ td, th {
 
 /* ---------------------------- Pagination -----------------------*/
 
-.pagination {
-    margin-top: 8px;
-    font-size: 90%;
+
+.pagination .page-link {
     font-weight: bold;
+    color: var(--primary-blue);
+    background-color: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.pagination li.disabled .page-link{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
+}
+
+.pagination li.active .page-link {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.pagination #prevPage .page-link {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.pagination #contPage .page-link {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 /*-----Footer----*/

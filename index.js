@@ -72,6 +72,10 @@ app.use(express.urlencoded({extended: false}));
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/'))
 
+app.use(express.json());
+
+app.use(express.urlencoded({extended: false}));
+
 app.use('/', require('./routes/index_route'))
 
 app.use('/login', require('./routes/login_route'));

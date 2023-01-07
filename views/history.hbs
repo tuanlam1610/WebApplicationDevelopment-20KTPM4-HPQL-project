@@ -35,25 +35,28 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width:5%;">Mã vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian đặt vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm đến</th>
-                                            <th scope="col" style="width:15%;">Thanh toán</th>
+                                            <th scope="col" style="min-width:5%;">Mã vé</th>
+                                            <th scope="col" style="min-width:15%;">Thời gian đặt vé</th>
+                                            <th scope="col" style="min-width:15%;">Thời gian xuất phát</th>
+                                            <th scope="col" style="min-width:25%;">Địa điểm xuất phát</th>
+                                            <th scope="col" style="min-width:25%;">Địa điểm đến</th>
+                                            <th scope="col" style="min-width:15%;">Thanh toán</th>
                                         </tr>
                                     </thead>
+                                    
                                     <tbody>
+                                        {{#each booked}}
                                         <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
+                                            <th scope="row">{{ID_Ve}}</th>
+                                            <td>{{{formatDate LichSuDatVe.thoigiandat "hh:mm:ss DD/MM/YYYY"}}}</td>
+                                            <td>{{{formatDate ChuyenXe.gioKhoiHanh "hh:mm:ss DD/MM/YYYY"}}}</td>
+                                            <td>{{ChuyenXe.tpDi}}</td>
+                                            <td>{{ChuyenXe.tpDen}}</td>
+                                            <td>{{LichSuDatVe.trangthaive}}</td>
                                         </tr>
-
+                                        {{/each}}
                                     </tbody>
+                                    
                                 </table>
                             </div>
                         </div>
@@ -65,64 +68,28 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width:5%;">Mã vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian đặt vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm đến</th>
-                                            <th scope="col" style="width:15%;">Thanh toán</th>
+                                            <th scope="col" style="min-width:5%;">Mã vé</th>
+                                            <th scope="col" style="min-width:15%;">Thời gian đặt vé</th>
+                                            <th scope="col" style="min-width:15%;">Thời gian xuất phát</th>
+                                            <th scope="col" style="min-width:25%;">Địa điểm xuất phát</th>
+                                            <th scope="col" style="min-width:25%;">Địa điểm đến</th>
+                                            <th scope="col" style="min-width:15%;">Thanh toán</th>
                                         </tr>
                                     </thead>
+                                    
                                     <tbody>
+                                        {{#each finished}}
                                         <tr>
-                                            <th scope="row">A0001</th>
-                                            <td>13:52:12 11/05/2022</td>
-                                            <td>15:00:00 12/05/2022</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Long xuyên</td>
-                                            <td>Đã thanh toán</td>
+                                            <th scope="row">{{ID_Ve}}</th>
+                                            <td>{{{formatDate LichSuDatVe.thoigiandat "hh:mm:ss DD/MM/YYYY"}}}</td>
+                                            <td>{{{formatDate ChuyenXe.gioKhoiHanh "hh:mm:ss DD/MM/YYYY"}}}</td>
+                                            <td>{{ChuyenXe.tpDi}}</td>
+                                            <td>{{ChuyenXe.tpDen}}</td>
+                                            <td>{{LichSuDatVe.trangthaive}}</td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">A0005</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">A0100</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Long Xuyên</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã thanh toán</td>
-                                        </tr>
+                                        {{/each}}
                                     </tbody>
+                                    
                                 </table>
                             </div>
                         </div>
@@ -134,23 +101,25 @@
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col" style="width:5%;">Mã vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian đặt vé</th>
-                                            <th scope="col" style="width:15%;">Thời gian xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm xuất phát</th>
-                                            <th scope="col" style="width:25%;">Địa điểm đến</th>
-                                            <th scope="col" style="width:15%;">Thanh toán</th>
+                                            <th scope="col" style="min-width:5%;">Mã vé</th>
+                                            <th scope="col" style="min-width:15%;">Thời gian đặt vé</th>
+                                            <th scope="col" style="min-width:15%;">Thời gian xuất phát</th>
+                                            <th scope="col" style="min-width:25%;">Địa điểm xuất phát</th>
+                                            <th scope="col" style="min-width:25%;">Địa điểm đến</th>
+                                            <th scope="col" style="min-width:15%;">Thanh toán</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {{#each cancelled}}
                                         <tr>
-                                            <th scope="row">A1205</th>
-                                            <td>08:52:12 13/09/2022</td>
-                                            <td>15:30:00 15/09/2022</td>
-                                            <td>Cần Thơ</td>
-                                            <td>Thành phố Hồ Chí Minh</td>
-                                            <td>Đã hoàn tiền</td>
+                                            <th scope="row">{{ID_Ve}}</th>
+                                            <td>{{{formatDate LichSuDatVe.thoigiandat "hh:mm:ss DD/MM/YYYY"}}}</td>
+                                            <td>{{{formatDate ChuyenXe.gioKhoiHanh "hh:mm:ss DD/MM/YYYY"}}}</td>
+                                            <td>{{ChuyenXe.tpDi}}</td>
+                                            <td>{{ChuyenXe.tpDen}}</td>
+                                            <td>{{LichSuDatVe.trangthaive}}</td>
                                         </tr>
+                                        {{/each}}
                                     </tbody>
                                 </table>
                             </div>
@@ -159,26 +128,6 @@
 
                     </div>
                 </section>
-
-                <!----------------------------- Pagination ----------------------------->
-
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <!--<li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </div>
