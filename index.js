@@ -8,11 +8,6 @@ const ticket_time_route = require('./routes/ticket_time_route');
 const ticket_seat_route = require('./routes/ticket_seat_route');
 const ticket_confirm_route = require('./routes/ticket_confirm_route');
 
-
-const account_info_route = require('./routes/account_info_route');
-const edit_info_route = require('./routes/edit_info_route');
-const change_password_route = require('./routes/change_password_route');
-const history_route = require('./routes/history_route');
 const paginateHelper = require('express-handlebars-paginate');
 
 app.engine('hbs', expressHbs.engine({
