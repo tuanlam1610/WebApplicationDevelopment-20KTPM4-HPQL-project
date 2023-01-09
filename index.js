@@ -110,6 +110,8 @@ app.use('/edit_info', require('./routes/edit_info_route'));
 app.use('/change_password', require('./routes/change_password_route'));
 app.use('/history', require('./routes/history_route'));
 
+app.use ('/admin', require('./routes/admin_route'));
+
 function getSum(total, item){
     return total + item.soSao
 }

@@ -29,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       unique: true,
-      primaryKey: false
     },
     website: DataTypes.STRING,
     sosaoTB: DataTypes.FLOAT
