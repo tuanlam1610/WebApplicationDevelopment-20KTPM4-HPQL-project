@@ -24,7 +24,6 @@
       <input style="display: none" name="IDChuyenXe" value="{{IDChuyenXe}}"></input>
       <input style="display: none" name="viTriGhe" value="{{listGhe}}"></input>
       
-      
       <div>
         <div class="dvx-chuyenXeBox  d-flex justify-content-center flex-column align-items-center">
           <!-- info-->
@@ -34,7 +33,7 @@
             <p class="m-1 p-0">{{formatDate tripInfo.gioKetThuc "hh:mm - DD/MM/yyyy"}}</p>
           </div>
           <div class="dvx-xacNhanBox text-center">
-            <div class="d-flex flex-column flex-lg-row gap-2">
+            <div class="d-flex flex-column flex-lg-row gap-2 justify-content-center">
               <div id="Highlight">
                 {{tripInfo.tpDi}}
               </div>
@@ -69,6 +68,7 @@
           <div class="dvx-TinhTien text-end w-50">
             <div>{{formatCurrency tripInfo.giaVe}}</div>
             <div>x {{soGheChon}} vé</div>
+            <input style="display: none" name="soGheChon" value="{{soGheChon}}"></input>
           </div>
           <div class="dvx-linebreak"></div>
           <div class="dvx-TotalMoney">
@@ -78,6 +78,7 @@
             <div class="dvx-TinhTien" id="Bold">
               {{{formatCurrency (calcCost tripInfo.giaVe soGheChon) }}}
             </div>
+            <input style="display: none" name="tongGia" value="{{{formatCurrency (calcCost tripInfo.giaVe soGheChon) }}}"></input>
           </div>
           <div class="dropdown">
             <div id="startDes" class="d-flex flex-row px-3">
@@ -94,7 +95,7 @@
               </ul>
             </div>
           </div>
-           <div class="btn btn-dvx-confirm"><button type="submit">Thanh Toán</button></div>
+           <button type="submit" style="" class="btn btn-dvx-confirm">Thanh Toán</button>
     </form>
   </div>
 

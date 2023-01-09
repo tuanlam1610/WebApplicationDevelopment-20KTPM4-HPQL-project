@@ -1,4 +1,25 @@
 const models = require('../models/index')
+const nodemailer = require('nodemailer');
+const moment = require('moment');
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'hpqlgroup@gmail.com',
+        pass: 'tcmfopsfukzyvnsc'
+    }
+});
+
+
+function formatDate(datetime, format) {
+    if (moment) {
+        // can use other formats like 'lll' too
+        return moment(datetime).format(format);
+      }
+      else {
+        return datetime;
+    }
+}
 
 const controller = {
 
@@ -88,9 +109,13 @@ controller.editTicketInfo = async (req, res) => {
     let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
+    
+    let hour = date.getHours();
+    let minute = date.getMinutes();
+    let seconds = date.getSeconds();
 
     // This arrangement can be altered based on how we want the date's format to appear.
-    let currentDate = `${year}-${month}-${day}`;
+    let currentDate = `${year}-${month}-${day} ${hour}:${minute}:${seconds}`;
     //Info Chuyen Xe
     let newInfoCX = {
         soGheTrong: req.body.soGheTrong
@@ -134,22 +159,78 @@ controller.editTicketInfo = async (req, res) => {
 
         var queryVeXe = {
             attributes: ['ID_Ve', 'IDChuyenXe', 'viTriGhe'],
-            where: { IDChuyenXe: req.body.IDChuyenXe, viTriGhe: seatLocation},
+            where: { IDChuyenXe: req.body.IDChuyenXe, viTriGhe: seatLocation },
             raw: true
         }
-        veXeQuery = await models.VeXe.findOne(queryVeXe);   
+        veXeQuery = await models.VeXe.findOne(queryVeXe);
 
         await models.LichSuDatVe.create({
             ID_TK: 1,
             ID_Ve: veXeQuery.ID_Ve,
             thoigiandat: currentDate,
-            trangThaiVe: "Đã đặt"
+            trangthaive: "Đã đặt"
         }, {
 
         });
     };
 
-    //res.redirect();
+    //send email
+    let seatListHTML = "";
+    let idListHTML = "";
+    for (const seatLocation of seatsList){
+        seatListHTML = seatListHTML + seatLocation + " ";
+
+        var queryVeXe = {
+            attributes: ['ID_Ve', 'IDChuyenXe', 'viTriGhe'],
+            where: { IDChuyenXe: req.body.IDChuyenXe, viTriGhe: seatLocation },
+            raw: true
+        }
+        veXeQuery = await models.VeXe.findOne(queryVeXe);
+        idListHTML = idListHTML + veXeQuery.ID_Ve + " "
+    }
+
+    var tripID = req.body.IDChuyenXe;
+    var queryChuyenXe = {
+        attributes: ['tpDi', 'tpDen', 'gioKhoiHanh', 'gioKetThuc', 'loaiXe', 'tongThoiGian'],
+        where: {},
+        raw: true
+    }
+    if (tripID) {
+        queryChuyenXe.where.IDChuyenXe = tripID;
+    }
+    tripsInfoQuery = await models.ChuyenXe.findOne(queryChuyenXe);
+
+    tripDate = formatDate(tripsInfoQuery.gioKhoiHanh, "hh:mm - DD/MM/yyyy")
+    var mailOptions = {
+        from: 'hpqlgroup@gmail.com',
+        to: 'giatruong0612@gmail.com',
+        subject: 'Bus Ticket Order Received - Waiting For Payment',
+        text: 'That was easy!',
+        html:"<div style='width: 1000px; margin:0.25rem; padding: 0.5rem; border-style: solid; border-color:#4F98CA; border-width: 2px; border-radius: 0.5rem;'>"
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Mã vé của bạn là:  <span style='font-weight:600; color:#4F98CA;'>"+ idListHTML +"</span></div>"
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Bạn đã đặt <span style='font-weight:600; color:#4F98CA;'>"+  req.body.soGheChon  +"</span> vé </div>"
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Số tiền cần thanh toán: <span style='font-weight:600; color:#4F98CA;'>"+  req.body.tongGia  +"</span></div>"
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Mã ghế: <span style='font-weight:600; color:#4F98CA;'>"+ seatListHTML +"</span> </div>"
+             +"</div>"
+             +"<div style='width: 1000px; margin:0.25rem; padding: 0.5rem; border-style: solid; border-color:#4F98CA; border-width: 2px; border-radius: 0.5rem;'>"
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Giờ khởi hành:  <span style='font-weight:600; color:#4F98CA;'>"+ tripDate +"</span></div>"
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Điểm khởi hành <span style='font-weight:600; color:#4F98CA;'>"+ tripsInfoQuery.tpDi   +"</span></div>"
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Điểm đến: <span style='font-weight:600; color:#4F98CA;'>"+  tripsInfoQuery.tpDen   +"</span></div>"
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Tổng thời gian: <span style='font-weight:600; color:#4F98CA;'>"+  tripsInfoQuery.tongThoiGian  +"</span></div>" 
+             +"<div style='font-weight: 400; font-size: 1.25rem; color: black;'>Loại xe: <span style='font-weight:600; color:#4F98CA;'>"+  tripsInfoQuery.loaiXe   +"</span></div>"
+             +"</div>"
+             +"<div style='font-weight: 600; font-size: 2rem; color: black;'>HPQL GROUP <div>"
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
+
+    res.redirect("/");
 }
 
 module.exports = controller;
