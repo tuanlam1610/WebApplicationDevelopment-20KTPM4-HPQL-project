@@ -14,51 +14,51 @@ module.exports = {
     */
     let items =
       [{
-        "ID_Ve": "H0000001",
+        //"ID_Ve": "H0000001",
         "IDChuyenXe": 1,
         "viTriGhe": "A01"
       }, {
-        "ID_Ve": "H0000002",
+        //"ID_Ve": "H0000002",
         "IDChuyenXe": 1,
         "viTriGhe": "A02"
       }, {
-        "ID_Ve": "H0000003",
+        //"ID_Ve": "H0000003",
         "IDChuyenXe": 1,
         "viTriGhe": "A03"
       }, {
-        "ID_Ve": "H0000004",
+        //"ID_Ve": "H0000004",
         "IDChuyenXe": 1,
         "viTriGhe": "A04"
       }, {
-        "ID_Ve": "H0000005",
+        //"ID_Ve": "H0000005",
         "IDChuyenXe": 1,
         "viTriGhe": "A05"
       }, {
-        "ID_Ve": "H0000006",
+        //"ID_Ve": "H0000006",
         "IDChuyenXe": 1,
         "viTriGhe": "A06"
       }, {
-        "ID_Ve": "H0000007",
+       //"ID_Ve": "H0000007",
         "IDChuyenXe": 1,
         "viTriGhe": "A07"
       }, {
-        "ID_Ve": "H0000008",
+        //"ID_Ve": "H0000008",
         "IDChuyenXe": 1,
         "viTriGhe": "A08"
       }, {
-        "ID_Ve": "H0000009",
+        //"ID_Ve": "H0000009",
         "IDChuyenXe": 1,
         "viTriGhe": "A09"
       }, {
-        "ID_Ve": "H0000010",
+        //"ID_Ve": "H0000010",
         "IDChuyenXe": 1,
         "viTriGhe": "A10"
       }, {
-        "ID_Ve": "H0000011",
+        //"ID_Ve": "H0000011",
         "IDChuyenXe": 1,
         "viTriGhe": "A11"
       }, {
-        "ID_Ve": "H0000012",
+        //"ID_Ve": "H0000012",
         "IDChuyenXe": 1,
         "viTriGhe": "A12"
       }];

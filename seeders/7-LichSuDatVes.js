@@ -13,17 +13,17 @@ module.exports = {
      * }], {});
     */
     let items =
-      [{ "ID_TK": 1, "ID_Ve": "H0000001", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000003", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000004", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000005", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000006", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000007", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000008", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000009", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000010", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000011", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
-      { "ID_TK": 1, "ID_Ve": "H0000002", "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },];
+      [{ "ID_TK": 1, "ID_Ve": 1, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 2, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 3, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 4, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 5, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 6, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 7, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 8, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 9, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 10, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 11, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },];
     items.forEach(item => {
       item.createdAt = Sequelize.literal('NOW()');
       item.updatedAt = Sequelize.literal('NOW()');
