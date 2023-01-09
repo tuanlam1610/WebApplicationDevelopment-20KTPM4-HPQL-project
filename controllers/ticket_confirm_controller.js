@@ -131,14 +131,24 @@ controller.editTicketInfo = async (req, res) => {
         }, {
 
         });
+
+        var queryVeXe = {
+            attributes: ['ID_Ve', 'IDChuyenXe', 'viTriGhe'],
+            where: { IDChuyenXe: req.body.IDChuyenXe, viTriGhe: seatLocation},
+            raw: true
+        }
+        veXeQuery = await models.VeXe.findOne(queryVeXe);   
+
+        await models.LichSuDatVe.create({
+            ID_TK: 1,
+            ID_Ve: veXeQuery.ID_Ve,
+            thoigiandat: currentDate,
+            trangThaiVe: "Đã đặt"
+        }, {
+
+        });
     };
 
-    /*await models.LichSuDatVe.update(newInfoLSDV, {
-        where: {
-            ID_TK: req.body.IDChuyenXe,
-            ID_Ve: req.body.ID_Ve
-        }
-    });*/
     //res.redirect();
 }
 

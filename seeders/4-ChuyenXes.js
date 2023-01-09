@@ -26,7 +26,7 @@ module.exports = {
         "tongThoiGian": "4:30",
         "loaiXe": "Giường nằm",
         "tongSoGhe": "36",
-        "soGheTrong": "36",
+        "soGheTrong": "33",
         "giaVe": "170000",
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
