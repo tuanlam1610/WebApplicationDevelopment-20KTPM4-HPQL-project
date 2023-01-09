@@ -1,7 +1,7 @@
 const models = require('../models/index')
 
 const controller = {
-   
+
     show: async (req, res) => {
         var tripID = req.query.tripID;
         var loaiGhe = req.query.typeSeat;
@@ -14,7 +14,7 @@ const controller = {
             where: {},
             raw: true
         }
-        if(tripID){ 
+        if (tripID) {
             queryChuyenXe.where.IDChuyenXe = tripID;
         }
 
@@ -25,6 +25,7 @@ const controller = {
         res.locals.soGheTrong = emptySeats;
         res.locals.soGheChon = chosenNum;
 
+        res.locals.listGhe = chosenSeats;
         //console.log(chosenSeats);
         var seatsList = chosenSeats.split("-");
         //console.log(seatsList);
@@ -32,7 +33,7 @@ const controller = {
         //console.log(seatsList);
         res.locals.gheChon = seatsList;
 
-        res.render('ticket_confirm', {styleLink: "/assets/css/dvx-style.css"});
+        res.render('ticket_confirm', { styleLink: "/assets/css/dvx-style.css" });
     }
     /*showDetails: async (req, res) => {
         let count = 0;
@@ -74,4 +75,81 @@ const controller = {
         res.render('garage_info');
     }*/
 }
+controller.editTicketInfo = async (req, res) => {
+
+    chosenSeats = req.body.viTriGhe;
+    //console.log(chosenSeats);
+    var seatsList = chosenSeats.split("-");
+    //console.log(seatsList);
+    seatsList.shift();
+
+    const date = new Date();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    // This arrangement can be altered based on how we want the date's format to appear.
+    let currentDate = `${year}-${month}-${day}`;
+    //Info Chuyen Xe
+    let newInfoCX = {
+        soGheTrong: req.body.soGheTrong
+    }
+    //Info Ghe Chuyen Xe
+    let newInfoGCX = {
+        trangThaiGhe: true
+    }
+    //Info Ve Xe
+    let newInfoVX = {
+    }
+
+    let newInfoLSDV = {
+        ID_TK: 1,
+        thoigiandat: currentDate,
+        trangThaiVe: "Đã Đặt"
+    }
+    // let info = await models.TaiKhoan.findByPk(1);
+    // info.hoten = req.body.hoten;
+    // info.save();
+
+    await models.ChuyenXe.update(newInfoCX, {
+        where: {
+            IDChuyenXe: req.body.IDChuyenXe,
+        }
+    });
+    for (const seatLocation of seatsList) {
+        await models.GheChuyenXe.update(newInfoGCX, {
+            where: {
+                IDChuyenXe: req.body.IDChuyenXe,
+                viTriGhe: seatLocation // need to convert to loop
+            }
+        });
+
+        await models.VeXe.create({
+            IDChuyenXe: req.body.IDChuyenXe,
+            viTriGhe: seatLocation
+        }, {
+
+        });
+
+        var queryVeXe = {
+            attributes: ['ID_Ve', 'IDChuyenXe', 'viTriGhe'],
+            where: { IDChuyenXe: req.body.IDChuyenXe, viTriGhe: seatLocation},
+            raw: true
+        }
+        veXeQuery = await models.VeXe.findOne(queryVeXe);   
+
+        await models.LichSuDatVe.create({
+            ID_TK: 1,
+            ID_Ve: veXeQuery.ID_Ve,
+            thoigiandat: currentDate,
+            trangThaiVe: "Đã đặt"
+        }, {
+
+        });
+    };
+
+    //res.redirect();
+}
+
 module.exports = controller;

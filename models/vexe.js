@@ -18,8 +18,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   VeXe.init({
     ID_Ve: { 
-      type: DataTypes.CHAR(8),
-      primaryKey: true
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
     },
     IDChuyenXe: DataTypes.INTEGER,
     viTriGhe: DataTypes.CHAR(3)

@@ -8,15 +8,15 @@ module.exports = {
       {
       "IDChuyenXe": 1,
       "viTriGhe": "A01",
-      "trangThaiGhe": false
+      "trangThaiGhe": true
     }, {
       "IDChuyenXe": 1,
       "viTriGhe": "A02",
-      "trangThaiGhe": false
+      "trangThaiGhe": true
     }, {
       "IDChuyenXe": 1,
       "viTriGhe": "A03",
-      "trangThaiGhe": false
+      "trangThaiGhe": true
     }, {
       "IDChuyenXe": 1,
       "viTriGhe": "A04",
@@ -45,7 +45,7 @@ module.exports = {
     {
       "IDChuyenXe": 1,
       "viTriGhe": "A10",
-      "trangThaiGhe": true
+      "trangThaiGhe": false
     }, {
       "IDChuyenXe": 1,
       "viTriGhe": "A11",
@@ -94,7 +94,7 @@ module.exports = {
     {
       "IDChuyenXe": 1,
       "viTriGhe": "B04",
-      "trangThaiGhe": true
+      "trangThaiGhe": false
     }, {
       "IDChuyenXe": 1,
       "viTriGhe": "B05",
@@ -135,7 +135,7 @@ module.exports = {
     {
       "IDChuyenXe": 1,
       "viTriGhe": "B14",
-      "trangThaiGhe": true
+      "trangThaiGhe": false
     }, {
       "IDChuyenXe": 1,
       "viTriGhe": "B15",
@@ -194,7 +194,7 @@ module.exports = {
     {
       "IDChuyenXe": 10,
       "viTriGhe": "A10",
-      "trangThaiGhe": true
+      "trangThaiGhe": false
     }, {
       "IDChuyenXe": 10,
       "viTriGhe": "A11",
@@ -219,7 +219,7 @@ module.exports = {
     {
       "IDChuyenXe": 10,
       "viTriGhe": "B04",
-      "trangThaiGhe": true
+      "trangThaiGhe": false
     }, {
       "IDChuyenXe": 10,
       "viTriGhe": "B05",
@@ -295,7 +295,7 @@ module.exports = {
     {
       "IDChuyenXe": 6,
       "viTriGhe": "A10",
-      "trangThaiGhe": true
+      "trangThaiGhe": false
     }, {
       "IDChuyenXe": 6,
       "viTriGhe": "A11",
@@ -344,7 +344,7 @@ module.exports = {
     {
       "IDChuyenXe": 6,
       "viTriGhe": "A22",
-      "trangThaiGhe": true
+      "trangThaiGhe": false
     }, {
       "IDChuyenXe": 6,
       "viTriGhe": "A23",
@@ -385,7 +385,7 @@ module.exports = {
     {
       "IDChuyenXe": 6,
       "viTriGhe": "A32",
-      "trangThaiGhe": true
+      "trangThaiGhe": false
     }, {
       "IDChuyenXe": 6,
       "viTriGhe": "A33",

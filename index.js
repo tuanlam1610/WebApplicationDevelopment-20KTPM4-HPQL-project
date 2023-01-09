@@ -61,6 +61,10 @@ app.engine('hbs', expressHbs.engine({
                 options.data.root = {};
             }
             options.data.root[varName] = varValue;
+        },
+        calcCost: function (ticketPrice, ticketNums) {
+            let totalPrice = ticketPrice * ticketNums;
+            return totalPrice;
         }
     }
 }));

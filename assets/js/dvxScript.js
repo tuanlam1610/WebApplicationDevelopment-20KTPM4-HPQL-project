@@ -3,6 +3,7 @@
 const container = document.querySelector(".seat-container");
 const Count = document.getElementsByClassName("seatsCount");
 const SelectedCount = document.getElementsByClassName("selectedSeatsCount")
+
 // Seat click event
 container.addEventListener("click", (e) => {
     if (
