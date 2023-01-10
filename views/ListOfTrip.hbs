@@ -7,14 +7,22 @@
                 <p class="col-12 col-md-2 fw-bold fs-5 mb-md-0 d-flex justify-content-center align-items-center">Sắp
                     Xếp Theo:
                 </p>
-                <button id="earlierTime" type="button"
-                    class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-1 active-btn">Giờ Đi Sớm
-                    Nhất</button>
-                <button id="laterTime" type="button" class="col-5 col-md-2 btn btn-primary mb-1 mb-md-0 me-md-1">Giờ Đi
-                    Muộn
-                    Nhất</button>
-                <button id="ascPrice" type="button" class="col-5 col-md-2 btn btn-primary me-1">Giá Vé Tăng Dần</button>
-                <button id="descPrice" type="button" class="col-5 col-md-2 btn btn-primary">Giá Vé Giảm Dần</button>
+                <a id="timeAsc" class="col-5 col-md-2 mb-1 mb-md-0 me-1">
+                    <button type="button" class="btn btn-primary w-100">
+                        Giờ Đi Sớm Nhất
+                    </button>
+                </a>
+                <a id="timeDesc" class="col-5 col-md-2 mb-1 mb-md-0 me-md-1">
+                    <button type="button" class="btn btn-primary w-100">
+                        Giờ Đi Muộn Nhất
+                    </button>
+                </a>
+                <a id="priceAsc" class="col-5 col-md-2 me-1">
+                    <button type="button" class="btn btn-primary w-100">Giá Vé Tăng Dần</button>
+                </a>
+                <a id="priceDesc" class="col-5 col-md-2">
+                    <button type="button" class="btn btn-primary w-100">Giá Vé Giảm Dần</button>
+                </a>
             </div>
             <!-- Filter and List -->
             <div id="filterAndList" class="row d-sm-flex justify-content-center">
@@ -204,7 +212,8 @@
                                         <div class="btnGroup col-4 d-flex flex-column justify-content-center">
                                             <p class="lh-sm"></p>
                                             <a name="orderTicket" id="order-btn" class="btn btn-primary my-3"
-                                                href="/seat_ticket?tripID={{IDChuyenXe}}&typeSeat={{loaiXe}}" role="button">Đặt Vé</a>
+                                                href="/seat_ticket?tripID={{IDChuyenXe}}&typeSeat={{loaiXe}}"
+                                                role="button">Đặt Vé</a>
                                             <a name="detail-btn" id="detail-btn" class="btn btn-link lh-sm p-0"
                                                 href="/trip_info/{{IDChuyenXe}}" role="button"
                                                 style="font-size: 12px;">Thông tin chi tiết</a>
@@ -303,9 +312,10 @@
 </main>
 <script>
     const urlParams = new URLSearchParams(window.location.search);
-    window.onload = function() {
+    console.log(urlParams.toString());
+    window.onload = function () {
         var listTrip = document.getElementById("listTrip");
-        if(listTrip.childElementCount == 0) {
+        if (listTrip.childElementCount == 0) {
             listTrip.innerHTML = "<p class='mt-5' style='text-align:center;'>Không tìm thấy chuyến xe phù hợp</p>"
         }
     }
@@ -326,7 +336,6 @@
             orientation: "bottom left"
         });
     })
-
     // Update from params
     let checkedPrice = urlParams.getAll("ticketPrice");
     checkedPrice.forEach(checkbox => {
@@ -340,6 +349,30 @@
     if (numOfSeat != null && numOfSeat != "") {
         document.getElementById("seatNum").value = numOfSeat;
     }
+    // Set Sort
+    let currentSort = urlParams.get('sort') || null;
+    console.log(currentSort);
+    if (currentSort != null) {
+        document.getElementById(currentSort).children[0].classList.add('active-btn');
+        urlParams.delete("sort");
+    }
+    else {
+        document.getElementById("timeAsc").children[0].classList.add('active-btn');
+    }
+    let orders = {
+        priceAsc: "?" + urlParams.toString() + "&sort=priceAsc",
+        priceDesc: "?" + urlParams.toString() + "&sort=priceDesc",
+        timeAsc: "?" + urlParams.toString() + "&sort=timeAsc",
+        timeDesc: "?" + urlParams.toString() + "&sort=timeDesc",
+    }
+    if (currentSort != null) {
+        urlParams.append("sort", currentSort);
+    };
+    // Set sort href for sort btns
+    document.getElementById("timeAsc").href = orders.timeAsc;
+    document.getElementById("timeDesc").href = orders.timeDesc;
+    document.getElementById("priceAsc").href = orders.priceAsc;
+    document.getElementById("priceDesc").href = orders.priceDesc;
     // Set Pagination
     let pagination = document.getElementById("pagination");
     let currentPage = pagination.children[0].children[urlParams.get("page")];
@@ -364,7 +397,7 @@
     urlParams.delete('page');
     var pageNum = 1;
     pagination.querySelectorAll('a').forEach(item => {
-        if(item.innerText != "Trước" && item.id != "Sau") {
+        if (item.innerText != "Trước" && item.id != "Sau") {
             item.href = "?" + urlParams.toString() + "&page=" + pageNum;
             pageNum = pageNum + 1;
         }
