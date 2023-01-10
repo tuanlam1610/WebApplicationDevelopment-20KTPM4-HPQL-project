@@ -6,6 +6,8 @@ const tripController = require('../controllers/admin_controller_trip');
 route.post('/garage/add', garageController.addNewGarage);
 route.delete('/garage/delete/:id', garageController.deleteGarage);
 route.put('/garage/update/:id', garageController.updateGarage);
+route.delete('/garage/img', garageController.deleteImage);
+route.post('/garage/updateGarageImg/:id', garageController.updateGarageImg);
 
 route.get('/trip/', tripController.show);
 
