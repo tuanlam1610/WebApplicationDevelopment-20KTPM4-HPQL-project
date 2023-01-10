@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
 const moment = require('moment');
+const fileUpload = require('express-fileupload')
 
 const ticket_find_route = require('./routes/ticket_find_route');
 const ticket_time_route = require('./routes/ticket_time_route');
@@ -64,6 +65,8 @@ app.engine('hbs', expressHbs.engine({
     }
 }));
 
+app.use(fileUpload());
+
 app.use(express.json());
 
 app.use(express.urlencoded({extended: false}));
@@ -108,6 +111,8 @@ app.use('/account_info', require('./routes/account_info_route'));
 app.use('/edit_info', require('./routes/edit_info_route'));
 app.use('/change_password', require('./routes/change_password_route'));
 app.use('/history', require('./routes/history_route'));
+
+app.use ('/admin', require('./routes/admin_route'));
 
 function getSum(total, item){
     return total + item.soSao
