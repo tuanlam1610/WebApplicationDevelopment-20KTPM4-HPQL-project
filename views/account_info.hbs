@@ -38,13 +38,13 @@
                     <div class="phone">
                         <h4>Số điện thoại</h4>
                         <div class="displayField">
-                            <input type="text" id="sdt" name="sdt" maxlength="10" value="{{sdt}}" readonly required>
+                            <input type="text" id="sdt" name="sdt" maxlength="10" value="{{sdt}}" readonly>
                         </div>
                     </div>
                     <div class="dob">
                         <h4>Ngày sinh</h4>
                         <div class="displayField">
-                            <input type="text" id="ngaysinh" name="ngaysinh" value="{{ngaysinh}}" readonly>
+                            <input type="text" id="ngaysinh" name="ngaysinh" value="{{{formatDate ngaysinh 'DD/MM/YYYY'}}}" readonly>
                         </div>
                     </div>
                 {{/each}}
