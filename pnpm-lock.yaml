@@ -5,6 +5,7 @@ specifiers:
   express-handlebars: ^6.0.6
   express-handlebars-paginate: ^1.0.3
   moment: ^2.29.4
+  nodemailer: ^6.8.0
   pg: ^8.8.0
   pg-hstore: ^2.3.4
   sequelize: ^6.27.0
@@ -14,6 +15,7 @@ dependencies:
   express-handlebars: 6.0.6
   express-handlebars-paginate: 1.0.3
   moment: 2.29.4
+  nodemailer: 6.8.0
   pg: 8.8.0
   pg-hstore: 2.3.4
   sequelize: 6.27.0_pg-hstore@2.3.4+pg@8.8.0
@@ -428,6 +430,11 @@ packages:
 
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
+    dev: false
+
+  /nodemailer/6.8.0:
+    resolution: {integrity: sha512-EjYvSmHzekz6VNkNd12aUqAco+bOkRe3Of5jVhltqKhEsjw/y0PYPJfp83+s9Wzh1dspYAkUW/YNQ350NATbSQ==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /object-inspect/1.12.2:
