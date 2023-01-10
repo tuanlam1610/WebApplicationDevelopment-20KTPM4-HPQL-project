@@ -1,9 +1,14 @@
-// const express = require('express');
-// const route = express.Router();
-// const garageController = require('../controllers/admin_controller_garage');
-// const tripController = require('../controllers/admin_controller_trip');
+const express = require('express');
+const route = express.Router();
+const garageController = require('../controllers/admin_controller_garage');
+const tripController = require('../controllers/admin_controller_trip');
 
-// route.get('/garage/', garageController.show);
-// route.get('/trip/', tripController.show);
+route.post('/garage/add', garageController.addNewGarage);
+route.delete('/garage/delete/:id', garageController.deleteGarage);
+route.put('/garage/update/:id', garageController.updateGarage);
+route.delete('/garage/img', garageController.deleteImage);
+route.post('/garage/updateGarageImg/:id', garageController.updateGarageImg);
 
-// module.exports = route;
+route.get('/trip/', tripController.show);
+
+module.exports = route;

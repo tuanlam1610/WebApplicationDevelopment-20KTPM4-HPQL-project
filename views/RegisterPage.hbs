@@ -115,7 +115,7 @@
                 noticeS[0].setAttribute('style', 'visibility: visible !important');
                 setTimeout(() => noticeS[0].setAttribute('style', 'visibility: hidden !important'), 3000);
 
-                window.location.href = '/login';
+                setTimeout(() => window.location.assign('/login'), 3000);
             }
             else {
                 myAlertF.innerHTML = body.result;
