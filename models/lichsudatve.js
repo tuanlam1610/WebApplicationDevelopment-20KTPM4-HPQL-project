@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     ID_Ve: { 
-      type: DataTypes.CHAR(8),
+      type: DataTypes.INTEGER,
       primaryKey: true
     },
     thoigiandat: DataTypes.DATE,
