@@ -1,4 +1,6 @@
 const models = require('../models/index')
+const TokenManager = require('../middleware/token');
+var accountID = 0;
 
 const controller = {
     show: async (req, res) => {
@@ -6,6 +8,10 @@ const controller = {
     },
 
     changePassword: async (req, res) => {
+        const decode  = TokenManager.TokenDecode(req.body.accessToken, req.body.refreshToken);
+        console.log(decode);
+        accountID = decode.ID_TK;
+
         let inputPassword = {
             currentPass: req.body.currentPassword,
             newPass: req.body.newPassword,
@@ -15,7 +21,7 @@ const controller = {
         let oldPass = await models.TaiKhoan.findOne({
             attributes: ["password"],
             where: {
-                ID_TK: 1,
+                ID_TK: accountID,
             }
         })
       
@@ -28,7 +34,7 @@ const controller = {
               
                 await models.TaiKhoan.update({password: inputPassword.newPass}, {
                     where: {
-                        ID_TK: 1,
+                        ID_TK: accountID,
                     }
                 });
 
@@ -55,7 +61,7 @@ const controller = {
         console.log(msg)
         res.setHeader('content-type', 'application/json'); 
         res.status(200).send(JSON.stringify(msg));
-    }
+    },
 }
 
 

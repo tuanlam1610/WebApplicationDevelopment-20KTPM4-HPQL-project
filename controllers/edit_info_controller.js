@@ -55,26 +55,27 @@ const controller = {
             }
         })
         res.render('edit_info_load', { styleLink: "/assets/css/ChinhSuaThongTin.css" });
-    }
-}
-
-controller.editAccountInfo = async (req, res) => {
-    let newInfo = {
-        hoten: req.body.hoten,
-        email: req.body.email,
-        sdt: req.body.sdt,
-        ngaysinh: req.body.ngaysinh,
-    }
-    // let info = await models.TaiKhoan.findByPk(1);
-    // info.hoten = req.body.hoten;
-    // info.save();
-
-    await models.TaiKhoan.update(newInfo, {
-        where: {
-            ID_TK: accountID,
+    },
+    editAccountInfo: async (req, res) => {
+        let newInfo = {
+            hoten: req.body.hoten,
+            email: req.body.email,
+            sdt: req.body.sdt,
+            ngaysinh: req.body.ngaysinh,
         }
-    });
-
-    res.redirect("/account_info")
+        // let info = await models.TaiKhoan.findByPk(1);
+        // info.hoten = req.body.hoten;
+        // info.save();
+    
+        await models.TaiKhoan.update(newInfo, {
+            where: {
+                ID_TK: accountID,
+            }
+        });
+    
+        res.redirect("/account_info")
+    }
 }
+
+
 module.exports = controller;

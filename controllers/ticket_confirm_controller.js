@@ -1,6 +1,8 @@
 const models = require('../models/index')
 const nodemailer = require('nodemailer');
 const moment = require('moment');
+const TokenManager = require('../middleware/token');
+var accountID = 0;
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -97,6 +99,11 @@ const controller = {
     }*/
 }
 controller.editTicketInfo = async (req, res) => {
+    //account id
+    const decode  = TokenManager.TokenDecode(req.body.accessToken, req.body.refreshToken);
+    console.log(decode);
+    accountID = decode.ID_TK;
+    accountEmail = decode.email;
 
     chosenSeats = req.body.viTriGhe;
     //console.log(chosenSeats);
@@ -129,7 +136,7 @@ controller.editTicketInfo = async (req, res) => {
     }
 
     let newInfoLSDV = {
-        ID_TK: 1,
+        ID_TK: accountID,
         thoigiandat: currentDate,
         trangThaiVe: "Đã Đặt"
     }
@@ -165,7 +172,7 @@ controller.editTicketInfo = async (req, res) => {
         veXeQuery = await models.VeXe.findOne(queryVeXe);
 
         await models.LichSuDatVe.create({
-            ID_TK: 1,
+            ID_TK: accountID,
             ID_Ve: veXeQuery.ID_Ve,
             thoigiandat: currentDate,
             trangthaive: "Đã đặt"
@@ -203,7 +210,7 @@ controller.editTicketInfo = async (req, res) => {
     tripDate = formatDate(tripsInfoQuery.gioKhoiHanh, "hh:mm - DD/MM/yyyy")
     var mailOptions = {
         from: 'hpqlgroup@gmail.com',
-        to: 'giatruong0612@gmail.com',
+        to: accountEmail,
         subject: 'Bus Ticket Order Received - Waiting For Payment',
         text: 'That was easy!',
         html:"<div style='width: 1000px; margin:0.25rem; padding: 0.5rem; border-style: solid; border-color:#4F98CA; border-width: 2px; border-radius: 0.5rem;'>"
