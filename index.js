@@ -16,10 +16,7 @@ const ticket_seat_route = require('./routes/ticket_seat_route');
 const ticket_confirm_route = require('./routes/ticket_confirm_route');
 
 
-const account_info_route = require('./routes/account_info_route');
-const edit_info_route = require('./routes/edit_info_route');
-const change_password_route = require('./routes/change_password_route');
-const history_route = require('./routes/history_route');
+
 const paginateHelper = require('express-handlebars-paginate');
 
 app.engine('hbs', expressHbs.engine({
@@ -129,9 +126,20 @@ app.use('/edit_info', require('./routes/edit_info_route'));
 app.use('/change_password', require('./routes/change_password_route'));
 app.use('/history', require('./routes/history_route'));
 
-app.use('/admin', require('./routes/admin_route'));
+//htlam
+app.use ('/admin', require('./routes/admin_route'));
 
-function getSum(total, item) {
+//
+app.use ('/add_garage', require('./routes/add_garage_route'));
+app.use ('/add_trip', require('./routes/add_trip_route'));
+app.use ('/admin_dashboard', require('./routes/admin_dashboard_route'));
+app.use ('/admin_garages', require('./routes/admin_garage_route'));
+app.use ('/admin_trips', require('./routes/admin_trip_route'));
+app.use ('/edit_garage', require('./routes/edit_garage_route'));
+app.use ('/edit_trip', require('./routes/edit_trip_route'));
+
+
+function getSum(total, item){
     return total + item.soSao
 }
 

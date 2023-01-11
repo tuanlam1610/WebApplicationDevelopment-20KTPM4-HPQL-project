@@ -41,12 +41,6 @@ const controller = {
                     ],
                     required: true,
                 },
-                
-                // {
-                //     model: models.GheChuyenXe,
-                //     attributes: ["viTriGhe"],
-                //     required: true,
-                // },
             ],
         };
 
@@ -104,7 +98,7 @@ const controller = {
         finished.limit = limit;
         finished.offset = limit * (page - 1);
         let {rows, count} = await models.VeXe.findAndCountAll(finished);
-        console.log(JSON.stringify(rows))
+        //console.log(JSON.stringify(rows))
         res.locals.tickets = rows;
         res.locals.pagination = {
             page,
@@ -152,7 +146,7 @@ const controller = {
         cancelled.limit = limit;
         cancelled.offset = limit * (page - 1);
         let {rows, count} = await models.VeXe.findAndCountAll(cancelled);
-        console.log(JSON.stringify(rows))
+        //console.log(JSON.stringify(rows))
         res.locals.tickets = rows;
         res.locals.pagination = {
             page,

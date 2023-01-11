@@ -1,0 +1,96 @@
+<main>
+    <div class="wrapper">
+        <div class="header">Sửa chuyến xe</div>
+        <form id="AddTrip" action="/admin/garage/AddTrip" method="post" enctype="multipart/form-data">
+            <div class="container">
+                <div class="img">
+                    <input type="file" name="sampleFile" required multiple><br>
+                </div>
+
+                <div class="content row">
+                    <div class="name col-md-12">
+                        <h4>Tên nhà xe</h4>
+                        <div class="displayField">
+                            <input type="text" id="name" name="name" maxlength="32" value="" required>
+                        </div>
+                    </div>
+                    <div class="ddk col-md-6">
+                        <h4>Điểm đón khách</h4>
+                        <textarea rows="2" cols="55" id="ddk" , name="ddk" required>
+
+                            </textarea>
+                    </div>
+                    <div class="dtk col-md-6">
+                        <h4>Điểm trả khách</h4>
+                        <textarea rows="2" cols="55" id="dtk" , name="dtk" required>
+
+                            </textarea>
+                    </div>
+                    <div class="date col-md-12">
+                        <h4>Ngày</h4>
+                        <div class="displayField">
+                            <input type="date" id="date" name="date" value="" required>
+                        </div>
+                    </div>
+                    <div class="tgxp col-md-6">
+                        <h4>Thời gian xuất phát</h4>
+                        <div class="displayField1">
+                            <input type="text" id="tgxp" name="tgxp" maxlength="20" value="" required>
+                        </div>
+                    </div>
+                    <div class="tgdn col-md-6">
+                        <h4>Thời gian đến nơi</h4>
+                        <div class="displayField1">
+                            <input type="text" id="tgdn" name="tgdn" maxlength="20" value="" required>
+                        </div>
+                    </div>
+                    <div class="loaiGhe col-md-12">
+                        <h4>Loại ghế</h4>
+
+                        <div class="displayField">
+                            <input type="text" name="loaiGhe" id="loaiGhe" class="form-control lh-lg" placeholder=""
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                            <ul class="dropdown-menu w-25 mx-3 text-center overflow-auto">
+                                <h6 class="dropdown-header fw-bold">Loại ghế</h6>
+                                <div class="dropdown-divider"></div>
+
+                                <li class="dropdown-item" onclick="loadDropdown(this)">Ghế ngồi</li>
+                                <li class="dropdown-item" onclick="loadDropdown(this)">Giường nằm</li>
+                                <li class="dropdown-item" onclick="loadDropdown(this)">Giường nằm đôi</li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="tienIch col-md-12">
+                        <h4>Tiện Ích</h4>
+                        <textarea rows="2" cols="55" id="tienIch" , name="tienIch">
+
+                            </textarea>
+                    </div>
+                    <div class="chinhSach col-md-12">
+                        <h4>Chính sách</h4>
+                        <textarea rows="6" cols="117" id="chinhSach" , name="chinhSach" required>
+
+                            </textarea>
+                    </div>
+                    <div class="giaVe col-md-6">
+                        <h4>Giá vé</h4>
+                        <div class="displayField1">
+                            <input type="text" id="giaVe" name="giaVe" maxlength="20" value="" required>
+                        </div>
+                    </div>
+                    <div class="soGhe col-md-6">
+                        <h4>Số lượng ghế</h4>
+                        <div class="displayField1">
+                            <input type="text" id="soGhe" name="soGhe" maxlength="20" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="btn"><button type="submit">Lưu</button></div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</main>
