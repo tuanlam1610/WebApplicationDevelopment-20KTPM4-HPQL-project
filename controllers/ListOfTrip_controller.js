@@ -62,7 +62,7 @@ const controller = {
             query.where.loaiXe = { [Op.in]: typeArray}
         }
         if (req.query.startDate){
-            query.where.gioKhoiHanh = sequelize.where(sequelize.fn('date', sequelize.col('gioKhoiHanh')), '=', ngayKhoiHanh);
+            query.where.gioKhoiHanh = sequelize.where(sequelize.col('gioKhoiHanh'), '=', ngayKhoiHanh);
         }
         else {
             var currentDate = new Date();

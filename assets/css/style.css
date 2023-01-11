@@ -144,7 +144,7 @@ div.navbar-collapse .btn:hover {
 
 .btn-group .dropdown-item:hover {
     background-color: var(--primary-blue);
-    color: var(--white);
+    color: var(--white) !important;
 }
 
 /* ---------- */

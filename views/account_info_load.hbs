@@ -56,14 +56,3 @@
         </div>
     </div>
 </main>
-<script>
-    document.getElementById("accessToken").value = localStorage.getItem("accessToken");
-    document.getElementById("refreshToken").value = localStorage.getItem("accessToken");
-    window.onload = function () {
-        document.forms["tokenForm"].submit((event) => {
-            fetch(event.target.action, {
-            method: 'POST',
-            body: new URLSearchParams(new FormData(event.target)) // event.target is the form
-        })});
-    }
-</script>
