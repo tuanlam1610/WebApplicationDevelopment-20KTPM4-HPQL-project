@@ -1,8 +1,14 @@
+require('dotenv').config();
+const bp = require('body-parser');
+const TokenManager = require('./middleWare/token');
 const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
 const moment = require('moment');
 const fileUpload = require('express-fileupload')
+
+app.use(bp.json());
+app.use(bp.urlencoded({ extended: true }));
 
 const ticket_find_route = require('./routes/ticket_find_route');
 const ticket_time_route = require('./routes/ticket_time_route');
@@ -82,6 +88,9 @@ app.use(express.static(__dirname + '/'))
 app.use(express.json());
 
 app.use(express.urlencoded({extended: false}));
+
+// Login
+
 
 app.use('/', require('./routes/index_route'))
 
