@@ -121,8 +121,8 @@ app.use ('/admin', require('./routes/admin_route'));
 app.use ('/add_garage', require('./routes/add_garage_route'));
 app.use ('/add_trip', require('./routes/add_trip_route'));
 app.use ('/admin_dashboard', require('./routes/admin_dashboard_route'));
-app.use ('/admin_garage', require('./routes/admin_garage_route'));
-app.use ('/admin_trip', require('./routes/admin_trip_route'));
+app.use ('/admin_garages', require('./routes/admin_garage_route'));
+app.use ('/admin_trips', require('./routes/admin_trip_route'));
 app.use ('/edit_garage', require('./routes/edit_garage_route'));
 app.use ('/edit_trip', require('./routes/edit_trip_route'));
 

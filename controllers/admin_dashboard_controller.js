@@ -1,6 +1,6 @@
 const controller = {
     show: async (req, res) => {
-        res.render('AdminDashboard', {styleLink: "/admin/assets/css/Admin.css", layout: "admin_layout"});
+        res.render('admin_dashboard', {styleLink: "/admin/assets/css/Admin.css", layout: "admin_layout1"});
     }
 }
 module.exports = controller;
