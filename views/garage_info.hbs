@@ -262,13 +262,14 @@
                 method: 'POST',
                 body: new URLSearchParams(new FormData(event.target)) // event.target is the form
             }
-            if (!localStorage.getItem('id')) {
+            if (!localStorage.getItem('accessToken')) {
                 myAlertF.innerHTML = "Bạn phải đăng nhập trước khi đánh giá nhà xe này";
                 noticeF[0].setAttribute('style', 'visibility: visible !important');
                 setTimeout(() => noticeF[0].setAttribute('style', 'visibility: hidden !important'), 3000);
                 return
             }
-            url.body.set("ID_TK", localStorage.getItem('id'));
+            url.body.set("accessToken", localStorage.getItem('accessToken'));
+            url.body.set("refreshToken", localStorage.getItem('refreshToken'));
             url.body.set("ngayDanhGia", getToday());
             fetch(event.target.action, url
             ).then((response) => {

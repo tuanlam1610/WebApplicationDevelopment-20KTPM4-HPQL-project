@@ -11,6 +11,7 @@ route.get('/garage/showAll/', controller.getAllGarage);
 
 route.get('/trip/', tripController.show);
 route.delete('/trip/delete/:id', tripController.deleteTrip)
-route.put('/trip/addTienIch/:id', tripController.addTienIch)
+route.post('/trip/addTrip', tripController.addTrip)
+route.post('/trip/addTripIMG/:id', tripController.updateTripImg)
 
 module.exports = route;
