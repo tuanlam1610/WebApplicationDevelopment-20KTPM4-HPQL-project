@@ -40,33 +40,29 @@
   <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light py-0">
       <div class="container-fluid">
-          <a class="navbar-brand py-1" href="/"><img src="/assets/img/HPQL-Light.svg" alt="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa-solid fa-caret-down" style="color: var(--white);"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto me-0 mb-3 mb-lg-0">
-                  <li class="nav-item d-flex justify-content-sm-center align-items-center active"
-                      style="min-width: 156px;">
-                      <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/">Trang Chủ</a>
-                  </li>
-                  <li class="nav-item d-flex align-items-center" style="min-width: 216px;">
-                      <a class="nav-link ps-3 ps-md-2 text-md-center w-100"
-                          href="/listofgarage/">Danh Sách Nhà Xe</a>
-                  </li>
-                  <li class="nav-item d-flex align-items-center" style="min-width: 250px;">
-                      <a class="nav-link ps-3 ps-md-2 text-md-center w-100"
-                          href="/listoftrip/">Danh Sách Chuyến Xe</a>
-                  </li>
-              </ul>
-              <a role="button"
-                  class="btn btn-primary d-flex align-items-center justify-content-center mx-3 mb-3 mx-md-0 mb-md-0"
-                  href="/login" style="min-width: 130px;">Đăng Nhập</a>
-          </div>
+        <a class="navbar-brand py-1" href="/"><img src="/assets/img/HPQL-Light.svg" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-caret-down" style="color: var(--white);"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto me-0 mb-3 mb-lg-0">
+            <li class="nav-item d-flex justify-content-sm-center align-items-center active" style="min-width: 156px;">
+              <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/">Trang Chủ</a>
+            </li>
+            <li class="nav-item d-flex align-items-center" style="min-width: 216px;">
+              <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/listofgarage/">Danh Sách Nhà Xe</a>
+            </li>
+            <li class="nav-item d-flex align-items-center" style="min-width: 250px;">
+              <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/listoftrip/">Danh Sách Chuyến Xe</a>
+            </li>
+          </ul>
+          <a role="button"
+            class="btn btn-primary d-flex align-items-center justify-content-center mx-3 mb-3 mx-md-0 mb-md-0"
+            href="/login" style="min-width: 130px;">Đăng Nhập</a>
+        </div>
       </div>
-  </nav>
+    </nav>
   </header>
   {{{body}}}
   <!-- Footer -->
@@ -115,5 +111,42 @@
   <!-- Footer -->
 </body>
 
-
 </html>
+<script>
+  if (localStorage.getItem("accessToken")) {
+    document.getElementById("navbarSupportedContent").lastElementChild.remove();
+    var userBtn = '<div id="userBtnGroup" class="btn-group float-sm-end">' +
+      '<button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"' +
+      'aria-expanded="false">' +
+      '<i class="fa-solid fa-user me-2"></i>' +
+      '</button>' +
+      '<ul class="dropdown-menu dropdown-menu-end">' +
+      '<li><a class="dropdown-item"' +
+      'href="/account_info" style="font-size: 15px; color: var(--primary-blue) !important;"><i ' +
+      'class="fa-regular fa-circle-user" style="padding-right: 5px;"></i>Thông tin tài khoản</a></li>' +
+      '<li><a class="dropdown-item"' +
+      'href="/edit_info" style="font-size: 15px; color: var(--primary-blue) !important;"><i ' +
+      'class="fa-solid fa-pen-to-square" style="padding-right: 5px;"></i>Chỉnh sửa thông ' +
+      'tin</a></li>' +
+      '<li><a class="dropdown-item" href="/change_password" style="font-size: 15px; color: var(--primary-blue) !important;"><i ' +
+      'class="fa-solid fa-unlock" style="padding-right: 5px;"></i>Thay đổi mật khẩu</a>' +
+      '</li>' +
+      '<li><a class="dropdown-item" href="/assets/page/LichSuDatVe.html" style="font-size: 15px; color: var(--primary-blue) !important;"><i ' +
+      'class="fa-solid fa-clock" style="padding-right: 5px;"></i>Lịch sử đặt vé</a></li>' +
+      '<li><a class="dropdown-item" href="/" onclick="logout()" style="font-size: 15px; color: var(--primary-blue) !important;"><i class="fa-solid fa-right-from-bracket" style="padding-right: 5px;"></i>Đăng xuất</a></li>' +
+      '</ul>' +
+      '</div>'
+    document.getElementById("navbarSupportedContent").innerHTML = document.getElementById("navbarSupportedContent").innerHTML + userBtn;
+  }
+  function logout() {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    window.location.reload();
+  }
+</script>
+  <style>
+  .btn-group .dropdown-item:hover {
+    background-color: var(--blue) !important;
+    color: var(--white) !important;
+  }
+</style>

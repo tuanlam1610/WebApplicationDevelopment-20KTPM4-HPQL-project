@@ -1,7 +1,19 @@
 const { sequelize } = require('../models/index');
 const models = require('../models/index')
+const TokenManager = require('../middleware/token');
+var accountID = 0;
 
 const controller = {
+    loadID: async (req, res) => {
+        res.render('load_history', { styleLink: "/assets/css/LichSuDatVe.css" });
+    },
+    getToken:  async (req, res) => {
+        const decode  = TokenManager.TokenDecode(req.body.accessToken, req.body.refreshToken);
+        console.log(decode);
+        accountID = decode.ID_TK;
+        
+        res.redirect("/history/booked");
+    },
 
     showBooked: async (req, res) => {
         var booked = {
@@ -13,7 +25,7 @@ const controller = {
                     required: true,
                     where: {
                         trangthaive: "Đã đặt",
-                        ID_TK: 1,
+                        ID_TK: accountID,
                     },
                 },
                 {
@@ -61,7 +73,7 @@ const controller = {
                     required: true,
                     where: {
                         trangthaive: "Đã thanh toán",
-                        ID_TK: 1,
+                        ID_TK: accountID,
                     },
                 },
                 {
@@ -109,7 +121,7 @@ const controller = {
                     required: true,
                     where: {
                         trangthaive: "Đã hủy",
-                        ID_TK: 1,
+                        ID_TK: accountID,
                     },
                 },
                 {

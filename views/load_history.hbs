@@ -1,0 +1,45 @@
+<main>
+    <form action="/history" id="tokenForm" name="tokenForm" method="post">
+        <input id="accessToken" style="display: none" name="accessToken" value="">
+        <input id="refreshToken" style="display: none" name="refreshToken" value="">
+    </form>
+    <!--Quản Lí Tài Khoản-->
+    <div class="wrapper">
+        <div class="header">Quản Lí Tài Khoản</div>
+        <div class="container row">
+            <div class="selection col-md-3 col-sm-12">
+                <div class="list-group">
+                    <a href="/account_info" class="list-group-item list-group-item-action">
+                        <i class="fa-regular fa-circle-user"></i>Thông tin tài khoản
+                    </a>
+                    <a href="/edit_info" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
+                    <a href="/change_password" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
+                    <a href="/history" class="list-group-item list-group-item-action active" aria-current="true">
+                        <i class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
+                    <a href="/index" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <script src="/assets/js/LichSuDatVe.js"></script>
+</main>
+
+<script>
+    document.getElementById("accessToken").value = localStorage.getItem("accessToken");
+    document.getElementById("refreshToken").value = localStorage.getItem("refreshToken");
+    window.onload = function () {
+        document.forms["tokenForm"].submit((event) => {
+            fetch(event.target.action, {
+                method: 'POST',
+                body: new URLSearchParams(new FormData(event.target))
+            })
+        });
+    }
+</script>

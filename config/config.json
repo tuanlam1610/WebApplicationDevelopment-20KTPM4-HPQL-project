@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "postgres",
-    "password": "thienphu1206",
-    "database": "DBTest",
+    "password": "ShadowWarrior2",
+    "database": "HPQL_DATABASE",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },  

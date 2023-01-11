@@ -20,11 +20,11 @@
                 <h4 class="rate">{{garageinfo.sosaoTB}}/5</h4>
                 <p class="number-of-ratings">({{num_of_cmts}} lượt đánh giá)</p>
             </div>
-
         </div>
         <div id="comment-slider" class="carousel slide" data-interval="1000000">
             <div class="carousel-inner" role="listbox">
                 {{#each cmts}}
+                {{#if (isLessThan3 @index) }}
                 <div class="carousel-item">
                     <div class="comments row d-flex justify-content-center">
                         {{#each this}}
@@ -60,6 +60,7 @@
                         {{/each}}
                     </div>
                 </div>
+                {{/if}}
                 {{/each}}
             </div>
             <div class="left carousel-prev-btn" type="button" data-bs-target="#comment-slider" data-bs-slide="prev">
@@ -262,13 +263,14 @@
                 method: 'POST',
                 body: new URLSearchParams(new FormData(event.target)) // event.target is the form
             }
-            if (!localStorage.getItem('id')) {
+            if (!localStorage.getItem('accessToken')) {
                 myAlertF.innerHTML = "Bạn phải đăng nhập trước khi đánh giá nhà xe này";
                 noticeF[0].setAttribute('style', 'visibility: visible !important');
                 setTimeout(() => noticeF[0].setAttribute('style', 'visibility: hidden !important'), 3000);
                 return
             }
-            url.body.set("ID_TK", localStorage.getItem('id'));
+            url.body.set("accessToken", localStorage.getItem('accessToken'));
+            url.body.set("refreshToken", localStorage.getItem('refreshToken'));
             url.body.set("ngayDanhGia", getToday());
             fetch(event.target.action, url
             ).then((response) => {
@@ -307,7 +309,7 @@
                 document.getElementsByClassName("carousel-prev-btn")[0].style.display = "none";
                 document.getElementsByClassName("carousel-next-btn")[0].style.display = "none";
             }
-            if (carousel_inner.childElementCount < 4) {
+            if (carousel_inner.childElementCount < 3) {
                 document.getElementsByClassName("view-more")[0].style.display = "none";
             }
             const carousel_inner_first = document.getElementsByClassName("carousel-inner")[0].firstElementChild;

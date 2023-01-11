@@ -1,5 +1,9 @@
 <main>
     <!--Quản Lí Tài Khoản-->
+    <form id="tokenForm" name="tokenForm" method="post">
+        <input id="accessToken" style="display: none" name="accessToken" value="">
+        <input id="refreshToken" style="display: none" name="refreshToken" value="">
+    </form>
     <div class="wrapper">
         <div class="header">Quản Lí Tài Khoản</div>
         <div class="container row">
@@ -12,7 +16,7 @@
                         <i class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
                     <a href="/change_password" class="list-group-item list-group-item-action">
                         <i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
-                    <a href="/history/booked" class="list-group-item list-group-item-action">
+                    <a href="/history" class="list-group-item list-group-item-action">
                         <i class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
                     <a href="/index" class="list-group-item list-group-item-action">
                         <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
@@ -30,10 +34,9 @@
                     </div>
                 </div>
                 <div class="email">
-                        <h4>Email</h4>
-                        <div class="displayField">
-                            <input type="text" id="email" name="email" value="{{email}}" readonly>
-                        </div>
+                    <h4>Email</h4>
+                    <div class="displayField">
+                        <input type="text" id="email" name="email" value="{{email}}" readonly>
                     </div>
                     <div class="phone">
                         <h4>Số điện thoại</h4>
@@ -47,8 +50,20 @@
                             <input type="text" id="ngaysinh" name="ngaysinh" value="{{{formatDate ngaysinh 'DD/MM/YYYY'}}}" readonly>
                         </div>
                     </div>
+                </div>
                 {{/each}}
             </div>
         </div>
     </div>
 </main>
+<script>
+    document.getElementById("accessToken").value = localStorage.getItem("accessToken");
+    document.getElementById("refreshToken").value = localStorage.getItem("refreshToken");
+    window.onload = function () {
+        document.forms["tokenForm"].submit((event) => {
+            fetch(event.target.action, {
+            method: 'POST',
+            body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+        })});
+    }
+</script>

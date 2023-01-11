@@ -1,0 +1,58 @@
+<main>
+    <!--Quản Lí Tài Khoản-->
+    <form id="tokenForm" name="tokenForm" method="post">
+        <input id="accessToken" style="display: none" name="accessToken" value="">
+        <input id="refreshToken" style="display: none" name="refreshToken" value="">
+    </form>
+    <div class="wrapper">
+        <div class="header">Quản Lí Tài Khoản</div>
+        <div class="container row">
+            <div class="selection col-md-3 col-sm-12">
+                <div class="list-group">
+                    <a href="/account_info" class="list-group-item list-group-item-action active" aria-current="true">
+                        <i class="fa-regular fa-circle-user"></i>Thông tin tài khoản
+                    </a>
+                    <a href="/edit_info" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-pen-to-square"></i>Chỉnh sửa thông tin</a>
+                    <a href="/change_password" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
+                    <a href="/history" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
+                    <a href="/index" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+                </div>
+            </div>
+
+            <div class="col-md-1"></div>
+
+            <div class="content col-md-8 col-sm-12">
+                {{#each accountInfo}}
+                <div class="fullname">
+                    <h4>Họ và tên</h4>
+                    <div class="displayField">
+                        <input type="text" id="hoten" name="hoten" maxlength="32" value="{{hoten}}" readonly>
+                    </div>
+                </div>
+                <div class="email">
+                    <h4>Email</h4>
+                    <div class="displayField">
+                        <input type="text" id="email" name="email" value="{{email}}" readonly>
+                    </div>
+                </div>
+                <div class="phone">
+                    <h4>Số điện thoại</h4>
+                    <div class="displayField">
+                        <input type="text" id="sdt" name="sdt" maxlength="10" value="{{sdt}}" readonly required>
+                    </div>
+                </div>
+                <div class="dob">
+                    <h4>Ngày sinh</h4>
+                    <div class="displayField">
+                        <input type="text" id="ngaysinh" name="ngaysinh" value="{{ngaysinh}}" readonly>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</main>

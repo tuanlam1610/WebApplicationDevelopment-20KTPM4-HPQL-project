@@ -23,7 +23,9 @@
       <input style="display: none" name="soGheTrong" value="{{soGheTrong}}"></input>
       <input style="display: none" name="IDChuyenXe" value="{{IDChuyenXe}}"></input>
       <input style="display: none" name="viTriGhe" value="{{listGhe}}"></input>
-      
+      <input id="accessToken" style="display: none" name="accessToken" value="">
+      <input id="refreshToken" style="display: none" name="refreshToken" value="">
+                    
       <div>
         <div class="dvx-chuyenXeBox  d-flex justify-content-center flex-column align-items-center">
           <!-- info-->
@@ -104,3 +106,9 @@
   </div>
   </div>
 </main>
+
+
+<script>
+    document.getElementById("accessToken").value = localStorage.getItem("accessToken");
+    document.getElementById("refreshToken").value = localStorage.getItem("refreshToken");
+</script>

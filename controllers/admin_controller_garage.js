@@ -1,10 +1,30 @@
 const models = require('../models/index');
 const fs = require('fs');
 const fileUpload = require('express-fileupload');
+const { where } = require('sequelize');
 
 const controller = {
+    getAllGarage: async (req, res) => {
+        var query = {
+            order: [["sosaoTB", "DESC"]],
+            where: {}
+        }
+        // Paginate Setting
+        let page = req.query.page || 1;
+        let limit = 10;
+        query.limit = limit;
+        query.offset = limit * (page - 1);
+        let { rows, count } = await models.NhaXe.findAndCountAll(query);
+        res.locals.garages = rows;
+        res.locals.pagination = {
+            page,
+            limit,
+            totalRows: count,
+        }
+        res.render('ListOfGarage', { styleLink: "/assets/css/ListOfGarage.css" });
+    },
     addNewGarage: async (req, res) => {
-        letmsg = "";
+        let msg = "";
         let newGarage = {
             tennhaxe: req.body.tennhaxe,
             doangioithieu: req.body.doangioithieu,
@@ -16,7 +36,28 @@ const controller = {
         }
         try {
             const addGarage = await models.NhaXe.create(newGarage);
-            console.log(addGarage.ID_NX)
+            console.log(addGarage.ID_NX);
+            if (req.files || Object.keys(req.files).length != 0) {
+                let sampleFile;
+                let uploadPath;
+
+                let path = "/assets/img/Garage/" + addGarage.ID_NX + ".png";
+
+                sampleFile = req.files.sampleFile;
+                uploadPath = "." + path;
+                sampleFile.mv(uploadPath, function (err) {
+                    if (err) {
+                        return res.status(500).send(err);
+                    }
+                });
+                await models.NhaXe.update({
+                    imagepath: path
+                }, {
+                    where: {
+                        ID_NX: addGarage.ID_NX
+                    }
+                });
+            }
             msg = {
                 result: "Thêm thành công!",
                 sign: "1",
@@ -35,7 +76,7 @@ const controller = {
         res.status(200).send(JSON.stringify(msg));
     },
     deleteGarage: async (req, res) => {
-        letmsg = "";
+        let msg = "";
         try {
             //delete comment
             await models.DanhGia.destroy({
@@ -51,6 +92,22 @@ const controller = {
                     ID_NX: req.params.id
                 }
             })
+            //xóa hình trong file assets/img/garage
+            const garageToDelete = await models.NhaXe.findOne({
+                where: {
+                    ID_NX: req.params.id
+                }
+            });
+            if (garageToDelete.imagepath.length != 0) {
+                fs.unlinkSync("." + garageToDelete.imagepath, (err) => {
+                    if (err) {
+                        res.status(500).send({
+                            message: "Could not delete the file. " + err,
+                        });
+                    }
+                });
+            }
+            //xóa nhà xe trong database
             const deleteGarage = await models.NhaXe.destroy({
                 where: {
                     ID_NX: req.params.id
@@ -85,20 +142,40 @@ const controller = {
             website: req.body.website
         }
         try {
-            const addGarage = await models.NhaXe.update(updateGarage, {
+            const updateGarage = await models.NhaXe.update(updateGarage, {
                 where: {
                     ID_NX: req.params.id
                 }
             });
+            if (req.files || Object.keys(req.files).length != 0) {
+                let sampleFile;
+                let uploadPath;
+
+                const oldImgPath = await models.NhaXe.findOne({
+                    where: {
+                        ID_NX: req.params.id
+                    },
+                    attributes: ["imagepath"]
+                });
+                console.log(oldImgPath.imagepath);
+
+                console.log('req.files >>>', req.files); // eslint-disable-line
+
+                sampleFile = req.files.sampleFile;
+                console.log(sampleFile);
+                uploadPath = "." + oldImgPath.imagepath;
+
+                sampleFile.mv(uploadPath, function (err) {
+                    if (err) {
+                        return res.status(500).send(err);
+                    }
+                });
+            }
             msg = {
-                result: "Thêm thành công!",
+                result: "Sửa thành công!",
                 sign: "1",
             }
         } catch (err) {
-            // const errObj = {};
-            // err.errors.map(er => {
-            //     errObj[er.path] = er.message;
-            // })
             if (updateGarage.sdt.length > 10) {
                 msg = {
                     result: "Số điện thoại không được dài quá 10 ký tự!",
