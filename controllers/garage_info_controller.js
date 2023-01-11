@@ -1,4 +1,5 @@
 const models = require('../models/index')
+const TokenManager = require('../middleware/token')
 
 function getSum(total, item){
     return total + item.soSao
@@ -51,9 +52,12 @@ const controller = {
         res.render('garage_info');
     },
     addComment: async (req, res) => {
+        const accessToken = req.body.accessToken;
+        const refreshToken = req.body.refreshToken;
+        const Token = TokenManager.TokenDecode(accessToken,refreshToken);
         let review = {
             ID_NX: req.body.ID_NX,
-            ID_TK: req.body.ID_TK,
+            ID_TK: Token.ID_TK,
             soSao: req.body.star || 3,
             loaiGhe: req.body.loaiGhe,
             noiDung: req.body.noiDung,
@@ -88,10 +92,6 @@ const controller = {
                 sign: "1",
             }
         } catch (err) {
-            // const errObj = {};
-            // err.errors.map(er => {
-            //     errObj[er.path] = er.message;
-            // })
             msg = {
                 result: "Bạn đã đánh giá nhà xe này trước đó!",
                 sign: "0",
