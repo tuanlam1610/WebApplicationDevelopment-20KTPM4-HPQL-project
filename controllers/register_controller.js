@@ -38,7 +38,7 @@ const controller = {
                 if (newAccount.password.length < 6 || newAccount.password.length > 20){
                     msg = {
                         result: "Mật khẩu phải dài từ 6-20 ký tự.",
-                        sign: "1",
+                        sign: "0",
                     }
                 }
                 else{

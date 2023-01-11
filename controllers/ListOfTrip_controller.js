@@ -14,15 +14,16 @@ const controller = {
         const PriceOption = {"1": [0,100000], "2":[100000,300000], "3":[300000,500000], "4": [500000,1000000]}
         const TypeSeatOption = {"1": "Ghế ngồi", "2": "Giường nằm", "3": "Giường đôi"}
         var query = {
-            order: [["createdAt", "DESC"]],
             include:[{
                 model: models.NhaXe,
                 attributes: ['ID_NX', 'tennhaxe'],
                 where: {},
                 require: true
             }],
-            where:{}
+            where:{},
+            order:[]
         }
+        // Where Clause
         if (req.query.StartDestination){
             query.where.tpDi = tpdi;
         }
@@ -63,6 +64,19 @@ const controller = {
         if (req.query.startDate){
             query.where.gioKhoiHanh = sequelize.where(sequelize.fn('date', sequelize.col('gioKhoiHanh')), '=', ngayKhoiHanh);
         }
+        else {
+            var currentDate = new Date();
+            query.where.gioKhoiHanh = sequelize.where(sequelize.cast(sequelize.col('gioKhoiHanh'), 'date'), '>=', currentDate);
+        }
+        //Order Clause
+        let sort = req.query.sort || 'timeAsc';
+        let orders = {
+            priceAsc: ['giaVe', 'ASC'],
+            priceDesc: ['giaVe', 'DESC'],
+            timeAsc: [sequelize.cast(sequelize.col("gioKhoiHanh"), 'TIME'), 'ASC'],
+            timeDesc: [sequelize.cast(sequelize.col("gioKhoiHanh"), 'TIME'), 'DESC']
+        }
+        query.order.push(orders[sort]);
         // Paginate Setting
         let page = req.query.page || 1;
         let limit = 7;
@@ -70,12 +84,12 @@ const controller = {
         query.offset = limit * (page - 1);
         let {rows, count} = await models.ChuyenXe.findAndCountAll(query);
         res.locals.trips = rows;
+        console.log(rows);
         res.locals.pagination = {
             page,
             limit,
             totalRows: count,
         }
-
         res.locals.tpDi = await models.ChuyenXe.findAll({
             attributes: ['tpDi'],
             group: ['tpDi']

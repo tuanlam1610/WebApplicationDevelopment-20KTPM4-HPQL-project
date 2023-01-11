@@ -143,3 +143,19 @@ body {
         height: 100%;
     }
 }
+
+.alertS {
+    visibility: hidden;
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.alertF {
+    visibility: hidden; 
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
