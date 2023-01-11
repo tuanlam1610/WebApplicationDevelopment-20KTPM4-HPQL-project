@@ -13,7 +13,9 @@ module.exports = {
      * }], {});
     */
     let items =
-      [{ "ID_TK": 1, "ID_Ve": 1, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" }];
+      [{ "ID_TK": 1, "ID_Ve": 1, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 2, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" },
+      { "ID_TK": 1, "ID_Ve": 3, "thoigiandat": "2022-11-03", "trangthaive": "Đã đặt" }];
     items.forEach(item => {
       item.createdAt = Sequelize.literal('NOW()');
       item.updatedAt = Sequelize.literal('NOW()');
