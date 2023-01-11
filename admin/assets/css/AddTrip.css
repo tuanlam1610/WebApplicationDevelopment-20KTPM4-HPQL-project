@@ -186,6 +186,17 @@ div.navbar-collapse .btn:hover {
 
 .content .displayField input {
     height: 48px;
+    width: 50%;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 2px solid var(--primary-blue);
+    background-color: white;
+    padding-left: 20px;
+}
+
+.content .displayField1 input {
+    height: 48px;
     width: 100%;
     font-size: 16px;
     font-weight: 500;
@@ -193,6 +204,23 @@ div.navbar-collapse .btn:hover {
     border: 2px solid var(--primary-blue);
     background-color: white;
     padding-left: 20px;
+}
+
+.displayField .dropdown-menu,
+.displayField .dropdown-divider{
+    /* Scrollable Menu */
+    max-height: 10rem;
+    /* --------------- */
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+}
+
+.displayField .dropdown-header {
+    padding: 0.5rem;
+    color: var(--white);
+    background-color: var(--primary-blue);
 }
 
 textarea {
