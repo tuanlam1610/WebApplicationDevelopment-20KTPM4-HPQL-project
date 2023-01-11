@@ -1,0 +1,136 @@
+<main>
+    <div class="wrapper">
+        <div class="header">Thêm chuyến xe</div>
+        <form id="AddTrip" action="/admin/garage/AddTrip" method="post" enctype="multipart/form-data">
+            <div class="container">
+                <div class="img">
+                    <input type="file" name="sampleFile" required multiple><br>
+                </div>
+
+                <div class="content row">
+                    <div class="name col-md-12">
+                        <h4>Tên nhà xe</h4>
+                        <div class="displayField">
+                            <input type="text" id="name" name="name" maxlength="32" value="" required>
+                        </div>
+                    </div>
+                    <div class="ddk col-md-6">
+                        <h4>Điểm đón khách</h4>
+                        <textarea rows="2" cols="55" id="ddk" , name="ddk" required>
+
+                            </textarea>
+                    </div>
+                    <div class="dtk col-md-6">
+                        <h4>Điểm trả khách</h4>
+                        <textarea rows="2" cols="55" id="dtk" , name="dtk" required>
+
+                            </textarea>
+                    </div>
+                    <div class="date col-md-12">
+                        <h4>Ngày</h4>
+                        <div class="displayField">
+                            <input type="date" id="date" name="date" value="" required>
+                        </div>
+                    </div>
+                    <div class="tgxp col-md-6">
+                        <h4>Thời gian xuất phát</h4>
+                        <div class="displayField1">
+                            <input type="text" id="tgxp" name="tgxp" maxlength="20" value="" required>
+                        </div>
+                    </div>
+                    <div class="tgdn col-md-6">
+                        <h4>Thời gian đến nơi</h4>
+                        <div class="displayField1">
+                            <input type="text" id="tgdn" name="tgdn" maxlength="20" value="" required>
+                        </div>
+                    </div>
+                    <div class="loaiGhe col-md-12">
+                        <h4>Loại ghế</h4>
+
+                        <div class="displayField">
+                            <input type="text" name="loaiGhe" id="loaiGhe" class="form-control lh-lg" placeholder=""
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                            <ul class="dropdown-menu w-25 mx-3 text-center overflow-auto">
+                                <h6 class="dropdown-header fw-bold">Loại ghế</h6>
+                                <div class="dropdown-divider"></div>
+
+                                <li class="dropdown-item" onclick="loadDropdown(this)">Ghế ngồi</li>
+                                <li class="dropdown-item" onclick="loadDropdown(this)">Giường nằm</li>
+                                <li class="dropdown-item" onclick="loadDropdown(this)">Giường nằm đôi</li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="tienIch col-md-12">
+                        <h4>Tiện Ích</h4>
+                        <textarea rows="2" cols="55" id="tienIch" , name="tienIch">
+
+                            </textarea>
+                    </div>
+                    <div class="chinhSach col-md-12">
+                        <h4>Chính sách</h4>
+                        <textarea rows="6" cols="117" id="chinhSach" , name="chinhSach" required>
+
+                            </textarea>
+                    </div>
+                    <div class="giaVe col-md-6">
+                        <h4>Giá vé</h4>
+                        <div class="displayField1">
+                            <input type="text" id="giaVe" name="giaVe" maxlength="20" value="" required>
+                        </div>
+                    </div>
+                    <div class="soGhe col-md-6">
+                        <h4>Số lượng ghế</h4>
+                        <div class="displayField1">
+                            <input type="text" id="soGhe" name="soGhe" maxlength="20" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="btn"><button type="submit">Lưu</button></div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <!---------------------------------- Alert --------------------------------------->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+        </symbol>
+        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path
+                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </symbol>
+    </svg>
+
+    <div class="alert alertS alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill" />
+        </svg>
+        <div id="noticeS">
+            An example success alert with an icon
+        </div>
+    </div>
+
+    <div class="alert alertF alert-danger d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+            <use xlink:href="#exclamation-triangle-fill" />
+        </svg>
+        <div id="noticeF">
+            My alert
+        </div>
+    </div>
+</main>
+
+
+
+<script>
+    function loadDropdown(e) {
+        let content = document.getElementById("loaiGhe");
+        content.value = e.innerText;
+        console.log(e.innerText);
+    }
+</script>
