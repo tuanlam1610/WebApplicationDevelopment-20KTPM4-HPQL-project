@@ -31,32 +31,35 @@ app.engine('hbs', expressHbs.engine({
         allowProtoPropertiesByDefault: true
     },
     helpers: {
+        isLessThan3: function (value) {
+            return value < 3;
+        },
         generateStar: function (value, options) {
             let result = "";
             const full_star = Math.floor(value);
             const half_star = value - full_star;
             let i = 0;
-            for (;i < full_star; i++){
+            for (; i < full_star; i++) {
                 result += '<i class="fa-solid fa-star"></i>'
             }
-            if (half_star > 0){
+            if (half_star > 0) {
                 result += '<i class="fa-regular fa-star-half-stroke"></i>'
             }
-            for (; i < 5; i++){
+            for (; i < 5; i++) {
                 result += '<i class="fa-regular fa-star"></i>'
             }
             return result
         },
-        formatDate: function(datetime, format){
+        formatDate: function (datetime, format) {
             if (moment) {
                 // can use other formats like 'lll' too
                 return moment(datetime).format(format);
-              }
-              else {
+            }
+            else {
                 return datetime;
-              }
+            }
         },
-        formatCurrency: function(currency){
+        formatCurrency: function (currency) {
             var result = "";
             result = new Intl.NumberFormat().format(currency) + "đ";
             result = result.replace(",", ".");
@@ -80,14 +83,14 @@ app.use(fileUpload());
 
 app.use(express.json());
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/'))
 
 app.use(express.json());
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 // Login
 
@@ -126,30 +129,30 @@ app.use('/edit_info', require('./routes/edit_info_route'));
 app.use('/change_password', require('./routes/change_password_route'));
 app.use('/history', require('./routes/history_route'));
 
-app.use ('/admin', require('./routes/admin_route'));
+app.use('/admin', require('./routes/admin_route'));
 
-function getSum(total, item){
+function getSum(total, item) {
     return total + item.soSao
 }
 
 app.get('/calcStar', async (req, res) => {
     const models = require('./models/index')
     let garages = await models.NhaXe.findAll({
-        include:[{
+        include: [{
             model: models.DanhGia
         }]
     });
     garages.forEach(item => {
         let stars = 0;
-        if (item.DanhGia.length > 0){
+        if (item.DanhGia.length > 0) {
             stars = item.DanhGia.reduce(getSum, 0) / item.DanhGia.length;
         }
         console.log(stars)
         item.sosaoTB = stars;
         item.update({
             sosaoTB: stars.toFixed(1)
-        },{
-            where: {ID_NX: item.ID_NX}
+        }, {
+            where: { ID_NX: item.ID_NX }
         })
     })
 });

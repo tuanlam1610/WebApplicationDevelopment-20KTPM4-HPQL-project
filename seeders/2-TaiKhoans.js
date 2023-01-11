@@ -15,7 +15,7 @@ module.exports = {
     let items =
     [{  "email": "ntphu202@clc.fitus.edu.vn", "sdt": "1484297558", "hoten": "Nguyễn Thiên Phú", "ngaysinh": "2002-06-12", "password": "123", "isAdmin": "false"},
     {  "email": "nnquang20@clc.fitus.edu.vn", "sdt": "4316013419", "hoten": "Nguyễn Quang", "ngaysinh": "2002-09-17", "password": "123", "isAdmin": "false"},
-    {  "email": "htlam20@clc.fitus.edu.vn", "sdt": "4013075497", "hoten": "Hà Tuân Lâm", "ngaysinh": "2002-10-16", "password": "123", "isAdmin": "false"},
+    {  "email": "htlam20@clc.fitus.edu.vn", "sdt": "4013075497", "hoten": "Hà Tuấn Lâm", "ngaysinh": "2002-10-16", "password": "123", "isAdmin": "false"},
     {  "email": "tghuy201@clc.fitus.edu.vn", "sdt": "5958406601", "hoten": "Trương Gia Huy", "ngaysinh": "2002-12-06", "password": "123", "isAdmin": "false"},
     {  "email": "giatruong0612@gmail.com", "sdt": "3035927832", "hoten": "UnDeadCharger", "ngaysinh": "2002-12-06", "password": "123", "isAdmin": "false"},
     {  "email": "hpqlgroup@gmail.com", "sdt": "5349083640", "hoten": "Admin", "ngaysinh": "2022-01-01", "password": "123", "isAdmin": "true"},

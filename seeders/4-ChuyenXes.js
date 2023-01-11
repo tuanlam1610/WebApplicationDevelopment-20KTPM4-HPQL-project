@@ -15,7 +15,7 @@ module.exports = {
     let items =
       [{
         "ID_NX": 1,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/1/Bus_img_1.png", "/assets/img/trip/1/Bus_img_2.png", "/assets/img/trip/1/Bus_img_3.png", "/assets/img/trip/1/Bus_img_4.png", "/assets/img/trip/1/Bus_img_5.png", "/assets/img/trip/1/Bus_img_6.png"],
         "diemDon": ["Bến xe miền tây"],
         "diemTra": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên"],
@@ -31,7 +31,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 1,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/2/Bus_img_1.png", "/assets/img/trip/2/Bus_img_2.png", "/assets/img/trip/2/Bus_img_3.png", "/assets/img/trip/2/Bus_img_4.png", "/assets/img/trip/700/Bus_img_5.png", "/assets/img/trip/2/Bus_img_6.png"],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên"],
         "diemTra": ["Bến xe miền tây", "Bến xe Long An"],
@@ -47,7 +47,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 2,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/3/Bus_img_1.png", "/assets/img/trip/3/Bus_img_2.png", "/assets/img/trip/3/Bus_img_3.png", "/assets/img/trip/3/Bus_img_4.png", "/assets/img/trip/3/Bus_img_5.png", "/assets/img/trip/3/Bus_img_6.png",],
         "diemDon": ["Bến xe miền tây", "Bến xe Huỳnh Đạt"],
         "diemTra": ["Bến xe Vĩnh Long", "Bến xe Tiền Giang"],
@@ -63,7 +63,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 2,
-         "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+         "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/4/Bus_img_1.png", "/assets/img/trip/4/Bus_img_2.png", "/assets/img/trip/4/Bus_img_3.png", "/assets/img/trip/4/Bus_img_4.png", "/assets/img/trip/4/Bus_img_5.png", "/assets/img/trip/4/Bus_img_6.png",],
         "diemDon": ["Bến xe Vĩnh Long", "Bến xe Tiền Giang"],
         "diemTra": ["Bến xe miền tây", "Bến xe Huỳnh Đạt", "Bến xe Long An"],
@@ -79,7 +79,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 3,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/5/Bus_img_1.png", "/assets/img/trip/5/Bus_img_2.png", "/assets/img/trip/5/Bus_img_3.png", "/assets/img/trip/5/Bus_img_4.png", "/assets/img/trip/5/Bus_img_5.png", "/assets/img/trip/5/Bus_img_6.png",],
         "diemDon": ["Bến xe miền tây, Bến xe Hùng Cường"],
         "diemTra": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên, Bến xe Châu Đốc"],
@@ -95,7 +95,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 3,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/6/Bus_img_1.png", "/assets/img/trip/6/Bus_img_2.png", "/assets/img/trip/6/Bus_img_3.png", "/assets/img/trip/6/Bus_img_4.png", "/assets/img/trip/6/Bus_img_5.png", "/assets/img/trip/6/Bus_img_6.png",],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên, Bến xe Châu Đốc"],
         "diemTra": ["Bến xe miền tây", "Bến xe Hùng Cường"],
@@ -111,7 +111,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 3,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/7/Bus_img_1.png", "/assets/img/trip/7/Bus_img_2.png", "/assets/img/trip/7/Bus_img_3.png", "/assets/img/trip/7/Bus_img_4.png", "/assets/img/trip/7/Bus_img_5.png", "/assets/img/trip/7/Bus_img_6.png",],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên, Bến xe Châu Đốc"],
         "diemTra": ["Bến xe miền tây", "Bến xe Hùng Cường"],
@@ -127,7 +127,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 1,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/8/Bus_img_1.png", "/assets/img/trip/8/Bus_img_2.png", "/assets/img/trip/8/Bus_img_3.png", "/assets/img/trip/8/Bus_img_4.png", "/assets/img/trip/8/Bus_img_5.png", "/assets/img/trip/8/Bus_img_6.png",],
         "diemDon": ["Bến xe miền tây"],
         "diemTra": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên"],
@@ -143,7 +143,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 1,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/9/Bus_img_1.png", "/assets/img/trip/9/Bus_img_2.png", "/assets/img/trip/9/Bus_img_3.png", "/assets/img/trip/9/Bus_img_4.png", "/assets/img/trip/9/Bus_img_5.png", "/assets/img/trip/9/Bus_img_6.png",],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên"],
         "diemTra": ["Bến xe miền tây", "Bến xe Long An"],
@@ -159,7 +159,7 @@ module.exports = {
         "tienIch": ['<i class="fa-solid fa-bottle-water"></i>Nước suối miễn phí', '<i class="fa-solid fa-mattress-pillow"></i>Trang bị mền gối', '<i class="fa-solid fa-wind"></i>Điều hòa nhiệt độ', '<i class="fa-solid fa-wifi"></i>Wifi tốc độ cao'],
       }, {
         "ID_NX": 4,
-        "moTaChinhSach": ["Yêu cầu khi lên xe:"," + Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe","  + Xuất trình SMS/Email đặt vé trước khi lên xe"," + Không mang đồ ăn, thức ăn có mùi lên xe"," + Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," +  Không mang các vật dễ cháy nổ lên xe "," + Không vứt rác trên xe"," + Không làm ồn, gây mất trật tự trên xe ","  + Không mang giày, dép trên xe."],
+        "moTaChinhSach": ["Yêu cầu khi lên xe:","Có mặt tại văn phòng/quầy vé/bến xe trước 30 phút để làm thủ tục lên xe"," Xuất trình SMS/Email đặt vé trước khi lên xe","Không mang đồ ăn, thức ăn có mùi lên xe","Không hút thuốc, uống rượu, sử dụng chất kích thích trên xe"," Không mang các vật dễ cháy nổ lên xe ","Không vứt rác trên xe","Không làm ồn, gây mất trật tự trên xe "," Không mang giày, dép trên xe."],
         "imagePath": ["/assets/img/trip/10/Bus_img_1.png", "/assets/img/trip/10/Bus_img_2.png", "/assets/img/trip/10/Bus_img_3.png", "/assets/img/trip/10/Bus_img_4.png", "/assets/img/trip/10/Bus_img_5.png", "/assets/img/trip/10/Bus_img_6.png",],
         "diemDon": ["Bến xe Sa Đéc", "Bến xe Cao Lãnh", "Bến xe Long Xuyên"],
         "diemTra": ["Bến xe miền tây", "Bến xe Long An"],
