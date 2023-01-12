@@ -62,10 +62,16 @@ const controller = {
             query.where.loaiXe = { [Op.in]: typeArray}
         }
         if (req.query.startDate){
-            query.where.gioKhoiHanh = sequelize.where(sequelize.col('gioKhoiHanh'), '=', ngayKhoiHanh);
+            const date = req.query.startDate.split('/')[0];
+            const month = req.query.startDate.split('/')[1];
+            const year = req.query.startDate.split('/')[2];
+            var dateStart = new Date(year + '-' + month + '-' + date);
+            dateStart = dateStart.toISOString().split('T')[0];
+            query.where.gioKhoiHanh = sequelize.where(sequelize.cast(sequelize.col('gioKhoiHanh'), 'date'), '=', dateStart);
         }
         else {
             var currentDate = new Date();
+            currentDate = currentDate.toISOString().split("T")[0];
             query.where.gioKhoiHanh = sequelize.where(sequelize.cast(sequelize.col('gioKhoiHanh'), 'date'), '>=', currentDate);
         }
         //Order Clause
@@ -73,8 +79,8 @@ const controller = {
         let orders = {
             priceAsc: ['giaVe', 'ASC'],
             priceDesc: ['giaVe', 'DESC'],
-            timeAsc: [sequelize.cast(sequelize.col("gioKhoiHanh"), 'TIME'), 'ASC'],
-            timeDesc: [sequelize.cast(sequelize.col("gioKhoiHanh"), 'TIME'), 'DESC']
+            timeAsc: ['gioKhoiHanh', 'ASC'],
+            timeDesc: ['gioKhoiHanh', 'DESC']
         }
         query.order.push(orders[sort]);
         // Paginate Setting

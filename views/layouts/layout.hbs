@@ -47,13 +47,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto me-0 mb-3 mb-lg-0">
-            <li class="nav-item d-flex justify-content-sm-center align-items-center active" style="min-width: 156px;">
+            <li id="homepageNav" class="nav-item d-flex justify-content-sm-center align-items-center" style="min-width: 156px;">
               <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/">Trang Chủ</a>
             </li>
-            <li class="nav-item d-flex align-items-center" style="min-width: 216px;">
+            <li id="garageNav" class="nav-item d-flex align-items-center" style="min-width: 216px;">
               <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/listofgarage/">Danh Sách Nhà Xe</a>
             </li>
-            <li class="nav-item d-flex align-items-center" style="min-width: 250px;">
+            <li id="tripNav" class="nav-item d-flex align-items-center" style="min-width: 250px;">
               <a class="nav-link ps-3 ps-md-2 text-md-center w-100" href="/listoftrip/">Danh Sách Chuyến Xe</a>
             </li>
           </ul>
@@ -113,6 +113,20 @@
 
 </html>
 <script>
+  // Dynamic Nav Bar
+  var url = window.location;
+  var params = new URLSearchParams(window.location.search);
+  console.log("URL: " + url.toString());
+  console.log(url.toString().split('/'));
+  console.log("Params: " + params.toString());
+  if(url.toString().includes("listofgarage")) {
+    document.getElementById('garageNav').classList.add("active");
+  }
+  else if(url.toString().includes("listoftrip")){
+    document.getElementById('tripNav').classList.add("active");
+  }
+  else if(params.toString() == "" && url.toString().split('/')[3] == "") document.getElementById('homepageNav').classList.add("active");
+  //Token
   if (localStorage.getItem("accessToken")) {
     document.getElementById("navbarSupportedContent").lastElementChild.remove();
     var userBtn = '<div id="userBtnGroup" class="btn-group float-sm-end">' +
