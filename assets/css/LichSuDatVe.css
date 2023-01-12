@@ -247,6 +247,10 @@ div.navbar-collapse .btn:hover {
     overflow-y: scroll;
 }
 
+#filter_data::-webkit-scrollbar {
+    display: none;
+}
+
 .element_type .table {
     border-color: var(--primary-blue);
 }
