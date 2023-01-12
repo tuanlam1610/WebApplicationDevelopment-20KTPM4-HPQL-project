@@ -29,12 +29,12 @@
                 Management
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="/admin_garages">
+                <a class="nav-link" href="/admin/garage/">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Nhà Xe</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/admin_trips">
+                <a class="nav-link" href="/admin/trip/">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Chuyến Xe</span></a>
             </li>
@@ -81,14 +81,14 @@
                     <!-- Garages Card -->
                     <div class="row">
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="/admin_garages">
+                            <a href="/admin/garage/">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-s font-weight-bold text-info text-uppercase mb-1">Danh
                                                     Sách Nhà Xe</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{numOfGarage}}</div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-table fa-2x text-gray-400"></i>
@@ -99,14 +99,14 @@
                             </a>
                         </div>
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <a href="/admin_trips">
+                            <a href="/admin/trip/">
                                 <div class="card border-left-info shadow h-100 py-2">
                                     <div class="card-body">
                                         <div class="row no-gutters align-items-center">
                                             <div class="col mr-2">
                                                 <div class="text-s font-weight-bold text-info text-uppercase mb-1">Danh
                                                     Sách Chuyến Xe</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{numOfTrip}}</div>
                                             </div>
                                             <div class="col-auto">
                                                 <i class="fas fa-table fa-2x text-gray-400"></i>
