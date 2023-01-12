@@ -12,7 +12,8 @@ route.get('/garage/:id', garageController.getAGarage);
 route.put('/garage/update/:id', garageController.updateGarage);
 route.get('/garage/', controller.getAllGarage);
 
-route.get('/trip/', tripController.show);
+route.get('/trip/', tripController.getAllTrips);
+route.get('/trip/:id', tripController.getATrip)
 route.delete('/trip/delete/:id', tripController.deleteTrip)
 route.post('/trip/add', tripController.addTrip)
 route.post('/trip/addTripIMG/:id', tripController.updateTripImg)

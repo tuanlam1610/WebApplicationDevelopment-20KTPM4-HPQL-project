@@ -106,29 +106,31 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {{#each row}}
                                         <tr>
-                                            <td>Phương Trang</td>
+                                            <td>{{NhaXe.tennhaxe}}</td>
                                             <td>
                                                 <ul>
-                                                    <li>Bến xe Sa Đéc</li>
-                                                    <li>Bến xe Cao Lãnh</li>
-                                                    <li>Bến xe Long Xuyên, Bến xe Châu Đốc</li>
+                                                    {{#each diemDon}}
+                                                    <li>{{this}}</li>
+                                                    {{/each}}
                                                 </ul>
                                             </td>
                                             <td>
                                                 <ul>
-                                                    <li>Bến xe miền tây</li>
-                                                    <li>Bến xe Hùng Cường</li>
+                                                    {{#each diemTra}}
+                                                    <li>{{this}}</li>
+                                                    {{/each}}
                                                 </ul>
                                             </td>
-                                            <td>15/01/2023</td>
-                                            <td>08:00 - 15/01/2023(Bến xe Sa Đéc)</td>
-                                            <td>13:30 - 15/01/2023(Bến xe miền tây)</td>
-                                            <td>Ghế ngồi</td>
-                                            <td>170000đ</td>
-                                            <td>45/45</td>
+                                            <td>{{{formatDate gioKhoiHanh "DD/MM/YYYY"}}}</td>
+                                            <td>{{{formatDate gioKhoiHanh "HH:mm - DD/MM/YYYY"}}}({{diemDon.[0]}})</td>
+                                            <td>{{{formatDate gioKetThuc "HH:mm - DD/MM/YYYY"}}}({{diemTra.[0]}})</td>
+                                            <td>{{loaiXe}}</td>
+                                            <td>{{{formatCurrency giaVe}}}</td>
+                                            <td>{{soGheTrong}}/{{tongSoGhe}}</td>
                                             <td>
-                                                <a class="btn btn-primary" href="/edit_trip">Sửa</a>
+                                                <a class="btn btn-primary" href="/admin/trip/{{{IDChuyenXe}}}">Sửa</a>
                                             </td>
                                             <td>
                                                 <form>
@@ -138,70 +140,7 @@
 
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Phương Trang</td>
-                                            <td>
-                                                <ul>
-                                                    <li>Bến xe Sa Đéc</li>
-                                                    <li>Bến xe Cao Lãnh</li>
-                                                    <li>Bến xe Long Xuyên, Bến xe Châu Đốc</li>
-                                                </ul>
-                                            </td>
-                                            <td>
-                                                <ul>
-                                                    <li>Bến xe miền tây</li>
-                                                    <li>Bến xe Hùng Cường</li>
-                                                </ul>
-                                            </td>
-                                            <td>15/01/2023</td>
-                                            <td>08:00 - 15/01/2023(Bến xe Sa Đéc)</td>
-                                            <td>13:30 - 15/01/2023(Bến xe miền tây)</td>
-                                            <td>Ghế ngồi</td>
-                                            <td>170000đ</td>
-                                            <td>45/45</td>
-                                            <td>
-                                                <a class="btn btn-primary" href="/edit_trip">Sửa</a>
-                                            </td>
-                                            <td>
-                                                <form>
-                                                    <input class="btn btn-primary" type="button" value="Xóa"
-                                                        onclick="getConfirmation();" />
-                                                </form>
-
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Phương Trang</td>
-                                            <td>
-                                                <ul>
-                                                    <li>Bến xe Sa Đéc</li>
-                                                    <li>Bến xe Cao Lãnh</li>
-                                                    <li>Bến xe Long Xuyên, Bến xe Châu Đốc</li>
-                                                </ul>
-                                            </td>
-                                            <td>
-                                                <ul>
-                                                    <li>Bến xe miền tây</li>
-                                                    <li>Bến xe Hùng Cường</li>
-                                                </ul>
-                                            </td>
-                                            <td>15/01/2023</td>
-                                            <td>08:00 - 15/01/2023(Bến xe Sa Đéc)</td>
-                                            <td>13:30 - 15/01/2023(Bến xe miền tây)</td>
-                                            <td>Ghế ngồi</td>
-                                            <td>170000đ</td>
-                                            <td>45/45</td>
-                                            <td>
-                                                <a class="btn btn-primary" href="/edit_trip">Sửa</a>
-                                            </td>
-                                            <td>
-                                                <form>
-                                                    <input class="btn btn-primary" type="button" value="Xóa"
-                                                        onclick="getConfirmation();" />
-                                                </form>
-
-                                            </td>
-                                        </tr>
+                                        {{/each}}
                                     </tbody>
                                 </table>
                             </div>
