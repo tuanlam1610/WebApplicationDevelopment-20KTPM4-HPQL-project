@@ -14,7 +14,7 @@
                         <i class="fa-solid fa-unlock"></i>Thay đổi mật khẩu</a>
                     <a href="/history" class="list-group-item list-group-item-action active" aria-current="true">
                         <i class="fa-solid fa-clock"></i>Lịch sử đặt vé</a>
-                    <a href="/index" class="list-group-item list-group-item-action">
+                    <a href="/" class="list-group-item list-group-item-action" onclick="logout()">
                         <i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
                 </div>
             </div>
@@ -99,5 +99,9 @@
     nextButton.children[0].href = "?" + urlParams.toString() + "&page=" + nextpage;
     prevButton.children[0].href = "?" + urlParams.toString() + "&page=" + prevpage;
     currentPage.classList.add('active');
-
+    function logout() {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+        window.location.reload();
+    }
 </script>

@@ -87,10 +87,16 @@
                 noticeS[0].setAttribute('style', 'visibility: visible !important');
                 localStorage.setItem("accessToken", body.token.accessToken);
                 localStorage.setItem("refreshToken", body.token.refreshToken);
-                if(body.account.isAdmin) console.log("Login with admin account");
-                else console.log("Login with user account");
-                setTimeout(() => noticeS[0].setAttribute('style', 'visibility: hidden !important'), 3000);
-                setTimeout(() => window.location.href = '/', 3000);
+                if(body.account.isAdmin){
+                    console.log("Login with admin account");
+                    setTimeout(() => noticeS[0].setAttribute('style', 'visibility: hidden !important'), 3000);
+                    setTimeout(() => window.location.href = '/admin_dashboard', 3000);
+                }     
+                else {
+                    console.log("Login with user account")
+                    setTimeout(() => noticeS[0].setAttribute('style', 'visibility: hidden !important'), 3000);
+                    setTimeout(() => window.location.href = '/', 3000);
+                }
             }
             else {
                 myAlertF.innerHTML = body.msg.result;
