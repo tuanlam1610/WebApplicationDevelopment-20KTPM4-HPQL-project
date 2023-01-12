@@ -264,6 +264,22 @@ textarea {
     text-align: start;
 }
 
+.alertS {
+    visibility: hidden;
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.alertF {
+    visibility: hidden; 
+    position: fixed;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 @media (min-width:768px) {
     :root {
         --fs-600: 1.5rem;

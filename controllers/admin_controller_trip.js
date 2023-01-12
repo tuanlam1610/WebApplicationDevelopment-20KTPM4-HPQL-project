@@ -5,14 +5,43 @@ const fileUpload = require('express-fileupload');
 const fs = require('fs')
 
 const controller = {
-    show: async (req, res) => {
-        res.render('account_info', { styleLink: "/assets/css/ThongTinTaiKhoan.css" });
+    getAllTrips: async (req, res) => {
+        var query = {
+            include: [{
+                model: models.NhaXe,
+                attributes: ['ID_NX', 'tennhaxe'],
+                where: {},
+                require: true
+            }],
+            where: {},
+            order: []
+        }
+        var currentDate = new Date();
+        query.where.gioKhoiHanh = sequelize.where(sequelize.cast(sequelize.col('gioKhoiHanh'), 'date'), '>=', currentDate);
+        let rows = await models.ChuyenXe.findAll(query);
+        res.locals.row = rows
+        res.render('admin_trips', { styleLink: "/admin/assets/css/Admin.css", layout: "admin_layout1" });
+    },
+    getATrip: async (req,res) =>{
+        const tripFound = await models.ChuyenXe.findOne({
+            where:{
+                IDChuyenXe: req.params.id
+            },
+            include:[{
+                model: models.NhaXe,
+                attributes: ['ID_NX','tennhaxe'],
+                require: true
+            }
+            ]
+        })
+        res.locals.trip = tripFound;
+        res.render('edit_trip', {styleLink: "/admin/assets/css/AddTrip.css", layout: "admin_layout2"});
     },
     addTrip: async (req, res) => {
-        const tienIch = req.body.tienIch.split('\r\n');
-        const moTa = req.body.moTa.split('\r\n');
-        const diemDon = req.body.diemDon.split('\r\n');
-        const diemTra = req.body.diemTra.split('\r\n');
+        const tienIch = req.body.tienIch.split(',');
+        const moTa = req.body.moTa.split(',');
+        const diemDon = req.body.diemDon.split(',');
+        const diemTra = req.body.diemTra.split(',');
         let tongSoGhe = 0;
 
         if (req.body.loaiXe === "Giường nằm") {
@@ -159,8 +188,8 @@ const controller = {
         res.setHeader('content-type', 'application/json');
         res.status(200).send(JSON.stringify(msg));
     },
-    updateTrip: async (req,res) =>{
-        
+    updateTrip: async (req, res) => {
+
     },
     updateTripImg: async (req, res) => {
         let sampleFile;

@@ -21,7 +21,19 @@ const controller = {
             limit,
             totalRows: count,
         }
-        res.render('ListOfGarage', { styleLink: "/assets/css/ListOfGarage.css" });
+        res.render('admin_garages', {styleLink: "/admin/assets/css/Admin.css", layout: "admin_layout1"});
+    },
+    getAGarage: async (req, res) =>{
+        const garageFound = await models.NhaXe.findOne({
+            where: {
+                ID_NX: req.params.id
+            }
+        });
+        res.locals.garage = garageFound;
+        res.render('edit_garage', {styleLink: "/admin/assets/css/AddGarage.css", layout: "admin_layout2"});
+    },
+    showAddGarageScreen: async (req,res) =>{
+        res.render('add_garage', {styleLink: "/admin/assets/css/AddGarage.css", layout: "admin_layout2"});
     },
     addNewGarage: async (req, res) => {
         let msg = "";
@@ -32,17 +44,17 @@ const controller = {
             diachi: req.body.diachi,
             email: req.body.email,
             website: req.body.website,
-            sosaoTB: 0
+            sosaoTB: 0,
+            imagePath: "/assets/img/Garage/new.png"
         }
         try {
             const addGarage = await models.NhaXe.create(newGarage);
             console.log(addGarage.ID_NX);
-            if (req.files || Object.keys(req.files).length != 0) {
+            if (req.files && Object.keys(req.files).length != 0){
                 let sampleFile;
                 let uploadPath;
-
+                console.log("IN")
                 let path = "/assets/img/Garage/" + addGarage.ID_NX + ".png";
-
                 sampleFile = req.files.sampleFile;
                 uploadPath = "." + path;
                 sampleFile.mv(uploadPath, function (err) {
@@ -63,12 +75,9 @@ const controller = {
                 sign: "1",
             }
         } catch (err) {
-            const errObj = {};
-            err.errors.map(er => {
-                errObj[er.path] = er.message;
-            })
+            console.log(err);
             msg = {
-                result: "Thêm thất bại!",
+                result: "Email này đã được liên kết với nhà xe khác!",
                 sign: "0",
             }
         }
@@ -114,7 +123,7 @@ const controller = {
                 }
             });
             msg = {
-                result: "Thêm thành công!",
+                result: "Xóa thành công!",
                 sign: "1",
             }
         } catch (err) {
@@ -123,7 +132,7 @@ const controller = {
                 errObj[er.path] = er.message;
             })
             msg = {
-                result: "Thêm thất bại!",
+                result: "Xóa thất bại!",
                 sign: "0",
             }
         }
@@ -142,12 +151,13 @@ const controller = {
             website: req.body.website
         }
         try {
-            const updateGarage = await models.NhaXe.update(updateGarage, {
+            const updatedGarage = await models.NhaXe.update(updateGarage, {
                 where: {
                     ID_NX: req.params.id
                 }
             });
-            if (req.files || Object.keys(req.files).length != 0) {
+            console.log(req);
+            if (req.files && Object.keys(req.files).length != 0) {
                 let sampleFile;
                 let uploadPath;
 
@@ -176,6 +186,7 @@ const controller = {
                 sign: "1",
             }
         } catch (err) {
+            console.log(err)
             if (updateGarage.sdt.length > 10) {
                 msg = {
                     result: "Số điện thoại không được dài quá 10 ký tự!",
@@ -185,7 +196,7 @@ const controller = {
             }
             else {
                 msg = {
-                    result: "Thêm thất bại!",
+                    result: "Sửa thất bại!",
                     sign: "0",
                 }
                 status = 500;
