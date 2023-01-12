@@ -85,7 +85,7 @@
                             ADMIN
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="/"><i class="fa-solid fa-right-from-bracket"></i>Đăng
+                            <li><a class="dropdown-item" href="/" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i>Đăng
                                     xuất</a></li>
                         </ul>
                     </div>
@@ -250,4 +250,11 @@
             // TODO handle error
         });
     });
+</script>
+<script>
+    function logout() {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+        window.location.reload();
+    }
 </script>

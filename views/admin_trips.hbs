@@ -72,7 +72,7 @@
                             ADMIN
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="/index.html"><i
+                            <li><a class="dropdown-item" href="/" onclick="logout()"><i
                                         class="fa-solid fa-right-from-bracket"></i>Đăng
                                     xuất</a></li>
                         </ul>
@@ -209,4 +209,11 @@
         }
     }
 
+</script>
+<script>
+    function logout() {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
+        window.location.reload();
+    }
 </script>
