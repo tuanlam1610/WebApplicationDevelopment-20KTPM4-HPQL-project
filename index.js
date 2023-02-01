@@ -1,6 +1,6 @@
 require('dotenv').config();
 const bp = require('body-parser');
-const TokenManager = require('./middleWare/token');
+const TokenManager = require('./middleware/token');
 const express = require('express');
 const app = express();
 const expressHbs = require('express-handlebars');
